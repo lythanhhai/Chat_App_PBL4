@@ -1,0 +1,12 @@
+D:\Class\PBL4\Server1\Server1\bin\Debug\Server1.exe.config
+D:\Class\PBL4\Server1\Server1\bin\Debug\Server1.exe
+D:\Class\PBL4\Server1\Server1\bin\Debug\Server1.pdb
+D:\Class\PBL4\Server1\Server1\bin\Debug\SimpleTCP.dll
+D:\Class\PBL4\Server1\Server1\obj\Debug\Server1.csprojAssemblyReference.cache
+D:\Class\PBL4\Server1\Server1\obj\Debug\Server1.Form1.resources
+D:\Class\PBL4\Server1\Server1\obj\Debug\Server1.Properties.Resources.resources
+D:\Class\PBL4\Server1\Server1\obj\Debug\Server1.csproj.GenerateResource.cache
+D:\Class\PBL4\Server1\Server1\obj\Debug\Server1.csproj.CoreCompileInputs.cache
+D:\Class\PBL4\Server1\Server1\obj\Debug\Server1.csproj.CopyComplete
+D:\Class\PBL4\Server1\Server1\obj\Debug\Server1.exe
+D:\Class\PBL4\Server1\Server1\obj\Debug\Server1.pdb
