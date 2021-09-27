@@ -8,6 +8,6 @@ D:\Class\PBL4\PBL4_Chat\PBL4_Chat\obj\Debug\PBL4_Chat.csproj.CopyComplete
 D:\Class\PBL4\PBL4_Chat\PBL4_Chat\obj\Debug\PBL4_Chat.exe
 D:\Class\PBL4\PBL4_Chat\PBL4_Chat\obj\Debug\PBL4_Chat.pdb
 D:\Class\PBL4\PBL4_Chat\PBL4_Chat\bin\Debug\Guna.UI.dll
-D:\Class\PBL4\PBL4_Chat\PBL4_Chat\obj\Debug\PBL4_Chat.Form1.resources
 D:\Class\PBL4\PBL4_Chat\PBL4_Chat\obj\Debug\PBL4_Chat.View.user_info.resources
 D:\Class\PBL4\PBL4_Chat\PBL4_Chat\obj\Debug\PBL4_Chat.csprojAssemblyReference.cache
+D:\Class\PBL4\PBL4_Chat\PBL4_Chat\obj\Debug\PBL4_Chat.mainForm.resources
