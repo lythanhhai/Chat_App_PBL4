@@ -1,4 +1,5 @@
 ﻿using PBL4_Chat.View;
+using PBL4_Chat.View;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,7 @@ namespace PBL4_Chat
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Register_Login());
+            Application.Run(new Register());
         }
     }
 }
