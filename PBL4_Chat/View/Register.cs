@@ -467,12 +467,12 @@ namespace PBL4_Chat.View
                 // kiểm tra email format 
                 if (txtEmail.Text.Contains("@") == false)
                 {
-                    lbErrorDontTick.Text = "Email dont correct format";
+                    lbErrorEmail.Text = "Email dont correct format";
                 }
                 // kiểm tra phone 
                 if (txtPhone.Text.Length < 8)
                 {
-                    lbErrorDontTick.Text = "Please insert more than 8 characters";
+                    lbErrorPhone.Text = "Please insert more than 8 characters";
                 }
             }
 
@@ -482,23 +482,13 @@ namespace PBL4_Chat.View
                 if (count == 0)
                 {
                     string userId = Convert.ToString(Convert.ToInt32(BLL_User.instance.getUserIdMax_BLL()) + 1);
-                    BLL_User.instance.BLL_addUser(userId, txtFirstName.Text, txtLastname.Text, txtUser1.Text, txtPass1.Text, txtEmail.Text, txtPhone.Text);
+                    BLL_User.instance.BLL_addUser(userId, txtFirstName.Text, txtLastname.Text, txtUser1.Text, txtPass1.Text, txtPhone.Text, txtPhone.Text);
+                    MessageBox.Show("dang ky thanh cong");
                 }
             }
         }
 
-        private void checkRemember_CheckedChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void Register_Load(object sender, EventArgs e)
-        {
-        }
-
-        private void txtUser_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
+        
 
         private void Register_FormClosing(object sender, FormClosingEventArgs e)
         {

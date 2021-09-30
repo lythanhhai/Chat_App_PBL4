@@ -1,6 +1,7 @@
 ﻿using PBL4_Chat.DTO;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -35,16 +36,16 @@ namespace PBL4_Chat.DAL
         public List<User> DAL_getUser()
         {
             List<User> user = new List<User>();
-            foreach(User u in DBHelper.Instance.executeNonQuery("select * from User").Rows)
+            foreach(DataRow u in DBHelper.Instance.executeNonQuery("select * from [User]").Rows)
             {
                 user.Add(new User { 
-                    userId = u.userId,
-                    firstName = u.firstName,
-                    lastName = u.lastName,
-                    userName = u.userName,
-                    passWord = u.passWord,
-                    email = u.email,
-                    phone = u.phone
+                    userId = u["userId"].ToString(),
+                    firstName = u["firstName"].ToString(),
+                    lastName = u["lastName"].ToString(),
+                    userName = u["userName"].ToString(),
+                    passWord = u["passWord"].ToString(),
+                    email = u["email"].ToString(),
+                    phone = u["phone"].ToString()
                 });
             }    
             return user;
@@ -52,14 +53,21 @@ namespace PBL4_Chat.DAL
 
         public void DAL_addUser(string userId, string firstName, string lastName, string userName, string passWord, string email, string phone)
         {
-            string query = "Insert into User values("
-                + userId + ","
-                + firstName + ","
-                + lastName + ","
-                + userName + ","
-                + passWord + ","
-                + email + ","
-                + phone + ")";
+            string query = "insert into [User] values (N'"
+                + userId
+                + "',N'"
+                + firstName
+                + "',N'"
+                + lastName
+                + "',N'"
+                + userName
+                + "',N'"
+                + passWord
+                + "',N'"
+                + email
+                + "',N'"
+                + phone
+                + "')";
             DBHelper.Instance.executeQuery(query);
         }
     }
