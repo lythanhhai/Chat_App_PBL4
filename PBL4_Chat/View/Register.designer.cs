@@ -62,25 +62,25 @@ namespace PBL4_Chat.View
             this.pnUser = new System.Windows.Forms.Panel();
             this.bunifuPages1 = new Bunifu.UI.WinForms.BunifuPages();
             this.panel11 = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lbErrorLast = new System.Windows.Forms.Label();
             this.bpbLastname = new Bunifu.UI.WinForms.BunifuPictureBox();
             this.lbLastname = new System.Windows.Forms.Label();
             this.pnLastname = new System.Windows.Forms.Panel();
             this.txtLastname = new System.Windows.Forms.TextBox();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lbErrorFirst = new System.Windows.Forms.Label();
             this.bpbFirstName = new Bunifu.UI.WinForms.BunifuPictureBox();
             this.lbFirstName = new System.Windows.Forms.Label();
             this.pnFirstName = new System.Windows.Forms.Panel();
             this.txtFirstName = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lbErrorEmail = new System.Windows.Forms.Label();
             this.bpbEmail = new Bunifu.UI.WinForms.BunifuPictureBox();
             this.lbEmail = new System.Windows.Forms.Label();
             this.pnEmail = new System.Windows.Forms.Panel();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lbErrorPhone = new System.Windows.Forms.Label();
             this.bpbPhone = new Bunifu.UI.WinForms.BunifuPictureBox();
             this.lbPhone = new System.Windows.Forms.Label();
             this.pnPhone = new System.Windows.Forms.Panel();
@@ -579,7 +579,7 @@ namespace PBL4_Chat.View
             // 
             // panel11
             // 
-            this.panel11.Controls.Add(this.label7);
+            this.panel11.Controls.Add(this.lbErrorLast);
             this.panel11.Controls.Add(this.bpbLastname);
             this.panel11.Controls.Add(this.lbLastname);
             this.panel11.Controls.Add(this.pnLastname);
@@ -589,16 +589,16 @@ namespace PBL4_Chat.View
             this.panel11.Size = new System.Drawing.Size(398, 124);
             this.panel11.TabIndex = 57;
             // 
-            // label7
+            // lbErrorLast
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.LightCoral;
-            this.label7.Location = new System.Drawing.Point(49, 91);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(44, 22);
-            this.label7.TabIndex = 38;
-            this.label7.Text = "Last";
+            this.lbErrorLast.AutoSize = true;
+            this.lbErrorLast.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbErrorLast.ForeColor = System.Drawing.Color.LightCoral;
+            this.lbErrorLast.Location = new System.Drawing.Point(49, 91);
+            this.lbErrorLast.Name = "lbErrorLast";
+            this.lbErrorLast.Size = new System.Drawing.Size(44, 22);
+            this.lbErrorLast.TabIndex = 38;
+            this.lbErrorLast.Text = "Last";
             // 
             // bpbLastname
             // 
@@ -650,7 +650,7 @@ namespace PBL4_Chat.View
             // 
             // panel6
             // 
-            this.panel6.Controls.Add(this.label3);
+            this.panel6.Controls.Add(this.lbErrorFirst);
             this.panel6.Controls.Add(this.bpbFirstName);
             this.panel6.Controls.Add(this.lbFirstName);
             this.panel6.Controls.Add(this.pnFirstName);
@@ -660,16 +660,16 @@ namespace PBL4_Chat.View
             this.panel6.Size = new System.Drawing.Size(398, 114);
             this.panel6.TabIndex = 58;
             // 
-            // label3
+            // lbErrorFirst
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.LightCoral;
-            this.label3.Location = new System.Drawing.Point(49, 83);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(45, 22);
-            this.label3.TabIndex = 38;
-            this.label3.Text = "First";
+            this.lbErrorFirst.AutoSize = true;
+            this.lbErrorFirst.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbErrorFirst.ForeColor = System.Drawing.Color.LightCoral;
+            this.lbErrorFirst.Location = new System.Drawing.Point(49, 83);
+            this.lbErrorFirst.Name = "lbErrorFirst";
+            this.lbErrorFirst.Size = new System.Drawing.Size(45, 22);
+            this.lbErrorFirst.TabIndex = 38;
+            this.lbErrorFirst.Text = "First";
             // 
             // bpbFirstName
             // 
@@ -721,7 +721,7 @@ namespace PBL4_Chat.View
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.lbErrorEmail);
             this.panel2.Controls.Add(this.bpbEmail);
             this.panel2.Controls.Add(this.lbEmail);
             this.panel2.Controls.Add(this.pnEmail);
@@ -731,16 +731,16 @@ namespace PBL4_Chat.View
             this.panel2.Size = new System.Drawing.Size(468, 113);
             this.panel2.TabIndex = 55;
             // 
-            // label2
+            // lbErrorEmail
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.LightCoral;
-            this.label2.Location = new System.Drawing.Point(64, 83);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(54, 22);
-            this.label2.TabIndex = 38;
-            this.label2.Text = "Email";
+            this.lbErrorEmail.AutoSize = true;
+            this.lbErrorEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbErrorEmail.ForeColor = System.Drawing.Color.LightCoral;
+            this.lbErrorEmail.Location = new System.Drawing.Point(64, 83);
+            this.lbErrorEmail.Name = "lbErrorEmail";
+            this.lbErrorEmail.Size = new System.Drawing.Size(54, 22);
+            this.lbErrorEmail.TabIndex = 38;
+            this.lbErrorEmail.Text = "Email";
             // 
             // bpbEmail
             // 
@@ -792,7 +792,7 @@ namespace PBL4_Chat.View
             // 
             // panel8
             // 
-            this.panel8.Controls.Add(this.label4);
+            this.panel8.Controls.Add(this.lbErrorPhone);
             this.panel8.Controls.Add(this.bpbPhone);
             this.panel8.Controls.Add(this.lbPhone);
             this.panel8.Controls.Add(this.pnPhone);
@@ -802,16 +802,16 @@ namespace PBL4_Chat.View
             this.panel8.Size = new System.Drawing.Size(398, 108);
             this.panel8.TabIndex = 56;
             // 
-            // label4
+            // lbErrorPhone
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.LightCoral;
-            this.label4.Location = new System.Drawing.Point(49, 76);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(60, 22);
-            this.label4.TabIndex = 38;
-            this.label4.Text = "phone";
+            this.lbErrorPhone.AutoSize = true;
+            this.lbErrorPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbErrorPhone.ForeColor = System.Drawing.Color.LightCoral;
+            this.lbErrorPhone.Location = new System.Drawing.Point(49, 76);
+            this.lbErrorPhone.Name = "lbErrorPhone";
+            this.lbErrorPhone.Size = new System.Drawing.Size(60, 22);
+            this.lbErrorPhone.TabIndex = 38;
+            this.lbErrorPhone.Text = "phone";
             // 
             // bpbPhone
             // 
@@ -1178,25 +1178,25 @@ namespace PBL4_Chat.View
         private System.Windows.Forms.Label lbErrorPassSignIn;
         private System.Windows.Forms.Label lbErrorDontTick;
         private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lbErrorLast;
         private Bunifu.UI.WinForms.BunifuPictureBox bpbLastname;
         private System.Windows.Forms.Label lbLastname;
         private System.Windows.Forms.Panel pnLastname;
         private System.Windows.Forms.TextBox txtLastname;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lbErrorFirst;
         private Bunifu.UI.WinForms.BunifuPictureBox bpbFirstName;
         private System.Windows.Forms.Label lbFirstName;
         private System.Windows.Forms.Panel pnFirstName;
         private System.Windows.Forms.TextBox txtFirstName;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbErrorEmail;
         private Bunifu.UI.WinForms.BunifuPictureBox bpbEmail;
         private System.Windows.Forms.Label lbEmail;
         private System.Windows.Forms.Panel pnEmail;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lbErrorPhone;
         private Bunifu.UI.WinForms.BunifuPictureBox bpbPhone;
         private System.Windows.Forms.Label lbPhone;
         private System.Windows.Forms.Panel pnPhone;
