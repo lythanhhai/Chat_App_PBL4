@@ -1,4 +1,6 @@
 ﻿
+using PBL4_Chat.BLL;
+using PBL4_Chat.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -379,43 +381,33 @@ namespace PBL4_Chat.View
 
         private void bpbSignIn_Click(object sender, EventArgs e)
         {
-            //int count = 0;
-            //int row = -1;
-            //string id_login = "";
-            //AffterLogin aflogin = new AffterLogin();
-            //foreach (Login i in BLL_TKVX.Instance.getAllLogin_BLL())
-            //{
-            //    if (txtUser.Text == i.userName && txtPass.Text == i.passWord)
-            //    {
+            int count = 0;
+            string userId = "";
+            foreach(User u in BLL_User.instance.BLL_getUser())
+            {
+                if (txtUser.Text == u.userName && txtPass.Text == u.passWord)
+                {
 
-            //        count++;
-            //        id_login = i.id_login;
-            //        row = i.row;
-            //        break;
-            //    }
-            //}
-            //if (count > 0 && row == 1)
-            //{
-
-            //    //ds.Show();
-            //    aflogin.Show();
-            //    Properties.Settings.Default.id_login = id_login;
-            //    Properties.Settings.Default.Save();
-            //    Properties.Settings.Default.Reload();
-            //    this.Hide();
-            //}
-
-            //if(count > 0 && row == 0)
-            //{
-            //    main_ql f = new main_ql();
-            //    f.Show();
-            //    this.Hide();
-
-            //}
-            //if(count==0)
-            //{
-            //    lbErrorPassSignIn.Text = "Username or Password is incorrect";
-            //}
+                    count++;
+                    userId = u.userId;
+                    break;
+                }
+            }
+            mainForm main = new mainForm();
+            ////AffterLogin aflogin = new AffterLogin();
+            if (count > 0)
+            {
+                //ds.Show();
+                main.Show();
+                Properties.Settings.Default.userId = userId;
+                Properties.Settings.Default.Save();
+                Properties.Settings.Default.Reload();
+                this.Hide();
+            }
+            if (count == 0)
+            {
+                lbErrorPassSignIn.Text = "Username or Password is incorrect";
+            }
             //List<DetailRoute> list = BLL_TKVX.Instance.getAllChiTietTuyen_BLL();
             //foreach (DetailRoute i in list)
             //{
@@ -423,7 +415,7 @@ namespace PBL4_Chat.View
             //    //if ((DateTime.Compare(DateTime.Now.Date, i.date) > 0))
             //    if ((DateTime.Compare(DateTime.Now.Date, i.date) > 0))// || (DateTime.Compare(Convert.ToDateTime(DateTime.Now.Hour),Convert.ToDateTime(i.time_start)) > 0))
             //    {
-            //        BLL_TKVX.Instance.updateDetailRoute_BLL(i.id_delRoute);
+            //        //BLL_TKVX.Instance.updateDetailRoute_BLL(i.id_delRoute);
             //    }
             //}
 
@@ -431,80 +423,68 @@ namespace PBL4_Chat.View
 
         private void bpbSignUp_Click(object sender, EventArgs e)
         {
-            ////if (txtUser1.Text.Length >= 5)
-            ////{
-            ////    lbErrorUserSignUp.Text = "";
-            ////}
-            ////// kiểm tra lượng ký tự password
-            ////if (txtPass1.Text.Length >= 8)
-            ////{
-            ////    lbErrorPassSignUp.Text = "";
-            ////}
-            ////// kiểm tra 2 mật khâu trùng nhau không
-            ////if (String.Compare(txtPass1.Text, txtConPass.Text) == 0)
-            ////{
-            ////    lbErrorConPassSignUp.Text = "";
-            ////}
-            ////// kiểm tra tích vào 
-            ////if (cbAgree.Checked == true)
-            ////{
-            ////    lbErrorDontTick.Text = "";
-            ////}
-            //List<Login> list = BLL_TKVX.Instance.getAllLogin_BLL();
-            //int count = 0;
-            //foreach (Login i in list)
-            //{
-            //    if (txtUser1.Text == i.userName)
-            //    {
-            //        count++;
-            //        break;
-            //    }
-            //}
-            //if (count > 0)
-            //{
-            //    lbErrorUserSignUp.Text = "Username have used to";
-            //}
-            //else
-            //{
-            //}
+            List<User> list = BLL_User.instance.BLL_getUser();
+            int count = 0;
+            foreach (User i in list)
+            {
+                if (txtUser1.Text == i.userName)
+                {
+                    count++;
+                    break;
+                }
+            }
+            if (count > 0)
+            {
+                lbErrorUserSignUp.Text = "Username have used to";
+            }
+            else
+            {
+            }
+            // kiểm tra nếu có bất kỳ lỗi nào
+            if (String.Compare(txtPass1.Text, txtConPass.Text) != 0 || txtUser1.Text.Length < 5 || txtPass1.Text.Length < 8 || cbAgree.Checked == false || txtEmail.Text.Contains("@") == false || txtPhone.Text.Length < 8)
+            {
 
-            //if (String.Compare(txtPass1.Text, txtConPass.Text) != 0 || txtUser1.Text.Length < 5 || txtPass1.Text.Length < 8 || cbAgree.Checked == false)
-            //{
-                
-            //    // kiểm tra lượng ký tự username
-            //    if (txtUser1.Text.Length < 5)
-            //    {
-            //        lbErrorUserSignUp.Text = "Please insert more than 5 characters";
-            //    }
-            //    // kiểm tra lượng ký tự password
-            //    if (txtPass1.Text.Length < 8)
-            //    {
-            //        lbErrorPassSignUp.Text = "Please insert more than 8 characters";
-            //    }
-            //    // kiểm tra 2 mật khâu trùng nhau không
-            //    if (String.Compare(txtPass1.Text, txtConPass.Text) != 0)
-            //    {
-            //        lbErrorConPassSignUp.Text = "Confirm Password dont same as password";
-            //    }
-            //    // kiểm tra tích vào 
-            //    if (cbAgree.Checked == false)
-            //    {
-            //        lbErrorDontTick.Text = "You havent agree with condition and service of app";
-            //    }
-            //}
-   
-            //else
-            //{
+                // kiểm tra lượng ký tự username
+                if (txtUser1.Text.Length < 5)
+                {
+                    lbErrorUserSignUp.Text = "Please insert more than 5 characters";
+                }
+                // kiểm tra lượng ký tự password
+                if (txtPass1.Text.Length < 8)
+                {
+                    lbErrorPassSignUp.Text = "Please insert more than 8 characters";
+                }
+                // kiểm tra 2 mật khâu trùng nhau không
+                if (String.Compare(txtPass1.Text, txtConPass.Text) != 0)
+                {
+                    lbErrorConPassSignUp.Text = "Confirm Password dont same as password";
+                }
+                // kiểm tra tích vào 
+                if (cbAgree.Checked == false)
+                {
+                    lbErrorDontTick.Text = "You havent agree with condition and service of app";
+                }
+                // kiểm tra email format 
+                if (txtEmail.Text.Contains("@") == false)
+                {
+                    lbErrorDontTick.Text = "Email dont correct format";
+                }
+                // kiểm tra phone 
+                if (txtPhone.Text.Length < 8)
+                {
+                    lbErrorDontTick.Text = "Please insert more than 8 characters";
+                }
+            }
 
-            //    if(count == 0)
-            //    {
-            //        string id_login = Convert.ToString(Convert.ToInt32(BLL_TKVX.Instance.getIdLoginMax_BLL()) + 1);
-            //        BLL_TKVX.Instance.insertLogin_BLL(id_login, txtUser1.Text, txtPass1.Text);
-            //    }    
-                    
-                
+            else
+            {
 
-            //}                
+                if (count == 0)
+                {
+                    string userId = Convert.ToString(Convert.ToInt32(BLL_User.instance.getUserIdMax_BLL()) + 1);
+                    BLL_User.instance.BLL_addUser(userId, txtFirstName.Text, txtLastname.Text, txtUser1.Text, txtPass1.Text, txtEmail.Text, txtPhone.Text);
+                }
+            }
         }
 
         private void checkRemember_CheckedChanged(object sender, EventArgs e)
@@ -524,7 +504,5 @@ namespace PBL4_Chat.View
         {
             Environment.Exit(0);
         }
-
-        
     }
 }
