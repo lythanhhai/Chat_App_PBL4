@@ -41,26 +41,8 @@ namespace PBL4_Chat.View
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbErrorDontTick = new System.Windows.Forms.Label();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.lbErrorConPassSignUp = new System.Windows.Forms.Label();
-            this.bpbConPass = new Bunifu.UI.WinForms.BunifuPictureBox();
-            this.lbConPass = new System.Windows.Forms.Label();
-            this.pnConPass = new System.Windows.Forms.Panel();
-            this.txtConPass = new System.Windows.Forms.TextBox();
             this.cbAgree = new System.Windows.Forms.CheckBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.lbErrorUserSignUp = new System.Windows.Forms.Label();
-            this.lbUser1 = new System.Windows.Forms.Label();
-            this.bpbUser1 = new Bunifu.UI.WinForms.BunifuPictureBox();
-            this.txtUser1 = new System.Windows.Forms.TextBox();
-            this.pnUser1 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.lbErrorPassSignUp = new System.Windows.Forms.Label();
-            this.bpbPass1 = new Bunifu.UI.WinForms.BunifuPictureBox();
-            this.lbPass1 = new System.Windows.Forms.Label();
-            this.pnPass1 = new System.Windows.Forms.Panel();
-            this.txtPass1 = new System.Windows.Forms.TextBox();
             this.bpbSignUp = new Bunifu.UI.WinForms.BunifuPictureBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.pn = new Bunifu.UI.WinForms.BunifuPanel();
@@ -79,18 +61,49 @@ namespace PBL4_Chat.View
             this.txtUser = new System.Windows.Forms.TextBox();
             this.pnUser = new System.Windows.Forms.Panel();
             this.bunifuPages1 = new Bunifu.UI.WinForms.BunifuPages();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.bpbLastname = new Bunifu.UI.WinForms.BunifuPictureBox();
+            this.lbLastname = new System.Windows.Forms.Label();
+            this.pnLastname = new System.Windows.Forms.Panel();
+            this.txtLastname = new System.Windows.Forms.TextBox();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.bpbFirstName = new Bunifu.UI.WinForms.BunifuPictureBox();
+            this.lbFirstName = new System.Windows.Forms.Label();
+            this.pnFirstName = new System.Windows.Forms.Panel();
+            this.txtFirstName = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.bunifuPictureBox1 = new Bunifu.UI.WinForms.BunifuPictureBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.bpbEmail = new Bunifu.UI.WinForms.BunifuPictureBox();
+            this.lbEmail = new System.Windows.Forms.Label();
+            this.pnEmail = new System.Windows.Forms.Panel();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             this.panel8 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
-            this.bunifuPictureBox3 = new Bunifu.UI.WinForms.BunifuPictureBox();
+            this.bpbPhone = new Bunifu.UI.WinForms.BunifuPictureBox();
+            this.lbPhone = new System.Windows.Forms.Label();
+            this.pnPhone = new System.Windows.Forms.Panel();
+            this.txtPhone = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.lbErrorConPassSignUp = new System.Windows.Forms.Label();
+            this.bpbConPass = new Bunifu.UI.WinForms.BunifuPictureBox();
+            this.lbConPass = new System.Windows.Forms.Label();
+            this.pnConPass = new System.Windows.Forms.Panel();
+            this.txtConPass = new System.Windows.Forms.TextBox();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.lbErrorUserSignUp = new System.Windows.Forms.Label();
+            this.lbUser1 = new System.Windows.Forms.Label();
+            this.bpbUser1 = new Bunifu.UI.WinForms.BunifuPictureBox();
+            this.txtUser1 = new System.Windows.Forms.TextBox();
+            this.pnUser1 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.lbErrorPassSignUp = new System.Windows.Forms.Label();
+            this.bpbPass1 = new Bunifu.UI.WinForms.BunifuPictureBox();
+            this.lbPass1 = new System.Windows.Forms.Label();
+            this.pnPass1 = new System.Windows.Forms.Panel();
+            this.txtPass1 = new System.Windows.Forms.TextBox();
             this.bunifuGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ButSignUpLeft)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ButSignInLeft)).BeginInit();
@@ -98,12 +111,6 @@ namespace PBL4_Chat.View
             this.pnSignIn.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panel9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bpbConPass)).BeginInit();
-            this.panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bpbUser1)).BeginInit();
-            this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bpbPass1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bpbSignUp)).BeginInit();
             this.tabPage1.SuspendLayout();
             this.pn.SuspendLayout();
@@ -113,10 +120,20 @@ namespace PBL4_Chat.View
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bpbUser)).BeginInit();
             this.bunifuPages1.SuspendLayout();
+            this.panel11.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bpbLastname)).BeginInit();
+            this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bpbFirstName)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bpbEmail)).BeginInit();
             this.panel8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bpbPhone)).BeginInit();
+            this.panel9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bpbConPass)).BeginInit();
+            this.panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bpbUser1)).BeginInit();
+            this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bpbPass1)).BeginInit();
             this.SuspendLayout();
             // 
             // bunifuGradientPanel1
@@ -138,7 +155,7 @@ namespace PBL4_Chat.View
             this.bunifuGradientPanel1.Location = new System.Drawing.Point(0, 0);
             this.bunifuGradientPanel1.Name = "bunifuGradientPanel1";
             this.bunifuGradientPanel1.Quality = 10;
-            this.bunifuGradientPanel1.Size = new System.Drawing.Size(441, 748);
+            this.bunifuGradientPanel1.Size = new System.Drawing.Size(441, 725);
             this.bunifuGradientPanel1.TabIndex = 14;
             // 
             // lbTitle
@@ -162,7 +179,7 @@ namespace PBL4_Chat.View
             this.ButSignUpLeft.Image = global::PBL4_Chat.Properties.Resources.SignUp2;
             this.ButSignUpLeft.InitialImage = null;
             this.ButSignUpLeft.IsCircle = true;
-            this.ButSignUpLeft.Location = new System.Drawing.Point(223, 537);
+            this.ButSignUpLeft.Location = new System.Drawing.Point(223, 525);
             this.ButSignUpLeft.Name = "ButSignUpLeft";
             this.ButSignUpLeft.Size = new System.Drawing.Size(160, 160);
             this.ButSignUpLeft.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -183,7 +200,7 @@ namespace PBL4_Chat.View
             this.ButSignInLeft.Image = global::PBL4_Chat.Properties.Resources.SignIn2;
             this.ButSignInLeft.InitialImage = null;
             this.ButSignInLeft.IsCircle = true;
-            this.ButSignInLeft.Location = new System.Drawing.Point(38, 537);
+            this.ButSignInLeft.Location = new System.Drawing.Point(38, 525);
             this.ButSignInLeft.Name = "ButSignInLeft";
             this.ButSignInLeft.Size = new System.Drawing.Size(160, 160);
             this.ButSignInLeft.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -202,7 +219,7 @@ namespace PBL4_Chat.View
             this.bunifuPictureBox2.BorderRadius = 50;
             this.bunifuPictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("bunifuPictureBox2.Image")));
             this.bunifuPictureBox2.IsCircle = true;
-            this.bunifuPictureBox2.Location = new System.Drawing.Point(159, 49);
+            this.bunifuPictureBox2.Location = new System.Drawing.Point(159, 37);
             this.bunifuPictureBox2.Name = "bunifuPictureBox2";
             this.bunifuPictureBox2.Size = new System.Drawing.Size(100, 100);
             this.bunifuPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -244,7 +261,7 @@ namespace PBL4_Chat.View
             this.tabPage2.Location = new System.Drawing.Point(4, 4);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(616, 748);
+            this.tabPage2.Size = new System.Drawing.Size(933, 740);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -252,19 +269,22 @@ namespace PBL4_Chat.View
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
+            this.panel1.Controls.Add(this.panel11);
+            this.panel1.Controls.Add(this.panel6);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.panel8);
-            this.panel1.Controls.Add(this.lbErrorDontTick);
+            this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.panel9);
-            this.panel1.Controls.Add(this.cbAgree);
-            this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.panel7);
             this.panel1.Controls.Add(this.panel5);
+            this.panel1.Controls.Add(this.lbErrorDontTick);
+            this.panel1.Controls.Add(this.cbAgree);
+            this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.bpbSignUp);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(610, 742);
+            this.panel1.Size = new System.Drawing.Size(927, 734);
             this.panel1.TabIndex = 0;
             // 
             // lbErrorDontTick
@@ -272,87 +292,17 @@ namespace PBL4_Chat.View
             this.lbErrorDontTick.AutoSize = true;
             this.lbErrorDontTick.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbErrorDontTick.ForeColor = System.Drawing.Color.LightCoral;
-            this.lbErrorDontTick.Location = new System.Drawing.Point(141, 462);
+            this.lbErrorDontTick.Location = new System.Drawing.Point(119, 378);
             this.lbErrorDontTick.Name = "lbErrorDontTick";
             this.lbErrorDontTick.Size = new System.Drawing.Size(0, 22);
             this.lbErrorDontTick.TabIndex = 38;
-            // 
-            // panel9
-            // 
-            this.panel9.Controls.Add(this.lbErrorConPassSignUp);
-            this.panel9.Controls.Add(this.bpbConPass);
-            this.panel9.Controls.Add(this.lbConPass);
-            this.panel9.Controls.Add(this.pnConPass);
-            this.panel9.Controls.Add(this.txtConPass);
-            this.panel9.Location = new System.Drawing.Point(36, 273);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(537, 94);
-            this.panel9.TabIndex = 47;
-            // 
-            // lbErrorConPassSignUp
-            // 
-            this.lbErrorConPassSignUp.AutoSize = true;
-            this.lbErrorConPassSignUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbErrorConPassSignUp.ForeColor = System.Drawing.Color.LightCoral;
-            this.lbErrorConPassSignUp.Location = new System.Drawing.Point(105, 83);
-            this.lbErrorConPassSignUp.Name = "lbErrorConPassSignUp";
-            this.lbErrorConPassSignUp.Size = new System.Drawing.Size(0, 22);
-            this.lbErrorConPassSignUp.TabIndex = 38;
-            // 
-            // bpbConPass
-            // 
-            this.bpbConPass.AllowFocused = false;
-            this.bpbConPass.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bpbConPass.AutoSizeHeight = true;
-            this.bpbConPass.BorderRadius = 17;
-            this.bpbConPass.Image = global::PBL4_Chat.Properties.Resources.confirmPass;
-            this.bpbConPass.IsCircle = true;
-            this.bpbConPass.Location = new System.Drawing.Point(68, 37);
-            this.bpbConPass.Name = "bpbConPass";
-            this.bpbConPass.Size = new System.Drawing.Size(35, 35);
-            this.bpbConPass.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bpbConPass.TabIndex = 35;
-            this.bpbConPass.TabStop = false;
-            this.bpbConPass.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Circle;
-            // 
-            // lbConPass
-            // 
-            this.lbConPass.AutoSize = true;
-            this.lbConPass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
-            this.lbConPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbConPass.ForeColor = System.Drawing.Color.Black;
-            this.lbConPass.Location = new System.Drawing.Point(63, 9);
-            this.lbConPass.Name = "lbConPass";
-            this.lbConPass.Size = new System.Drawing.Size(171, 25);
-            this.lbConPass.TabIndex = 33;
-            this.lbConPass.Text = "Confirm Password";
-            // 
-            // pnConPass
-            // 
-            this.pnConPass.BackColor = System.Drawing.Color.Black;
-            this.pnConPass.Location = new System.Drawing.Point(68, 78);
-            this.pnConPass.Name = "pnConPass";
-            this.pnConPass.Size = new System.Drawing.Size(430, 2);
-            this.pnConPass.TabIndex = 37;
-            // 
-            // txtConPass
-            // 
-            this.txtConPass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
-            this.txtConPass.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtConPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtConPass.Location = new System.Drawing.Point(109, 42);
-            this.txtConPass.Name = "txtConPass";
-            this.txtConPass.PasswordChar = '*';
-            this.txtConPass.Size = new System.Drawing.Size(375, 25);
-            this.txtConPass.TabIndex = 30;
-            this.txtConPass.Click += new System.EventHandler(this.txtConPass_Click);
             // 
             // cbAgree
             // 
             this.cbAgree.AutoSize = true;
             this.cbAgree.FlatAppearance.CheckedBackColor = System.Drawing.Color.DodgerBlue;
             this.cbAgree.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbAgree.Location = new System.Drawing.Point(145, 641);
+            this.cbAgree.Location = new System.Drawing.Point(539, 617);
             this.cbAgree.Name = "cbAgree";
             this.cbAgree.Size = new System.Drawing.Size(116, 24);
             this.cbAgree.TabIndex = 46;
@@ -371,145 +321,6 @@ namespace PBL4_Chat.View
             this.label5.TabIndex = 45;
             this.label5.Text = "Sign Up";
             // 
-            // panel7
-            // 
-            this.panel7.Controls.Add(this.lbErrorUserSignUp);
-            this.panel7.Controls.Add(this.lbUser1);
-            this.panel7.Controls.Add(this.bpbUser1);
-            this.panel7.Controls.Add(this.txtUser1);
-            this.panel7.Controls.Add(this.pnUser1);
-            this.panel7.Location = new System.Drawing.Point(36, 77);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(537, 87);
-            this.panel7.TabIndex = 44;
-            // 
-            // lbErrorUserSignUp
-            // 
-            this.lbErrorUserSignUp.AutoSize = true;
-            this.lbErrorUserSignUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbErrorUserSignUp.ForeColor = System.Drawing.Color.LightCoral;
-            this.lbErrorUserSignUp.Location = new System.Drawing.Point(105, 75);
-            this.lbErrorUserSignUp.Name = "lbErrorUserSignUp";
-            this.lbErrorUserSignUp.Size = new System.Drawing.Size(0, 22);
-            this.lbErrorUserSignUp.TabIndex = 37;
-            // 
-            // lbUser1
-            // 
-            this.lbUser1.AutoSize = true;
-            this.lbUser1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
-            this.lbUser1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbUser1.ForeColor = System.Drawing.Color.Black;
-            this.lbUser1.Location = new System.Drawing.Point(63, 2);
-            this.lbUser1.Name = "lbUser1";
-            this.lbUser1.Size = new System.Drawing.Size(53, 25);
-            this.lbUser1.TabIndex = 27;
-            this.lbUser1.Text = "User";
-            // 
-            // bpbUser1
-            // 
-            this.bpbUser1.AllowFocused = false;
-            this.bpbUser1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bpbUser1.AutoSizeHeight = true;
-            this.bpbUser1.BorderRadius = 17;
-            this.bpbUser1.Image = global::PBL4_Chat.Properties.Resources.user;
-            this.bpbUser1.IsCircle = true;
-            this.bpbUser1.Location = new System.Drawing.Point(68, 30);
-            this.bpbUser1.Name = "bpbUser1";
-            this.bpbUser1.Size = new System.Drawing.Size(35, 35);
-            this.bpbUser1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bpbUser1.TabIndex = 34;
-            this.bpbUser1.TabStop = false;
-            this.bpbUser1.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Circle;
-            // 
-            // txtUser1
-            // 
-            this.txtUser1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
-            this.txtUser1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtUser1.Location = new System.Drawing.Point(109, 37);
-            this.txtUser1.Multiline = true;
-            this.txtUser1.Name = "txtUser1";
-            this.txtUser1.Size = new System.Drawing.Size(375, 25);
-            this.txtUser1.TabIndex = 29;
-            this.txtUser1.Click += new System.EventHandler(this.txtUser1_Click);
-            // 
-            // pnUser1
-            // 
-            this.pnUser1.BackColor = System.Drawing.Color.Black;
-            this.pnUser1.Location = new System.Drawing.Point(68, 71);
-            this.pnUser1.Name = "pnUser1";
-            this.pnUser1.Size = new System.Drawing.Size(430, 2);
-            this.pnUser1.TabIndex = 36;
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.lbErrorPassSignUp);
-            this.panel5.Controls.Add(this.bpbPass1);
-            this.panel5.Controls.Add(this.lbPass1);
-            this.panel5.Controls.Add(this.pnPass1);
-            this.panel5.Controls.Add(this.txtPass1);
-            this.panel5.Location = new System.Drawing.Point(36, 170);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(537, 97);
-            this.panel5.TabIndex = 43;
-            // 
-            // lbErrorPassSignUp
-            // 
-            this.lbErrorPassSignUp.AutoSize = true;
-            this.lbErrorPassSignUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbErrorPassSignUp.ForeColor = System.Drawing.Color.LightCoral;
-            this.lbErrorPassSignUp.Location = new System.Drawing.Point(105, 85);
-            this.lbErrorPassSignUp.Name = "lbErrorPassSignUp";
-            this.lbErrorPassSignUp.Size = new System.Drawing.Size(0, 22);
-            this.lbErrorPassSignUp.TabIndex = 38;
-            // 
-            // bpbPass1
-            // 
-            this.bpbPass1.AllowFocused = false;
-            this.bpbPass1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bpbPass1.AutoSizeHeight = true;
-            this.bpbPass1.BorderRadius = 17;
-            this.bpbPass1.Image = global::PBL4_Chat.Properties.Resources.password;
-            this.bpbPass1.IsCircle = true;
-            this.bpbPass1.Location = new System.Drawing.Point(68, 39);
-            this.bpbPass1.Name = "bpbPass1";
-            this.bpbPass1.Size = new System.Drawing.Size(35, 35);
-            this.bpbPass1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bpbPass1.TabIndex = 35;
-            this.bpbPass1.TabStop = false;
-            this.bpbPass1.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Circle;
-            // 
-            // lbPass1
-            // 
-            this.lbPass1.AutoSize = true;
-            this.lbPass1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
-            this.lbPass1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPass1.ForeColor = System.Drawing.Color.Black;
-            this.lbPass1.Location = new System.Drawing.Point(63, 8);
-            this.lbPass1.Name = "lbPass1";
-            this.lbPass1.Size = new System.Drawing.Size(98, 25);
-            this.lbPass1.TabIndex = 33;
-            this.lbPass1.Text = "Password";
-            // 
-            // pnPass1
-            // 
-            this.pnPass1.BackColor = System.Drawing.Color.Black;
-            this.pnPass1.Location = new System.Drawing.Point(68, 80);
-            this.pnPass1.Name = "pnPass1";
-            this.pnPass1.Size = new System.Drawing.Size(430, 2);
-            this.pnPass1.TabIndex = 37;
-            // 
-            // txtPass1
-            // 
-            this.txtPass1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
-            this.txtPass1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPass1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPass1.Location = new System.Drawing.Point(109, 45);
-            this.txtPass1.Name = "txtPass1";
-            this.txtPass1.PasswordChar = '*';
-            this.txtPass1.Size = new System.Drawing.Size(375, 25);
-            this.txtPass1.TabIndex = 30;
-            this.txtPass1.Click += new System.EventHandler(this.txtPass1_Click);
-            // 
             // bpbSignUp
             // 
             this.bpbSignUp.AllowFocused = false;
@@ -519,7 +330,7 @@ namespace PBL4_Chat.View
             this.bpbSignUp.BorderRadius = 87;
             this.bpbSignUp.Image = global::PBL4_Chat.Properties.Resources.signUp;
             this.bpbSignUp.IsCircle = true;
-            this.bpbSignUp.Location = new System.Drawing.Point(311, 558);
+            this.bpbSignUp.Location = new System.Drawing.Point(711, 518);
             this.bpbSignUp.Name = "bpbSignUp";
             this.bpbSignUp.Size = new System.Drawing.Size(174, 174);
             this.bpbSignUp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -535,7 +346,7 @@ namespace PBL4_Chat.View
             this.tabPage1.Location = new System.Drawing.Point(4, 4);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(616, 633);
+            this.tabPage1.Size = new System.Drawing.Size(933, 748);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
             // 
@@ -556,7 +367,7 @@ namespace PBL4_Chat.View
             this.pn.Location = new System.Drawing.Point(3, 3);
             this.pn.Name = "pn";
             this.pn.ShowBorders = true;
-            this.pn.Size = new System.Drawing.Size(610, 627);
+            this.pn.Size = new System.Drawing.Size(927, 742);
             this.pn.TabIndex = 15;
             // 
             // checkRemember
@@ -564,7 +375,7 @@ namespace PBL4_Chat.View
             this.checkRemember.AutoSize = true;
             this.checkRemember.FlatAppearance.CheckedBackColor = System.Drawing.Color.DodgerBlue;
             this.checkRemember.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.checkRemember.Location = new System.Drawing.Point(108, 397);
+            this.checkRemember.Location = new System.Drawing.Point(276, 434);
             this.checkRemember.Name = "checkRemember";
             this.checkRemember.Size = new System.Drawing.Size(135, 24);
             this.checkRemember.TabIndex = 45;
@@ -581,7 +392,7 @@ namespace PBL4_Chat.View
             this.bpbSignIn.BorderRadius = 87;
             this.bpbSignIn.Image = global::PBL4_Chat.Properties.Resources.siginIn;
             this.bpbSignIn.IsCircle = true;
-            this.bpbSignIn.Location = new System.Drawing.Point(219, 434);
+            this.bpbSignIn.Location = new System.Drawing.Point(377, 464);
             this.bpbSignIn.Name = "bpbSignIn";
             this.bpbSignIn.Size = new System.Drawing.Size(174, 174);
             this.bpbSignIn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -596,7 +407,7 @@ namespace PBL4_Chat.View
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(151)))), ((int)(((byte)(145)))));
-            this.label1.Location = new System.Drawing.Point(223, 58);
+            this.label1.Location = new System.Drawing.Point(408, 65);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(143, 46);
             this.label1.TabIndex = 0;
@@ -609,7 +420,7 @@ namespace PBL4_Chat.View
             this.panel3.Controls.Add(this.lbPass);
             this.panel3.Controls.Add(this.pnPass);
             this.panel3.Controls.Add(this.txtPass);
-            this.panel3.Location = new System.Drawing.Point(28, 253);
+            this.panel3.Location = new System.Drawing.Point(208, 262);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(537, 138);
             this.panel3.TabIndex = 42;
@@ -678,7 +489,7 @@ namespace PBL4_Chat.View
             this.panel4.Controls.Add(this.bpbUser);
             this.panel4.Controls.Add(this.txtUser);
             this.panel4.Controls.Add(this.pnUser);
-            this.panel4.Location = new System.Drawing.Point(28, 136);
+            this.panel4.Location = new System.Drawing.Point(208, 136);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(537, 111);
             this.panel4.TabIndex = 43;
@@ -745,7 +556,7 @@ namespace PBL4_Chat.View
             this.bunifuPages1.PageName = "tabPage2";
             this.bunifuPages1.PageTitle = "tabPage2";
             this.bunifuPages1.SelectedIndex = 0;
-            this.bunifuPages1.Size = new System.Drawing.Size(624, 781);
+            this.bunifuPages1.Size = new System.Drawing.Size(941, 773);
             this.bunifuPages1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.bunifuPages1.TabIndex = 15;
             animation1.AnimateOnlyDifferences = true;
@@ -766,150 +577,518 @@ namespace PBL4_Chat.View
             this.bunifuPages1.Transition = animation1;
             this.bunifuPages1.TransitionType = Utilities.BunifuPages.BunifuAnimatorNS.AnimationType.Transparent;
             // 
+            // panel11
+            // 
+            this.panel11.Controls.Add(this.label7);
+            this.panel11.Controls.Add(this.bpbLastname);
+            this.panel11.Controls.Add(this.lbLastname);
+            this.panel11.Controls.Add(this.pnLastname);
+            this.panel11.Controls.Add(this.txtLastname);
+            this.panel11.Location = new System.Drawing.Point(505, 314);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(398, 124);
+            this.panel11.TabIndex = 57;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.LightCoral;
+            this.label7.Location = new System.Drawing.Point(49, 91);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(44, 22);
+            this.label7.TabIndex = 38;
+            this.label7.Text = "Last";
+            // 
+            // bpbLastname
+            // 
+            this.bpbLastname.AllowFocused = false;
+            this.bpbLastname.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bpbLastname.AutoSizeHeight = true;
+            this.bpbLastname.BorderRadius = 17;
+            this.bpbLastname.Image = global::PBL4_Chat.Properties.Resources.confirmPass;
+            this.bpbLastname.IsCircle = true;
+            this.bpbLastname.Location = new System.Drawing.Point(12, 37);
+            this.bpbLastname.Name = "bpbLastname";
+            this.bpbLastname.Size = new System.Drawing.Size(35, 35);
+            this.bpbLastname.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bpbLastname.TabIndex = 35;
+            this.bpbLastname.TabStop = false;
+            this.bpbLastname.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Circle;
+            // 
+            // lbLastname
+            // 
+            this.lbLastname.AutoSize = true;
+            this.lbLastname.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
+            this.lbLastname.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbLastname.ForeColor = System.Drawing.Color.Black;
+            this.lbLastname.Location = new System.Drawing.Point(7, 9);
+            this.lbLastname.Name = "lbLastname";
+            this.lbLastname.Size = new System.Drawing.Size(106, 25);
+            this.lbLastname.TabIndex = 33;
+            this.lbLastname.Text = "Last Name";
+            // 
+            // pnLastname
+            // 
+            this.pnLastname.BackColor = System.Drawing.Color.Black;
+            this.pnLastname.Location = new System.Drawing.Point(12, 86);
+            this.pnLastname.Name = "pnLastname";
+            this.pnLastname.Size = new System.Drawing.Size(370, 2);
+            this.pnLastname.TabIndex = 37;
+            // 
+            // txtLastname
+            // 
+            this.txtLastname.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
+            this.txtLastname.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtLastname.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLastname.Location = new System.Drawing.Point(53, 43);
+            this.txtLastname.Name = "txtLastname";
+            this.txtLastname.PasswordChar = '*';
+            this.txtLastname.Size = new System.Drawing.Size(329, 25);
+            this.txtLastname.TabIndex = 30;
+            this.txtLastname.Click += new System.EventHandler(this.txtLastname_Click);
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.label3);
+            this.panel6.Controls.Add(this.bpbFirstName);
+            this.panel6.Controls.Add(this.lbFirstName);
+            this.panel6.Controls.Add(this.pnFirstName);
+            this.panel6.Controls.Add(this.txtFirstName);
+            this.panel6.Location = new System.Drawing.Point(505, 194);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(398, 114);
+            this.panel6.TabIndex = 58;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.LightCoral;
+            this.label3.Location = new System.Drawing.Point(49, 83);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(45, 22);
+            this.label3.TabIndex = 38;
+            this.label3.Text = "First";
+            // 
+            // bpbFirstName
+            // 
+            this.bpbFirstName.AllowFocused = false;
+            this.bpbFirstName.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bpbFirstName.AutoSizeHeight = true;
+            this.bpbFirstName.BorderRadius = 17;
+            this.bpbFirstName.Image = global::PBL4_Chat.Properties.Resources.confirmPass;
+            this.bpbFirstName.IsCircle = true;
+            this.bpbFirstName.Location = new System.Drawing.Point(12, 42);
+            this.bpbFirstName.Name = "bpbFirstName";
+            this.bpbFirstName.Size = new System.Drawing.Size(35, 35);
+            this.bpbFirstName.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bpbFirstName.TabIndex = 35;
+            this.bpbFirstName.TabStop = false;
+            this.bpbFirstName.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Circle;
+            // 
+            // lbFirstName
+            // 
+            this.lbFirstName.AutoSize = true;
+            this.lbFirstName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
+            this.lbFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbFirstName.ForeColor = System.Drawing.Color.Black;
+            this.lbFirstName.Location = new System.Drawing.Point(7, 4);
+            this.lbFirstName.Name = "lbFirstName";
+            this.lbFirstName.Size = new System.Drawing.Size(106, 25);
+            this.lbFirstName.TabIndex = 33;
+            this.lbFirstName.Text = "First Name";
+            // 
+            // pnFirstName
+            // 
+            this.pnFirstName.BackColor = System.Drawing.Color.Black;
+            this.pnFirstName.Location = new System.Drawing.Point(12, 78);
+            this.pnFirstName.Name = "pnFirstName";
+            this.pnFirstName.Size = new System.Drawing.Size(370, 2);
+            this.pnFirstName.TabIndex = 37;
+            // 
+            // txtFirstName
+            // 
+            this.txtFirstName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
+            this.txtFirstName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFirstName.Location = new System.Drawing.Point(53, 44);
+            this.txtFirstName.Name = "txtFirstName";
+            this.txtFirstName.PasswordChar = '*';
+            this.txtFirstName.Size = new System.Drawing.Size(329, 25);
+            this.txtFirstName.TabIndex = 30;
+            this.txtFirstName.Click += new System.EventHandler(this.txtFirstName_Click);
+            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.bunifuPictureBox1);
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.panel6);
-            this.panel2.Controls.Add(this.textBox1);
-            this.panel2.Location = new System.Drawing.Point(36, 375);
+            this.panel2.Controls.Add(this.bpbEmail);
+            this.panel2.Controls.Add(this.lbEmail);
+            this.panel2.Controls.Add(this.pnEmail);
+            this.panel2.Controls.Add(this.txtEmail);
+            this.panel2.Location = new System.Drawing.Point(16, 444);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(537, 94);
-            this.panel2.TabIndex = 48;
+            this.panel2.Size = new System.Drawing.Size(468, 113);
+            this.panel2.TabIndex = 55;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.LightCoral;
-            this.label2.Location = new System.Drawing.Point(105, 83);
+            this.label2.Location = new System.Drawing.Point(64, 83);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(0, 22);
+            this.label2.Size = new System.Drawing.Size(54, 22);
             this.label2.TabIndex = 38;
+            this.label2.Text = "Email";
             // 
-            // bunifuPictureBox1
+            // bpbEmail
             // 
-            this.bunifuPictureBox1.AllowFocused = false;
-            this.bunifuPictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bunifuPictureBox1.AutoSizeHeight = true;
-            this.bunifuPictureBox1.BorderRadius = 17;
-            this.bunifuPictureBox1.Image = global::PBL4_Chat.Properties.Resources.confirmPass;
-            this.bunifuPictureBox1.IsCircle = true;
-            this.bunifuPictureBox1.Location = new System.Drawing.Point(68, 37);
-            this.bunifuPictureBox1.Name = "bunifuPictureBox1";
-            this.bunifuPictureBox1.Size = new System.Drawing.Size(35, 35);
-            this.bunifuPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuPictureBox1.TabIndex = 35;
-            this.bunifuPictureBox1.TabStop = false;
-            this.bunifuPictureBox1.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Circle;
+            this.bpbEmail.AllowFocused = false;
+            this.bpbEmail.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bpbEmail.AutoSizeHeight = true;
+            this.bpbEmail.BorderRadius = 17;
+            this.bpbEmail.Image = global::PBL4_Chat.Properties.Resources.confirmPass;
+            this.bpbEmail.IsCircle = true;
+            this.bpbEmail.Location = new System.Drawing.Point(14, 32);
+            this.bpbEmail.Name = "bpbEmail";
+            this.bpbEmail.Size = new System.Drawing.Size(35, 35);
+            this.bpbEmail.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bpbEmail.TabIndex = 35;
+            this.bpbEmail.TabStop = false;
+            this.bpbEmail.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Circle;
             // 
-            // label3
+            // lbEmail
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(63, 9);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(171, 25);
-            this.label3.TabIndex = 33;
-            this.label3.Text = "Confirm Password";
+            this.lbEmail.AutoSize = true;
+            this.lbEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
+            this.lbEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbEmail.ForeColor = System.Drawing.Color.Black;
+            this.lbEmail.Location = new System.Drawing.Point(9, 4);
+            this.lbEmail.Name = "lbEmail";
+            this.lbEmail.Size = new System.Drawing.Size(60, 25);
+            this.lbEmail.TabIndex = 33;
+            this.lbEmail.Text = "Email";
             // 
-            // panel6
+            // pnEmail
             // 
-            this.panel6.BackColor = System.Drawing.Color.Black;
-            this.panel6.Location = new System.Drawing.Point(68, 78);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(430, 2);
-            this.panel6.TabIndex = 37;
+            this.pnEmail.BackColor = System.Drawing.Color.Black;
+            this.pnEmail.Location = new System.Drawing.Point(14, 78);
+            this.pnEmail.Name = "pnEmail";
+            this.pnEmail.Size = new System.Drawing.Size(430, 2);
+            this.pnEmail.TabIndex = 37;
             // 
-            // textBox1
+            // txtEmail
             // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(109, 42);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.PasswordChar = '*';
-            this.textBox1.Size = new System.Drawing.Size(375, 25);
-            this.textBox1.TabIndex = 30;
+            this.txtEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
+            this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.Location = new System.Drawing.Point(68, 39);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.PasswordChar = '*';
+            this.txtEmail.Size = new System.Drawing.Size(375, 25);
+            this.txtEmail.TabIndex = 30;
+            this.txtEmail.Click += new System.EventHandler(this.txtEmail_Click);
             // 
             // panel8
             // 
             this.panel8.Controls.Add(this.label4);
-            this.panel8.Controls.Add(this.bunifuPictureBox3);
-            this.panel8.Controls.Add(this.label6);
-            this.panel8.Controls.Add(this.panel10);
-            this.panel8.Controls.Add(this.textBox2);
-            this.panel8.Location = new System.Drawing.Point(36, 475);
+            this.panel8.Controls.Add(this.bpbPhone);
+            this.panel8.Controls.Add(this.lbPhone);
+            this.panel8.Controls.Add(this.pnPhone);
+            this.panel8.Controls.Add(this.txtPhone);
+            this.panel8.Location = new System.Drawing.Point(505, 80);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(537, 94);
-            this.panel8.TabIndex = 48;
+            this.panel8.Size = new System.Drawing.Size(398, 108);
+            this.panel8.TabIndex = 56;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.LightCoral;
-            this.label4.Location = new System.Drawing.Point(105, 83);
+            this.label4.Location = new System.Drawing.Point(49, 76);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(0, 22);
+            this.label4.Size = new System.Drawing.Size(60, 22);
             this.label4.TabIndex = 38;
+            this.label4.Text = "phone";
             // 
-            // bunifuPictureBox3
+            // bpbPhone
             // 
-            this.bunifuPictureBox3.AllowFocused = false;
-            this.bunifuPictureBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bunifuPictureBox3.AutoSizeHeight = true;
-            this.bunifuPictureBox3.BorderRadius = 17;
-            this.bunifuPictureBox3.Image = global::PBL4_Chat.Properties.Resources.confirmPass;
-            this.bunifuPictureBox3.IsCircle = true;
-            this.bunifuPictureBox3.Location = new System.Drawing.Point(68, 37);
-            this.bunifuPictureBox3.Name = "bunifuPictureBox3";
-            this.bunifuPictureBox3.Size = new System.Drawing.Size(35, 35);
-            this.bunifuPictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuPictureBox3.TabIndex = 35;
-            this.bunifuPictureBox3.TabStop = false;
-            this.bunifuPictureBox3.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Circle;
+            this.bpbPhone.AllowFocused = false;
+            this.bpbPhone.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bpbPhone.AutoSizeHeight = true;
+            this.bpbPhone.BorderRadius = 17;
+            this.bpbPhone.Image = global::PBL4_Chat.Properties.Resources.confirmPass;
+            this.bpbPhone.IsCircle = true;
+            this.bpbPhone.Location = new System.Drawing.Point(12, 30);
+            this.bpbPhone.Name = "bpbPhone";
+            this.bpbPhone.Size = new System.Drawing.Size(35, 35);
+            this.bpbPhone.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bpbPhone.TabIndex = 35;
+            this.bpbPhone.TabStop = false;
+            this.bpbPhone.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Circle;
+            // 
+            // lbPhone
+            // 
+            this.lbPhone.AutoSize = true;
+            this.lbPhone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
+            this.lbPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPhone.ForeColor = System.Drawing.Color.Black;
+            this.lbPhone.Location = new System.Drawing.Point(7, 4);
+            this.lbPhone.Name = "lbPhone";
+            this.lbPhone.Size = new System.Drawing.Size(69, 25);
+            this.lbPhone.TabIndex = 33;
+            this.lbPhone.Text = "Phone";
+            // 
+            // pnPhone
+            // 
+            this.pnPhone.BackColor = System.Drawing.Color.Black;
+            this.pnPhone.Location = new System.Drawing.Point(12, 71);
+            this.pnPhone.Name = "pnPhone";
+            this.pnPhone.Size = new System.Drawing.Size(370, 2);
+            this.pnPhone.TabIndex = 37;
+            // 
+            // txtPhone
+            // 
+            this.txtPhone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
+            this.txtPhone.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPhone.Location = new System.Drawing.Point(53, 33);
+            this.txtPhone.Name = "txtPhone";
+            this.txtPhone.PasswordChar = '*';
+            this.txtPhone.Size = new System.Drawing.Size(329, 25);
+            this.txtPhone.TabIndex = 30;
+            this.txtPhone.Click += new System.EventHandler(this.txtPhone_Click);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(63, 9);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.LightCoral;
+            this.label6.Location = new System.Drawing.Point(145, 465);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(171, 25);
-            this.label6.TabIndex = 33;
-            this.label6.Text = "Confirm Password";
+            this.label6.Size = new System.Drawing.Size(0, 22);
+            this.label6.TabIndex = 50;
             // 
-            // panel10
+            // panel9
             // 
-            this.panel10.BackColor = System.Drawing.Color.Black;
-            this.panel10.Location = new System.Drawing.Point(68, 78);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(430, 2);
-            this.panel10.TabIndex = 37;
+            this.panel9.Controls.Add(this.lbErrorConPassSignUp);
+            this.panel9.Controls.Add(this.bpbConPass);
+            this.panel9.Controls.Add(this.lbConPass);
+            this.panel9.Controls.Add(this.pnConPass);
+            this.panel9.Controls.Add(this.txtConPass);
+            this.panel9.Location = new System.Drawing.Point(16, 314);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(468, 124);
+            this.panel9.TabIndex = 54;
             // 
-            // textBox2
+            // lbErrorConPassSignUp
             // 
-            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(109, 42);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.PasswordChar = '*';
-            this.textBox2.Size = new System.Drawing.Size(375, 25);
-            this.textBox2.TabIndex = 30;
+            this.lbErrorConPassSignUp.AutoSize = true;
+            this.lbErrorConPassSignUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbErrorConPassSignUp.ForeColor = System.Drawing.Color.LightCoral;
+            this.lbErrorConPassSignUp.Location = new System.Drawing.Point(64, 91);
+            this.lbErrorConPassSignUp.Name = "lbErrorConPassSignUp";
+            this.lbErrorConPassSignUp.Size = new System.Drawing.Size(196, 22);
+            this.lbErrorConPassSignUp.TabIndex = 38;
+            this.lbErrorConPassSignUp.Text = "lbErrorConPassSignUp";
+            // 
+            // bpbConPass
+            // 
+            this.bpbConPass.AllowFocused = false;
+            this.bpbConPass.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bpbConPass.AutoSizeHeight = true;
+            this.bpbConPass.BorderRadius = 17;
+            this.bpbConPass.Image = global::PBL4_Chat.Properties.Resources.confirmPass;
+            this.bpbConPass.IsCircle = true;
+            this.bpbConPass.Location = new System.Drawing.Point(14, 37);
+            this.bpbConPass.Name = "bpbConPass";
+            this.bpbConPass.Size = new System.Drawing.Size(35, 35);
+            this.bpbConPass.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bpbConPass.TabIndex = 35;
+            this.bpbConPass.TabStop = false;
+            this.bpbConPass.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Circle;
+            // 
+            // lbConPass
+            // 
+            this.lbConPass.AutoSize = true;
+            this.lbConPass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
+            this.lbConPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbConPass.ForeColor = System.Drawing.Color.Black;
+            this.lbConPass.Location = new System.Drawing.Point(9, 9);
+            this.lbConPass.Name = "lbConPass";
+            this.lbConPass.Size = new System.Drawing.Size(171, 25);
+            this.lbConPass.TabIndex = 33;
+            this.lbConPass.Text = "Confirm Password";
+            // 
+            // pnConPass
+            // 
+            this.pnConPass.BackColor = System.Drawing.Color.Black;
+            this.pnConPass.Location = new System.Drawing.Point(14, 86);
+            this.pnConPass.Name = "pnConPass";
+            this.pnConPass.Size = new System.Drawing.Size(430, 2);
+            this.pnConPass.TabIndex = 37;
+            // 
+            // txtConPass
+            // 
+            this.txtConPass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
+            this.txtConPass.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtConPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtConPass.Location = new System.Drawing.Point(68, 43);
+            this.txtConPass.Name = "txtConPass";
+            this.txtConPass.PasswordChar = '*';
+            this.txtConPass.Size = new System.Drawing.Size(375, 25);
+            this.txtConPass.TabIndex = 30;
+            this.txtConPass.Click += new System.EventHandler(this.txtConPass_Click);
+            // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.lbErrorUserSignUp);
+            this.panel7.Controls.Add(this.lbUser1);
+            this.panel7.Controls.Add(this.bpbUser1);
+            this.panel7.Controls.Add(this.txtUser1);
+            this.panel7.Controls.Add(this.pnUser1);
+            this.panel7.Location = new System.Drawing.Point(16, 80);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(468, 108);
+            this.panel7.TabIndex = 52;
+            // 
+            // lbErrorUserSignUp
+            // 
+            this.lbErrorUserSignUp.AutoSize = true;
+            this.lbErrorUserSignUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbErrorUserSignUp.ForeColor = System.Drawing.Color.LightCoral;
+            this.lbErrorUserSignUp.Location = new System.Drawing.Point(63, 76);
+            this.lbErrorUserSignUp.Name = "lbErrorUserSignUp";
+            this.lbErrorUserSignUp.Size = new System.Drawing.Size(196, 22);
+            this.lbErrorUserSignUp.TabIndex = 37;
+            this.lbErrorUserSignUp.Text = "lbErrorConPassSignUp";
+            // 
+            // lbUser1
+            // 
+            this.lbUser1.AutoSize = true;
+            this.lbUser1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
+            this.lbUser1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbUser1.ForeColor = System.Drawing.Color.Black;
+            this.lbUser1.Location = new System.Drawing.Point(9, 2);
+            this.lbUser1.Name = "lbUser1";
+            this.lbUser1.Size = new System.Drawing.Size(53, 25);
+            this.lbUser1.TabIndex = 27;
+            this.lbUser1.Text = "User";
+            // 
+            // bpbUser1
+            // 
+            this.bpbUser1.AllowFocused = false;
+            this.bpbUser1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bpbUser1.AutoSizeHeight = true;
+            this.bpbUser1.BorderRadius = 17;
+            this.bpbUser1.Image = global::PBL4_Chat.Properties.Resources.user;
+            this.bpbUser1.IsCircle = true;
+            this.bpbUser1.Location = new System.Drawing.Point(14, 30);
+            this.bpbUser1.Name = "bpbUser1";
+            this.bpbUser1.Size = new System.Drawing.Size(35, 35);
+            this.bpbUser1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bpbUser1.TabIndex = 34;
+            this.bpbUser1.TabStop = false;
+            this.bpbUser1.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Circle;
+            // 
+            // txtUser1
+            // 
+            this.txtUser1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
+            this.txtUser1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtUser1.Location = new System.Drawing.Point(68, 35);
+            this.txtUser1.Multiline = true;
+            this.txtUser1.Name = "txtUser1";
+            this.txtUser1.Size = new System.Drawing.Size(375, 25);
+            this.txtUser1.TabIndex = 29;
+            this.txtUser1.Click += new System.EventHandler(this.txtUser1_Click);
+            // 
+            // pnUser1
+            // 
+            this.pnUser1.BackColor = System.Drawing.Color.Black;
+            this.pnUser1.Location = new System.Drawing.Point(14, 71);
+            this.pnUser1.Name = "pnUser1";
+            this.pnUser1.Size = new System.Drawing.Size(430, 2);
+            this.pnUser1.TabIndex = 36;
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.lbErrorPassSignUp);
+            this.panel5.Controls.Add(this.bpbPass1);
+            this.panel5.Controls.Add(this.lbPass1);
+            this.panel5.Controls.Add(this.pnPass1);
+            this.panel5.Controls.Add(this.txtPass1);
+            this.panel5.Location = new System.Drawing.Point(15, 194);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(468, 114);
+            this.panel5.TabIndex = 51;
+            // 
+            // lbErrorPassSignUp
+            // 
+            this.lbErrorPassSignUp.AutoSize = true;
+            this.lbErrorPassSignUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbErrorPassSignUp.ForeColor = System.Drawing.Color.LightCoral;
+            this.lbErrorPassSignUp.Location = new System.Drawing.Point(65, 83);
+            this.lbErrorPassSignUp.Name = "lbErrorPassSignUp";
+            this.lbErrorPassSignUp.Size = new System.Drawing.Size(196, 22);
+            this.lbErrorPassSignUp.TabIndex = 38;
+            this.lbErrorPassSignUp.Text = "lbErrorConPassSignUp";
+            // 
+            // bpbPass1
+            // 
+            this.bpbPass1.AllowFocused = false;
+            this.bpbPass1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bpbPass1.AutoSizeHeight = true;
+            this.bpbPass1.BorderRadius = 17;
+            this.bpbPass1.Image = global::PBL4_Chat.Properties.Resources.password;
+            this.bpbPass1.IsCircle = true;
+            this.bpbPass1.Location = new System.Drawing.Point(14, 35);
+            this.bpbPass1.Name = "bpbPass1";
+            this.bpbPass1.Size = new System.Drawing.Size(35, 35);
+            this.bpbPass1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bpbPass1.TabIndex = 35;
+            this.bpbPass1.TabStop = false;
+            this.bpbPass1.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Circle;
+            // 
+            // lbPass1
+            // 
+            this.lbPass1.AutoSize = true;
+            this.lbPass1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
+            this.lbPass1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPass1.ForeColor = System.Drawing.Color.Black;
+            this.lbPass1.Location = new System.Drawing.Point(9, 7);
+            this.lbPass1.Name = "lbPass1";
+            this.lbPass1.Size = new System.Drawing.Size(98, 25);
+            this.lbPass1.TabIndex = 33;
+            this.lbPass1.Text = "Password";
+            // 
+            // pnPass1
+            // 
+            this.pnPass1.BackColor = System.Drawing.Color.Black;
+            this.pnPass1.Location = new System.Drawing.Point(14, 76);
+            this.pnPass1.Name = "pnPass1";
+            this.pnPass1.Size = new System.Drawing.Size(430, 2);
+            this.pnPass1.TabIndex = 37;
+            // 
+            // txtPass1
+            // 
+            this.txtPass1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
+            this.txtPass1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPass1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPass1.Location = new System.Drawing.Point(68, 41);
+            this.txtPass1.Name = "txtPass1";
+            this.txtPass1.PasswordChar = '*';
+            this.txtPass1.Size = new System.Drawing.Size(375, 25);
+            this.txtPass1.TabIndex = 30;
+            this.txtPass1.Click += new System.EventHandler(this.txtPass1_Click);
             // 
             // Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
-            this.ClientSize = new System.Drawing.Size(1062, 748);
+            this.ClientSize = new System.Drawing.Size(1372, 725);
             this.Controls.Add(this.bunifuPages1);
             this.Controls.Add(this.bunifuGradientPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -929,15 +1108,6 @@ namespace PBL4_Chat.View
             this.tabPage2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel9.ResumeLayout(false);
-            this.panel9.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bpbConPass)).EndInit();
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bpbUser1)).EndInit();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bpbPass1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bpbSignUp)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.pn.ResumeLayout(false);
@@ -950,12 +1120,27 @@ namespace PBL4_Chat.View
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bpbUser)).EndInit();
             this.bunifuPages1.ResumeLayout(false);
+            this.panel11.ResumeLayout(false);
+            this.panel11.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bpbLastname)).EndInit();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bpbFirstName)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bpbEmail)).EndInit();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bpbPhone)).EndInit();
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bpbConPass)).EndInit();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bpbUser1)).EndInit();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bpbPass1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -971,23 +1156,8 @@ namespace PBL4_Chat.View
         private System.Windows.Forms.Panel pnSignIn;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel9;
-        private Bunifu.UI.WinForms.BunifuPictureBox bpbConPass;
-        private System.Windows.Forms.Label lbConPass;
-        private System.Windows.Forms.Panel pnConPass;
-        private System.Windows.Forms.TextBox txtConPass;
         private System.Windows.Forms.CheckBox cbAgree;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Label lbUser1;
-        private Bunifu.UI.WinForms.BunifuPictureBox bpbUser1;
-        private System.Windows.Forms.TextBox txtUser1;
-        private System.Windows.Forms.Panel pnUser1;
-        private System.Windows.Forms.Panel panel5;
-        private Bunifu.UI.WinForms.BunifuPictureBox bpbPass1;
-        private System.Windows.Forms.Label lbPass1;
-        private System.Windows.Forms.Panel pnPass1;
-        private System.Windows.Forms.TextBox txtPass1;
         private Bunifu.UI.WinForms.BunifuPictureBox bpbSignUp;
         private System.Windows.Forms.TabPage tabPage1;
         private Bunifu.UI.WinForms.BunifuPanel pn;
@@ -1006,21 +1176,49 @@ namespace PBL4_Chat.View
         private System.Windows.Forms.Panel pnUser;
         private Bunifu.UI.WinForms.BunifuPages bunifuPages1;
         private System.Windows.Forms.Label lbErrorPassSignIn;
-        private System.Windows.Forms.Label lbErrorConPassSignUp;
-        private System.Windows.Forms.Label lbErrorUserSignUp;
-        private System.Windows.Forms.Label lbErrorPassSignUp;
         private System.Windows.Forms.Label lbErrorDontTick;
+        private System.Windows.Forms.Panel panel11;
+        private System.Windows.Forms.Label label7;
+        private Bunifu.UI.WinForms.BunifuPictureBox bpbLastname;
+        private System.Windows.Forms.Label lbLastname;
+        private System.Windows.Forms.Panel pnLastname;
+        private System.Windows.Forms.TextBox txtLastname;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Label label3;
+        private Bunifu.UI.WinForms.BunifuPictureBox bpbFirstName;
+        private System.Windows.Forms.Label lbFirstName;
+        private System.Windows.Forms.Panel pnFirstName;
+        private System.Windows.Forms.TextBox txtFirstName;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label2;
-        private Bunifu.UI.WinForms.BunifuPictureBox bunifuPictureBox1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.TextBox textBox1;
+        private Bunifu.UI.WinForms.BunifuPictureBox bpbEmail;
+        private System.Windows.Forms.Label lbEmail;
+        private System.Windows.Forms.Panel pnEmail;
+        private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Label label4;
-        private Bunifu.UI.WinForms.BunifuPictureBox bunifuPictureBox3;
+        private Bunifu.UI.WinForms.BunifuPictureBox bpbPhone;
+        private System.Windows.Forms.Label lbPhone;
+        private System.Windows.Forms.Panel pnPhone;
+        private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Label lbErrorConPassSignUp;
+        private Bunifu.UI.WinForms.BunifuPictureBox bpbConPass;
+        private System.Windows.Forms.Label lbConPass;
+        private System.Windows.Forms.Panel pnConPass;
+        private System.Windows.Forms.TextBox txtConPass;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Label lbErrorUserSignUp;
+        private System.Windows.Forms.Label lbUser1;
+        private Bunifu.UI.WinForms.BunifuPictureBox bpbUser1;
+        private System.Windows.Forms.TextBox txtUser1;
+        private System.Windows.Forms.Panel pnUser1;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Label lbErrorPassSignUp;
+        private Bunifu.UI.WinForms.BunifuPictureBox bpbPass1;
+        private System.Windows.Forms.Label lbPass1;
+        private System.Windows.Forms.Panel pnPass1;
+        private System.Windows.Forms.TextBox txtPass1;
     }
 }

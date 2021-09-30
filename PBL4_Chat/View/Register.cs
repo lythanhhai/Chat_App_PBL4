@@ -125,6 +125,27 @@ namespace PBL4_Chat.View
             pnConPass.BackColor = Color.FromArgb(0, 0, 0);
             txtConPass.ForeColor = Color.FromArgb(0, 0, 0);
             bpbConPass.Image = global::PBL4_Chat.Properties.Resources.confirmPass;
+
+            lbEmail.ForeColor = Color.FromArgb(0, 0, 0);
+            pnEmail.BackColor = Color.FromArgb(0, 0, 0);
+            txtEmail.ForeColor = Color.FromArgb(0, 0, 0);
+            bpbEmail.Image = global::PBL4_Chat.Properties.Resources.confirmPass;
+
+            lbPhone.ForeColor = Color.FromArgb(0, 0, 0);
+            pnPhone.BackColor = Color.FromArgb(0, 0, 0);
+            txtPhone.ForeColor = Color.FromArgb(0, 0, 0);
+            bpbPhone.Image = global::PBL4_Chat.Properties.Resources.confirmPass;
+
+            lbFirstName.ForeColor = Color.FromArgb(0, 0, 0);
+            pnFirstName.BackColor = Color.FromArgb(0, 0, 0);
+            txtFirstName.ForeColor = Color.FromArgb(0, 0, 0);
+            bpbFirstName.Image = global::PBL4_Chat.Properties.Resources.confirmPass;
+
+            lbLastname.ForeColor = Color.FromArgb(0, 0, 0);
+            pnLastname.BackColor = Color.FromArgb(0, 0, 0);
+            txtLastname.ForeColor = Color.FromArgb(0, 0, 0);
+            bpbLastname.Image = global::PBL4_Chat.Properties.Resources.confirmPass;
+
         }
 
         private void txtPass1_Click(object sender, EventArgs e)
@@ -143,6 +164,26 @@ namespace PBL4_Chat.View
             pnConPass.BackColor = Color.FromArgb(0, 0, 0);
             txtConPass.ForeColor = Color.FromArgb(0, 0, 0);
             bpbConPass.Image = global::PBL4_Chat.Properties.Resources.confirmPass;
+
+            lbEmail.ForeColor = Color.FromArgb(0, 0, 0);
+            pnEmail.BackColor = Color.FromArgb(0, 0, 0);
+            txtEmail.ForeColor = Color.FromArgb(0, 0, 0);
+            bpbEmail.Image = global::PBL4_Chat.Properties.Resources.confirmPass;
+
+            lbPhone.ForeColor = Color.FromArgb(0, 0, 0);
+            pnPhone.BackColor = Color.FromArgb(0, 0, 0);
+            txtPhone.ForeColor = Color.FromArgb(0, 0, 0);
+            bpbPhone.Image = global::PBL4_Chat.Properties.Resources.confirmPass;
+
+            lbFirstName.ForeColor = Color.FromArgb(0, 0, 0);
+            pnFirstName.BackColor = Color.FromArgb(0, 0, 0);
+            txtFirstName.ForeColor = Color.FromArgb(0, 0, 0);
+            bpbFirstName.Image = global::PBL4_Chat.Properties.Resources.confirmPass;
+
+            lbLastname.ForeColor = Color.FromArgb(0, 0, 0);
+            pnLastname.BackColor = Color.FromArgb(0, 0, 0);
+            txtLastname.ForeColor = Color.FromArgb(0, 0, 0);
+            bpbLastname.Image = global::PBL4_Chat.Properties.Resources.confirmPass;
         }
 
         private void txtConPass_Click(object sender, EventArgs e)
@@ -161,6 +202,178 @@ namespace PBL4_Chat.View
             pnConPass.BackColor = Color.FromArgb(10, 70, 70);
             txtConPass.ForeColor = Color.FromArgb(10, 70, 70);
             bpbConPass.Image = global::PBL4_Chat.Properties.Resources.confirmPassEvent;
+
+            lbEmail.ForeColor = Color.FromArgb(0, 0, 0);
+            pnEmail.BackColor = Color.FromArgb(0, 0, 0);
+            txtEmail.ForeColor = Color.FromArgb(0, 0, 0);
+            bpbEmail.Image = global::PBL4_Chat.Properties.Resources.confirmPass;
+
+            lbPhone.ForeColor = Color.FromArgb(0, 0, 0);
+            pnPhone.BackColor = Color.FromArgb(0, 0, 0);
+            txtPhone.ForeColor = Color.FromArgb(0, 0, 0);
+            bpbPhone.Image = global::PBL4_Chat.Properties.Resources.confirmPass;
+
+            lbFirstName.ForeColor = Color.FromArgb(0, 0, 0);
+            pnFirstName.BackColor = Color.FromArgb(0, 0, 0);
+            txtFirstName.ForeColor = Color.FromArgb(0, 0, 0);
+            bpbFirstName.Image = global::PBL4_Chat.Properties.Resources.confirmPass;
+
+            lbLastname.ForeColor = Color.FromArgb(0, 0, 0);
+            pnLastname.BackColor = Color.FromArgb(0, 0, 0);
+            txtLastname.ForeColor = Color.FromArgb(0, 0, 0);
+            bpbLastname.Image = global::PBL4_Chat.Properties.Resources.confirmPass;
+        }
+
+        private void txtPhone_Click(object sender, EventArgs e)
+        {
+            lbUser1.ForeColor = Color.FromArgb(0, 0, 0);
+            pnUser1.BackColor = Color.FromArgb(0, 0, 0);
+            txtUser1.ForeColor = Color.FromArgb(0, 0, 0);
+            bpbUser1.Image = global::PBL4_Chat.Properties.Resources.user;
+
+            lbPass1.ForeColor = Color.FromArgb(0, 0, 0);
+            pnPass1.BackColor = Color.FromArgb(0, 0, 0);
+            txtPass1.ForeColor = Color.FromArgb(0, 0, 0);
+            bpbPass1.Image = global::PBL4_Chat.Properties.Resources.password;
+
+            lbConPass.ForeColor = Color.FromArgb(0, 0, 0);
+            pnConPass.BackColor = Color.FromArgb(0, 0, 0);
+            txtConPass.ForeColor = Color.FromArgb(0, 0, 0);
+            bpbConPass.Image = global::PBL4_Chat.Properties.Resources.confirmPass;
+
+            lbEmail.ForeColor = Color.FromArgb(0, 0, 0);
+            pnEmail.BackColor = Color.FromArgb(0, 0, 0);
+            txtEmail.ForeColor = Color.FromArgb(0, 0, 0);
+            bpbEmail.Image = global::PBL4_Chat.Properties.Resources.confirmPass;
+
+            lbPhone.ForeColor = Color.FromArgb(10, 70, 70);
+            pnPhone.BackColor = Color.FromArgb(10, 70, 70);
+            txtPhone.ForeColor = Color.FromArgb(10, 70, 70);
+            bpbPhone.Image = global::PBL4_Chat.Properties.Resources.confirmPass;
+
+            lbFirstName.ForeColor = Color.FromArgb(0, 0, 0);
+            pnFirstName.BackColor = Color.FromArgb(0, 0, 0);
+            txtFirstName.ForeColor = Color.FromArgb(0, 0, 0);
+            bpbFirstName.Image = global::PBL4_Chat.Properties.Resources.confirmPass;
+
+            lbLastname.ForeColor = Color.FromArgb(0, 0, 0);
+            pnLastname.BackColor = Color.FromArgb(0, 0, 0);
+            txtLastname.ForeColor = Color.FromArgb(0, 0, 0);
+            bpbLastname.Image = global::PBL4_Chat.Properties.Resources.confirmPass;
+        }
+
+        private void txtFirstName_Click(object sender, EventArgs e)
+        {
+            lbUser1.ForeColor = Color.FromArgb(0, 0, 0);
+            pnUser1.BackColor = Color.FromArgb(0, 0, 0);
+            txtUser1.ForeColor = Color.FromArgb(0, 0, 0);
+            bpbUser1.Image = global::PBL4_Chat.Properties.Resources.user;
+
+            lbPass1.ForeColor = Color.FromArgb(0, 0, 0);
+            pnPass1.BackColor = Color.FromArgb(0, 0, 0);
+            txtPass1.ForeColor = Color.FromArgb(0, 0, 0);
+            bpbPass1.Image = global::PBL4_Chat.Properties.Resources.password;
+
+            lbConPass.ForeColor = Color.FromArgb(0, 0, 0);
+            pnConPass.BackColor = Color.FromArgb(0, 0, 0);
+            txtConPass.ForeColor = Color.FromArgb(0, 0, 0);
+            bpbConPass.Image = global::PBL4_Chat.Properties.Resources.confirmPass;
+
+            lbEmail.ForeColor = Color.FromArgb(0, 0, 0);
+            pnEmail.BackColor = Color.FromArgb(0, 0, 0);
+            txtEmail.ForeColor = Color.FromArgb(0, 0, 0);
+            bpbEmail.Image = global::PBL4_Chat.Properties.Resources.confirmPass;
+
+            lbPhone.ForeColor = Color.FromArgb(0, 0, 0);
+            pnPhone.BackColor = Color.FromArgb(0, 0, 0);
+            txtPhone.ForeColor = Color.FromArgb(0, 0, 0);
+            bpbPhone.Image = global::PBL4_Chat.Properties.Resources.confirmPass;
+
+            lbFirstName.ForeColor = Color.FromArgb(10, 70, 70);
+            pnFirstName.BackColor = Color.FromArgb(10, 70, 70);
+            txtFirstName.ForeColor = Color.FromArgb(10, 70, 70);
+            bpbFirstName.Image = global::PBL4_Chat.Properties.Resources.confirmPass;
+
+            lbLastname.ForeColor = Color.FromArgb(0, 0, 0);
+            pnLastname.BackColor = Color.FromArgb(0, 0, 0);
+            txtLastname.ForeColor = Color.FromArgb(0, 0, 0);
+            bpbLastname.Image = global::PBL4_Chat.Properties.Resources.confirmPass;
+        }
+
+        private void txtLastname_Click(object sender, EventArgs e)
+        {
+            lbUser1.ForeColor = Color.FromArgb(0, 0, 0);
+            pnUser1.BackColor = Color.FromArgb(0, 0, 0);
+            txtUser1.ForeColor = Color.FromArgb(0, 0, 0);
+            bpbUser1.Image = global::PBL4_Chat.Properties.Resources.user;
+
+            lbPass1.ForeColor = Color.FromArgb(0, 0, 0);
+            pnPass1.BackColor = Color.FromArgb(0, 0, 0);
+            txtPass1.ForeColor = Color.FromArgb(0, 0, 0);
+            bpbPass1.Image = global::PBL4_Chat.Properties.Resources.password;
+
+            lbConPass.ForeColor = Color.FromArgb(0, 0, 0);
+            pnConPass.BackColor = Color.FromArgb(0, 0, 0);
+            txtConPass.ForeColor = Color.FromArgb(0, 0, 0);
+            bpbConPass.Image = global::PBL4_Chat.Properties.Resources.confirmPass;
+
+            lbEmail.ForeColor = Color.FromArgb(0, 0, 0);
+            pnEmail.BackColor = Color.FromArgb(0, 0, 0);
+            txtEmail.ForeColor = Color.FromArgb(0, 0, 0);
+            bpbEmail.Image = global::PBL4_Chat.Properties.Resources.confirmPass;
+
+            lbPhone.ForeColor = Color.FromArgb(0, 0, 0);
+            pnPhone.BackColor = Color.FromArgb(0, 0, 0);
+            txtPhone.ForeColor = Color.FromArgb(0, 0, 0);
+            bpbPhone.Image = global::PBL4_Chat.Properties.Resources.confirmPass;
+
+            lbFirstName.ForeColor = Color.FromArgb(0, 0, 0);
+            pnFirstName.BackColor = Color.FromArgb(0, 0, 0);
+            txtFirstName.ForeColor = Color.FromArgb(0, 0, 0);
+            bpbFirstName.Image = global::PBL4_Chat.Properties.Resources.confirmPass;
+
+            lbLastname.ForeColor = Color.FromArgb(10, 70, 70);
+            pnLastname.BackColor = Color.FromArgb(10, 70, 70);
+            txtLastname.ForeColor = Color.FromArgb(10, 70, 70);
+            bpbLastname.Image = global::PBL4_Chat.Properties.Resources.confirmPass;
+        }
+
+        private void txtEmail_Click(object sender, EventArgs e)
+        {
+            lbUser1.ForeColor = Color.FromArgb(0, 0, 0);
+            pnUser1.BackColor = Color.FromArgb(0, 0, 0);
+            txtUser1.ForeColor = Color.FromArgb(0, 0, 0);
+            bpbUser1.Image = global::PBL4_Chat.Properties.Resources.user;
+
+            lbPass1.ForeColor = Color.FromArgb(0, 0, 0);
+            pnPass1.BackColor = Color.FromArgb(0, 0, 0);
+            txtPass1.ForeColor = Color.FromArgb(0, 0, 0);
+            bpbPass1.Image = global::PBL4_Chat.Properties.Resources.password;
+
+            lbConPass.ForeColor = Color.FromArgb(0, 0, 0);
+            pnConPass.BackColor = Color.FromArgb(0, 0, 0);
+            txtConPass.ForeColor = Color.FromArgb(0, 0, 0);
+            bpbConPass.Image = global::PBL4_Chat.Properties.Resources.confirmPass;
+
+            lbEmail.ForeColor = Color.FromArgb(10, 70, 70);
+            pnEmail.BackColor = Color.FromArgb(10, 70, 70);
+            txtEmail.ForeColor = Color.FromArgb(10, 70, 70);
+            bpbEmail.Image = global::PBL4_Chat.Properties.Resources.confirmPass;
+
+            lbPhone.ForeColor = Color.FromArgb(0, 0, 0);
+            pnPhone.BackColor = Color.FromArgb(0, 0, 0);
+            txtPhone.ForeColor = Color.FromArgb(0, 0, 0);
+            bpbPhone.Image = global::PBL4_Chat.Properties.Resources.confirmPass;
+
+            lbFirstName.ForeColor = Color.FromArgb(0, 0, 0);
+            pnFirstName.BackColor = Color.FromArgb(0, 0, 0);
+            txtFirstName.ForeColor = Color.FromArgb(0, 0, 0);
+            bpbFirstName.Image = global::PBL4_Chat.Properties.Resources.confirmPass;
+
+            lbLastname.ForeColor = Color.FromArgb(0, 0, 0);
+            pnLastname.BackColor = Color.FromArgb(0, 0, 0);
+            txtLastname.ForeColor = Color.FromArgb(0, 0, 0);
+            bpbLastname.Image = global::PBL4_Chat.Properties.Resources.confirmPass;
         }
 
 
@@ -311,5 +524,7 @@ namespace PBL4_Chat.View
         {
             Environment.Exit(0);
         }
+
+        
     }
 }
