@@ -43,7 +43,6 @@ namespace PBL4_Chat
             this.gunaPanel4 = new Guna.UI.WinForms.GunaPanel();
             this.flowPanel_message = new System.Windows.Forms.FlowLayoutPanel();
             this.txt_message = new System.Windows.Forms.TextBox();
-            this.txt_mes1 = new System.Windows.Forms.TextBox();
             this.GunaCircleButton1 = new Guna.UI.WinForms.GunaCircleButton();
             this.GunaImageButton5 = new Guna.UI.WinForms.GunaImageButton();
             this.GunaImageButton4 = new Guna.UI.WinForms.GunaImageButton();
@@ -346,7 +345,6 @@ namespace PBL4_Chat
             // 
             this.flowPanel_message.BackColor = System.Drawing.Color.Pink;
             this.flowPanel_message.Controls.Add(this.txt_message);
-            this.flowPanel_message.Controls.Add(this.txt_mes1);
             this.flowPanel_message.Location = new System.Drawing.Point(387, 125);
             this.flowPanel_message.Name = "flowPanel_message";
             this.flowPanel_message.Size = new System.Drawing.Size(709, 636);
@@ -357,15 +355,8 @@ namespace PBL4_Chat
             this.txt_message.Location = new System.Drawing.Point(3, 3);
             this.txt_message.Multiline = true;
             this.txt_message.Name = "txt_message";
-            this.txt_message.Size = new System.Drawing.Size(681, 458);
+            this.txt_message.Size = new System.Drawing.Size(703, 633);
             this.txt_message.TabIndex = 0;
-            // 
-            // txt_mes1
-            // 
-            this.txt_mes1.Location = new System.Drawing.Point(3, 467);
-            this.txt_mes1.Name = "txt_mes1";
-            this.txt_mes1.Size = new System.Drawing.Size(100, 26);
-            this.txt_mes1.TabIndex = 1;
             // 
             // GunaCircleButton1
             // 
@@ -744,7 +735,6 @@ namespace PBL4_Chat
         internal Guna.UI.WinForms.GunaTextBox txt_send;
         private System.Windows.Forms.FlowLayoutPanel flowPanel_message;
         private System.Windows.Forms.TextBox txt_message;
-        private System.Windows.Forms.TextBox txt_mes1;
     }
 }
 
