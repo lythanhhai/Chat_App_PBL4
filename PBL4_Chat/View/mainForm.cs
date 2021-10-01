@@ -1,4 +1,7 @@
-﻿using System;
+﻿using PBL4_Chat.BLL;
+using PBL4_Chat.DTO;
+using PBL4_Chat.View;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -29,6 +32,25 @@ namespace PBL4_Chat
 
         }
 
+        // showDSUser có trong hệ thống
+        public void showUser()
+        {
+            //List<Detail> listDetail = BLL_TKVX.Instance.getALLDetailSchedule_BLL(departure, arrival, date.Date);
+            List<User> listUser = BLL_User.instance.BLL_getUser();
+            foreach (User u in listUser)
+            {
+                //if (u.userId == Properties.Settings.Default.userId)
+                //{
+                //    continue;
+                //}
+                panel_listUser.Controls.Add(new user_info
+                {
+                    userId = u.userId,
+                    name = u.firstName + " " + u.lastName,
+                    phone = u.phone,
+                });
+            }
+        }
         private void mainForm_Load(object sender, EventArgs e)
         {
             try
