@@ -57,17 +57,28 @@ namespace PBL4_Chat.View
             }
         }
 
+
         public string getUserId()
         {
             return this.userId;
         }
+
+        public event EventHandler DataAvailable;
+        /// <summary>
+        /// Called to signal to subscribers that new data is available
+        /// </summary>
+        /// <param name="e"></param>
+        protected virtual void OnDataAvailable(EventArgs e)
+        {
+            EventHandler eh = DataAvailable;
+            if (eh != null)
+            {
+                eh(this, e);
+            }
+        }
         private void gunaGradientPanel1_Click(object sender, EventArgs e)
         {
-            //((mainForm)this.TopLevelControl).userId_receive += new mainForm.getUserIdReveive(getUserId);
-            var parent = this.Parent as mainForm;
-            parent.userId_receive += new mainForm.getUserIdReveive(getUserId);
-            //((mainForm)this.TopLevelControl).Hide();
-            MessageBox.Show("oke");
+            ((mainForm)this.ParentForm).userId_receive = new mainForm.getUserIdReveive(getUserId);
         }
     }
 }
