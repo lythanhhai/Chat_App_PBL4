@@ -53,8 +53,21 @@ namespace PBL4_Chat.View
             }
             set
             {
-                lbName.Text = value;
+                lbPhone.Text = value;
             }
+        }
+
+        public string getUserId()
+        {
+            return this.userId;
+        }
+        private void gunaGradientPanel1_Click(object sender, EventArgs e)
+        {
+            //((mainForm)this.TopLevelControl).userId_receive += new mainForm.getUserIdReveive(getUserId);
+            var parent = this.Parent as mainForm;
+            parent.userId_receive += new mainForm.getUserIdReveive(getUserId);
+            //((mainForm)this.TopLevelControl).Hide();
+            MessageBox.Show("oke");
         }
     }
 }

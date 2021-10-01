@@ -43,7 +43,6 @@ namespace PBL4_Chat
             this.gunaPanel4 = new Guna.UI.WinForms.GunaPanel();
             this.flowPanel_message = new System.Windows.Forms.FlowLayoutPanel();
             this.txt_message = new System.Windows.Forms.TextBox();
-            this.txt_mes1 = new System.Windows.Forms.TextBox();
             this.GunaCircleButton1 = new Guna.UI.WinForms.GunaCircleButton();
             this.GunaImageButton5 = new Guna.UI.WinForms.GunaImageButton();
             this.GunaImageButton4 = new Guna.UI.WinForms.GunaImageButton();
@@ -65,9 +64,6 @@ namespace PBL4_Chat
             this.user_info2 = new PBL4_Chat.View.user_info();
             this.user_info3 = new PBL4_Chat.View.user_info();
             this.user_info4 = new PBL4_Chat.View.user_info();
-            this.user_info5 = new PBL4_Chat.View.user_info();
-            this.user_info6 = new PBL4_Chat.View.user_info();
-            this.user_info7 = new PBL4_Chat.View.user_info();
             this.gunaPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).BeginInit();
             this.gunaPanel3.SuspendLayout();
@@ -349,7 +345,6 @@ namespace PBL4_Chat
             // 
             this.flowPanel_message.BackColor = System.Drawing.Color.Pink;
             this.flowPanel_message.Controls.Add(this.txt_message);
-            this.flowPanel_message.Controls.Add(this.txt_mes1);
             this.flowPanel_message.Location = new System.Drawing.Point(387, 125);
             this.flowPanel_message.Name = "flowPanel_message";
             this.flowPanel_message.Size = new System.Drawing.Size(709, 636);
@@ -360,15 +355,8 @@ namespace PBL4_Chat
             this.txt_message.Location = new System.Drawing.Point(3, 3);
             this.txt_message.Multiline = true;
             this.txt_message.Name = "txt_message";
-            this.txt_message.Size = new System.Drawing.Size(681, 458);
+            this.txt_message.Size = new System.Drawing.Size(703, 633);
             this.txt_message.TabIndex = 0;
-            // 
-            // txt_mes1
-            // 
-            this.txt_mes1.Location = new System.Drawing.Point(3, 467);
-            this.txt_mes1.Name = "txt_mes1";
-            this.txt_mes1.Size = new System.Drawing.Size(100, 26);
-            this.txt_mes1.TabIndex = 1;
             // 
             // GunaCircleButton1
             // 
@@ -563,9 +551,6 @@ namespace PBL4_Chat
             this.panel_listUser.Controls.Add(this.user_info2);
             this.panel_listUser.Controls.Add(this.user_info3);
             this.panel_listUser.Controls.Add(this.user_info4);
-            this.panel_listUser.Controls.Add(this.user_info5);
-            this.panel_listUser.Controls.Add(this.user_info6);
-            this.panel_listUser.Controls.Add(this.user_info7);
             this.panel_listUser.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel_listUser.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.panel_listUser.Location = new System.Drawing.Point(0, 0);
@@ -647,51 +632,42 @@ namespace PBL4_Chat
             // user_info1
             // 
             this.user_info1.Location = new System.Drawing.Point(3, 126);
+            this.user_info1.name = "Hai Ly";
             this.user_info1.Name = "user_info1";
+            this.user_info1.phone = "hello, how are you?";
             this.user_info1.Size = new System.Drawing.Size(384, 95);
             this.user_info1.TabIndex = 4;
+            this.user_info1.userId = null;
             // 
             // user_info2
             // 
             this.user_info2.Location = new System.Drawing.Point(3, 227);
+            this.user_info2.name = "Hai Ly";
             this.user_info2.Name = "user_info2";
+            this.user_info2.phone = "hello, how are you?";
             this.user_info2.Size = new System.Drawing.Size(384, 95);
             this.user_info2.TabIndex = 5;
+            this.user_info2.userId = null;
             // 
             // user_info3
             // 
             this.user_info3.Location = new System.Drawing.Point(3, 328);
+            this.user_info3.name = "Hai Ly";
             this.user_info3.Name = "user_info3";
+            this.user_info3.phone = "hello, how are you?";
             this.user_info3.Size = new System.Drawing.Size(384, 95);
             this.user_info3.TabIndex = 6;
+            this.user_info3.userId = null;
             // 
             // user_info4
             // 
             this.user_info4.Location = new System.Drawing.Point(3, 429);
+            this.user_info4.name = "Hai Ly";
             this.user_info4.Name = "user_info4";
+            this.user_info4.phone = "hello, how are you?";
             this.user_info4.Size = new System.Drawing.Size(384, 95);
             this.user_info4.TabIndex = 7;
-            // 
-            // user_info5
-            // 
-            this.user_info5.Location = new System.Drawing.Point(3, 530);
-            this.user_info5.Name = "user_info5";
-            this.user_info5.Size = new System.Drawing.Size(384, 95);
-            this.user_info5.TabIndex = 8;
-            // 
-            // user_info6
-            // 
-            this.user_info6.Location = new System.Drawing.Point(3, 631);
-            this.user_info6.Name = "user_info6";
-            this.user_info6.Size = new System.Drawing.Size(384, 95);
-            this.user_info6.TabIndex = 9;
-            // 
-            // user_info7
-            // 
-            this.user_info7.Location = new System.Drawing.Point(3, 732);
-            this.user_info7.Name = "user_info7";
-            this.user_info7.Size = new System.Drawing.Size(384, 95);
-            this.user_info7.TabIndex = 10;
+            this.user_info4.userId = null;
             // 
             // mainForm
             // 
@@ -745,9 +721,6 @@ namespace PBL4_Chat
         private View.user_info user_info2;
         private View.user_info user_info3;
         private View.user_info user_info4;
-        private View.user_info user_info5;
-        private View.user_info user_info6;
-        private View.user_info user_info7;
         private Guna.UI.WinForms.GunaAdvenceButton btn_taoNhom;
         internal Guna.UI.WinForms.GunaCircleButton GunaCircleButton1;
         internal Guna.UI.WinForms.GunaImageButton GunaImageButton5;
@@ -762,7 +735,6 @@ namespace PBL4_Chat
         internal Guna.UI.WinForms.GunaTextBox txt_send;
         private System.Windows.Forms.FlowLayoutPanel flowPanel_message;
         private System.Windows.Forms.TextBox txt_message;
-        private System.Windows.Forms.TextBox txt_mes1;
     }
 }
 

@@ -53,9 +53,10 @@ namespace PBL4_Chat.View
             this.gunaGradientPanel1.GradientColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(48)))), ((int)(((byte)(90)))));
             this.gunaGradientPanel1.Location = new System.Drawing.Point(0, 0);
             this.gunaGradientPanel1.Name = "gunaGradientPanel1";
-            this.gunaGradientPanel1.Size = new System.Drawing.Size(328, 95);
+            this.gunaGradientPanel1.Size = new System.Drawing.Size(384, 95);
             this.gunaGradientPanel1.TabIndex = 0;
             this.gunaGradientPanel1.Text = "gunaGradientPanel1";
+            this.gunaGradientPanel1.Click += new System.EventHandler(this.gunaGradientPanel1_Click);
             // 
             // lbPhone
             // 
@@ -102,7 +103,7 @@ namespace PBL4_Chat.View
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.gunaGradientPanel1);
             this.Name = "user_info";
-            this.Size = new System.Drawing.Size(328, 95);
+            this.Size = new System.Drawing.Size(384, 95);
             this.gunaGradientPanel1.ResumeLayout(false);
             this.gunaGradientPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).EndInit();
