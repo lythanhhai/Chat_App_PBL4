@@ -36,6 +36,7 @@ namespace PBL4_Chat
         public delegate string getUserIdReveive();
         public getUserIdReveive userId_receive;
 
+        string id = "";
         public mainForm()
         {
             InitializeComponent();
@@ -116,18 +117,18 @@ namespace PBL4_Chat
         private void btn_send_Click(object sender, EventArgs e)
         {
 
-            //txt_message.Text += BLL_User.instance.BLL_getUserById(userId()).firstName 
-            //                  + " "
-            //                  + BLL_User.instance.BLL_getUserById(userId()).lastName 
-            //                  + " << "
-            //                  + txt_send.Text 
-            //                  + Environment.NewLine;
-            // gửi userId cho server 
-            byte[] userId_receive1 = encoding.GetBytes("1");
+            txt_message.Text += BLL_User.instance.BLL_getUserById(userId()).firstName
+                              + " "
+                              + BLL_User.instance.BLL_getUserById(userId()).lastName
+                              + " << "
+                              + txt_send.Text
+                              + Environment.NewLine;
+            // gửi userId cho server
+            byte[] userId_receive1 = encoding.GetBytes(userId_receive());
+
             stream.Write(userId_receive1, 0, userId_receive1.Length);
             byte[] message = encoding.GetBytes(txt_send.Text);
-            stream.Write(message, 0, message.Length);
-                
+            stream.Write(message, 0, message.Length);   
         }
 
         
