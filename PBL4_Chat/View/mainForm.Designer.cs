@@ -65,9 +65,6 @@ namespace PBL4_Chat
             this.user_info2 = new PBL4_Chat.View.user_info();
             this.user_info3 = new PBL4_Chat.View.user_info();
             this.user_info4 = new PBL4_Chat.View.user_info();
-            this.user_info5 = new PBL4_Chat.View.user_info();
-            this.user_info6 = new PBL4_Chat.View.user_info();
-            this.user_info7 = new PBL4_Chat.View.user_info();
             this.gunaPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).BeginInit();
             this.gunaPanel3.SuspendLayout();
@@ -563,9 +560,6 @@ namespace PBL4_Chat
             this.panel_listUser.Controls.Add(this.user_info2);
             this.panel_listUser.Controls.Add(this.user_info3);
             this.panel_listUser.Controls.Add(this.user_info4);
-            this.panel_listUser.Controls.Add(this.user_info5);
-            this.panel_listUser.Controls.Add(this.user_info6);
-            this.panel_listUser.Controls.Add(this.user_info7);
             this.panel_listUser.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel_listUser.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.panel_listUser.Location = new System.Drawing.Point(0, 0);
@@ -647,51 +641,42 @@ namespace PBL4_Chat
             // user_info1
             // 
             this.user_info1.Location = new System.Drawing.Point(3, 126);
+            this.user_info1.name = "Hai Ly";
             this.user_info1.Name = "user_info1";
+            this.user_info1.phone = "hello, how are you?";
             this.user_info1.Size = new System.Drawing.Size(384, 95);
             this.user_info1.TabIndex = 4;
+            this.user_info1.userId = null;
             // 
             // user_info2
             // 
             this.user_info2.Location = new System.Drawing.Point(3, 227);
+            this.user_info2.name = "Hai Ly";
             this.user_info2.Name = "user_info2";
+            this.user_info2.phone = "hello, how are you?";
             this.user_info2.Size = new System.Drawing.Size(384, 95);
             this.user_info2.TabIndex = 5;
+            this.user_info2.userId = null;
             // 
             // user_info3
             // 
             this.user_info3.Location = new System.Drawing.Point(3, 328);
+            this.user_info3.name = "Hai Ly";
             this.user_info3.Name = "user_info3";
+            this.user_info3.phone = "hello, how are you?";
             this.user_info3.Size = new System.Drawing.Size(384, 95);
             this.user_info3.TabIndex = 6;
+            this.user_info3.userId = null;
             // 
             // user_info4
             // 
             this.user_info4.Location = new System.Drawing.Point(3, 429);
+            this.user_info4.name = "Hai Ly";
             this.user_info4.Name = "user_info4";
+            this.user_info4.phone = "hello, how are you?";
             this.user_info4.Size = new System.Drawing.Size(384, 95);
             this.user_info4.TabIndex = 7;
-            // 
-            // user_info5
-            // 
-            this.user_info5.Location = new System.Drawing.Point(3, 530);
-            this.user_info5.Name = "user_info5";
-            this.user_info5.Size = new System.Drawing.Size(384, 95);
-            this.user_info5.TabIndex = 8;
-            // 
-            // user_info6
-            // 
-            this.user_info6.Location = new System.Drawing.Point(3, 631);
-            this.user_info6.Name = "user_info6";
-            this.user_info6.Size = new System.Drawing.Size(384, 95);
-            this.user_info6.TabIndex = 9;
-            // 
-            // user_info7
-            // 
-            this.user_info7.Location = new System.Drawing.Point(3, 732);
-            this.user_info7.Name = "user_info7";
-            this.user_info7.Size = new System.Drawing.Size(384, 95);
-            this.user_info7.TabIndex = 10;
+            this.user_info4.userId = null;
             // 
             // mainForm
             // 
@@ -745,9 +730,6 @@ namespace PBL4_Chat
         private View.user_info user_info2;
         private View.user_info user_info3;
         private View.user_info user_info4;
-        private View.user_info user_info5;
-        private View.user_info user_info6;
-        private View.user_info user_info7;
         private Guna.UI.WinForms.GunaAdvenceButton btn_taoNhom;
         internal Guna.UI.WinForms.GunaCircleButton GunaCircleButton1;
         internal Guna.UI.WinForms.GunaImageButton GunaImageButton5;

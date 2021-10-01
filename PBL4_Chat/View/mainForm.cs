@@ -26,6 +26,11 @@ namespace PBL4_Chat
         Stream stream;
         string data = null;
 
+
+        // chuyen userid cho mainForm
+        public delegate string getUserId();
+        public getUserId userId;
+
         public mainForm()
         {
             InitializeComponent();
@@ -39,10 +44,10 @@ namespace PBL4_Chat
             List<User> listUser = BLL_User.instance.BLL_getUser();
             foreach (User u in listUser)
             {
-                //if (u.userId == Properties.Settings.Default.userId)
-                //{
-                //    continue;
-                //}
+                if (u.userId == userId())
+                {
+                    continue;
+                }
                 panel_listUser.Controls.Add(new user_info
                 {
                     userId = u.userId,
@@ -53,6 +58,7 @@ namespace PBL4_Chat
         }
         private void mainForm_Load(object sender, EventArgs e)
         {
+            showUser();
             try
             {
                 data = "Conected to Chat Server ...";
@@ -87,25 +93,6 @@ namespace PBL4_Chat
                 data = encoding.GetString(a);
                 //MessageBox.Show(data);
                 msg();
-                //AppendTextBox("hi.  ");
-
-                //this.Invoke(new Action(() =>
-                //{
-                //    txt_message.Invoke((MethodInvoker)delegate {
-                //        // Running on the UI thread
-                //        txt_message.Text = newText;
-                //    });
-                //}));
-
-                //Console.WriteLine("Client >> " + encoding.GetString(a));
-
-                //txt_message.invokeOnFormThread((MethodInvoker)(() => txt_message.Text = "Requested" + "Times"));
-
-                //if (txt_mes1.InvokeRequired == true)
-                //    txt_mes1.Invoke((MethodInvoker)delegate { txt_mes1.Text = "Invoke was needed"; });
-
-                //else
-                //    txt_mes1.Text = "Invoke was NOT needed";
             }
 
         }
@@ -114,23 +101,19 @@ namespace PBL4_Chat
             if (this.InvokeRequired)
                 this.Invoke(new MethodInvoker(msg));
             else
-                txt_message.Text = txt_message.Text + Environment.NewLine + " >> " + data + "1";
+                txt_message.Text = txt_message.Text + Environment.NewLine + BLL_User.instance.BLL_getUserById(userId()).firstName + " " + BLL_User.instance.BLL_getUserById(userId()).lastName + " >> " + data;
         }
 
-        //public void AppendTextBox(string value)
-        //{
-        //    if (InvokeRequired)
-        //    {
-        //        this.BeginInvoke(new Action<string>(AppendTextBox), new object[] { value });
-        //        return;
-        //    }
-        //    txt_message.Text += value;
-        //}
 
         private void btn_send_Click(object sender, EventArgs e)
         {
 
-                //txt_message.Text += txt_send.Text + Environment.NewLine;
+                //txt_message.Text += BLL_User.instance.BLL_getUserById(userId()).firstName 
+                //                  + " "
+                //                  + BLL_User.instance.BLL_getUserById(userId()).lastName 
+                //                  + " << "
+                //                  + txt_send.Text 
+                //                  + Environment.NewLine;
                 byte[] c = encoding.GetBytes(txt_send.Text);
                 stream.Write(c, 0, c.Length);
                 

@@ -53,7 +53,7 @@ namespace PBL4_Chat.View
             }
             set
             {
-                lbName.Text = value;
+                lbPhone.Text = value;
             }
         }
     }

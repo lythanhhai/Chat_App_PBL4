@@ -33,16 +33,19 @@ namespace PBL4_Chat.BLL
 
         }
 
+        // lấy tất cả user
         public List<User> BLL_getUser()
         {
             return DAL_User.instance.DAL_getUser();
         }
 
+        // thêm user
         public void BLL_addUser(string userId, string firstName, string lastName, string userName, string passWord, string email, string phone)
         {
             DAL_User.instance.DAL_addUser(userId,firstName,lastName,userName,passWord,email,phone);
         }
 
+        // lấy userId lớn nhất để thêm user sau
         public string getUserIdMax_BLL()
         {
             int Max = 0;
@@ -56,6 +59,31 @@ namespace PBL4_Chat.BLL
                 }    
             }    
             return Max.ToString();
+        }
+
+        // lấy user theo id
+        public User BLL_getUserById(string userId)
+        {
+            int count = 0;
+            List<User> list = BLL_getUser();
+            User user = new User();
+            foreach(User u in list)
+            {
+                if(userId == u.userId)
+                {
+                    count++;
+                    user = u;
+                    break;
+                }    
+            }
+            if(count > 0)
+            {
+                return user;
+            }    
+            else
+            {
+                return null;
+            }                
         }
     }
 }

@@ -15,6 +15,7 @@ namespace PBL4_Chat.View
 {
     public partial class Register : Form
     {
+        string userID = "";
         public Register()
         {
             
@@ -378,7 +379,10 @@ namespace PBL4_Chat.View
             bpbLastname.Image = global::PBL4_Chat.Properties.Resources.confirmPass;
         }
 
-
+        public string getUserId()
+        {
+            return this.userID;
+        }
         private void bpbSignIn_Click(object sender, EventArgs e)
         {
             int count = 0;
@@ -394,11 +398,15 @@ namespace PBL4_Chat.View
                 }
             }
             mainForm main = new mainForm();
+            
             ////AffterLogin aflogin = new AffterLogin();
             if (count > 0)
             {
                 //ds.Show();
+                userID = userId;
+                main.userId += new mainForm.getUserId(getUserId);
                 main.Show();
+                
                 Properties.Settings.Default.userId = userId;
                 Properties.Settings.Default.Save();
                 Properties.Settings.Default.Reload();
