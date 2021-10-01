@@ -16,5 +16,45 @@ namespace PBL4_Chat.View
         {
             InitializeComponent();
         }
+        private string _userId;
+        private string _name;
+        private string _phone;
+
+        public string userId
+        {
+            get
+            {
+                return _userId;
+            }
+            set
+            {
+                _userId = value;
+            }
+        }
+        public string name
+        {
+            get
+            {
+                return lbName.Text;
+            }
+            set
+            {
+                lbName.Text = value;
+            }
+        }
+
+
+
+        public string phone
+        {
+            get
+            {
+                return lbPhone.Text;
+            }
+            set
+            {
+                lbName.Text = value;
+            }
+        }
     }
 }

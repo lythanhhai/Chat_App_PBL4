@@ -482,7 +482,7 @@ namespace PBL4_Chat.View
                 if (count == 0)
                 {
                     string userId = Convert.ToString(Convert.ToInt32(BLL_User.instance.getUserIdMax_BLL()) + 1);
-                    BLL_User.instance.BLL_addUser(userId, txtFirstName.Text, txtLastname.Text, txtUser1.Text, txtPass1.Text, txtPhone.Text, txtPhone.Text);
+                    BLL_User.instance.BLL_addUser(userId, txtFirstName.Text, txtLastname.Text, txtUser1.Text, txtPass1.Text, txtEmail.Text, txtPhone.Text);
                     MessageBox.Show("dang ky thanh cong");
                 }
             }
