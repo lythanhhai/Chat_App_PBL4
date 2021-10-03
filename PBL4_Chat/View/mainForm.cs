@@ -32,7 +32,7 @@ namespace PBL4_Chat
         public delegate string getUserId();
         public getUserId userId;
 
-        //
+        // lấy dữ liệu từ user control receiver
         public delegate string getUserIdReveive();
         public getUserIdReveive userId_receive;
 
@@ -46,7 +46,6 @@ namespace PBL4_Chat
         // showDSUser có trong hệ thống
         public void showUser()
         {
-            //List<Detail> listDetail = BLL_TKVX.Instance.getALLDetailSchedule_BLL(departure, arrival, date.Date);
             List<User> listUser = BLL_User.instance.BLL_getUser();
             foreach (User u in listUser)
             {
@@ -72,6 +71,7 @@ namespace PBL4_Chat
                 // 1. connect
                 client.Connect("127.0.0.1", PORT_NUMBER);
                 stream = client.GetStream();
+
                 // gửi userId mỗi khi load
                 byte[] userId_load = encoding.GetBytes(userId());
                 stream.Write(userId_load, 0, userId_load.Length);
@@ -91,6 +91,8 @@ namespace PBL4_Chat
 
         public delegate void Delegate();
         //public void XLNhan(TcpClient client, Stream stream)
+
+        // hàm xử lý nhận
         public void XLNhan()
         {
             
@@ -110,25 +112,41 @@ namespace PBL4_Chat
             if (this.InvokeRequired)
                 this.Invoke(new MethodInvoker(msg));
             else
-                txt_message.Text = txt_message.Text + Environment.NewLine + name + " >> " + data;
+                txt_message.Text += Environment.NewLine + name + " >> " + data;
         }
 
 
         private void btn_send_Click(object sender, EventArgs e)
         {
 
-            txt_message.Text += BLL_User.instance.BLL_getUserById(userId()).firstName
+            txt_message.Text += Environment.NewLine
+                              + BLL_User.instance.BLL_getUserById(userId()).firstName
                               + " "
                               + BLL_User.instance.BLL_getUserById(userId()).lastName
                               + " << "
-                              + txt_send.Text
-                              + Environment.NewLine;
-            // gửi userId cho server
+                              + txt_send.Text;
+            // gửi userId_receive cho server
             byte[] userId_receive1 = encoding.GetBytes(userId_receive());
-
             stream.Write(userId_receive1, 0, userId_receive1.Length);
             byte[] message = encoding.GetBytes(txt_send.Text);
-            stream.Write(message, 0, message.Length);   
+            stream.Write(message, 0, message.Length);
+            add(encoding.GetString(message));
+        }
+
+        // hàm add 1 userRelation hoặc tin nhắn
+        public void add(string content_mes)
+        {
+            try
+            {
+                string id_rel = BLL_UserRelation.instance.BLL_getIdRelMax();
+                string id_mes = BLL_UserRelation.instance.BLL_getIdMesMax();
+                string date_send = DateTime.Now.ToString();
+                BLL_UserRelation.instance.BLL_addUserOrMes(id_rel, id_mes, userId(), userId_receive(), "friend", content_mes, date_send);
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.ToString());
+            }
         }
 
         

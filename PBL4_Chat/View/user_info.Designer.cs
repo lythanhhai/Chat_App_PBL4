@@ -70,6 +70,7 @@ namespace PBL4_Chat.View
             this.lbPhone.Size = new System.Drawing.Size(165, 25);
             this.lbPhone.TabIndex = 2;
             this.lbPhone.Text = "hello, how are you?";
+            this.lbPhone.Click += new System.EventHandler(this.gunaGradientPanel1_Click);
             // 
             // lbName
             // 
@@ -83,6 +84,7 @@ namespace PBL4_Chat.View
             this.lbName.Size = new System.Drawing.Size(59, 25);
             this.lbName.TabIndex = 1;
             this.lbName.Text = "Hai Ly";
+            this.lbName.Click += new System.EventHandler(this.gunaGradientPanel1_Click);
             // 
             // gunaCirclePictureBox1
             // 
@@ -96,6 +98,7 @@ namespace PBL4_Chat.View
             this.gunaCirclePictureBox1.TabIndex = 0;
             this.gunaCirclePictureBox1.TabStop = false;
             this.gunaCirclePictureBox1.UseTransfarantBackground = false;
+            this.gunaCirclePictureBox1.Click += new System.EventHandler(this.gunaGradientPanel1_Click);
             // 
             // user_info
             // 

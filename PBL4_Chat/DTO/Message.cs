@@ -10,7 +10,7 @@ namespace PBL4_Chat.DTO
     {
         public string id_mes { get; set; }
         public string id_rel { get; set; }
-        public string contentMes { get; set; }
+        public string content_mes { get; set; }
         public string date_send { get; set; }
     }
 }

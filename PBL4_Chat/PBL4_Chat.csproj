@@ -175,9 +175,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL\BLL_User.cs" />
+    <Compile Include="BLL\BLL_UserRelation.cs" />
     <Compile Include="DAL\DAL_User.cs" />
+    <Compile Include="DAL\DAL_UserRelationship.cs" />
     <Compile Include="DAL\DBHelper.cs" />
+    <Compile Include="DTO\Message.cs" />
     <Compile Include="DTO\User.cs" />
+    <Compile Include="DTO\UserRelationship.cs" />
     <Compile Include="View\mainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -204,6 +208,12 @@
     <Compile Include="View\user_info.Designer.cs">
       <DependentUpon>user_info.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\user_message.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\user_message.Designer.cs">
+      <DependentUpon>user_message.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="View\mainForm.resx">
       <DependentUpon>mainForm.cs</DependentUpon>
@@ -226,6 +236,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\user_info.resx">
       <DependentUpon>user_info.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\user_message.resx">
+      <DependentUpon>user_message.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
