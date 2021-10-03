@@ -192,3 +192,4 @@ D:\Class\PBL4\PBL4_Chat\test_chat_app\PBL4_Chat\obj\Debug\PBL4_Chat.csproj.CoreC
 D:\Class\PBL4\PBL4_Chat\test_chat_app\PBL4_Chat\obj\Debug\PBL4_Chat.csproj.CopyComplete
 D:\Class\PBL4\PBL4_Chat\test_chat_app\PBL4_Chat\obj\Debug\PBL4_Chat.exe
 D:\Class\PBL4\PBL4_Chat\test_chat_app\PBL4_Chat\obj\Debug\PBL4_Chat.pdb
+D:\Class\PBL4\PBL4_Chat\test_chat_app\PBL4_Chat\obj\Debug\PBL4_Chat.View.user_message.resources
