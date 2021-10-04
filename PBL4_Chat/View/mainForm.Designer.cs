@@ -95,7 +95,7 @@ namespace PBL4_Chat
             this.GunaAdvenceButton1.FocusedColor = System.Drawing.Color.Empty;
             this.GunaAdvenceButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.GunaAdvenceButton1.ForeColor = System.Drawing.Color.White;
-            this.GunaAdvenceButton1.Image = ((System.Drawing.Image)(resources.GetObject("GunaAdvenceButton1.Image")));
+            this.GunaAdvenceButton1.Image = global::PBL4_Chat.Properties.Resources.Speech_Bubble_ck_16px;
             this.GunaAdvenceButton1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.GunaAdvenceButton1.ImageSize = new System.Drawing.Size(16, 16);
             this.GunaAdvenceButton1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(33)))));

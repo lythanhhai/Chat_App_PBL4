@@ -104,6 +104,7 @@ namespace PBL4_Chat.View
             this.txtUser = new System.Windows.Forms.TextBox();
             this.pnUser = new System.Windows.Forms.Panel();
             this.bunifuPages1 = new Bunifu.UI.WinForms.BunifuPages();
+            this.user_message1 = new PBL4_Chat.View.user_message();
             this.bunifuGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ButSignUpLeft)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ButSignInLeft)).BeginInit();
@@ -269,6 +270,7 @@ namespace PBL4_Chat.View
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
+            this.panel1.Controls.Add(this.user_message1);
             this.panel1.Controls.Add(this.panel11);
             this.panel1.Controls.Add(this.panel6);
             this.panel1.Controls.Add(this.panel2);
@@ -306,9 +308,8 @@ namespace PBL4_Chat.View
             this.lbErrorLast.ForeColor = System.Drawing.Color.LightCoral;
             this.lbErrorLast.Location = new System.Drawing.Point(49, 91);
             this.lbErrorLast.Name = "lbErrorLast";
-            this.lbErrorLast.Size = new System.Drawing.Size(44, 22);
+            this.lbErrorLast.Size = new System.Drawing.Size(0, 22);
             this.lbErrorLast.TabIndex = 38;
-            this.lbErrorLast.Text = "Last";
             // 
             // bpbLastname
             // 
@@ -376,9 +377,8 @@ namespace PBL4_Chat.View
             this.lbErrorFirst.ForeColor = System.Drawing.Color.LightCoral;
             this.lbErrorFirst.Location = new System.Drawing.Point(49, 83);
             this.lbErrorFirst.Name = "lbErrorFirst";
-            this.lbErrorFirst.Size = new System.Drawing.Size(45, 22);
+            this.lbErrorFirst.Size = new System.Drawing.Size(0, 22);
             this.lbErrorFirst.TabIndex = 38;
-            this.lbErrorFirst.Text = "First";
             // 
             // bpbFirstName
             // 
@@ -446,9 +446,8 @@ namespace PBL4_Chat.View
             this.lbErrorEmail.ForeColor = System.Drawing.Color.LightCoral;
             this.lbErrorEmail.Location = new System.Drawing.Point(64, 83);
             this.lbErrorEmail.Name = "lbErrorEmail";
-            this.lbErrorEmail.Size = new System.Drawing.Size(54, 22);
+            this.lbErrorEmail.Size = new System.Drawing.Size(0, 22);
             this.lbErrorEmail.TabIndex = 38;
-            this.lbErrorEmail.Text = "Email";
             // 
             // bpbEmail
             // 
@@ -516,9 +515,8 @@ namespace PBL4_Chat.View
             this.lbErrorPhone.ForeColor = System.Drawing.Color.LightCoral;
             this.lbErrorPhone.Location = new System.Drawing.Point(49, 76);
             this.lbErrorPhone.Name = "lbErrorPhone";
-            this.lbErrorPhone.Size = new System.Drawing.Size(60, 22);
+            this.lbErrorPhone.Size = new System.Drawing.Size(0, 22);
             this.lbErrorPhone.TabIndex = 38;
-            this.lbErrorPhone.Text = "phone";
             // 
             // bpbPhone
             // 
@@ -596,9 +594,8 @@ namespace PBL4_Chat.View
             this.lbErrorConPassSignUp.ForeColor = System.Drawing.Color.LightCoral;
             this.lbErrorConPassSignUp.Location = new System.Drawing.Point(64, 91);
             this.lbErrorConPassSignUp.Name = "lbErrorConPassSignUp";
-            this.lbErrorConPassSignUp.Size = new System.Drawing.Size(196, 22);
+            this.lbErrorConPassSignUp.Size = new System.Drawing.Size(0, 22);
             this.lbErrorConPassSignUp.TabIndex = 38;
-            this.lbErrorConPassSignUp.Text = "lbErrorConPassSignUp";
             // 
             // bpbConPass
             // 
@@ -667,9 +664,8 @@ namespace PBL4_Chat.View
             this.lbErrorUserSignUp.ForeColor = System.Drawing.Color.LightCoral;
             this.lbErrorUserSignUp.Location = new System.Drawing.Point(63, 76);
             this.lbErrorUserSignUp.Name = "lbErrorUserSignUp";
-            this.lbErrorUserSignUp.Size = new System.Drawing.Size(196, 22);
+            this.lbErrorUserSignUp.Size = new System.Drawing.Size(0, 22);
             this.lbErrorUserSignUp.TabIndex = 37;
-            this.lbErrorUserSignUp.Text = "lbErrorConPassSignUp";
             // 
             // lbUser1
             // 
@@ -737,9 +733,8 @@ namespace PBL4_Chat.View
             this.lbErrorPassSignUp.ForeColor = System.Drawing.Color.LightCoral;
             this.lbErrorPassSignUp.Location = new System.Drawing.Point(65, 83);
             this.lbErrorPassSignUp.Name = "lbErrorPassSignUp";
-            this.lbErrorPassSignUp.Size = new System.Drawing.Size(196, 22);
+            this.lbErrorPassSignUp.Size = new System.Drawing.Size(0, 22);
             this.lbErrorPassSignUp.TabIndex = 38;
-            this.lbErrorPassSignUp.Text = "lbErrorConPassSignUp";
             // 
             // bpbPass1
             // 
@@ -1077,6 +1072,14 @@ namespace PBL4_Chat.View
             this.bunifuPages1.Transition = animation1;
             this.bunifuPages1.TransitionType = Utilities.BunifuPages.BunifuAnimatorNS.AnimationType.Transparent;
             // 
+            // user_message1
+            // 
+            this.user_message1.AutoSize = true;
+            this.user_message1.Location = new System.Drawing.Point(505, 448);
+            this.user_message1.Name = "user_message1";
+            this.user_message1.Size = new System.Drawing.Size(366, 142);
+            this.user_message1.TabIndex = 59;
+            // 
             // Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -1213,5 +1216,6 @@ namespace PBL4_Chat.View
         private System.Windows.Forms.Label lbPass1;
         private System.Windows.Forms.Panel pnPass1;
         private System.Windows.Forms.TextBox txtPass1;
+        private user_message user_message1;
     }
 }
