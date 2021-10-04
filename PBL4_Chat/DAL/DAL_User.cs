@@ -32,7 +32,7 @@ namespace PBL4_Chat.DAL
         {
 
         }
-
+        // lấy user
         public List<User> DAL_getUser()
         {
             List<User> user = new List<User>();
@@ -50,7 +50,7 @@ namespace PBL4_Chat.DAL
             }    
             return user;
         }
-
+        // add user
         public void DAL_addUser(string userId, string firstName, string lastName, string userName, string passWord, string email, string phone)
         {
             string query = "insert into [User] values (N'"
