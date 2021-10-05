@@ -89,6 +89,13 @@ namespace PBL4_Chat
             }
         }
 
+        private void mainForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            // gửi user để server hủy kết nối
+            byte[] userId_load = encoding.GetBytes(userId());
+            stream.Write(userId_load, 0, userId_load.Length);
+        }
+
         public delegate void Delegate();
         //public void XLNhan(TcpClient client, Stream stream)
 
