@@ -1,4 +1,6 @@
-﻿using System;
+﻿using PBL4_Chat.BLL;
+using PBL4_Chat.DAL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -84,6 +86,7 @@ namespace PBL4_Chat.View
             ((mainForm)this.ParentForm).lbName_Receiver.Text = this.name;
             ((mainForm)this.ParentForm).lbStatus.Text = "online";
             ((mainForm)this.ParentForm).pn_chat.Visible = true;
+            BLL_UserRelation.instance.BLL_loadMessageForChat(((mainForm)this.ParentForm).userId(), this.userId);
         }
     }
 }

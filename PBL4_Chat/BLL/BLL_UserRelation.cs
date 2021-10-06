@@ -38,6 +38,11 @@ namespace PBL4_Chat.BLL
         {
             return DAL_UserRelationship.instance.DAL_getUserRelationship();
         }
+        // lấy message
+        public List<Message> BLL_getMessage()
+        {
+            return DAL_UserRelationship.instance.DAL_getMessage();
+        }
 
         // lấy id_rel lớn nhất 
         public string BLL_getIdRelMax()
@@ -67,7 +72,7 @@ namespace PBL4_Chat.BLL
             return max.ToString();
         }
 
-        //add userRelation
+        // add userRelation
         public void BLL_addUserRelationship(string id_rel, string userId, string userId_receive, string relation)
         {
             DAL_UserRelationship.instance.DAL_addUserRelationship(id_rel, userId, userId_receive, relation);
@@ -106,5 +111,26 @@ namespace PBL4_Chat.BLL
                 BLL_addMessage(id_mes,id_rel,content_mes, date_send);
             }                
         }
+
+        // hàm load message for khung chat
+        public List<Message> BLL_loadMessageForChat(string userId, string userId_receive)
+        {
+            List<Message> listMes = new List<Message>();
+            foreach(UserRelationship ur in BLL_getUserRelationship())
+            {
+                if((ur.userId == userId && ur.userId_receive == userId_receive) || (ur.userId == userId_receive && ur.userId_receive == userId))
+                {
+                    foreach(Message m in BLL_getMessage())
+                    {
+                        if(ur.id_rel == m.id_rel)
+                        {
+                            listMes.Add(m);
+                        }    
+                    }    
+                }    
+            }    
+            return listMes;
+        }
+
     }
 }
