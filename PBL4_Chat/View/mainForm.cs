@@ -64,6 +64,7 @@ namespace PBL4_Chat
         private void mainForm_Load(object sender, EventArgs e)
         {
             showUser();
+            pn_chat.Visible = false;
             try
             {
                 data = "Conected to Chat Server ...";
@@ -137,7 +138,7 @@ namespace PBL4_Chat
             stream.Write(userId_receive1, 0, userId_receive1.Length);
             byte[] message = encoding.GetBytes(txt_send.Text);
             stream.Write(message, 0, message.Length);
-            add(encoding.GetString(message));
+            //add(encoding.GetString(message));
         }
 
         // hàm add 1 userRelation hoặc tin nhắn

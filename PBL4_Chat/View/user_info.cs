@@ -83,6 +83,7 @@ namespace PBL4_Chat.View
             // load tên
             ((mainForm)this.ParentForm).lbName_Receiver.Text = this.name;
             ((mainForm)this.ParentForm).lbStatus.Text = "online";
+            ((mainForm)this.ParentForm).pn_chat.Visible = true;
         }
     }
 }
