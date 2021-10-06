@@ -541,7 +541,7 @@ namespace PBL4_Chat
         internal Guna.UI.WinForms.GunaImageButton GunaImageButton3;
         internal Guna.UI.WinForms.GunaImageButton GunaImageButton2;
         internal Guna.UI.WinForms.GunaTextBox txt_send;
-        private System.Windows.Forms.TextBox txt_message;
+        internal System.Windows.Forms.TextBox txt_message;
         internal Guna.UI.WinForms.GunaPanel pn_chat;
         private Guna.UI.WinForms.GunaPanel gunaPanel8;
         internal Guna.UI.WinForms.GunaLabel lbName_Receiver;

@@ -51,12 +51,12 @@ namespace PBL4_Chat.DAL
             return list;
         }
         // lấy tất cả message
-        public List<Message> DAL_getMessage()
+        public List<Message1> DAL_getMessage()
         {
-            List<Message> list = new List<Message>();
+            List<Message1> list = new List<Message1>();
             foreach (DataRow m in DBHelper.Instance.executeNonQuery("select * from [Message]").Rows)
             {
-                list.Add(new Message
+                list.Add(new Message1
                 {
                     id_mes = m["id_mes"].ToString(),
                     id_rel = m["id_rel"].ToString(),

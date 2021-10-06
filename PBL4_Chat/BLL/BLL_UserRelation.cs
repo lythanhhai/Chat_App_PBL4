@@ -39,7 +39,7 @@ namespace PBL4_Chat.BLL
             return DAL_UserRelationship.instance.DAL_getUserRelationship();
         }
         // lấy message
-        public List<Message> BLL_getMessage()
+        public List<Message1> BLL_getMessage()
         {
             return DAL_UserRelationship.instance.DAL_getMessage();
         }
@@ -62,7 +62,7 @@ namespace PBL4_Chat.BLL
         public string BLL_getIdMesMax()
         {
             int max = 0;
-            foreach(Message m in DAL_UserRelationship.instance.DAL_getMessage())
+            foreach(Message1 m in DAL_UserRelationship.instance.DAL_getMessage())
             {
                 if (Convert.ToInt32(m.id_mes) > max)
                 {
@@ -113,14 +113,14 @@ namespace PBL4_Chat.BLL
         }
 
         // hàm load message for khung chat
-        public List<Message> BLL_loadMessageForChat(string userId, string userId_receive)
+        public List<Message1> BLL_loadMessageForChat(string userId, string userId_receive)
         {
-            List<Message> listMes = new List<Message>();
+            List<Message1> listMes = new List<Message1>();
             foreach(UserRelationship ur in BLL_getUserRelationship())
             {
                 if((ur.userId == userId && ur.userId_receive == userId_receive) || (ur.userId == userId_receive && ur.userId_receive == userId))
                 {
-                    foreach(Message m in BLL_getMessage())
+                    foreach(Message1 m in BLL_getMessage())
                     {
                         if(ur.id_rel == m.id_rel)
                         {

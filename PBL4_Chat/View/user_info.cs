@@ -1,5 +1,6 @@
 ﻿using PBL4_Chat.BLL;
 using PBL4_Chat.DAL;
+using PBL4_Chat.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -86,7 +87,11 @@ namespace PBL4_Chat.View
             ((mainForm)this.ParentForm).lbName_Receiver.Text = this.name;
             ((mainForm)this.ParentForm).lbStatus.Text = "online";
             ((mainForm)this.ParentForm).pn_chat.Visible = true;
-            BLL_UserRelation.instance.BLL_loadMessageForChat(((mainForm)this.ParentForm).userId(), this.userId);
+            List<Message1> listMes = BLL_UserRelation.instance.BLL_loadMessageForChat(((mainForm)this.ParentForm).userId(), this.userId);
+            foreach(Message1 m in listMes)
+            {
+                ((mainForm)this.ParentForm).txt_message.Text += Environment.NewLine + name + " >> " + m.content_mes;
+            }    
         }
     }
 }
