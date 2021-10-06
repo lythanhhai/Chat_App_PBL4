@@ -145,8 +145,8 @@ namespace PBL4_Chat
         {
             try
             {
-                string id_rel = BLL_UserRelation.instance.BLL_getIdRelMax();
-                string id_mes = BLL_UserRelation.instance.BLL_getIdMesMax();
+                string id_rel = Convert.ToString(Convert.ToInt32(BLL_UserRelation.instance.BLL_getIdRelMax()) + 1);
+                string id_mes = Convert.ToString(Convert.ToInt32(BLL_UserRelation.instance.BLL_getIdMesMax()) + 1);
                 string date_send = DateTime.Now.ToString();
                 BLL_UserRelation.instance.BLL_addUserOrMes(id_rel, id_mes, userId(), userId_receive(), "friend", content_mes, date_send);
             }

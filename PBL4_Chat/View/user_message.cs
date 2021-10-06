@@ -15,8 +15,8 @@ namespace PBL4_Chat.View
         public user_message()
         {
             InitializeComponent();
-            gunaTextBox1.AutoSize = false;
-            gunaTextBox1.Height += 10;
+            //gunaTextBox1.AutoSize = false;
+            //gunaTextBox1.Height += 10;
         }
 
         private void AutoSizeTextBox(TextBox txt)

@@ -68,9 +68,9 @@ namespace PBL4_Chat.BLL
         }
 
         //add userRelation
-        public void BLL_addUserRelationship(string id_rel, string id_mes, string userId, string userId_receive, string relation)
+        public void BLL_addUserRelationship(string id_rel, string userId, string userId_receive, string relation)
         {
-            DAL_UserRelationship.instance.DAL_addUserRelationship(id_rel, id_mes, userId, userId_receive, relation);
+            DAL_UserRelationship.instance.DAL_addUserRelationship(id_rel, userId, userId_receive, relation);
         }
         // add message
         public void BLL_addMessage(string id_mes, string id_rel, string content_mes, string date_send)
@@ -102,7 +102,7 @@ namespace PBL4_Chat.BLL
             }   
             else
             {
-                BLL_addUserRelationship(id_rel, id_mes, userId, userId_receive, relation);
+                BLL_addUserRelationship(id_rel, userId, userId_receive, relation);
                 BLL_addMessage(id_mes,id_rel,content_mes, date_send);
             }                
         }

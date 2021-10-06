@@ -42,7 +42,7 @@ namespace PBL4_Chat.DAL
                 list.Add(new UserRelationship
                 {
                     id_rel = u["id_rel"].ToString(),
-                    id_mes = u["id_mes"].ToString(),
+                    //id_mes = u["id_mes"].ToString(),
                     userId = u["userId"].ToString(),
                     userId_receive = u["userId_receive"].ToString(),
                     relation = u["relation"].ToString(),
@@ -68,12 +68,10 @@ namespace PBL4_Chat.DAL
         }
 
         // thêm user_relationship
-        public void DAL_addUserRelationship(string id_rel, string id_mes, string userId, string userId_receive, string relation)
+        public void DAL_addUserRelationship(string id_rel, string userId, string userId_receive, string relation)
         {
             string query = "insert into [User_relationship] values (N'"
                 + id_rel
-                + "',N'"
-                + id_mes
                 + "',N'"
                 + userId
                 + "',N'"
