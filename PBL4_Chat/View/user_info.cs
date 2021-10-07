@@ -87,10 +87,12 @@ namespace PBL4_Chat.View
             ((mainForm)this.ParentForm).lbName_Receiver.Text = this.name;
             ((mainForm)this.ParentForm).lbStatus.Text = "online";
             ((mainForm)this.ParentForm).pn_chat.Visible = true;
+            // khi người dùng nhắn cho 1 người khác sẽ xóa sạch panel để upload tin nhắn
+            ((mainForm)this.ParentForm).txt_message.Clear();
             List<Message1> listMes = BLL_UserRelation.instance.BLL_loadMessageForChat(((mainForm)this.ParentForm).userId(), this.userId);
             foreach(Message1 m in listMes)
             {
-                ((mainForm)this.ParentForm).txt_message.Text += Environment.NewLine + name + " >> " + m.content_mes;
+                ((mainForm)this.ParentForm).txt_message.Text += Environment.NewLine + " >> " + m.content_mes;
             }    
         }
     }

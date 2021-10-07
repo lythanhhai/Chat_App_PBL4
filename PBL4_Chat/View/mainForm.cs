@@ -111,8 +111,17 @@ namespace PBL4_Chat
                 stream.Read(message, 0, BUFFER_SIZE);
                 data = encoding.GetString(message);
                 //MessageBox.Show(data);
-                msg();
+                // khi người dùng đang nhắn 1 người khác nhưng 1 người khác gửi tin thì tin nhắn này không hiển thị lên
+                if (true)
+                {
+
+                }
+                else
+                {
+                    msg();
+                }    
             }
+
 
         }
         private void msg()

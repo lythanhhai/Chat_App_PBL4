@@ -204,6 +204,7 @@ namespace PBL4_Chat
             this.txt_message.Location = new System.Drawing.Point(0, 116);
             this.txt_message.Multiline = true;
             this.txt_message.Name = "txt_message";
+            this.txt_message.ReadOnly = true;
             this.txt_message.Size = new System.Drawing.Size(706, 648);
             this.txt_message.TabIndex = 0;
             // 
