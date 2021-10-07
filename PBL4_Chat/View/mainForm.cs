@@ -107,20 +107,28 @@ namespace PBL4_Chat
             while (true)
             {
                 stream = client.GetStream();
+                Byte[] userId_send = new Byte[BUFFER_SIZE];
+                stream.Read(userId_send, 0, BUFFER_SIZE);
+                string userId_sender = encoding.GetString(userId_send);
+
+                stream = client.GetStream();
                 Byte[] message = new Byte[BUFFER_SIZE];
                 stream.Read(message, 0, BUFFER_SIZE);
                 data = encoding.GetString(message);
-                MessageBox.Show(data.Split(' ')[0]);
-                
+                //MessageBox.Show(data);
                 // khi người dùng đang nhắn 1 người khác nhưng 1 người khác gửi tin thì tin nhắn này không hiển thị lên
-                if (data.Split(' ')[0] != userId_receive())
+                MessageBox.Show(userId_sender);
+                MessageBox.Show(userId_receive());
+                MessageBox.Show((string.Equals(userId_sender, userId_receive())).ToString());
+                if (string.Equals(userId_sender, userId_receive()))
                 {
-
+                    msg();
                 }
                 else
                 {
-                    msg();
-                }    
+
+                }
+
             }
 
 
@@ -131,7 +139,7 @@ namespace PBL4_Chat
             if (this.InvokeRequired)
                 this.Invoke(new MethodInvoker(msg));
             else
-                txt_message.Text += Environment.NewLine + name + " >> " + data.Split(' ')[1];
+                txt_message.Text += Environment.NewLine + name + " >> " + data;
         }
 
 

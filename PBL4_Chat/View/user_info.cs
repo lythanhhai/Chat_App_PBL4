@@ -90,10 +90,10 @@ namespace PBL4_Chat.View
             // khi người dùng nhắn cho 1 người khác sẽ xóa sạch panel để upload tin nhắn
             ((mainForm)this.ParentForm).txt_message.Clear();
             List<Message1> listMes = BLL_UserRelation.instance.BLL_loadMessageForChat(((mainForm)this.ParentForm).userId(), this.userId);
-            foreach(Message1 m in listMes)
+            foreach (Message1 m in listMes)
             {
                 ((mainForm)this.ParentForm).txt_message.Text += Environment.NewLine + " >> " + m.content_mes;
-            }    
+            }
         }
     }
 }
