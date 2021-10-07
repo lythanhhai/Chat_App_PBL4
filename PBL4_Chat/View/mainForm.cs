@@ -110,9 +110,10 @@ namespace PBL4_Chat
                 Byte[] message = new Byte[BUFFER_SIZE];
                 stream.Read(message, 0, BUFFER_SIZE);
                 data = encoding.GetString(message);
-                //MessageBox.Show(data);
+                MessageBox.Show(data.Split(' ')[0]);
+                
                 // khi người dùng đang nhắn 1 người khác nhưng 1 người khác gửi tin thì tin nhắn này không hiển thị lên
-                if (true)
+                if (data.Split(' ')[0] != userId_receive())
                 {
 
                 }
@@ -124,12 +125,13 @@ namespace PBL4_Chat
 
 
         }
+        // hiển tin nhắn lên textbox
         private void msg()
         {
             if (this.InvokeRequired)
                 this.Invoke(new MethodInvoker(msg));
             else
-                txt_message.Text += Environment.NewLine + name + " >> " + data;
+                txt_message.Text += Environment.NewLine + name + " >> " + data.Split(' ')[1];
         }
 
 
@@ -142,9 +144,13 @@ namespace PBL4_Chat
                               + BLL_User.instance.BLL_getUserById(userId()).lastName
                               + " << "
                               + txt_send.Text;
+            // gửi userId_send cho server
+            byte[] userId_sender = encoding.GetBytes(userId());
+            stream.Write(userId_sender, 0, userId_sender.Length);
             // gửi userId_receive cho server
             byte[] userId_receive1 = encoding.GetBytes(userId_receive());
             stream.Write(userId_receive1, 0, userId_receive1.Length);
+
             byte[] message = encoding.GetBytes(txt_send.Text);
             stream.Write(message, 0, message.Length);
             //add(encoding.GetString(message));
