@@ -89,6 +89,7 @@ namespace PBL4_Chat.View
             ((mainForm)this.ParentForm).pn_chat.Visible = true;
             // khi người dùng nhắn cho 1 người khác sẽ xóa sạch panel để upload tin nhắn
             ((mainForm)this.ParentForm).txt_message.Clear();
+            ((mainForm)this.ParentForm).txt_send.Clear();
             List<Message1> listMes = BLL_UserRelation.instance.BLL_loadMessageForChat(((mainForm)this.ParentForm).userId(), this.userId);
             foreach (Message1 m in listMes)
             {

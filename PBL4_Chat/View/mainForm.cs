@@ -26,6 +26,7 @@ namespace PBL4_Chat
         Stream stream;
         string data = null;
         string name = null;
+        string res = null;
 
 
         // chuyen userid cho mainForm
@@ -101,25 +102,25 @@ namespace PBL4_Chat
         //public void XLNhan(TcpClient client, Stream stream)
 
         // hàm xử lý nhận
+        
         public void XLNhan()
         {
             
             while (true)
             {
-                stream = client.GetStream();
-                Byte[] userId_send = new Byte[BUFFER_SIZE];
-                stream.Read(userId_send, 0, BUFFER_SIZE);
-                string userId_sender = encoding.GetString(userId_send);
 
                 stream = client.GetStream();
                 Byte[] message = new Byte[BUFFER_SIZE];
                 stream.Read(message, 0, BUFFER_SIZE);
                 data = encoding.GetString(message);
+
+                res = null;
+                for(int i = 1; i < data.Split(' ').Length ; i++)
+                {
+                    res += data.Split(' ')[i] + " ";
+                }
                 // khi người dùng đang nhắn 1 người khác nhưng 1 người khác gửi tin thì tin nhắn này không hiển thị lên
-                //MessageBox.Show((string.Compare(userId_sender, userId_receive()) == 0).ToString());
-                //MessageBox.Show(userId_sender.ToString());
-                //MessageBox.Show(userId_receive().ToString());
-                if (string.Compare(userId_sender, userId_receive()) == 0)
+                if (string.Compare(data.Split(' ')[0], userId_receive()) == 0)
                 {
                     msg();
                 }
@@ -127,7 +128,6 @@ namespace PBL4_Chat
                 {
 
                 }
-                //msg();
             }
 
 
@@ -138,7 +138,7 @@ namespace PBL4_Chat
             if (this.InvokeRequired)
                 this.Invoke(new MethodInvoker(msg));
             else
-                txt_message.Text += Environment.NewLine + name + " >> " + data;
+                txt_message.Text += Environment.NewLine + name + " >> " + res;
         }
 
 
@@ -151,13 +151,10 @@ namespace PBL4_Chat
                               + BLL_User.instance.BLL_getUserById(userId()).lastName
                               + " << "
                               + txt_send.Text;
-            // gửi userId_send cho server
-            byte[] userId_sender = encoding.GetBytes(userId());
-            stream.Write(userId_sender, 0, userId_sender.Length);
-            // gửi userId_receive cho server
-            byte[] userId_receive1 = encoding.GetBytes(userId_receive());
-            stream.Write(userId_receive1, 0, userId_receive1.Length);
 
+            // gửi userId_receive cho server
+            byte[] userId_receive1 = encoding.GetBytes(userId() + " " + userId_receive());
+            stream.Write(userId_receive1, 0, userId_receive1.Length);
             byte[] message = encoding.GetBytes(txt_send.Text);
             stream.Write(message, 0, message.Length);
             //add(encoding.GetString(message));
