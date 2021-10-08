@@ -115,12 +115,9 @@ namespace PBL4_Chat
                 Byte[] message = new Byte[BUFFER_SIZE];
                 stream.Read(message, 0, BUFFER_SIZE);
                 data = encoding.GetString(message);
-                //MessageBox.Show(data);
                 // khi người dùng đang nhắn 1 người khác nhưng 1 người khác gửi tin thì tin nhắn này không hiển thị lên
-                MessageBox.Show(userId_sender);
-                MessageBox.Show(userId_receive());
-                MessageBox.Show((string.Equals(userId_sender, userId_receive())).ToString());
-                if (string.Equals(userId_sender, userId_receive()))
+                //MessageBox.Show((string.Compare(userId_sender, userId_receive()) == 0).ToString());
+                if (string.Compare(userId_sender, userId_receive()) == 0)
                 {
                     msg();
                 }
@@ -153,7 +150,7 @@ namespace PBL4_Chat
                               + " << "
                               + txt_send.Text;
             // gửi userId_send cho server
-            byte[] userId_sender = encoding.GetBytes(userId());
+            byte[] userId_sender = encoding.GetBytes("1");
             stream.Write(userId_sender, 0, userId_sender.Length);
             // gửi userId_receive cho server
             byte[] userId_receive1 = encoding.GetBytes(userId_receive());
