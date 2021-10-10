@@ -104,7 +104,6 @@ namespace PBL4_Chat.View
             this.txtUser = new System.Windows.Forms.TextBox();
             this.pnUser = new System.Windows.Forms.Panel();
             this.bunifuPages1 = new Bunifu.UI.WinForms.BunifuPages();
-            this.user_message1 = new PBL4_Chat.View.user_message();
             this.bunifuGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ButSignUpLeft)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ButSignInLeft)).BeginInit();
@@ -270,7 +269,6 @@ namespace PBL4_Chat.View
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(244)))), ((int)(((byte)(246)))));
-            this.panel1.Controls.Add(this.user_message1);
             this.panel1.Controls.Add(this.panel11);
             this.panel1.Controls.Add(this.panel6);
             this.panel1.Controls.Add(this.panel2);
@@ -1072,14 +1070,6 @@ namespace PBL4_Chat.View
             this.bunifuPages1.Transition = animation1;
             this.bunifuPages1.TransitionType = Utilities.BunifuPages.BunifuAnimatorNS.AnimationType.Transparent;
             // 
-            // user_message1
-            // 
-            this.user_message1.AutoSize = true;
-            this.user_message1.Location = new System.Drawing.Point(505, 448);
-            this.user_message1.Name = "user_message1";
-            this.user_message1.Size = new System.Drawing.Size(366, 142);
-            this.user_message1.TabIndex = 59;
-            // 
             // Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -1216,6 +1206,5 @@ namespace PBL4_Chat.View
         private System.Windows.Forms.Label lbPass1;
         private System.Windows.Forms.Panel pnPass1;
         private System.Windows.Forms.TextBox txtPass1;
-        private user_message user_message1;
     }
 }

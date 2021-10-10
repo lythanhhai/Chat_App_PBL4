@@ -16,6 +16,7 @@ namespace PBL4_Chat.DTO
         public string email { get; set; }
         public string phone { get; set; }
 
+        public int isOnline { get; set; }
 
 
 

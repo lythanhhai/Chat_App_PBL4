@@ -45,13 +45,14 @@ namespace PBL4_Chat.DAL
                     userName = u["userName"].ToString(),
                     passWord = u["passWord"].ToString(),
                     email = u["email"].ToString(),
-                    phone = u["phone"].ToString()
+                    phone = u["phone"].ToString(),
+                    isOnline = Convert.ToInt32(u["isOnline"])
                 });
             }    
             return user;
         }
         // add user
-        public void DAL_addUser(string userId, string firstName, string lastName, string userName, string passWord, string email, string phone)
+        public void DAL_addUser(string userId, string firstName, string lastName, string userName, string passWord, string email, string phone, int isOnline)
         {
             string query = "insert into [User] values (N'"
                 + userId
@@ -67,7 +68,9 @@ namespace PBL4_Chat.DAL
                 + email
                 + "',N'"
                 + phone
-                + "')";
+                + "',"
+                + isOnline
+                + ")";
             DBHelper.Instance.executeQuery(query);
         }
     }

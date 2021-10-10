@@ -145,13 +145,15 @@ namespace PBL4_Chat
         private void btn_send_Click(object sender, EventArgs e)
         {
 
+            //txt_message.Text += Environment.NewLine
+            //                  + BLL_User.instance.BLL_getUserById(userId()).firstName
+            //                  + " "
+            //                  + BLL_User.instance.BLL_getUserById(userId()).lastName
+            //                  + " << "
+            //                  + txt_send.Text;
             txt_message.Text += Environment.NewLine
-                              + BLL_User.instance.BLL_getUserById(userId()).firstName
-                              + " "
-                              + BLL_User.instance.BLL_getUserById(userId()).lastName
                               + " << "
                               + txt_send.Text;
-
             // gửi userId_receive cho server
             byte[] userId_receive1 = encoding.GetBytes(userId() + " " + userId_receive());
             stream.Write(userId_receive1, 0, userId_receive1.Length);

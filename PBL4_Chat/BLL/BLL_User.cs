@@ -40,9 +40,9 @@ namespace PBL4_Chat.BLL
         }
 
         // thêm user
-        public void BLL_addUser(string userId, string firstName, string lastName, string userName, string passWord, string email, string phone)
+        public void BLL_addUser(string userId, string firstName, string lastName, string userName, string passWord, string email, string phone, int isOnline)
         {
-            DAL_User.instance.DAL_addUser(userId,firstName,lastName,userName,passWord,email,phone);
+            DAL_User.instance.DAL_addUser(userId,firstName,lastName,userName,passWord,email,phone, isOnline);
         }
 
         // lấy userId lớn nhất để thêm user sau
