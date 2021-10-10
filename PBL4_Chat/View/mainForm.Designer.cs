@@ -57,6 +57,7 @@ namespace PBL4_Chat
             this.btn_search = new Guna.UI.WinForms.GunaButton();
             this.txt_search = new Guna.UI.WinForms.GunaTextBox();
             this.GunaLabel1 = new Guna.UI.WinForms.GunaLabel();
+            this.btnDangXuat = new Guna.UI.WinForms.GunaAdvenceButton();
             this.gunaPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).BeginInit();
             this.gunaPanel3.SuspendLayout();
@@ -139,6 +140,7 @@ namespace PBL4_Chat
             // gunaPanel3
             // 
             this.gunaPanel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(25)))), ((int)(((byte)(40)))));
+            this.gunaPanel3.Controls.Add(this.btnDangXuat);
             this.gunaPanel3.Controls.Add(this.btn_taoNhom);
             this.gunaPanel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.gunaPanel3.Location = new System.Drawing.Point(96, 0);
@@ -164,7 +166,7 @@ namespace PBL4_Chat
             this.btn_taoNhom.Image = null;
             this.btn_taoNhom.ImageSize = new System.Drawing.Size(20, 20);
             this.btn_taoNhom.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btn_taoNhom.Location = new System.Drawing.Point(57, 32);
+            this.btn_taoNhom.Location = new System.Drawing.Point(173, 28);
             this.btn_taoNhom.Name = "btn_taoNhom";
             this.btn_taoNhom.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.btn_taoNhom.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -172,7 +174,7 @@ namespace PBL4_Chat
             this.btn_taoNhom.OnHoverImage = null;
             this.btn_taoNhom.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btn_taoNhom.OnPressedColor = System.Drawing.Color.Black;
-            this.btn_taoNhom.Size = new System.Drawing.Size(258, 42);
+            this.btn_taoNhom.Size = new System.Drawing.Size(180, 49);
             this.btn_taoNhom.TabIndex = 0;
             this.btn_taoNhom.Text = "Tạo nhóm";
             this.btn_taoNhom.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -490,6 +492,38 @@ namespace PBL4_Chat
             this.GunaLabel1.TabIndex = 2;
             this.GunaLabel1.Text = "Chat";
             // 
+            // btnDangXuat
+            // 
+            this.btnDangXuat.AnimationHoverSpeed = 0.07F;
+            this.btnDangXuat.AnimationSpeed = 0.03F;
+            this.btnDangXuat.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.btnDangXuat.BorderColor = System.Drawing.Color.Black;
+            this.btnDangXuat.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.btnDangXuat.CheckedBorderColor = System.Drawing.Color.Black;
+            this.btnDangXuat.CheckedForeColor = System.Drawing.Color.White;
+            this.btnDangXuat.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnDangXuat.CheckedImage")));
+            this.btnDangXuat.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.btnDangXuat.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnDangXuat.FocusedColor = System.Drawing.Color.Empty;
+            this.btnDangXuat.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnDangXuat.ForeColor = System.Drawing.Color.White;
+            this.btnDangXuat.Image = null;
+            this.btnDangXuat.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnDangXuat.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btnDangXuat.Location = new System.Drawing.Point(6, 28);
+            this.btnDangXuat.Name = "btnDangXuat";
+            this.btnDangXuat.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btnDangXuat.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnDangXuat.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnDangXuat.OnHoverImage = null;
+            this.btnDangXuat.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btnDangXuat.OnPressedColor = System.Drawing.Color.Black;
+            this.btnDangXuat.Size = new System.Drawing.Size(111, 42);
+            this.btnDangXuat.TabIndex = 1;
+            this.btnDangXuat.Text = "Đăng xuất";
+            this.btnDangXuat.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnDangXuat.Click += new System.EventHandler(this.btnTrove_Click);
+            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -551,6 +585,7 @@ namespace PBL4_Chat
         internal Guna.UI.WinForms.GunaLabel lbStatus;
         internal Guna.UI.WinForms.GunaImageButton GunaImageButton5;
         internal Guna.UI.WinForms.GunaImageButton GunaImageButton4;
+        private Guna.UI.WinForms.GunaAdvenceButton btnDangXuat;
     }
 }
 

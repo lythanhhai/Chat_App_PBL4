@@ -502,6 +502,7 @@ namespace PBL4_Chat.View
 
         private void Register_FormClosing(object sender, FormClosingEventArgs e)
         {
+            BLL_User.instance.BLL_updateLogin(0, userID);
             Environment.Exit(0);
         }
     }
