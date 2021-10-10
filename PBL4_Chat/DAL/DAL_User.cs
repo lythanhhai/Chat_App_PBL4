@@ -73,5 +73,11 @@ namespace PBL4_Chat.DAL
                 + ")";
             DBHelper.Instance.executeQuery(query);
         }
+
+        public void DAL_updateLogin(int isOnline, string userId)
+        {
+            string query = "update [User] set isOnline = " + isOnline + " where userId = " + "'" + userId + "'";
+            DBHelper.Instance.executeQuery(query);
+        }
     }
 }

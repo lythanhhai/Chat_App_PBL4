@@ -389,7 +389,7 @@ namespace PBL4_Chat.View
             string userId = "";
             foreach(User u in BLL_User.instance.BLL_getUser())
             {
-                if (txtUser.Text == u.userName && txtPass.Text == u.passWord)
+                if (txtUser.Text == u.userName && txtPass.Text == u.passWord && u.isOnline == 0)
                 {
 
                     count++;
@@ -402,8 +402,10 @@ namespace PBL4_Chat.View
             ////AffterLogin aflogin = new AffterLogin();
             if (count > 0)
             {
+                
                 //ds.Show();
                 userID = userId;
+                BLL_User.instance.BLL_updateLogin(1, userId);
                 main.userId += new mainForm.getUserId(getUserId);
                 main.Show();
                 
@@ -414,7 +416,7 @@ namespace PBL4_Chat.View
             }
             if (count == 0)
             {
-                lbErrorPassSignIn.Text = "Username or Password is incorrect";
+                lbErrorPassSignIn.Text = "Username or Password is incorrect, is online";
             }
             //List<DetailRoute> list = BLL_TKVX.Instance.getAllChiTietTuyen_BLL();
             //foreach (DetailRoute i in list)
