@@ -27,6 +27,7 @@ namespace PBL4_Chat
         string data = null;
         string name = null;
         string res = null;
+        string nameReceiver = null;
 
 
         // chuyen userid cho mainForm
@@ -113,6 +114,7 @@ namespace PBL4_Chat
                 {
                     res += data.Split(' ')[i] + " ";
                 }
+                nameReceiver = BLL_User.instance.BLL_getUserById(userId_receive()).firstName + " " + BLL_User.instance.BLL_getUserById(userId_receive()).firstName;
                 // khi người dùng đang nhắn 1 người khác nhưng 1 người khác gửi tin thì tin nhắn này không hiển thị lên
                 if (string.Compare(data.Split(' ')[0], userId_receive()) == 0)
                 {
@@ -132,7 +134,10 @@ namespace PBL4_Chat
             if (this.InvokeRequired)
                 this.Invoke(new MethodInvoker(msg));
             else
-                txt_message.Text += Environment.NewLine + name + " >> " + res;
+            {
+                txt_message.Text += Environment.NewLine + nameReceiver + " >> " + res;
+            }    
+                
         }
 
 
@@ -148,6 +153,7 @@ namespace PBL4_Chat
             txt_message.Text += Environment.NewLine
                               + " << "
                               + txt_send.Text;
+            
             // gửi userId_receive cho server
             byte[] userId_receive1 = encoding.GetBytes(userId() + " " + userId_receive());
             stream.Write(userId_receive1, 0, userId_receive1.Length);
