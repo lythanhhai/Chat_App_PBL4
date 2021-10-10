@@ -91,13 +91,7 @@ namespace PBL4_Chat
             }
         }
 
-        private void mainForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            // gửi user để server hủy kết nối
-            byte[] userId_load = encoding.GetBytes(userId());
-            stream.Write(userId_load, 0, userId_load.Length);
-        }
-
+       
         public delegate void Delegate();
         //public void XLNhan(TcpClient client, Stream stream)
 
@@ -177,7 +171,23 @@ namespace PBL4_Chat
                 MessageBox.Show(err.ToString());
             }
         }
+        // đăng xuất
+        private void btnTrove_Click(object sender, EventArgs e)
+        {
+            BLL_User.instance.BLL_updateLogin(0, userId());
+            this.Hide();
+            Register rg = new Register();
+            rg.Show();
 
-        
+        }
+        // đăng xuát
+        private void mainForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            BLL_User.instance.BLL_updateLogin(0, userId());
+            this.Hide();
+            Register rg = new Register();
+            rg.Show();
+        }
+
     }
 }
