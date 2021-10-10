@@ -85,5 +85,10 @@ namespace PBL4_Chat.BLL
                 return null;
             }                
         }
+
+        public void BLL_updateLogin(int isOnline, string userId)
+        {
+            DAL_User.instance.DAL_updateLogin(isOnline, userId);
+        }
     }
 }
