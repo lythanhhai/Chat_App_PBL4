@@ -405,7 +405,7 @@ namespace PBL4_Chat.View
                 
                 //ds.Show();
                 userID = userId;
-                BLL_User.instance.BLL_updateLogin(1, userId);
+                //BLL_User.instance.BLL_updateLogin(1, userId);
                 main.userId += new mainForm.getUserId(getUserId);
                 main.Show();
                 
