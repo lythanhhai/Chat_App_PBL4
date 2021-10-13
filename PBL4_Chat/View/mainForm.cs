@@ -114,7 +114,7 @@ namespace PBL4_Chat
                 {
                     res += data.Split(' ')[i] + " ";
                 }
-                nameReceiver = BLL_User.instance.BLL_getUserById(userId_receive()).firstName + " " + BLL_User.instance.BLL_getUserById(userId_receive()).firstName;
+                nameReceiver = BLL_User.instance.BLL_getUserById(userId_receive()).firstName + " " + BLL_User.instance.BLL_getUserById(userId_receive()).lastName;
                 // khi người dùng đang nhắn 1 người khác nhưng 1 người khác gửi tin thì tin nhắn này không hiển thị lên
                 if (string.Compare(data.Split(' ')[0], userId_receive()) == 0)
                 {
@@ -144,16 +144,16 @@ namespace PBL4_Chat
         private void btn_send_Click(object sender, EventArgs e)
         {
 
-            //txt_message.Text += Environment.NewLine
-            //                  + BLL_User.instance.BLL_getUserById(userId()).firstName
-            //                  + " "
-            //                  + BLL_User.instance.BLL_getUserById(userId()).lastName
-            //                  + " << "
-            //                  + txt_send.Text;
             txt_message.Text += Environment.NewLine
+                              + BLL_User.instance.BLL_getUserById(userId()).firstName
+                              + " "
+                              + BLL_User.instance.BLL_getUserById(userId()).lastName
                               + " << "
                               + txt_send.Text;
-            
+            //txt_message.Text += Environment.NewLine
+            //                  + " << "
+            //                  + txt_send.Text;
+
             // gửi userId_receive cho server
             byte[] userId_receive1 = encoding.GetBytes(userId() + " " + userId_receive());
             stream.Write(userId_receive1, 0, userId_receive1.Length);
@@ -180,7 +180,8 @@ namespace PBL4_Chat
         // đăng xuất
         private void btnTrove_Click(object sender, EventArgs e)
         {
-            BLL_User.instance.BLL_updateLogin(0, userId());
+            //BLL_User.instance.BLL_updateLogin(0, userId());
+            client.Close();
             this.Hide();
             Register rg = new Register();
             rg.Show();
@@ -189,7 +190,8 @@ namespace PBL4_Chat
         // đăng xuát
         private void mainForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            BLL_User.instance.BLL_updateLogin(0, userId());
+            //BLL_User.instance.BLL_updateLogin(0, userId());
+            client.Close();
             this.Hide();
             Register rg = new Register();
             rg.Show();
