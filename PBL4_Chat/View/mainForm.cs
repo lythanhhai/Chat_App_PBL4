@@ -88,7 +88,7 @@ namespace PBL4_Chat
 
             catch (Exception ex)
             {
-                Console.WriteLine("Error: " + ex);
+                //Console.WriteLine("Error: " + ex);
             }
         }
 
@@ -100,32 +100,38 @@ namespace PBL4_Chat
         
         public void XLNhan()
         {
-            
-            while (true)
+            try
             {
-
-                stream = client.GetStream();
-                Byte[] message = new Byte[BUFFER_SIZE];
-                stream.Read(message, 0, BUFFER_SIZE);
-                data = encoding.GetString(message);
-
-                res = null;
-                for(int i = 1; i < data.Split(' ').Length ; i++)
-                {
-                    res += data.Split(' ')[i] + " ";
-                }
-                nameReceiver = BLL_User.instance.BLL_getUserById(userId_receive()).firstName + " " + BLL_User.instance.BLL_getUserById(userId_receive()).lastName;
-                // khi người dùng đang nhắn 1 người khác nhưng 1 người khác gửi tin thì tin nhắn này không hiển thị lên
-                if (string.Compare(data.Split(' ')[0], userId_receive()) == 0)
-                {
-                    msg();
-                }
-                else
+                while (true)
                 {
 
+                    stream = client.GetStream();
+                    Byte[] message = new Byte[BUFFER_SIZE];
+                    stream.Read(message, 0, BUFFER_SIZE);
+                    data = encoding.GetString(message);
+
+                    res = null;
+                    for (int i = 1; i < data.Split(' ').Length; i++)
+                    {
+                        res += data.Split(' ')[i] + " ";
+                    }
+                    nameReceiver = BLL_User.instance.BLL_getUserById(userId_receive()).firstName + " " + BLL_User.instance.BLL_getUserById(userId_receive()).lastName;
+                    // khi người dùng đang nhắn 1 người khác nhưng 1 người khác gửi tin thì tin nhắn này không hiển thị lên
+                    if (string.Compare(data.Split(' ')[0], userId_receive()) == 0)
+                    {
+                        msg();
+                    }
+                    else
+                    {
+
+                    }
                 }
+
             }
-
+            catch (Exception err)
+            {
+                MessageBox.Show(err.ToString());
+            }
 
         }
         // hiển tin nhắn lên textbox
@@ -181,6 +187,7 @@ namespace PBL4_Chat
         private void btnTrove_Click(object sender, EventArgs e)
         {
             //BLL_User.instance.BLL_updateLogin(0, userId());
+            stream.Close();
             client.Close();
             this.Hide();
             Register rg = new Register();
@@ -191,6 +198,7 @@ namespace PBL4_Chat
         private void mainForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             //BLL_User.instance.BLL_updateLogin(0, userId());
+            stream.Close();
             client.Close();
             this.Hide();
             Register rg = new Register();
