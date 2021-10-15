@@ -44,22 +44,39 @@ namespace Server
 
                     Console.WriteLine("Connection received from " + socket.RemoteEndPoint);
 
-                    remote.Add(socket.RemoteEndPoint);
-                    Socket_client.Add(socket);
-
+                    int count = 0;
                     // nhận userId
                     byte[] userId_load = new byte[BUFFER_SIZE];
                     int size_userIdLoad = socket.Receive(userId_load);
 
-                    userId.Add(encoding.GetString(userId_load));
+                    for(int i = 0; i < userId.Count; i++)
+                    {
+                        if(String.Compare(encoding.GetString(userId_load), userId[i]) == 0)
+                        {
+                            remote.RemoveAt(i);
+                            Socket_client.RemoveAt(i);
+                            count++;
+                            break;
+                        }    
+                    }
+                    if(count > 0)
+                    {
+                        remote.Add(socket.RemoteEndPoint);
+                        Socket_client.Add(socket);
+                    }
+                    else
+                    {
+                        userId.Add(encoding.GetString(userId_load));
+                        remote.Add(socket.RemoteEndPoint);
+                        Socket_client.Add(socket);
+                        count--;
+                    }    
 
-                      
+
 
                     Thread userThread = new Thread(new ThreadStart(() => p.User(socket)));
                     userThread.Start();
 
-                    //Thread close = new Thread(new ThreadStart(() => p.IsSocketConnected(socket)));
-                    //close.Start();
                   
                     // 4. close
                     //socket.Close();
@@ -80,89 +97,86 @@ namespace Server
             Console.Read();
         }
 
-        public void IsSocketConnected(Socket client)
+        
+        public static void DisconnectClient(Socket client)
         {
-            if(!((client.Poll(1000, SelectMode.SelectRead) && (client.Available == 0)) || !client.Connected))
+            if (client == null)
             {
-                for (int i = 0; i < Socket_client.Count; i++)
-                {
-                    if (String.Compare(client.RemoteEndPoint.ToString(), remote[i].ToString()) == 0)
-                    {
-                        remote.RemoveAt(i);
-                        Socket_client.RemoveAt(i);
-                        userId.RemoveAt(i);
-                        break;
-                    }
-                }
+                return;
             }
+            userId.Remove("2");
+            Console.WriteLine("Disconnected client: " + client.ToString());
+
+            for (int i = 0; i < Socket_client.Count; i++)
+            {
+                //if (String.Compare(client.RemoteEndPoint.ToString(), remote[i].ToString()) == 0)
+                //{
+                    remote.RemoveAt(i);
+                    Socket_client.RemoveAt(i);
+                    userId.RemoveAt(i);
+                    break;
+                //}
+            }
+            client.Close();
+
+            
+            //NetworkBuffer buffer;
+            //clientBuffers.TryRemove(client, out buffer);
         }
         // xử lý gửi
         public void User(Socket client)
         {
-            //if (IsSocketConnected(client))
-            //{
-            //    for (int i = 0; i < Socket_client.Count; i++)
-            //    {
-            //        if (String.Compare(client.RemoteEndPoint.ToString(), remote[i].ToString()) == 0)
-            //        {
-            //            remote.RemoveAt(i);
-            //            Socket_client.RemoveAt(i);
-            //            userId.RemoveAt(i);
-            //            break;
-            //        }
-            //    }
-            //}
-            //else
-            //{
             try
             {
-                while (true)
+                for(int i = 0; i < userId.Count; i++)
                 {
-                    byte[] userId_receive = new byte[BUFFER_SIZE];
-                    int size_userId = client.Receive(userId_receive);
-                    //Console.WriteLine(encoding.GetString(userId_receive));
-                    byte[] data = new byte[BUFFER_SIZE];
-                    int size = client.Receive(data);
-                    string packetMes = encoding.GetString(userId_receive).Split(' ')[0] + " " + encoding.GetString(data);
-
-                    //Console.WriteLine(packetMes);
-
-                    for (int i = 0; i < userId.Count; i++)
+                    Console.WriteLine(userId[i]);
+                }    
+                Console.WriteLine(SocketExtensions.IsConnected(client).ToString());
+                while (true)
                     {
-                        if (String.Compare(encoding.GetString(userId_receive).Split(' ')[1], userId[i]) == 0)
+                        byte[] userId_receive = new byte[BUFFER_SIZE];
+                        int size_userId = client.Receive(userId_receive);
+                        //Console.WriteLine(encoding.GetString(userId_receive));
+                        byte[] data = new byte[BUFFER_SIZE];
+                        int size = client.Receive(data);
+                        string packetMes = encoding.GetString(userId_receive).Split(' ')[0] + " " + encoding.GetString(data);
+
+                        //Console.WriteLine(packetMes);
+
+                        for (int i = 0; i < userId.Count; i++)
                         {
-                            // gửi cho người nhận id người gửi để check xem có đang nhắn tin cùng nhau không
-                            //Socket_client[i].Send(data, 0, size, SocketFlags.None);
-                            Socket_client[i].Send(encoding.GetBytes(packetMes), 0, size + size + size_userId, SocketFlags.None);
+                            if (String.Compare(encoding.GetString(userId_receive).Split(' ')[1], userId[i]) == 0)
+                            {
+                                // gửi cho người nhận id người gửi để check xem có đang nhắn tin cùng nhau không
+                                //Socket_client[i].Send(data, 0, size, SocketFlags.None);
+                                Socket_client[i].Send(encoding.GetBytes(packetMes), 0, size + size + size_userId, SocketFlags.None);
 
+                            }
                         }
-                    }
-                    //client.Send(data, 0, size, SocketFlags.None);
-                    //Socket_client[1].Send(data, 0, size, SocketFlags.None);
-                    //Socket_client[1].Send(data, 0, size, SocketFlags.None);
+                        //client.Send(data, 0, size, SocketFlags.None);
+                        //Socket_client[1].Send(data, 0, size, SocketFlags.None);
+                        //Socket_client[1].Send(data, 0, size, SocketFlags.None);
 
-                }
+                    }
+                //}
             }
             catch(Exception err)
             {
-                //Console.WriteLine(err.ToString());
-                //for (int i = 0; i < Socket_client.Count; i++)
-                //{
-                //    if (String.Compare(client.RemoteEndPoint.ToString(), remote[i].ToString()) == 0)
-                //    {
-                //        remote.RemoveAt(i);
-                //        Socket_client.RemoveAt(i);
-                //        userId.RemoveAt(i);
-                //        break;
-                //    }
-                //}
+                Console.WriteLine(err.ToString());
             }
-
-                         
-
-          //  }                
-            
         }
 
+    }
+    static class SocketExtensions
+    {
+        public static bool IsConnected(this Socket socket)
+        {
+            try
+            {
+                return !(socket.Poll(1, SelectMode.SelectRead) && socket.Available == 0);
+            }
+            catch (SocketException) { return false; }
+        }
     }
 }
