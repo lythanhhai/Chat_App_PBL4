@@ -187,8 +187,8 @@ namespace PBL4_Chat
         private void btnTrove_Click(object sender, EventArgs e)
         {
             //BLL_User.instance.BLL_updateLogin(0, userId());
-            stream.Close();
-            client.Close();
+            //stream.Close();
+            //client.Close();
             this.Hide();
             Register rg = new Register();
             rg.Show();
@@ -198,8 +198,8 @@ namespace PBL4_Chat
         private void mainForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             //BLL_User.instance.BLL_updateLogin(0, userId());
-            stream.Close();
-            client.Close();
+            //stream.Close();
+            //client.Close();
             this.Hide();
             Register rg = new Register();
             rg.Show();
