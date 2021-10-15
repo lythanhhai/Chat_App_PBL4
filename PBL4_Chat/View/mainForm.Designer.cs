@@ -31,35 +31,34 @@ namespace PBL4_Chat
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainForm));
             this.gunaPanel1 = new Guna.UI.WinForms.GunaPanel();
-            this.GunaAdvenceButton1 = new Guna.UI.WinForms.GunaAdvenceButton();
-            this.gunaCirclePictureBox1 = new Guna.UI.WinForms.GunaCirclePictureBox();
             this.gunaPanel2 = new Guna.UI.WinForms.GunaPanel();
             this.gunaPanel3 = new Guna.UI.WinForms.GunaPanel();
-            this.btn_taoNhom = new Guna.UI.WinForms.GunaAdvenceButton();
             this.gunaPanel4 = new Guna.UI.WinForms.GunaPanel();
             this.pn_chat = new Guna.UI.WinForms.GunaPanel();
             this.txt_message = new System.Windows.Forms.TextBox();
             this.gunaPanel8 = new Guna.UI.WinForms.GunaPanel();
             this.lbName_Receiver = new Guna.UI.WinForms.GunaLabel();
             this.GunaSeparator1 = new Guna.UI.WinForms.GunaSeparator();
-            this.GunaCircleButton1 = new Guna.UI.WinForms.GunaCircleButton();
             this.lbStatus = new Guna.UI.WinForms.GunaLabel();
-            this.GunaImageButton5 = new Guna.UI.WinForms.GunaImageButton();
-            this.GunaImageButton4 = new Guna.UI.WinForms.GunaImageButton();
             this.gunaPanel5 = new Guna.UI.WinForms.GunaPanel();
             this.GunaElipsePanel5 = new Guna.UI.WinForms.GunaElipsePanel();
-            this.GunaImageButton3 = new Guna.UI.WinForms.GunaImageButton();
-            this.GunaImageButton2 = new Guna.UI.WinForms.GunaImageButton();
             this.txt_send = new Guna.UI.WinForms.GunaTextBox();
-            this.btn_send = new Guna.UI.WinForms.GunaButton();
             this.panel_listUser = new System.Windows.Forms.FlowLayoutPanel();
             this.gunaPanel6 = new Guna.UI.WinForms.GunaPanel();
-            this.btn_search = new Guna.UI.WinForms.GunaButton();
             this.txt_search = new Guna.UI.WinForms.GunaTextBox();
             this.GunaLabel1 = new Guna.UI.WinForms.GunaLabel();
+            this.GunaCircleButton1 = new Guna.UI.WinForms.GunaCircleButton();
+            this.GunaImageButton5 = new Guna.UI.WinForms.GunaImageButton();
+            this.GunaImageButton4 = new Guna.UI.WinForms.GunaImageButton();
+            this.btn_chooseFile = new Guna.UI.WinForms.GunaImageButton();
+            this.GunaImageButton2 = new Guna.UI.WinForms.GunaImageButton();
+            this.btn_send = new Guna.UI.WinForms.GunaButton();
+            this.btn_search = new Guna.UI.WinForms.GunaButton();
             this.btnDangXuat = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.btn_taoNhom = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.GunaAdvenceButton1 = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.gunaCirclePictureBox1 = new Guna.UI.WinForms.GunaCirclePictureBox();
             this.gunaPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).BeginInit();
             this.gunaPanel3.SuspendLayout();
             this.gunaPanel4.SuspendLayout();
             this.pn_chat.SuspendLayout();
@@ -68,6 +67,7 @@ namespace PBL4_Chat
             this.GunaElipsePanel5.SuspendLayout();
             this.panel_listUser.SuspendLayout();
             this.gunaPanel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // gunaPanel1
@@ -80,53 +80,6 @@ namespace PBL4_Chat
             this.gunaPanel1.Name = "gunaPanel1";
             this.gunaPanel1.Size = new System.Drawing.Size(96, 959);
             this.gunaPanel1.TabIndex = 0;
-            // 
-            // GunaAdvenceButton1
-            // 
-            this.GunaAdvenceButton1.AnimationHoverSpeed = 0.07F;
-            this.GunaAdvenceButton1.AnimationSpeed = 0.03F;
-            this.GunaAdvenceButton1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(33)))));
-            this.GunaAdvenceButton1.BorderColor = System.Drawing.Color.Black;
-            this.GunaAdvenceButton1.ButtonType = Guna.UI.WinForms.AdvenceButtonType.RadioButton;
-            this.GunaAdvenceButton1.Checked = true;
-            this.GunaAdvenceButton1.CheckedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(33)))));
-            this.GunaAdvenceButton1.CheckedBorderColor = System.Drawing.Color.Black;
-            this.GunaAdvenceButton1.CheckedForeColor = System.Drawing.Color.White;
-            this.GunaAdvenceButton1.CheckedImage = ((System.Drawing.Image)(resources.GetObject("GunaAdvenceButton1.CheckedImage")));
-            this.GunaAdvenceButton1.CheckedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(154)))), ((int)(((byte)(250)))));
-            this.GunaAdvenceButton1.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.GunaAdvenceButton1.FocusedColor = System.Drawing.Color.Empty;
-            this.GunaAdvenceButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.GunaAdvenceButton1.ForeColor = System.Drawing.Color.White;
-            this.GunaAdvenceButton1.Image = global::PBL4_Chat.Properties.Resources.Speech_Bubble_ck_16px;
-            this.GunaAdvenceButton1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.GunaAdvenceButton1.ImageSize = new System.Drawing.Size(16, 16);
-            this.GunaAdvenceButton1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(33)))));
-            this.GunaAdvenceButton1.LineLeft = 4;
-            this.GunaAdvenceButton1.Location = new System.Drawing.Point(0, 216);
-            this.GunaAdvenceButton1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.GunaAdvenceButton1.Name = "GunaAdvenceButton1";
-            this.GunaAdvenceButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(33)))));
-            this.GunaAdvenceButton1.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.GunaAdvenceButton1.OnHoverForeColor = System.Drawing.Color.White;
-            this.GunaAdvenceButton1.OnHoverImage = null;
-            this.GunaAdvenceButton1.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(33)))));
-            this.GunaAdvenceButton1.OnPressedColor = System.Drawing.Color.Black;
-            this.GunaAdvenceButton1.OnPressedDepth = 0;
-            this.GunaAdvenceButton1.Size = new System.Drawing.Size(95, 65);
-            this.GunaAdvenceButton1.TabIndex = 2;
-            // 
-            // gunaCirclePictureBox1
-            // 
-            this.gunaCirclePictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.gunaCirclePictureBox1.BaseColor = System.Drawing.SystemColors.Window;
-            this.gunaCirclePictureBox1.Location = new System.Drawing.Point(3, 12);
-            this.gunaCirclePictureBox1.Name = "gunaCirclePictureBox1";
-            this.gunaCirclePictureBox1.Size = new System.Drawing.Size(89, 88);
-            this.gunaCirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.gunaCirclePictureBox1.TabIndex = 0;
-            this.gunaCirclePictureBox1.TabStop = false;
-            this.gunaCirclePictureBox1.UseTransfarantBackground = false;
             // 
             // gunaPanel2
             // 
@@ -147,37 +100,6 @@ namespace PBL4_Chat
             this.gunaPanel3.Name = "gunaPanel3";
             this.gunaPanel3.Size = new System.Drawing.Size(1096, 100);
             this.gunaPanel3.TabIndex = 2;
-            // 
-            // btn_taoNhom
-            // 
-            this.btn_taoNhom.AnimationHoverSpeed = 0.07F;
-            this.btn_taoNhom.AnimationSpeed = 0.03F;
-            this.btn_taoNhom.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.btn_taoNhom.BorderColor = System.Drawing.Color.Black;
-            this.btn_taoNhom.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.btn_taoNhom.CheckedBorderColor = System.Drawing.Color.Black;
-            this.btn_taoNhom.CheckedForeColor = System.Drawing.Color.White;
-            this.btn_taoNhom.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btn_taoNhom.CheckedImage")));
-            this.btn_taoNhom.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.btn_taoNhom.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btn_taoNhom.FocusedColor = System.Drawing.Color.Empty;
-            this.btn_taoNhom.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btn_taoNhom.ForeColor = System.Drawing.Color.White;
-            this.btn_taoNhom.Image = null;
-            this.btn_taoNhom.ImageSize = new System.Drawing.Size(20, 20);
-            this.btn_taoNhom.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btn_taoNhom.Location = new System.Drawing.Point(173, 28);
-            this.btn_taoNhom.Name = "btn_taoNhom";
-            this.btn_taoNhom.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.btn_taoNhom.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btn_taoNhom.OnHoverForeColor = System.Drawing.Color.White;
-            this.btn_taoNhom.OnHoverImage = null;
-            this.btn_taoNhom.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btn_taoNhom.OnPressedColor = System.Drawing.Color.Black;
-            this.btn_taoNhom.Size = new System.Drawing.Size(180, 49);
-            this.btn_taoNhom.TabIndex = 0;
-            this.btn_taoNhom.Text = "Tạo nhóm";
-            this.btn_taoNhom.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // gunaPanel4
             // 
@@ -248,31 +170,6 @@ namespace PBL4_Chat
             this.GunaSeparator1.Size = new System.Drawing.Size(709, 15);
             this.GunaSeparator1.TabIndex = 24;
             // 
-            // GunaCircleButton1
-            // 
-            this.GunaCircleButton1.AnimationHoverSpeed = 0.07F;
-            this.GunaCircleButton1.AnimationSpeed = 0.03F;
-            this.GunaCircleButton1.BackColor = System.Drawing.Color.Transparent;
-            this.GunaCircleButton1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(34)))), ((int)(((byte)(41)))));
-            this.GunaCircleButton1.BorderColor = System.Drawing.Color.Black;
-            this.GunaCircleButton1.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.GunaCircleButton1.FocusedColor = System.Drawing.Color.Empty;
-            this.GunaCircleButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.GunaCircleButton1.ForeColor = System.Drawing.Color.White;
-            this.GunaCircleButton1.Image = global::PBL4_Chat.Properties.Resources.Next_page_24px;
-            this.GunaCircleButton1.ImageSize = new System.Drawing.Size(24, 24);
-            this.GunaCircleButton1.Location = new System.Drawing.Point(642, 26);
-            this.GunaCircleButton1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.GunaCircleButton1.Name = "GunaCircleButton1";
-            this.GunaCircleButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(168)))), ((int)(((byte)(251)))));
-            this.GunaCircleButton1.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.GunaCircleButton1.OnHoverForeColor = System.Drawing.Color.White;
-            this.GunaCircleButton1.OnHoverImage = null;
-            this.GunaCircleButton1.OnPressedColor = System.Drawing.Color.Black;
-            this.GunaCircleButton1.Size = new System.Drawing.Size(45, 46);
-            this.GunaCircleButton1.TabIndex = 29;
-            this.GunaCircleButton1.UseTransfarantBackground = true;
-            // 
             // lbStatus
             // 
             this.lbStatus.AutoSize = true;
@@ -284,32 +181,6 @@ namespace PBL4_Chat
             this.lbStatus.Size = new System.Drawing.Size(46, 19);
             this.lbStatus.TabIndex = 26;
             this.lbStatus.Text = "online";
-            // 
-            // GunaImageButton5
-            // 
-            this.GunaImageButton5.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.GunaImageButton5.Image = global::PBL4_Chat.Properties.Resources.Video_Call_24px;
-            this.GunaImageButton5.ImageSize = new System.Drawing.Size(24, 24);
-            this.GunaImageButton5.Location = new System.Drawing.Point(578, 26);
-            this.GunaImageButton5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.GunaImageButton5.Name = "GunaImageButton5";
-            this.GunaImageButton5.OnHoverImage = null;
-            this.GunaImageButton5.OnHoverImageOffset = new System.Drawing.Point(0, 0);
-            this.GunaImageButton5.Size = new System.Drawing.Size(45, 46);
-            this.GunaImageButton5.TabIndex = 28;
-            // 
-            // GunaImageButton4
-            // 
-            this.GunaImageButton4.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.GunaImageButton4.Image = global::PBL4_Chat.Properties.Resources.User_Account_16px;
-            this.GunaImageButton4.ImageSize = new System.Drawing.Size(24, 24);
-            this.GunaImageButton4.Location = new System.Drawing.Point(504, 26);
-            this.GunaImageButton4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.GunaImageButton4.Name = "GunaImageButton4";
-            this.GunaImageButton4.OnHoverImage = null;
-            this.GunaImageButton4.OnHoverImageOffset = new System.Drawing.Point(0, 0);
-            this.GunaImageButton4.Size = new System.Drawing.Size(45, 46);
-            this.GunaImageButton4.TabIndex = 27;
             // 
             // gunaPanel5
             // 
@@ -326,7 +197,7 @@ namespace PBL4_Chat
             // 
             this.GunaElipsePanel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(22)))), ((int)(((byte)(32)))));
             this.GunaElipsePanel5.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(22)))), ((int)(((byte)(32)))));
-            this.GunaElipsePanel5.Controls.Add(this.GunaImageButton3);
+            this.GunaElipsePanel5.Controls.Add(this.btn_chooseFile);
             this.GunaElipsePanel5.Controls.Add(this.GunaImageButton2);
             this.GunaElipsePanel5.Controls.Add(this.txt_send);
             this.GunaElipsePanel5.Location = new System.Drawing.Point(0, 5);
@@ -334,34 +205,6 @@ namespace PBL4_Chat
             this.GunaElipsePanel5.Name = "GunaElipsePanel5";
             this.GunaElipsePanel5.Size = new System.Drawing.Size(609, 87);
             this.GunaElipsePanel5.TabIndex = 18;
-            // 
-            // GunaImageButton3
-            // 
-            this.GunaImageButton3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(22)))), ((int)(((byte)(32)))));
-            this.GunaImageButton3.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.GunaImageButton3.Image = global::PBL4_Chat.Properties.Resources.Attach_24px;
-            this.GunaImageButton3.ImageSize = new System.Drawing.Size(24, 24);
-            this.GunaImageButton3.Location = new System.Drawing.Point(471, 20);
-            this.GunaImageButton3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.GunaImageButton3.Name = "GunaImageButton3";
-            this.GunaImageButton3.OnHoverImage = null;
-            this.GunaImageButton3.OnHoverImageOffset = new System.Drawing.Point(0, 0);
-            this.GunaImageButton3.Size = new System.Drawing.Size(49, 53);
-            this.GunaImageButton3.TabIndex = 2;
-            // 
-            // GunaImageButton2
-            // 
-            this.GunaImageButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(22)))), ((int)(((byte)(32)))));
-            this.GunaImageButton2.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.GunaImageButton2.Image = global::PBL4_Chat.Properties.Resources.Instagram_24px;
-            this.GunaImageButton2.ImageSize = new System.Drawing.Size(24, 24);
-            this.GunaImageButton2.Location = new System.Drawing.Point(528, 20);
-            this.GunaImageButton2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.GunaImageButton2.Name = "GunaImageButton2";
-            this.GunaImageButton2.OnHoverImage = null;
-            this.GunaImageButton2.OnHoverImageOffset = new System.Drawing.Point(0, 0);
-            this.GunaImageButton2.Size = new System.Drawing.Size(45, 53);
-            this.GunaImageButton2.TabIndex = 1;
             // 
             // txt_send
             // 
@@ -385,33 +228,6 @@ namespace PBL4_Chat
             this.txt_send.TabIndex = 0;
             this.txt_send.Text = "Ok";
             // 
-            // btn_send
-            // 
-            this.btn_send.AnimationHoverSpeed = 0.07F;
-            this.btn_send.AnimationSpeed = 0.03F;
-            this.btn_send.BackColor = System.Drawing.Color.Transparent;
-            this.btn_send.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(154)))), ((int)(((byte)(250)))));
-            this.btn_send.BorderColor = System.Drawing.Color.Black;
-            this.btn_send.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btn_send.FocusedColor = System.Drawing.Color.Empty;
-            this.btn_send.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btn_send.ForeColor = System.Drawing.Color.White;
-            this.btn_send.Image = ((System.Drawing.Image)(resources.GetObject("btn_send.Image")));
-            this.btn_send.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btn_send.ImageSize = new System.Drawing.Size(18, 18);
-            this.btn_send.Location = new System.Drawing.Point(617, 15);
-            this.btn_send.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btn_send.Name = "btn_send";
-            this.btn_send.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(168)))), ((int)(((byte)(251)))));
-            this.btn_send.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btn_send.OnHoverForeColor = System.Drawing.Color.White;
-            this.btn_send.OnHoverImage = null;
-            this.btn_send.OnPressedColor = System.Drawing.Color.Black;
-            this.btn_send.Radius = 4;
-            this.btn_send.Size = new System.Drawing.Size(85, 62);
-            this.btn_send.TabIndex = 19;
-            this.btn_send.Click += new System.EventHandler(this.btn_send_Click);
-            // 
             // panel_listUser
             // 
             this.panel_listUser.Controls.Add(this.gunaPanel6);
@@ -432,32 +248,6 @@ namespace PBL4_Chat
             this.gunaPanel6.Name = "gunaPanel6";
             this.gunaPanel6.Size = new System.Drawing.Size(383, 113);
             this.gunaPanel6.TabIndex = 3;
-            // 
-            // btn_search
-            // 
-            this.btn_search.AnimationHoverSpeed = 0.07F;
-            this.btn_search.AnimationSpeed = 0.03F;
-            this.btn_search.BackColor = System.Drawing.Color.Transparent;
-            this.btn_search.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(70)))), ((int)(((byte)(160)))));
-            this.btn_search.BorderColor = System.Drawing.Color.Black;
-            this.btn_search.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btn_search.FocusedColor = System.Drawing.Color.Empty;
-            this.btn_search.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btn_search.ForeColor = System.Drawing.Color.White;
-            this.btn_search.Image = global::PBL4_Chat.Properties.Resources.Connection_Status_On_16px;
-            this.btn_search.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btn_search.ImageSize = new System.Drawing.Size(20, 20);
-            this.btn_search.Location = new System.Drawing.Point(319, 51);
-            this.btn_search.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btn_search.Name = "btn_search";
-            this.btn_search.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(168)))), ((int)(((byte)(251)))));
-            this.btn_search.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btn_search.OnHoverForeColor = System.Drawing.Color.White;
-            this.btn_search.OnHoverImage = null;
-            this.btn_search.OnPressedColor = System.Drawing.Color.Black;
-            this.btn_search.Radius = 4;
-            this.btn_search.Size = new System.Drawing.Size(51, 49);
-            this.btn_search.TabIndex = 2;
             // 
             // txt_search
             // 
@@ -493,6 +283,138 @@ namespace PBL4_Chat
             this.GunaLabel1.TabIndex = 2;
             this.GunaLabel1.Text = "Chat";
             // 
+            // GunaCircleButton1
+            // 
+            this.GunaCircleButton1.AnimationHoverSpeed = 0.07F;
+            this.GunaCircleButton1.AnimationSpeed = 0.03F;
+            this.GunaCircleButton1.BackColor = System.Drawing.Color.Transparent;
+            this.GunaCircleButton1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(34)))), ((int)(((byte)(41)))));
+            this.GunaCircleButton1.BorderColor = System.Drawing.Color.Black;
+            this.GunaCircleButton1.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.GunaCircleButton1.FocusedColor = System.Drawing.Color.Empty;
+            this.GunaCircleButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.GunaCircleButton1.ForeColor = System.Drawing.Color.White;
+            this.GunaCircleButton1.Image = global::PBL4_Chat.Properties.Resources.Next_page_24px;
+            this.GunaCircleButton1.ImageSize = new System.Drawing.Size(24, 24);
+            this.GunaCircleButton1.Location = new System.Drawing.Point(642, 26);
+            this.GunaCircleButton1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.GunaCircleButton1.Name = "GunaCircleButton1";
+            this.GunaCircleButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(168)))), ((int)(((byte)(251)))));
+            this.GunaCircleButton1.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.GunaCircleButton1.OnHoverForeColor = System.Drawing.Color.White;
+            this.GunaCircleButton1.OnHoverImage = null;
+            this.GunaCircleButton1.OnPressedColor = System.Drawing.Color.Black;
+            this.GunaCircleButton1.Size = new System.Drawing.Size(45, 46);
+            this.GunaCircleButton1.TabIndex = 29;
+            this.GunaCircleButton1.UseTransfarantBackground = true;
+            // 
+            // GunaImageButton5
+            // 
+            this.GunaImageButton5.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.GunaImageButton5.Image = global::PBL4_Chat.Properties.Resources.Video_Call_24px;
+            this.GunaImageButton5.ImageSize = new System.Drawing.Size(24, 24);
+            this.GunaImageButton5.Location = new System.Drawing.Point(578, 26);
+            this.GunaImageButton5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.GunaImageButton5.Name = "GunaImageButton5";
+            this.GunaImageButton5.OnHoverImage = null;
+            this.GunaImageButton5.OnHoverImageOffset = new System.Drawing.Point(0, 0);
+            this.GunaImageButton5.Size = new System.Drawing.Size(45, 46);
+            this.GunaImageButton5.TabIndex = 28;
+            // 
+            // GunaImageButton4
+            // 
+            this.GunaImageButton4.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.GunaImageButton4.Image = global::PBL4_Chat.Properties.Resources.User_Account_16px;
+            this.GunaImageButton4.ImageSize = new System.Drawing.Size(24, 24);
+            this.GunaImageButton4.Location = new System.Drawing.Point(504, 26);
+            this.GunaImageButton4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.GunaImageButton4.Name = "GunaImageButton4";
+            this.GunaImageButton4.OnHoverImage = null;
+            this.GunaImageButton4.OnHoverImageOffset = new System.Drawing.Point(0, 0);
+            this.GunaImageButton4.Size = new System.Drawing.Size(45, 46);
+            this.GunaImageButton4.TabIndex = 27;
+            // 
+            // btn_chooseFile
+            // 
+            this.btn_chooseFile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(22)))), ((int)(((byte)(32)))));
+            this.btn_chooseFile.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btn_chooseFile.Image = global::PBL4_Chat.Properties.Resources.Attach_24px;
+            this.btn_chooseFile.ImageSize = new System.Drawing.Size(24, 24);
+            this.btn_chooseFile.Location = new System.Drawing.Point(471, 20);
+            this.btn_chooseFile.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btn_chooseFile.Name = "btn_chooseFile";
+            this.btn_chooseFile.OnHoverImage = null;
+            this.btn_chooseFile.OnHoverImageOffset = new System.Drawing.Point(0, 0);
+            this.btn_chooseFile.Size = new System.Drawing.Size(49, 53);
+            this.btn_chooseFile.TabIndex = 2;
+            // 
+            // GunaImageButton2
+            // 
+            this.GunaImageButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(22)))), ((int)(((byte)(32)))));
+            this.GunaImageButton2.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.GunaImageButton2.Image = global::PBL4_Chat.Properties.Resources.Instagram_24px;
+            this.GunaImageButton2.ImageSize = new System.Drawing.Size(24, 24);
+            this.GunaImageButton2.Location = new System.Drawing.Point(528, 20);
+            this.GunaImageButton2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.GunaImageButton2.Name = "GunaImageButton2";
+            this.GunaImageButton2.OnHoverImage = null;
+            this.GunaImageButton2.OnHoverImageOffset = new System.Drawing.Point(0, 0);
+            this.GunaImageButton2.Size = new System.Drawing.Size(45, 53);
+            this.GunaImageButton2.TabIndex = 1;
+            // 
+            // btn_send
+            // 
+            this.btn_send.AnimationHoverSpeed = 0.07F;
+            this.btn_send.AnimationSpeed = 0.03F;
+            this.btn_send.BackColor = System.Drawing.Color.Transparent;
+            this.btn_send.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(154)))), ((int)(((byte)(250)))));
+            this.btn_send.BorderColor = System.Drawing.Color.Black;
+            this.btn_send.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btn_send.FocusedColor = System.Drawing.Color.Empty;
+            this.btn_send.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btn_send.ForeColor = System.Drawing.Color.White;
+            this.btn_send.Image = ((System.Drawing.Image)(resources.GetObject("btn_send.Image")));
+            this.btn_send.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_send.ImageSize = new System.Drawing.Size(18, 18);
+            this.btn_send.Location = new System.Drawing.Point(617, 15);
+            this.btn_send.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btn_send.Name = "btn_send";
+            this.btn_send.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(168)))), ((int)(((byte)(251)))));
+            this.btn_send.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btn_send.OnHoverForeColor = System.Drawing.Color.White;
+            this.btn_send.OnHoverImage = null;
+            this.btn_send.OnPressedColor = System.Drawing.Color.Black;
+            this.btn_send.Radius = 4;
+            this.btn_send.Size = new System.Drawing.Size(85, 62);
+            this.btn_send.TabIndex = 19;
+            this.btn_send.Click += new System.EventHandler(this.btn_send_Click);
+            // 
+            // btn_search
+            // 
+            this.btn_search.AnimationHoverSpeed = 0.07F;
+            this.btn_search.AnimationSpeed = 0.03F;
+            this.btn_search.BackColor = System.Drawing.Color.Transparent;
+            this.btn_search.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(70)))), ((int)(((byte)(160)))));
+            this.btn_search.BorderColor = System.Drawing.Color.Black;
+            this.btn_search.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btn_search.FocusedColor = System.Drawing.Color.Empty;
+            this.btn_search.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btn_search.ForeColor = System.Drawing.Color.White;
+            this.btn_search.Image = global::PBL4_Chat.Properties.Resources.Connection_Status_On_16px;
+            this.btn_search.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_search.ImageSize = new System.Drawing.Size(20, 20);
+            this.btn_search.Location = new System.Drawing.Point(319, 51);
+            this.btn_search.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btn_search.Name = "btn_search";
+            this.btn_search.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(168)))), ((int)(((byte)(251)))));
+            this.btn_search.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btn_search.OnHoverForeColor = System.Drawing.Color.White;
+            this.btn_search.OnHoverImage = null;
+            this.btn_search.OnPressedColor = System.Drawing.Color.Black;
+            this.btn_search.Radius = 4;
+            this.btn_search.Size = new System.Drawing.Size(51, 49);
+            this.btn_search.TabIndex = 2;
+            // 
             // btnDangXuat
             // 
             this.btnDangXuat.AnimationHoverSpeed = 0.07F;
@@ -525,6 +447,84 @@ namespace PBL4_Chat
             this.btnDangXuat.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnDangXuat.Click += new System.EventHandler(this.btnTrove_Click);
             // 
+            // btn_taoNhom
+            // 
+            this.btn_taoNhom.AnimationHoverSpeed = 0.07F;
+            this.btn_taoNhom.AnimationSpeed = 0.03F;
+            this.btn_taoNhom.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.btn_taoNhom.BorderColor = System.Drawing.Color.Black;
+            this.btn_taoNhom.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.btn_taoNhom.CheckedBorderColor = System.Drawing.Color.Black;
+            this.btn_taoNhom.CheckedForeColor = System.Drawing.Color.White;
+            this.btn_taoNhom.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btn_taoNhom.CheckedImage")));
+            this.btn_taoNhom.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.btn_taoNhom.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btn_taoNhom.FocusedColor = System.Drawing.Color.Empty;
+            this.btn_taoNhom.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btn_taoNhom.ForeColor = System.Drawing.Color.White;
+            this.btn_taoNhom.Image = null;
+            this.btn_taoNhom.ImageSize = new System.Drawing.Size(20, 20);
+            this.btn_taoNhom.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btn_taoNhom.Location = new System.Drawing.Point(173, 28);
+            this.btn_taoNhom.Name = "btn_taoNhom";
+            this.btn_taoNhom.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btn_taoNhom.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btn_taoNhom.OnHoverForeColor = System.Drawing.Color.White;
+            this.btn_taoNhom.OnHoverImage = null;
+            this.btn_taoNhom.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btn_taoNhom.OnPressedColor = System.Drawing.Color.Black;
+            this.btn_taoNhom.Size = new System.Drawing.Size(180, 49);
+            this.btn_taoNhom.TabIndex = 0;
+            this.btn_taoNhom.Text = "Tạo nhóm";
+            this.btn_taoNhom.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // GunaAdvenceButton1
+            // 
+            this.GunaAdvenceButton1.AnimationHoverSpeed = 0.07F;
+            this.GunaAdvenceButton1.AnimationSpeed = 0.03F;
+            this.GunaAdvenceButton1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(33)))));
+            this.GunaAdvenceButton1.BorderColor = System.Drawing.Color.Black;
+            this.GunaAdvenceButton1.ButtonType = Guna.UI.WinForms.AdvenceButtonType.RadioButton;
+            this.GunaAdvenceButton1.Checked = true;
+            this.GunaAdvenceButton1.CheckedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(33)))));
+            this.GunaAdvenceButton1.CheckedBorderColor = System.Drawing.Color.Black;
+            this.GunaAdvenceButton1.CheckedForeColor = System.Drawing.Color.White;
+            this.GunaAdvenceButton1.CheckedImage = ((System.Drawing.Image)(resources.GetObject("GunaAdvenceButton1.CheckedImage")));
+            this.GunaAdvenceButton1.CheckedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(154)))), ((int)(((byte)(250)))));
+            this.GunaAdvenceButton1.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.GunaAdvenceButton1.FocusedColor = System.Drawing.Color.Empty;
+            this.GunaAdvenceButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.GunaAdvenceButton1.ForeColor = System.Drawing.Color.White;
+            this.GunaAdvenceButton1.Image = global::PBL4_Chat.Properties.Resources.Speech_Bubble_ck_16px;
+            this.GunaAdvenceButton1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.GunaAdvenceButton1.ImageSize = new System.Drawing.Size(16, 16);
+            this.GunaAdvenceButton1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(33)))));
+            this.GunaAdvenceButton1.LineLeft = 4;
+            this.GunaAdvenceButton1.Location = new System.Drawing.Point(0, 216);
+            this.GunaAdvenceButton1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.GunaAdvenceButton1.Name = "GunaAdvenceButton1";
+            this.GunaAdvenceButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(33)))));
+            this.GunaAdvenceButton1.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.GunaAdvenceButton1.OnHoverForeColor = System.Drawing.Color.White;
+            this.GunaAdvenceButton1.OnHoverImage = null;
+            this.GunaAdvenceButton1.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(33)))));
+            this.GunaAdvenceButton1.OnPressedColor = System.Drawing.Color.Black;
+            this.GunaAdvenceButton1.OnPressedDepth = 0;
+            this.GunaAdvenceButton1.Size = new System.Drawing.Size(95, 65);
+            this.GunaAdvenceButton1.TabIndex = 2;
+            // 
+            // gunaCirclePictureBox1
+            // 
+            this.gunaCirclePictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.gunaCirclePictureBox1.BaseColor = System.Drawing.SystemColors.Window;
+            this.gunaCirclePictureBox1.Location = new System.Drawing.Point(3, 12);
+            this.gunaCirclePictureBox1.Name = "gunaCirclePictureBox1";
+            this.gunaCirclePictureBox1.Size = new System.Drawing.Size(89, 88);
+            this.gunaCirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.gunaCirclePictureBox1.TabIndex = 0;
+            this.gunaCirclePictureBox1.TabStop = false;
+            this.gunaCirclePictureBox1.UseTransfarantBackground = false;
+            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -540,7 +540,6 @@ namespace PBL4_Chat
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.mainForm_FormClosed);
             this.Load += new System.EventHandler(this.mainForm_Load);
             this.gunaPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).EndInit();
             this.gunaPanel3.ResumeLayout(false);
             this.gunaPanel4.ResumeLayout(false);
             this.pn_chat.ResumeLayout(false);
@@ -552,6 +551,7 @@ namespace PBL4_Chat
             this.panel_listUser.ResumeLayout(false);
             this.gunaPanel6.ResumeLayout(false);
             this.gunaPanel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -574,7 +574,7 @@ namespace PBL4_Chat
         private Guna.UI.WinForms.GunaAdvenceButton btn_taoNhom;
         internal Guna.UI.WinForms.GunaButton btn_send;
         internal Guna.UI.WinForms.GunaElipsePanel GunaElipsePanel5;
-        internal Guna.UI.WinForms.GunaImageButton GunaImageButton3;
+        internal Guna.UI.WinForms.GunaImageButton btn_chooseFile;
         internal Guna.UI.WinForms.GunaImageButton GunaImageButton2;
         internal Guna.UI.WinForms.GunaTextBox txt_send;
         internal System.Windows.Forms.TextBox txt_message;
