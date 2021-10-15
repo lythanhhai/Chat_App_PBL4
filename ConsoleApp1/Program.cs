@@ -44,16 +44,35 @@ namespace Server
 
                     Console.WriteLine("Connection received from " + socket.RemoteEndPoint);
 
-                    remote.Add(socket.RemoteEndPoint);
-                    Socket_client.Add(socket);
-
+                    int count = 0;
                     // nhận userId
                     byte[] userId_load = new byte[BUFFER_SIZE];
                     int size_userIdLoad = socket.Receive(userId_load);
 
-                    userId.Add(encoding.GetString(userId_load));
+                    for(int i = 0; i < userId.Count; i++)
+                    {
+                        if(String.Compare(encoding.GetString(userId_load), userId[i]) == 0)
+                        {
+                            remote.RemoveAt(i);
+                            Socket_client.RemoveAt(i);
+                            count++;
+                            break;
+                        }    
+                    }
+                    if(count > 0)
+                    {
+                        remote.Add(socket.RemoteEndPoint);
+                        Socket_client.Add(socket);
+                    }
+                    else
+                    {
+                        userId.Add(encoding.GetString(userId_load));
+                        remote.Add(socket.RemoteEndPoint);
+                        Socket_client.Add(socket);
+                        count--;
+                    }    
 
-                      
+
 
                     Thread userThread = new Thread(new ThreadStart(() => p.User(socket)));
                     userThread.Start();
@@ -114,30 +133,6 @@ namespace Server
                     Console.WriteLine(userId[i]);
                 }    
                 Console.WriteLine(SocketExtensions.IsConnected(client).ToString());
-                //if(SocketExtensions.IsConnected(client) == false)
-                //{
-                //    for (int i = 0; i < Socket_client.Count; i++)
-                //    {
-                //        if (String.Compare(client.RemoteEndPoint.ToString(), remote[i].ToString()) == 0)
-                //        {
-                //            remote.RemoveAt(i);
-                //            Socket_client.RemoveAt(i);
-                //            userId.RemoveAt(i);
-                //            break;
-                //        }
-                //    }
-                //    client.Close();
-                //}
-                //else
-                //{
-                if (String.Compare(SocketExtensions.IsConnected(client).ToString(), "False") == 0)
-                {
-                    Console.WriteLine("TCP client is null, stopping processing for this client");
-                    userId.Remove("2");
-                    //Thread userThread = new Thread(new ThreadStart(() => DisconnectClient(client)));
-                    //userThread.Start();
-                    return;
-                }
                 while (true)
                     {
                         byte[] userId_receive = new byte[BUFFER_SIZE];
@@ -169,22 +164,7 @@ namespace Server
             catch(Exception err)
             {
                 Console.WriteLine(err.ToString());
-                //for (int i = 0; i < Socket_client.Count; i++)
-                //{
-                //    if (String.Compare(client.RemoteEndPoint.ToString(), remote[i].ToString()) == 0)
-                //    {
-                //        remote.RemoveAt(i);
-                //        Socket_client.RemoveAt(i);
-                //        userId.RemoveAt(i);
-                //        break;
-                //    }
-                //}
             }
-
-                         
-
-          //  }                
-            
         }
 
     }
