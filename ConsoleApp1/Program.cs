@@ -44,33 +44,25 @@ namespace Server
 
                     Console.WriteLine("Connection received from " + socket.RemoteEndPoint);
 
-                    int count = 0;
                     // nhận userId
                     byte[] userId_load = new byte[BUFFER_SIZE];
                     int size_userIdLoad = socket.Receive(userId_load);
 
+                    // kiểm tra xem client đã từng tồn tại chưa
                     for(int i = 0; i < userId.Count; i++)
                     {
                         if(String.Compare(encoding.GetString(userId_load), userId[i]) == 0)
                         {
                             remote.RemoveAt(i);
                             Socket_client.RemoveAt(i);
-                            count++;
+                            userId.RemoveAt(i);
                             break;
                         }    
                     }
-                    if(count > 0)
-                    {
-                        remote.Add(socket.RemoteEndPoint);
-                        Socket_client.Add(socket);
-                    }
-                    else
-                    {
-                        userId.Add(encoding.GetString(userId_load));
-                        remote.Add(socket.RemoteEndPoint);
-                        Socket_client.Add(socket);
-                        count--;
-                    }    
+                    userId.Add(encoding.GetString(userId_load));
+                    remote.Add(socket.RemoteEndPoint);
+                    Socket_client.Add(socket);
+
 
 
 
@@ -104,7 +96,6 @@ namespace Server
             {
                 return;
             }
-            userId.Remove("2");
             Console.WriteLine("Disconnected client: " + client.ToString());
 
             for (int i = 0; i < Socket_client.Count; i++)
@@ -119,9 +110,6 @@ namespace Server
             }
             client.Close();
 
-            
-            //NetworkBuffer buffer;
-            //clientBuffers.TryRemove(client, out buffer);
         }
         // xử lý gửi
         public void User(Socket client)
