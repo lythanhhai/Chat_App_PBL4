@@ -194,5 +194,5 @@ D:\Class\PBL4\PBL4_Chat\test_chat_app\PBL4_Chat\obj\Debug\PBL4_Chat.pdb
 D:\Class\PBL4\PBL4_Chat\test_chat_app\PBL4_Chat\obj\Debug\PBL4_Chat.View.user_message.resources
 D:\Class\PBL4\PBL4\test_chat_app\PBL4_Chat\obj\Debug\PBL4_Chat.View.user_message.resources
 D:\Class\PBL4\PBL4\test_chat_app\PBL4_Chat\obj\Debug\PBL4_Chat.csprojAssemblyReference.cache
-D:\Class\PBL4\PBL4\test_chat_app\PBL4_Chat\obj\Debug\PBL3_DATVEXE.View.datVe.resources
 D:\Class\PBL4\PBL4\test_chat_app\PBL4_Chat\obj\Debug\PBL4_Chat.View.group_info.resources
+D:\Class\PBL4\PBL4\test_chat_app\PBL4_Chat\obj\Debug\PBL4_Chat.View.CreateGroup.resources

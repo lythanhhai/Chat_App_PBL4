@@ -179,9 +179,12 @@
     <Compile Include="DAL\DAL_User.cs" />
     <Compile Include="DAL\DAL_UserRelationship.cs" />
     <Compile Include="DAL\DBHelper.cs" />
+    <Compile Include="DTO\Group.cs" />
     <Compile Include="DTO\Message.cs" />
+    <Compile Include="DTO\Message_group.cs" />
     <Compile Include="DTO\User.cs" />
     <Compile Include="DTO\UserRelationship.cs" />
+    <Compile Include="DTO\User_group.cs" />
     <Compile Include="View\CreateGroup.cs">
       <SubType>Form</SubType>
     </Compile>
