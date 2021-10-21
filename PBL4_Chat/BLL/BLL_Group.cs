@@ -61,7 +61,7 @@ namespace PBL4_Chat.BLL
         {
             DAL_Group.instance.DAL_addUserGroup(id_userGroup, id_member, id_group, date_join);
         }
-
+        // lấy giá trị lớn nhất id_group
         public string BLL_getMaxIdGroup()
         {
             int max = 1;

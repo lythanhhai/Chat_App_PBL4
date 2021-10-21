@@ -91,16 +91,25 @@ namespace PBL4_Chat.View
         // tạo nhóm
         private void but_taoNhom_Click(object sender, EventArgs e)
         {
-            string id_group = Convert.ToString(Convert.ToInt32(BLL_Group.instance.BLL_getMaxIdGroup()) + 1);
-            string date = DateTime.Now.ToString();
-            // thêm group
-            BLL_Group.instance.BLL_addGroup(id_group, txtNameGroup.Text, userId(), date, txtDes.Text);
-            foreach(string str in userId_add)
+            try
             {
-                // thêm thành viên
-                string id_userGroup = Convert.ToString(Convert.ToInt32(BLL_Group.instance.BLL_getMaxIdUserGroup()) + 1);
-                BLL_Group.instance.BLL_addUserGroup(id_userGroup, str, id_group, date);
-            }    
+                string id_group = Convert.ToString(Convert.ToInt32(BLL_Group.instance.BLL_getMaxIdGroup()) + 1);
+                string date = DateTime.Now.ToString();
+                // thêm group
+                BLL_Group.instance.BLL_addGroup(id_group, txtNameGroup.Text.ToString(), userId(), date, txtDes.Text.ToString());
+                foreach (string str in userId_add)
+                {
+                    // thêm thành viên
+                    string id_userGroup = Convert.ToString(Convert.ToInt32(BLL_Group.instance.BLL_getMaxIdUserGroup()) + 1);
+                    BLL_Group.instance.BLL_addUserGroup(id_userGroup, str, id_group, date);
+                }
+                MessageBox.Show("Tạo nhóm thành công");
+            }
+            catch(Exception err)
+            {
+                MessageBox.Show(err.ToString());
+            }
+             
         }
 
         private void CreateGroup_Load(object sender, EventArgs e)
