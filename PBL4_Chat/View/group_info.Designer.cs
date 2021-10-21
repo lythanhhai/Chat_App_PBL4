@@ -30,31 +30,33 @@ namespace PBL4_Chat.View
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(group_info));
-            this.gunaGradientPanel1 = new Guna.UI.WinForms.GunaGradientPanel();
+            this.groupInfo = new Guna.UI.WinForms.GunaGradientPanel();
             this.lbDes = new Guna.UI.WinForms.GunaLabel();
             this.lbNameGroup = new Guna.UI.WinForms.GunaLabel();
             this.gunaCirclePictureBox1 = new Guna.UI.WinForms.GunaCirclePictureBox();
-            this.gunaGradientPanel1.SuspendLayout();
+            this.groupInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // gunaGradientPanel1
+            // groupInfo
             // 
-            this.gunaGradientPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("gunaGradientPanel1.BackgroundImage")));
-            this.gunaGradientPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.gunaGradientPanel1.Controls.Add(this.lbDes);
-            this.gunaGradientPanel1.Controls.Add(this.lbNameGroup);
-            this.gunaGradientPanel1.Controls.Add(this.gunaCirclePictureBox1);
-            this.gunaGradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gunaGradientPanel1.GradientColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(36)))), ((int)(((byte)(206)))));
-            this.gunaGradientPanel1.GradientColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(48)))), ((int)(((byte)(90)))));
-            this.gunaGradientPanel1.GradientColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(48)))), ((int)(((byte)(90)))));
-            this.gunaGradientPanel1.GradientColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(48)))), ((int)(((byte)(90)))));
-            this.gunaGradientPanel1.Location = new System.Drawing.Point(0, 0);
-            this.gunaGradientPanel1.Name = "gunaGradientPanel1";
-            this.gunaGradientPanel1.Size = new System.Drawing.Size(384, 95);
-            this.gunaGradientPanel1.TabIndex = 0;
-            this.gunaGradientPanel1.Text = "gunaGradientPanel1";
+            this.groupInfo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("groupInfo.BackgroundImage")));
+            this.groupInfo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.groupInfo.Controls.Add(this.lbDes);
+            this.groupInfo.Controls.Add(this.lbNameGroup);
+            this.groupInfo.Controls.Add(this.gunaCirclePictureBox1);
+            this.groupInfo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.groupInfo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupInfo.GradientColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(36)))), ((int)(((byte)(206)))));
+            this.groupInfo.GradientColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(48)))), ((int)(((byte)(90)))));
+            this.groupInfo.GradientColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(48)))), ((int)(((byte)(90)))));
+            this.groupInfo.GradientColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(48)))), ((int)(((byte)(90)))));
+            this.groupInfo.Location = new System.Drawing.Point(0, 0);
+            this.groupInfo.Name = "groupInfo";
+            this.groupInfo.Size = new System.Drawing.Size(384, 95);
+            this.groupInfo.TabIndex = 0;
+            this.groupInfo.Text = "gunaGradientPanel1";
+            this.groupInfo.Click += new System.EventHandler(this.groupInfo_Click);
             // 
             // lbDes
             // 
@@ -99,11 +101,11 @@ namespace PBL4_Chat.View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.gunaGradientPanel1);
+            this.Controls.Add(this.groupInfo);
             this.Name = "group_info";
             this.Size = new System.Drawing.Size(384, 95);
-            this.gunaGradientPanel1.ResumeLayout(false);
-            this.gunaGradientPanel1.PerformLayout();
+            this.groupInfo.ResumeLayout(false);
+            this.groupInfo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -111,7 +113,7 @@ namespace PBL4_Chat.View
 
         #endregion
 
-        private Guna.UI.WinForms.GunaGradientPanel gunaGradientPanel1;
+        private Guna.UI.WinForms.GunaGradientPanel groupInfo;
         private Guna.UI.WinForms.GunaLabel lbDes;
         private Guna.UI.WinForms.GunaLabel lbNameGroup;
         private Guna.UI.WinForms.GunaCirclePictureBox gunaCirclePictureBox1;
