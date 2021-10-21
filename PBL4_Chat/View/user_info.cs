@@ -79,7 +79,7 @@ namespace PBL4_Chat.View
                 eh(this, e);
             }
         }
-        private void gunaGradientPanel1_Click(object sender, EventArgs e)
+        private void userInfo_Click(object sender, EventArgs e)
         {
             // chuyển dữ liệu
             ((mainForm)this.ParentForm).userId_receive = new mainForm.getUserIdReveive(getUserId);
@@ -91,6 +91,7 @@ namespace PBL4_Chat.View
             ((mainForm)this.ParentForm).txt_message.Clear();
             ((mainForm)this.ParentForm).txt_send.Clear();
             List<Message1> listMes = BLL_UserRelation.instance.BLL_loadMessageForChat(((mainForm)this.ParentForm).userId(), this.userId);
+            // load data from database
             foreach (Message1 m in listMes)
             {
                 ((mainForm)this.ParentForm).txt_message.Text += Environment.NewLine + " >> " + m.content_mes;

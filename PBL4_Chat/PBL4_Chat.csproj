@@ -176,6 +176,7 @@
   <ItemGroup>
     <Compile Include="BLL\BLL_User.cs" />
     <Compile Include="BLL\BLL_UserRelation.cs" />
+    <Compile Include="DAL\DAL_Group.cs" />
     <Compile Include="DAL\DAL_User.cs" />
     <Compile Include="DAL\DAL_UserRelationship.cs" />
     <Compile Include="DAL\DBHelper.cs" />
