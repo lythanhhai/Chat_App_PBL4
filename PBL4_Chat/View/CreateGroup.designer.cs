@@ -39,10 +39,10 @@ namespace PBL4_Chat.View
             this.bunifuPanel2 = new Bunifu.UI.WinForms.BunifuPanel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panelMain = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel_flowUser = new System.Windows.Forms.FlowLayoutPanel();
             this.but_troveConfirm = new System.Windows.Forms.Button();
             this.bunifuPictureBox1 = new Bunifu.UI.WinForms.BunifuPictureBox();
-            this.panel_flowUser = new System.Windows.Forms.FlowLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
             this.panelMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -105,6 +105,7 @@ namespace PBL4_Chat.View
             this.but_taoNhom.TabIndex = 8;
             this.but_taoNhom.Text = "Tạo nhóm";
             this.but_taoNhom.UseVisualStyleBackColor = false;
+            this.but_taoNhom.Click += new System.EventHandler(this.but_taoNhom_Click);
             // 
             // bunifuPanel1
             // 
@@ -161,6 +162,24 @@ namespace PBL4_Chat.View
             this.panelMain.Size = new System.Drawing.Size(602, 740);
             this.panelMain.TabIndex = 14;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(46, 331);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(122, 25);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "Thêm người:";
+            // 
+            // panel_flowUser
+            // 
+            this.panel_flowUser.Location = new System.Drawing.Point(174, 331);
+            this.panel_flowUser.Name = "panel_flowUser";
+            this.panel_flowUser.Size = new System.Drawing.Size(384, 250);
+            this.panel_flowUser.TabIndex = 15;
+            // 
             // but_troveConfirm
             // 
             this.but_troveConfirm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(174)))), ((int)(((byte)(208)))));
@@ -189,24 +208,6 @@ namespace PBL4_Chat.View
             this.bunifuPictureBox1.TabStop = false;
             this.bunifuPictureBox1.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Circle;
             // 
-            // panel_flowUser
-            // 
-            this.panel_flowUser.Location = new System.Drawing.Point(174, 331);
-            this.panel_flowUser.Name = "panel_flowUser";
-            this.panel_flowUser.Size = new System.Drawing.Size(384, 250);
-            this.panel_flowUser.TabIndex = 15;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(46, 331);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(122, 25);
-            this.label1.TabIndex = 16;
-            this.label1.Text = "Thêm người:";
-            // 
             // CreateGroup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -215,7 +216,8 @@ namespace PBL4_Chat.View
             this.ClientSize = new System.Drawing.Size(602, 740);
             this.Controls.Add(this.panelMain);
             this.Name = "CreateGroup";
-            this.Text = "datVe";
+            this.Text = "Tạo nhóm";
+            this.Load += new System.EventHandler(this.CreateGroup_Load);
             this.panelMain.ResumeLayout(false);
             this.panelMain.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox1)).EndInit();

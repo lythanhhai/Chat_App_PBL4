@@ -10,9 +10,9 @@ namespace PBL4_Chat.DAL
 {
     class DAL_Group
     {
-        private DAL_Group _instance;
+        private static DAL_Group _instance;
         
-        public DAL_Group instance
+        public static DAL_Group instance
         {
             get
             {
