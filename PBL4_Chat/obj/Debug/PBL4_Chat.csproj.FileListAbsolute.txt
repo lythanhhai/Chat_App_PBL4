@@ -196,3 +196,4 @@ D:\Class\PBL4\PBL4\test_chat_app\PBL4_Chat\obj\Debug\PBL4_Chat.View.user_message
 D:\Class\PBL4\PBL4\test_chat_app\PBL4_Chat\obj\Debug\PBL4_Chat.View.group_info.resources
 D:\Class\PBL4\PBL4\test_chat_app\PBL4_Chat\obj\Debug\PBL4_Chat.View.CreateGroup.resources
 D:\Class\PBL4\PBL4\test_chat_app\PBL4_Chat\obj\Debug\PBL4_Chat.View.userInfoAdd.resources
+D:\Class\PBL4\PBL4\test_chat_app\PBL4_Chat\obj\Debug\PBL4_Chat.csprojAssemblyReference.cache

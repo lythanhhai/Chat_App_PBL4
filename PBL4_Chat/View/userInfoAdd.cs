@@ -63,9 +63,18 @@ namespace PBL4_Chat.View
             return this.userId;
         }
 
+        public static event EventHandler userInfoAddClick;
+
         private void userInfoAdd_Click(object sender, EventArgs e)
         {
-            ((CreateGroup)this.Parent).userId_add.Add(this.userId);
+            // truyền dữ liệu
+            ((CreateGroup)this.ParentForm).userIdAdd = new CreateGroup.getUserIdAdd(getUserInfoAdd);
+            // mở click bên form
+            if (userInfoAddClick != null)
+            {
+                userInfoAddClick(this, e);
+            }    
+               
         }
     }
 }

@@ -15,13 +15,55 @@ namespace PBL4_Chat.View
 {
     public partial class CreateGroup : Form
     {
+        List<string> userId_add = new List<string>();
         // nhận userId từ mainForm
         public delegate string getUserId();
         public getUserId userId;
 
+        // nhận userId từ mainForm
+        public delegate string getUserIdAdd();
+        public getUserIdAdd userIdAdd;
+
+        static int count = 0;
+
+        protected void ClickSimulWithUserControl(object sender, EventArgs e)
+        {
+            //MessageBox.Show(userIdAdd());
+            for (int i = 0; i < userId_add.Count; i++)
+            {
+                if(userIdAdd() == userId_add[i])
+                {
+                    count++;
+                    break;
+                }    
+            }       
+            if(count > 0)
+            {
+                count--;
+            }    
+            else
+            {
+                userId_add.Add(userIdAdd());
+                count--;
+            }                
+        }
+
+        //void themUserIntoList()
+        //{
+        //    for(int i = 0; i < userId_add.Count; i++)
+        //    {
+        //        if(userIdAdd() == userId_add[i])
+        //        {
+
+        //        }    
+        //    }    
+        //    userId_add.Add(userIdAdd());
+        //}
+
         public CreateGroup()
         {
             InitializeComponent();
+            userInfoAdd.userInfoAddClick += new EventHandler(ClickSimulWithUserControl);
         }
         // cho user vào 
         public void showUser()
@@ -46,7 +88,6 @@ namespace PBL4_Chat.View
 
         }
 
-        public List<string> userId_add = new List<string>();
         // tạo nhóm
         private void but_taoNhom_Click(object sender, EventArgs e)
         {

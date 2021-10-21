@@ -45,6 +45,7 @@ namespace PBL4_Chat.View
             this.gunaGradientPanel1.Controls.Add(this.lbPhone_add);
             this.gunaGradientPanel1.Controls.Add(this.lbName_add);
             this.gunaGradientPanel1.Controls.Add(this.gunaCirclePictureBox1);
+            this.gunaGradientPanel1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.gunaGradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gunaGradientPanel1.GradientColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(36)))), ((int)(((byte)(206)))));
             this.gunaGradientPanel1.GradientColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(48)))), ((int)(((byte)(90)))));

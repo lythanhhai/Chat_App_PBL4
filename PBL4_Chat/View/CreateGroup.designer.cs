@@ -159,7 +159,7 @@ namespace PBL4_Chat.View
             this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMain.Location = new System.Drawing.Point(0, 0);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(602, 740);
+            this.panelMain.Size = new System.Drawing.Size(602, 708);
             this.panelMain.TabIndex = 14;
             // 
             // label1
@@ -175,9 +175,10 @@ namespace PBL4_Chat.View
             // 
             // panel_flowUser
             // 
+            this.panel_flowUser.AutoScroll = true;
             this.panel_flowUser.Location = new System.Drawing.Point(174, 331);
             this.panel_flowUser.Name = "panel_flowUser";
-            this.panel_flowUser.Size = new System.Drawing.Size(384, 250);
+            this.panel_flowUser.Size = new System.Drawing.Size(416, 250);
             this.panel_flowUser.TabIndex = 15;
             // 
             // but_troveConfirm
@@ -197,12 +198,12 @@ namespace PBL4_Chat.View
             this.bunifuPictureBox1.AllowFocused = false;
             this.bunifuPictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.bunifuPictureBox1.AutoSizeHeight = true;
-            this.bunifuPictureBox1.BorderRadius = 78;
+            this.bunifuPictureBox1.BorderRadius = 68;
             this.bunifuPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuPictureBox1.Image")));
             this.bunifuPictureBox1.IsCircle = true;
-            this.bunifuPictureBox1.Location = new System.Drawing.Point(210, 3);
+            this.bunifuPictureBox1.Location = new System.Drawing.Point(219, 12);
             this.bunifuPictureBox1.Name = "bunifuPictureBox1";
-            this.bunifuPictureBox1.Size = new System.Drawing.Size(156, 156);
+            this.bunifuPictureBox1.Size = new System.Drawing.Size(136, 136);
             this.bunifuPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.bunifuPictureBox1.TabIndex = 0;
             this.bunifuPictureBox1.TabStop = false;
@@ -213,7 +214,7 @@ namespace PBL4_Chat.View
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.ClientSize = new System.Drawing.Size(602, 740);
+            this.ClientSize = new System.Drawing.Size(602, 708);
             this.Controls.Add(this.panelMain);
             this.Name = "CreateGroup";
             this.Text = "Tạo nhóm";

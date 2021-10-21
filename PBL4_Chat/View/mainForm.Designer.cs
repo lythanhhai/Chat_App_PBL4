@@ -447,6 +447,7 @@ namespace PBL4_Chat
             // 
             // panel_listUser
             // 
+            this.panel_listUser.AutoScroll = true;
             this.panel_listUser.Controls.Add(this.gunaPanel6);
             this.panel_listUser.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel_listUser.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
