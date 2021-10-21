@@ -142,8 +142,7 @@ namespace PBL4_Chat
             else
             {
                 txt_message.Text += Environment.NewLine + nameReceiver + " >> " + res;
-            }    
-                
+            }           
         }
 
 
@@ -186,7 +185,7 @@ namespace PBL4_Chat
         // đăng xuất
         private void btnTrove_Click(object sender, EventArgs e)
         {
-            //BLL_User.instance.BLL_updateLogin(0, userId());
+            BLL_User.instance.BLL_updateLogin(0, userId());
             //stream.Close();
             //client.Close();
             this.Hide();
@@ -197,7 +196,7 @@ namespace PBL4_Chat
         // đăng xuát
         private void mainForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            //BLL_User.instance.BLL_updateLogin(0, userId());
+            BLL_User.instance.BLL_updateLogin(0, userId());
             //stream.Close();
             //client.Close();
             this.Hide();
