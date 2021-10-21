@@ -1,7 +1,7 @@
 ﻿
 namespace PBL4_Chat.View
 {
-    partial class group_info
+    partial class userInfoAdd
     {
         /// <summary> 
         /// Required designer variable.
@@ -29,10 +29,10 @@ namespace PBL4_Chat.View
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(group_info));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(userInfoAdd));
             this.gunaGradientPanel1 = new Guna.UI.WinForms.GunaGradientPanel();
-            this.lbDes = new Guna.UI.WinForms.GunaLabel();
-            this.lbNameGroup = new Guna.UI.WinForms.GunaLabel();
+            this.lbPhone_add = new Guna.UI.WinForms.GunaLabel();
+            this.lbName_add = new Guna.UI.WinForms.GunaLabel();
             this.gunaCirclePictureBox1 = new Guna.UI.WinForms.GunaCirclePictureBox();
             this.gunaGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).BeginInit();
@@ -42,9 +42,10 @@ namespace PBL4_Chat.View
             // 
             this.gunaGradientPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("gunaGradientPanel1.BackgroundImage")));
             this.gunaGradientPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.gunaGradientPanel1.Controls.Add(this.lbDes);
-            this.gunaGradientPanel1.Controls.Add(this.lbNameGroup);
+            this.gunaGradientPanel1.Controls.Add(this.lbPhone_add);
+            this.gunaGradientPanel1.Controls.Add(this.lbName_add);
             this.gunaGradientPanel1.Controls.Add(this.gunaCirclePictureBox1);
+            this.gunaGradientPanel1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.gunaGradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gunaGradientPanel1.GradientColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(36)))), ((int)(((byte)(206)))));
             this.gunaGradientPanel1.GradientColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(48)))), ((int)(((byte)(90)))));
@@ -55,32 +56,33 @@ namespace PBL4_Chat.View
             this.gunaGradientPanel1.Size = new System.Drawing.Size(384, 95);
             this.gunaGradientPanel1.TabIndex = 0;
             this.gunaGradientPanel1.Text = "gunaGradientPanel1";
+            this.gunaGradientPanel1.Click += new System.EventHandler(this.userInfoAdd_Click);
             // 
-            // lbDes
+            // lbPhone_add
             // 
-            this.lbDes.AutoSize = true;
-            this.lbDes.BackColor = System.Drawing.Color.Transparent;
-            this.lbDes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lbDes.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lbDes.ForeColor = System.Drawing.Color.White;
-            this.lbDes.Location = new System.Drawing.Point(80, 54);
-            this.lbDes.Name = "lbDes";
-            this.lbDes.Size = new System.Drawing.Size(125, 25);
-            this.lbDes.TabIndex = 5;
-            this.lbDes.Text = "this is a group";
+            this.lbPhone_add.AutoSize = true;
+            this.lbPhone_add.BackColor = System.Drawing.Color.Transparent;
+            this.lbPhone_add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbPhone_add.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.lbPhone_add.ForeColor = System.Drawing.Color.White;
+            this.lbPhone_add.Location = new System.Drawing.Point(80, 54);
+            this.lbPhone_add.Name = "lbPhone_add";
+            this.lbPhone_add.Size = new System.Drawing.Size(165, 25);
+            this.lbPhone_add.TabIndex = 5;
+            this.lbPhone_add.Text = "hello, how are you?";
             // 
-            // lbNameGroup
+            // lbName_add
             // 
-            this.lbNameGroup.AutoSize = true;
-            this.lbNameGroup.BackColor = System.Drawing.Color.Transparent;
-            this.lbNameGroup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lbNameGroup.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lbNameGroup.ForeColor = System.Drawing.Color.White;
-            this.lbNameGroup.Location = new System.Drawing.Point(80, 16);
-            this.lbNameGroup.Name = "lbNameGroup";
-            this.lbNameGroup.Size = new System.Drawing.Size(79, 25);
-            this.lbNameGroup.TabIndex = 4;
-            this.lbNameGroup.Text = "Group A";
+            this.lbName_add.AutoSize = true;
+            this.lbName_add.BackColor = System.Drawing.Color.Transparent;
+            this.lbName_add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbName_add.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.lbName_add.ForeColor = System.Drawing.Color.White;
+            this.lbName_add.Location = new System.Drawing.Point(80, 16);
+            this.lbName_add.Name = "lbName_add";
+            this.lbName_add.Size = new System.Drawing.Size(59, 25);
+            this.lbName_add.TabIndex = 4;
+            this.lbName_add.Text = "Hai Ly";
             // 
             // gunaCirclePictureBox1
             // 
@@ -95,12 +97,12 @@ namespace PBL4_Chat.View
             this.gunaCirclePictureBox1.TabStop = false;
             this.gunaCirclePictureBox1.UseTransfarantBackground = false;
             // 
-            // group_info
+            // userInfoAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.gunaGradientPanel1);
-            this.Name = "group_info";
+            this.Name = "userInfoAdd";
             this.Size = new System.Drawing.Size(384, 95);
             this.gunaGradientPanel1.ResumeLayout(false);
             this.gunaGradientPanel1.PerformLayout();
@@ -112,8 +114,8 @@ namespace PBL4_Chat.View
         #endregion
 
         private Guna.UI.WinForms.GunaGradientPanel gunaGradientPanel1;
-        private Guna.UI.WinForms.GunaLabel lbDes;
-        private Guna.UI.WinForms.GunaLabel lbNameGroup;
+        private Guna.UI.WinForms.GunaLabel lbPhone_add;
+        private Guna.UI.WinForms.GunaLabel lbName_add;
         private Guna.UI.WinForms.GunaCirclePictureBox gunaCirclePictureBox1;
     }
 }

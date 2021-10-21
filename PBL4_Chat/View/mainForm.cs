@@ -63,6 +63,7 @@ namespace PBL4_Chat
                 });
             }
         }
+        // danh sách group trong hệ thống
         private void mainForm_Load(object sender, EventArgs e)
         {
             showUser();
@@ -204,5 +205,16 @@ namespace PBL4_Chat
             rg.Show();
         }
 
+        // hàm lấy userId
+        string getUserIdCrea()
+        {
+            return userId();
+        }
+        private void btn_taoNhom_Click(object sender, EventArgs e)
+        {
+            CreateGroup cg = new CreateGroup();
+            cg.userId += new CreateGroup.getUserId(getUserIdCrea);
+            cg.Show();
+        }
     }
 }

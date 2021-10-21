@@ -174,6 +174,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\BLL_Group.cs" />
     <Compile Include="BLL\BLL_User.cs" />
     <Compile Include="BLL\BLL_UserRelation.cs" />
     <Compile Include="DAL\DAL_Group.cs" />
@@ -218,6 +219,12 @@
     <Compile Include="View\Register_Login.Designer.cs">
       <DependentUpon>Register_Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\userInfoAdd.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\userInfoAdd.Designer.cs">
+      <DependentUpon>userInfoAdd.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\user_info.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -255,6 +262,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Register_Login.resx">
       <DependentUpon>Register_Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\userInfoAdd.resx">
+      <DependentUpon>userInfoAdd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\user_info.resx">
       <DependentUpon>user_info.cs</DependentUpon>
