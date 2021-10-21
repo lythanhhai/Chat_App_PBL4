@@ -24,10 +24,15 @@ namespace PBL4_Chat
         static ASCIIEncoding encoding = new ASCIIEncoding();
         TcpClient client = new TcpClient();
         Stream stream;
+        // message 
         string data = null;
+        // tên
         string name = null;
+        // message thông qua userId
         string res = null;
         string nameReceiver = null;
+        // id_group
+
 
 
         // chuyen userid cho mainForm
@@ -37,6 +42,10 @@ namespace PBL4_Chat
         // lấy dữ liệu từ user control receiver
         public delegate string getUserIdReveive();
         public getUserIdReveive userId_receive;
+
+        // lấy id_group từ group_info
+        public delegate string getIdGroup();
+        public getIdGroup id_group;
 
         string id = "";
         public mainForm()
@@ -63,10 +72,43 @@ namespace PBL4_Chat
                 });
             }
         }
-        // danh sách group trong hệ thống
+        // danh sách group trong hệ thống.
+        public void showGroup()
+        {
+            List<Group> listGroup = BLL_Group.instance.BLL_getAllGroup();
+            foreach (Group g in listGroup)
+            {
+                if (userId() == g.userId)
+                {
+                    panel_listUser.Controls.Add(new group_info
+                    {
+                        id_group = g.id_group,
+                        name_group = g.name_group,
+                        des = g.des
+                    });
+                }
+                else
+                {
+                    foreach (User_group ug in BLL_Group.instance.BLL_getAllUserGroup())
+                    {
+                        if(ug.id_member == userId())
+                        {
+                            panel_listUser.Controls.Add(new group_info
+                            {
+                                id_group = g.id_group,
+                                name_group = g.name_group,
+                                des = g.des
+                            });
+                            break;
+                        }    
+                    }    
+                }                    
+            }
+        }
         private void mainForm_Load(object sender, EventArgs e)
         {
             showUser();
+            showGroup();
             pn_chat.Visible = false;
             try
             {
@@ -160,6 +202,13 @@ namespace PBL4_Chat
             //                  + " << "
             //                  + txt_send.Text;
 
+            foreach(User_group ug in BLL_Group.instance.BLL_getAllUserGroup())
+            {
+                if(ug.id_group == id_group())
+                {
+
+                }    
+            }    
             // gửi userId_receive cho server
             byte[] userId_receive1 = encoding.GetBytes(userId() + " " + userId_receive());
             stream.Write(userId_receive1, 0, userId_receive1.Length);

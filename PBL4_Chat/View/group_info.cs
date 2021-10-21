@@ -54,5 +54,24 @@ namespace PBL4_Chat.View
                 lbDes.Text = value;
             }
         }
+
+        string getIdGroup()
+        {
+            return this.id_group;
+        }
+
+        private void groupInfo_Click(object sender, EventArgs e)
+        {
+            // chuyển dữ liệu
+            ((mainForm)this.ParentForm).id_group = new mainForm.getIdGroup(getIdGroup);
+            // load tên
+            ((mainForm)this.ParentForm).lbName_Receiver.Text = this.name_group;
+            ((mainForm)this.ParentForm).lbStatus.Text = "online";
+            ((mainForm)this.ParentForm).pn_chat.Visible = true;
+            // khi người dùng nhắn cho 1 người khác sẽ xóa panel để upload tin nhắn
+            ((mainForm)this.ParentForm).txt_message.Clear();
+            ((mainForm)this.ParentForm).txt_send.Clear();
+            
+        }
     }
 }
