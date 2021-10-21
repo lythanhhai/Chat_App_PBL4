@@ -49,6 +49,22 @@ namespace PBL4_Chat.DAL
             }
             return group;
         }
+        // lấy tất cả user Group
+        public List<User_group> DAL_getAllUserGroup()
+        {
+            List<User_group> user_group = new List<User_group>();
+            foreach (DataRow d in DBHelper.Instance.executeNonQuery("select * from User_group").Rows)
+            {
+                user_group.Add(new User_group
+                {
+                    id_userGroup = d["id_userGroup"].ToString(),
+                    id_member = d["id_member"].ToString(),
+                    id_group = d["id_group"].ToString(),
+                    date_join = d["date_join"].ToString()
+                });
+            }
+            return user_group;
+        }
         //public List<Group> DAL_getAllGroup()
         //{
         //    List<Group> group = new List<Group>();

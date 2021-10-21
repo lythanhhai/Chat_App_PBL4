@@ -55,6 +55,7 @@ namespace PBL4_Chat.View
             this.gunaGradientPanel1.Size = new System.Drawing.Size(384, 95);
             this.gunaGradientPanel1.TabIndex = 0;
             this.gunaGradientPanel1.Text = "gunaGradientPanel1";
+            this.gunaGradientPanel1.Click += new System.EventHandler(this.userInfoAdd_Click);
             // 
             // lbPhone_add
             // 

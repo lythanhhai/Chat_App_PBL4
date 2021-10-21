@@ -58,16 +58,14 @@ namespace PBL4_Chat.View
         }
 
 
-        public string getUserId()
+        public string getUserInfoAdd()
         {
             return this.userId;
         }
 
-        List<string> userId_add = new List<string>();
-        // hàm chọn thêm thành viên
-        private void userInfo_Click(object sender, EventArgs e)
+        private void userInfoAdd_Click(object sender, EventArgs e)
         {
-
+            ((CreateGroup)this.Parent).userId_add.Add(this.userId);
         }
     }
 }

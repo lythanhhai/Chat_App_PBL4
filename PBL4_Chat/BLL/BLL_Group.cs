@@ -38,22 +38,12 @@ namespace PBL4_Chat.BLL
         {
             return DAL_Group.instance.DAL_getAllGroup();
         }
-        //public List<Group> DAL_getAllGroup()
-        //{
-        //    List<Group> group = new List<Group>();
-        //    foreach (DataRow d in DBHelper.Instance.executeNonQuery("select * from Group").Rows)
-        //    {
-        //        group.Add(new Group
-        //        {
-        //            id_group = d["id_group"].ToString(),
-        //            name_group = d["name_group"].ToString(),
-        //            userId = d["userId"].ToString(),
-        //            date_create = d["date_create"].ToString(),
-        //            des = d["des"].ToString(),
-        //        });
-        //    }
-        //    return group;
-        //}
+        // hàm lấy danh sách group
+        public List<User_group> BLL_getAllUserGroup()
+        {
+            return DAL_Group.instance.DAL_getAllUserGroup();
+        }
+
         // add group
         public void BLL_addGroup(string id_group, string name_group, string userId, string date_create, string des)
         {
@@ -81,6 +71,18 @@ namespace PBL4_Chat.BLL
                 {
                     max = Convert.ToInt32(g.id_group);
                 }    
+            }
+            return Convert.ToString(max);
+        }
+        public string BLL_getMaxIdUserGroup()
+        {
+            int max = 1;
+            foreach (User_group ug in BLL_getAllUserGroup())
+            {
+                if (Convert.ToInt32(ug.id_userGroup) > max)
+                {
+                    max = Convert.ToInt32(ug.id_userGroup);
+                }
             }
             return Convert.ToString(max);
         }
