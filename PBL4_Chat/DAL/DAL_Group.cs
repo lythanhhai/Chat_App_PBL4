@@ -36,7 +36,7 @@ namespace PBL4_Chat.DAL
         public List<Group> DAL_getAllGroup()
         {
             List<Group> group = new List<Group>();
-            foreach(DataRow d in DBHelper.Instance.executeNonQuery("select * from Group").Rows)
+            foreach(DataRow d in DBHelper.Instance.executeNonQuery("select * from Group_chat").Rows)
             {
                 group.Add(new Group
                 {
@@ -84,7 +84,7 @@ namespace PBL4_Chat.DAL
         // add group
         public void DAL_addGroup(string id_group, string name_group, string userId, string date_create, string des)
         {
-            string query = "insert into Group values (N'"
+            string query = "insert into [Group_chat] values(N'"
                 + id_group
                 + "',N'"
                 + name_group
@@ -94,14 +94,14 @@ namespace PBL4_Chat.DAL
                 + date_create
                 + "',N'"
                 + des
-                + ")";
+                + "')";
             DBHelper.Instance.executeQuery(query);
         }
 
         // add message_group
         public void DAL_addMessageGroup(string id_mesGroup, string id_sender, string id_group, string content_group, string date_sendGroup)
         {
-            string query = "insert into Message_group values (N'"
+            string query = "insert into [Message_group] values (N'"
                 + id_mesGroup
                 + "',N'"
                 + id_sender
@@ -111,14 +111,14 @@ namespace PBL4_Chat.DAL
                 + content_group
                 + "',N'"
                 + date_sendGroup
-                + ")";
+                + "')";
             DBHelper.Instance.executeQuery(query);
         }
 
         // add user_group
         public void DAL_addUserGroup(string id_userGroup, string id_member, string id_group, string date_join)
         {
-            string query = "insert into User_group values (N'"
+            string query = "insert into [User_group] values (N'"
                 + id_userGroup
                 + "',N'"
                 + id_member
@@ -126,7 +126,7 @@ namespace PBL4_Chat.DAL
                 + id_group
                 + "',N'"
                 + date_join
-                + ")";
+                + "')";
             DBHelper.Instance.executeQuery(query);
         }
 
