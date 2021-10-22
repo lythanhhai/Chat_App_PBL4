@@ -61,6 +61,7 @@ namespace PBL4_Chat.View
 
         string getIdMember()
         {
+            list_idMember = "";
             foreach (User_group ug in BLL_Group.instance.BLL_getAllUserGroup())
             {
                 if (ug.id_group == this.id_group)
@@ -68,7 +69,7 @@ namespace PBL4_Chat.View
                     list_idMember += ug.id_member + " ";
                 }
             }
-            return list_idMember;
+            return this.id_group + " " + list_idMember;
         }
 
         private void groupInfo_Click(object sender, EventArgs e)
@@ -76,6 +77,7 @@ namespace PBL4_Chat.View
 
             // chuyển dữ liệu
             ((mainForm)this.ParentForm).userId_receive = new mainForm.getUserIdReveive(getIdMember);
+            MessageBox.Show(getIdMember());
             // load tên
             ((mainForm)this.ParentForm).lbName_Receiver.Text = this.name_group;
             ((mainForm)this.ParentForm).lbStatus.Text = "online";

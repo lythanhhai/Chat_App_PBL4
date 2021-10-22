@@ -153,14 +153,18 @@ namespace PBL4_Chat
                     data = encoding.GetString(message);
 
                     res = null;
+                    //MessageBox.Show(data);
+                    //MessageBox.Show(data.Split(' ').Length.ToString());
+                    //MessageBox.Show(data.Split(' ')[0]);
+                    //MessageBox.Show(userId_receive());
                     // private
-                    if(data.Split(' ').Length < 3)
+                    if (data.Split(' ').Length < 3)
                     {
                         for (int i = 1; i < data.Split(' ').Length; i++)
                         {
                             res += data.Split(' ')[i] + " ";
                         }
-                        nameReceiver = BLL_User.instance.BLL_getUserById(userId_receive()).firstName + " " + BLL_User.instance.BLL_getUserById(userId_receive()).lastName;
+                        //nameReceiver = BLL_User.instance.BLL_getUserById(userId_receive()).firstName + " " + BLL_User.instance.BLL_getUserById(userId_receive()).lastName;
                         // khi người dùng đang nhắn 1 người khác nhưng 1 người khác gửi tin thì tin nhắn này không hiển thị lên
                         if (string.Compare(data.Split(' ')[0], userId_receive()) == 0)
                         {
@@ -168,13 +172,25 @@ namespace PBL4_Chat
                         }
                         else
                         {
-
+                            
                         }
                     }   
                     // group
                     else
                     {
 
+                        res += data.Split(' ')[2] + " ";
+                        //MessageBox.Show(res);
+                        //nameReceiver = BLL_User.instance.BLL_getUserById(userId_receive()).firstName + " " + BLL_User.instance.BLL_getUserById(userId_receive()).lastName;
+                        // khi người dùng đang nhắn 1 người khác nhưng 1 người khác gửi tin thì tin nhắn này không hiển thị lên
+                        if (string.Compare(data.Split(' ')[1], userId_receive().Split(' ')[0]) == 0)
+                        {
+                            msg();
+                        }
+                        else
+                        {
+
+                        }
                     }                        
                     
                 }
