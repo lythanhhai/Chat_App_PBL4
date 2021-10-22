@@ -118,124 +118,139 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Address_Book2_16px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Address Book2_16px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Address_Book_hv_16px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Address Book_hv_16px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Attach_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Attach_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Attach_hv_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Attach_hv_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Back_To_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Back To_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="confirmPass" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\confirmPass.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="confirmPassEvent" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\confirmPassEvent.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Connection_Status_On_16px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Connection Status On_16px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Connection_Status_On_ck_16px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Connection Status On_ck_16px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Info_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Info_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Info_hv_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Info_hv_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Instagram_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Instagram_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Instagram_hv_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Instagram_hv_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Menu_16px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Menu_16px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Menu_hv_16px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Menu_hv_16px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Next_page_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Next page_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="password" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\password.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="PasswordEvent" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\PasswordEvent.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Phone_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Phone_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Phone_hv_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Phone_hv_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Plus_16px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Plus_16px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Settings_16px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Settings_16px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Settings_ck_16px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Settings_ck_16px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="siginIn" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\siginIn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="SiginIn1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\SiginIn1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="SignIn2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\SignIn2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="signInHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\signInHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="signUp" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\signUp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="SignUp1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\SignUp1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="SignUp2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\SignUp2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="signUpHove" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\signUpHove.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Speech_Bubble_16px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Speech Bubble_16px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Speech_Bubble_ck_16px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Speech Bubble_ck_16px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Telegram_App_18px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Telegram App_18px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="user" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\user.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="UserEvent" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\UserEvent.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="User_Account_16px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\User Account_16px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="User_Account_ck_16px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\User Account_ck_16px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="UserEvent" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\UserEvent.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Settings_ck_16px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Settings_ck_16px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Telegram_App_18px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Telegram App_18px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Next_page_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Next page_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SignUp1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SignUp1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="confirmPassEvent" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\confirmPassEvent.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="signUp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\signUp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Phone_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Phone_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Address_Book_hv_16px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Address Book_hv_16px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="siginIn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\siginIn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="profile" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\profile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Menu_hv_16px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Menu_hv_16px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Instagram_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Instagram_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PasswordEvent" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PasswordEvent.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="signUpHove" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\signUpHove.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="confirmPass" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\confirmPass.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="user" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\user.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="search" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\search.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Settings_16px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Settings_16px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Video_Call_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Video Call_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Info_hv_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Info_hv_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Plus_16px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Plus_16px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Phone_hv_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Phone_hv_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Menu_16px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Menu_16px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="send" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\send.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="signInHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\signInHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Info_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Info_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SignUp2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SignUp2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Attach_hv_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Attach_hv_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SiginIn1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SiginIn1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Speech_Bubble_ck_16px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Speech Bubble_ck_16px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Video_Call_hv_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Video Call_hv_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Attach_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Attach_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Speech_Bubble_16px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Speech Bubble_16px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Address_Book2_16px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Address Book2_16px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="messenger" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\messenger.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Connection_Status_On_ck_16px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Connection Status On_ck_16px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SignIn2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SignIn2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Back_To_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Back To_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="User_Account_ck_16px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\User Account_ck_16px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Connection_Status_On_16px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Connection Status On_16px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Instagram_hv_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Instagram_hv_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="message" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\message.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

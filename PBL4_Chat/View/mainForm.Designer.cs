@@ -31,49 +31,53 @@ namespace PBL4_Chat
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainForm));
             this.gunaPanel1 = new Guna.UI.WinForms.GunaPanel();
-            this.GunaAdvenceButton1 = new Guna.UI.WinForms.GunaAdvenceButton();
-            this.gunaCirclePictureBox1 = new Guna.UI.WinForms.GunaCirclePictureBox();
             this.gunaPanel2 = new Guna.UI.WinForms.GunaPanel();
+            this.lbStatusPerson = new System.Windows.Forms.Label();
+            this.lbNamePerson = new System.Windows.Forms.Label();
             this.gunaPanel3 = new Guna.UI.WinForms.GunaPanel();
-            this.btnDangXuat = new Guna.UI.WinForms.GunaAdvenceButton();
-            this.btn_taoNhom = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.gunaPanel6 = new Guna.UI.WinForms.GunaPanel();
+            this.txt_search = new Guna.UI.WinForms.GunaTextBox();
+            this.GunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.gunaPanel4 = new Guna.UI.WinForms.GunaPanel();
             this.pn_chat = new Guna.UI.WinForms.GunaPanel();
             this.txt_message = new System.Windows.Forms.TextBox();
             this.gunaPanel8 = new Guna.UI.WinForms.GunaPanel();
             this.lbName_Receiver = new Guna.UI.WinForms.GunaLabel();
             this.GunaSeparator1 = new Guna.UI.WinForms.GunaSeparator();
-            this.GunaCircleButton1 = new Guna.UI.WinForms.GunaCircleButton();
             this.lbStatus = new Guna.UI.WinForms.GunaLabel();
-            this.GunaImageButton5 = new Guna.UI.WinForms.GunaImageButton();
-            this.GunaImageButton4 = new Guna.UI.WinForms.GunaImageButton();
             this.gunaPanel5 = new Guna.UI.WinForms.GunaPanel();
             this.GunaElipsePanel5 = new Guna.UI.WinForms.GunaElipsePanel();
+            this.txt_send = new Guna.UI.WinForms.GunaTextBox();
+            this.panel_listUser = new System.Windows.Forms.FlowLayoutPanel();
+            this.GunaCircleButton1 = new Guna.UI.WinForms.GunaCircleButton();
+            this.GunaImageButton5 = new Guna.UI.WinForms.GunaImageButton();
+            this.GunaImageButton4 = new Guna.UI.WinForms.GunaImageButton();
             this.btn_chooseFile = new Guna.UI.WinForms.GunaImageButton();
             this.GunaImageButton2 = new Guna.UI.WinForms.GunaImageButton();
-            this.txt_send = new Guna.UI.WinForms.GunaTextBox();
             this.btn_send = new Guna.UI.WinForms.GunaButton();
-            this.panel_listUser = new System.Windows.Forms.FlowLayoutPanel();
-            this.gunaPanel6 = new Guna.UI.WinForms.GunaPanel();
             this.btn_search = new Guna.UI.WinForms.GunaButton();
-            this.txt_search = new Guna.UI.WinForms.GunaTextBox();
-            this.GunaLabel1 = new Guna.UI.WinForms.GunaLabel();
+            this.btnDangXuat = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.btn_taoNhom = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.gunaCirclePictureBox2 = new Guna.UI.WinForms.GunaCirclePictureBox();
+            this.gunaImageButton1 = new Guna.UI.WinForms.GunaImageButton();
+            this.gunaCirclePictureBox1 = new Guna.UI.WinForms.GunaCirclePictureBox();
             this.gunaPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).BeginInit();
+            this.gunaPanel2.SuspendLayout();
             this.gunaPanel3.SuspendLayout();
+            this.gunaPanel6.SuspendLayout();
             this.gunaPanel4.SuspendLayout();
             this.pn_chat.SuspendLayout();
             this.gunaPanel8.SuspendLayout();
             this.gunaPanel5.SuspendLayout();
             this.GunaElipsePanel5.SuspendLayout();
-            this.panel_listUser.SuspendLayout();
-            this.gunaPanel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // gunaPanel1
             // 
             this.gunaPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(22)))), ((int)(((byte)(32)))));
-            this.gunaPanel1.Controls.Add(this.GunaAdvenceButton1);
+            this.gunaPanel1.Controls.Add(this.gunaImageButton1);
             this.gunaPanel1.Controls.Add(this.gunaCirclePictureBox1);
             this.gunaPanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.gunaPanel1.Location = new System.Drawing.Point(0, 0);
@@ -81,65 +85,43 @@ namespace PBL4_Chat
             this.gunaPanel1.Size = new System.Drawing.Size(96, 959);
             this.gunaPanel1.TabIndex = 0;
             // 
-            // GunaAdvenceButton1
-            // 
-            this.GunaAdvenceButton1.AnimationHoverSpeed = 0.07F;
-            this.GunaAdvenceButton1.AnimationSpeed = 0.03F;
-            this.GunaAdvenceButton1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(33)))));
-            this.GunaAdvenceButton1.BorderColor = System.Drawing.Color.Black;
-            this.GunaAdvenceButton1.ButtonType = Guna.UI.WinForms.AdvenceButtonType.RadioButton;
-            this.GunaAdvenceButton1.Checked = true;
-            this.GunaAdvenceButton1.CheckedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(33)))));
-            this.GunaAdvenceButton1.CheckedBorderColor = System.Drawing.Color.Black;
-            this.GunaAdvenceButton1.CheckedForeColor = System.Drawing.Color.White;
-            this.GunaAdvenceButton1.CheckedImage = ((System.Drawing.Image)(resources.GetObject("GunaAdvenceButton1.CheckedImage")));
-            this.GunaAdvenceButton1.CheckedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(154)))), ((int)(((byte)(250)))));
-            this.GunaAdvenceButton1.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.GunaAdvenceButton1.FocusedColor = System.Drawing.Color.Empty;
-            this.GunaAdvenceButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.GunaAdvenceButton1.ForeColor = System.Drawing.Color.White;
-            this.GunaAdvenceButton1.Image = global::PBL4_Chat.Properties.Resources.Speech_Bubble_ck_16px;
-            this.GunaAdvenceButton1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.GunaAdvenceButton1.ImageSize = new System.Drawing.Size(16, 16);
-            this.GunaAdvenceButton1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(33)))));
-            this.GunaAdvenceButton1.LineLeft = 4;
-            this.GunaAdvenceButton1.Location = new System.Drawing.Point(0, 216);
-            this.GunaAdvenceButton1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.GunaAdvenceButton1.Name = "GunaAdvenceButton1";
-            this.GunaAdvenceButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(33)))));
-            this.GunaAdvenceButton1.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.GunaAdvenceButton1.OnHoverForeColor = System.Drawing.Color.White;
-            this.GunaAdvenceButton1.OnHoverImage = null;
-            this.GunaAdvenceButton1.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(33)))));
-            this.GunaAdvenceButton1.OnPressedColor = System.Drawing.Color.Black;
-            this.GunaAdvenceButton1.OnPressedDepth = 0;
-            this.GunaAdvenceButton1.Size = new System.Drawing.Size(95, 65);
-            this.GunaAdvenceButton1.TabIndex = 2;
-            // 
-            // gunaCirclePictureBox1
-            // 
-            this.gunaCirclePictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.gunaCirclePictureBox1.BaseColor = System.Drawing.SystemColors.Window;
-            this.gunaCirclePictureBox1.Location = new System.Drawing.Point(3, 12);
-            this.gunaCirclePictureBox1.Name = "gunaCirclePictureBox1";
-            this.gunaCirclePictureBox1.Size = new System.Drawing.Size(89, 88);
-            this.gunaCirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.gunaCirclePictureBox1.TabIndex = 0;
-            this.gunaCirclePictureBox1.TabStop = false;
-            this.gunaCirclePictureBox1.UseTransfarantBackground = false;
-            // 
             // gunaPanel2
             // 
             this.gunaPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(22)))), ((int)(((byte)(32)))));
+            this.gunaPanel2.Controls.Add(this.gunaCirclePictureBox2);
+            this.gunaPanel2.Controls.Add(this.lbStatusPerson);
+            this.gunaPanel2.Controls.Add(this.lbNamePerson);
             this.gunaPanel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.gunaPanel2.Location = new System.Drawing.Point(1192, 0);
             this.gunaPanel2.Name = "gunaPanel2";
             this.gunaPanel2.Size = new System.Drawing.Size(255, 959);
             this.gunaPanel2.TabIndex = 1;
             // 
+            // lbStatusPerson
+            // 
+            this.lbStatusPerson.AutoSize = true;
+            this.lbStatusPerson.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lbStatusPerson.Location = new System.Drawing.Point(103, 247);
+            this.lbStatusPerson.Name = "lbStatusPerson";
+            this.lbStatusPerson.Size = new System.Drawing.Size(51, 20);
+            this.lbStatusPerson.TabIndex = 3;
+            this.lbStatusPerson.Text = "online";
+            // 
+            // lbNamePerson
+            // 
+            this.lbNamePerson.AutoSize = true;
+            this.lbNamePerson.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNamePerson.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lbNamePerson.Location = new System.Drawing.Point(90, 203);
+            this.lbNamePerson.Name = "lbNamePerson";
+            this.lbNamePerson.Size = new System.Drawing.Size(79, 29);
+            this.lbNamePerson.TabIndex = 2;
+            this.lbNamePerson.Text = "label1";
+            // 
             // gunaPanel3
             // 
             this.gunaPanel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(25)))), ((int)(((byte)(40)))));
+            this.gunaPanel3.Controls.Add(this.gunaPanel6);
             this.gunaPanel3.Controls.Add(this.btnDangXuat);
             this.gunaPanel3.Controls.Add(this.btn_taoNhom);
             this.gunaPanel3.Dock = System.Windows.Forms.DockStyle.Top;
@@ -148,69 +130,52 @@ namespace PBL4_Chat
             this.gunaPanel3.Size = new System.Drawing.Size(1096, 100);
             this.gunaPanel3.TabIndex = 2;
             // 
-            // btnDangXuat
+            // gunaPanel6
             // 
-            this.btnDangXuat.AnimationHoverSpeed = 0.07F;
-            this.btnDangXuat.AnimationSpeed = 0.03F;
-            this.btnDangXuat.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.btnDangXuat.BorderColor = System.Drawing.Color.Black;
-            this.btnDangXuat.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.btnDangXuat.CheckedBorderColor = System.Drawing.Color.Black;
-            this.btnDangXuat.CheckedForeColor = System.Drawing.Color.White;
-            this.btnDangXuat.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnDangXuat.CheckedImage")));
-            this.btnDangXuat.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.btnDangXuat.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnDangXuat.FocusedColor = System.Drawing.Color.Empty;
-            this.btnDangXuat.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnDangXuat.ForeColor = System.Drawing.Color.White;
-            this.btnDangXuat.Image = null;
-            this.btnDangXuat.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnDangXuat.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnDangXuat.Location = new System.Drawing.Point(6, 28);
-            this.btnDangXuat.Name = "btnDangXuat";
-            this.btnDangXuat.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.btnDangXuat.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnDangXuat.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnDangXuat.OnHoverImage = null;
-            this.btnDangXuat.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnDangXuat.OnPressedColor = System.Drawing.Color.Black;
-            this.btnDangXuat.Size = new System.Drawing.Size(111, 42);
-            this.btnDangXuat.TabIndex = 1;
-            this.btnDangXuat.Text = "Đăng xuất";
-            this.btnDangXuat.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnDangXuat.Click += new System.EventHandler(this.btnTrove_Click);
+            this.gunaPanel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.gunaPanel6.Controls.Add(this.btn_search);
+            this.gunaPanel6.Controls.Add(this.txt_search);
+            this.gunaPanel6.Controls.Add(this.GunaLabel1);
+            this.gunaPanel6.Location = new System.Drawing.Point(0, 0);
+            this.gunaPanel6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.gunaPanel6.Name = "gunaPanel6";
+            this.gunaPanel6.Size = new System.Drawing.Size(387, 100);
+            this.gunaPanel6.TabIndex = 3;
             // 
-            // btn_taoNhom
+            // txt_search
             // 
-            this.btn_taoNhom.AnimationHoverSpeed = 0.07F;
-            this.btn_taoNhom.AnimationSpeed = 0.03F;
-            this.btn_taoNhom.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.btn_taoNhom.BorderColor = System.Drawing.Color.Black;
-            this.btn_taoNhom.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.btn_taoNhom.CheckedBorderColor = System.Drawing.Color.Black;
-            this.btn_taoNhom.CheckedForeColor = System.Drawing.Color.White;
-            this.btn_taoNhom.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btn_taoNhom.CheckedImage")));
-            this.btn_taoNhom.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.btn_taoNhom.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btn_taoNhom.FocusedColor = System.Drawing.Color.Empty;
-            this.btn_taoNhom.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btn_taoNhom.ForeColor = System.Drawing.Color.White;
-            this.btn_taoNhom.Image = null;
-            this.btn_taoNhom.ImageSize = new System.Drawing.Size(20, 20);
-            this.btn_taoNhom.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btn_taoNhom.Location = new System.Drawing.Point(173, 28);
-            this.btn_taoNhom.Name = "btn_taoNhom";
-            this.btn_taoNhom.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.btn_taoNhom.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btn_taoNhom.OnHoverForeColor = System.Drawing.Color.White;
-            this.btn_taoNhom.OnHoverImage = null;
-            this.btn_taoNhom.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btn_taoNhom.OnPressedColor = System.Drawing.Color.Black;
-            this.btn_taoNhom.Size = new System.Drawing.Size(180, 49);
-            this.btn_taoNhom.TabIndex = 0;
-            this.btn_taoNhom.Text = "Tạo nhóm";
-            this.btn_taoNhom.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btn_taoNhom.Click += new System.EventHandler(this.btn_taoNhom_Click);
+            this.txt_search.BackColor = System.Drawing.Color.Transparent;
+            this.txt_search.BaseColor = System.Drawing.Color.WhiteSmoke;
+            this.txt_search.BorderColor = System.Drawing.Color.Silver;
+            this.txt_search.BorderSize = 0;
+            this.txt_search.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txt_search.FocusedBaseColor = System.Drawing.Color.White;
+            this.txt_search.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.txt_search.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.txt_search.Font = new System.Drawing.Font("Segoe UI", 8F);
+            this.txt_search.ForeColor = System.Drawing.Color.Black;
+            this.txt_search.Location = new System.Drawing.Point(18, 37);
+            this.txt_search.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txt_search.Name = "txt_search";
+            this.txt_search.PasswordChar = '\0';
+            this.txt_search.Radius = 4;
+            this.txt_search.SelectedText = "";
+            this.txt_search.Size = new System.Drawing.Size(293, 49);
+            this.txt_search.TabIndex = 2;
+            this.txt_search.Text = "...........";
+            this.txt_search.TextChanged += new System.EventHandler(this.btn_search_Click);
+            // 
+            // GunaLabel1
+            // 
+            this.GunaLabel1.AutoSize = true;
+            this.GunaLabel1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GunaLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(212)))), ((int)(((byte)(213)))));
+            this.GunaLabel1.Location = new System.Drawing.Point(13, 2);
+            this.GunaLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.GunaLabel1.Name = "GunaLabel1";
+            this.GunaLabel1.Size = new System.Drawing.Size(57, 30);
+            this.GunaLabel1.TabIndex = 2;
+            this.GunaLabel1.Text = "Chat";
             // 
             // gunaPanel4
             // 
@@ -281,6 +246,74 @@ namespace PBL4_Chat
             this.GunaSeparator1.Size = new System.Drawing.Size(709, 15);
             this.GunaSeparator1.TabIndex = 24;
             // 
+            // lbStatus
+            // 
+            this.lbStatus.AutoSize = true;
+            this.lbStatus.Font = new System.Drawing.Font("Segoe UI", 7F);
+            this.lbStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(159)))), ((int)(((byte)(163)))));
+            this.lbStatus.Location = new System.Drawing.Point(9, 66);
+            this.lbStatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbStatus.Name = "lbStatus";
+            this.lbStatus.Size = new System.Drawing.Size(46, 19);
+            this.lbStatus.TabIndex = 26;
+            this.lbStatus.Text = "online";
+            // 
+            // gunaPanel5
+            // 
+            this.gunaPanel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(47)))));
+            this.gunaPanel5.Controls.Add(this.GunaElipsePanel5);
+            this.gunaPanel5.Controls.Add(this.btn_send);
+            this.gunaPanel5.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.gunaPanel5.Location = new System.Drawing.Point(0, 767);
+            this.gunaPanel5.Name = "gunaPanel5";
+            this.gunaPanel5.Size = new System.Drawing.Size(709, 92);
+            this.gunaPanel5.TabIndex = 1;
+            // 
+            // GunaElipsePanel5
+            // 
+            this.GunaElipsePanel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(22)))), ((int)(((byte)(32)))));
+            this.GunaElipsePanel5.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(22)))), ((int)(((byte)(32)))));
+            this.GunaElipsePanel5.Controls.Add(this.btn_chooseFile);
+            this.GunaElipsePanel5.Controls.Add(this.GunaImageButton2);
+            this.GunaElipsePanel5.Controls.Add(this.txt_send);
+            this.GunaElipsePanel5.Location = new System.Drawing.Point(0, 5);
+            this.GunaElipsePanel5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.GunaElipsePanel5.Name = "GunaElipsePanel5";
+            this.GunaElipsePanel5.Size = new System.Drawing.Size(609, 87);
+            this.GunaElipsePanel5.TabIndex = 18;
+            // 
+            // txt_send
+            // 
+            this.txt_send.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(22)))), ((int)(((byte)(32)))));
+            this.txt_send.BaseColor = System.Drawing.Color.WhiteSmoke;
+            this.txt_send.BorderColor = System.Drawing.Color.Silver;
+            this.txt_send.BorderSize = 0;
+            this.txt_send.CausesValidation = false;
+            this.txt_send.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txt_send.FocusedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(39)))), ((int)(((byte)(49)))));
+            this.txt_send.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.txt_send.FocusedForeColor = System.Drawing.Color.White;
+            this.txt_send.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txt_send.ForeColor = System.Drawing.Color.Black;
+            this.txt_send.Location = new System.Drawing.Point(13, 10);
+            this.txt_send.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txt_send.Name = "txt_send";
+            this.txt_send.PasswordChar = '\0';
+            this.txt_send.SelectedText = "";
+            this.txt_send.Size = new System.Drawing.Size(467, 67);
+            this.txt_send.TabIndex = 0;
+            this.txt_send.Text = "Ok";
+            // 
+            // panel_listUser
+            // 
+            this.panel_listUser.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel_listUser.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.panel_listUser.Location = new System.Drawing.Point(0, 0);
+            this.panel_listUser.Name = "panel_listUser";
+            this.panel_listUser.Padding = new System.Windows.Forms.Padding(0, 114, 0, 0);
+            this.panel_listUser.Size = new System.Drawing.Size(387, 859);
+            this.panel_listUser.TabIndex = 0;
+            // 
             // GunaCircleButton1
             // 
             this.GunaCircleButton1.AnimationHoverSpeed = 0.07F;
@@ -305,18 +338,6 @@ namespace PBL4_Chat
             this.GunaCircleButton1.Size = new System.Drawing.Size(45, 46);
             this.GunaCircleButton1.TabIndex = 29;
             this.GunaCircleButton1.UseTransfarantBackground = true;
-            // 
-            // lbStatus
-            // 
-            this.lbStatus.AutoSize = true;
-            this.lbStatus.Font = new System.Drawing.Font("Segoe UI", 7F);
-            this.lbStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(159)))), ((int)(((byte)(163)))));
-            this.lbStatus.Location = new System.Drawing.Point(9, 66);
-            this.lbStatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbStatus.Name = "lbStatus";
-            this.lbStatus.Size = new System.Drawing.Size(46, 19);
-            this.lbStatus.TabIndex = 26;
-            this.lbStatus.Text = "online";
             // 
             // GunaImageButton5
             // 
@@ -344,42 +365,18 @@ namespace PBL4_Chat
             this.GunaImageButton4.Size = new System.Drawing.Size(45, 46);
             this.GunaImageButton4.TabIndex = 27;
             // 
-            // gunaPanel5
-            // 
-            this.gunaPanel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(47)))));
-            this.gunaPanel5.Controls.Add(this.GunaElipsePanel5);
-            this.gunaPanel5.Controls.Add(this.btn_send);
-            this.gunaPanel5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.gunaPanel5.Location = new System.Drawing.Point(0, 767);
-            this.gunaPanel5.Name = "gunaPanel5";
-            this.gunaPanel5.Size = new System.Drawing.Size(709, 92);
-            this.gunaPanel5.TabIndex = 1;
-            // 
-            // GunaElipsePanel5
-            // 
-            this.GunaElipsePanel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(22)))), ((int)(((byte)(32)))));
-            this.GunaElipsePanel5.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(22)))), ((int)(((byte)(32)))));
-            this.GunaElipsePanel5.Controls.Add(this.btn_chooseFile);
-            this.GunaElipsePanel5.Controls.Add(this.GunaImageButton2);
-            this.GunaElipsePanel5.Controls.Add(this.txt_send);
-            this.GunaElipsePanel5.Location = new System.Drawing.Point(0, 5);
-            this.GunaElipsePanel5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.GunaElipsePanel5.Name = "GunaElipsePanel5";
-            this.GunaElipsePanel5.Size = new System.Drawing.Size(609, 87);
-            this.GunaElipsePanel5.TabIndex = 18;
-            // 
             // btn_chooseFile
             // 
             this.btn_chooseFile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(22)))), ((int)(((byte)(32)))));
             this.btn_chooseFile.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btn_chooseFile.Image = global::PBL4_Chat.Properties.Resources.Attach_24px;
             this.btn_chooseFile.ImageSize = new System.Drawing.Size(24, 24);
-            this.btn_chooseFile.Location = new System.Drawing.Point(471, 20);
+            this.btn_chooseFile.Location = new System.Drawing.Point(488, 10);
             this.btn_chooseFile.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_chooseFile.Name = "btn_chooseFile";
             this.btn_chooseFile.OnHoverImage = null;
             this.btn_chooseFile.OnHoverImageOffset = new System.Drawing.Point(0, 0);
-            this.btn_chooseFile.Size = new System.Drawing.Size(49, 53);
+            this.btn_chooseFile.Size = new System.Drawing.Size(49, 62);
             this.btn_chooseFile.TabIndex = 2;
             // 
             // GunaImageButton2
@@ -388,35 +385,13 @@ namespace PBL4_Chat
             this.GunaImageButton2.DialogResult = System.Windows.Forms.DialogResult.None;
             this.GunaImageButton2.Image = global::PBL4_Chat.Properties.Resources.Instagram_24px;
             this.GunaImageButton2.ImageSize = new System.Drawing.Size(24, 24);
-            this.GunaImageButton2.Location = new System.Drawing.Point(528, 20);
+            this.GunaImageButton2.Location = new System.Drawing.Point(545, 10);
             this.GunaImageButton2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.GunaImageButton2.Name = "GunaImageButton2";
             this.GunaImageButton2.OnHoverImage = null;
             this.GunaImageButton2.OnHoverImageOffset = new System.Drawing.Point(0, 0);
-            this.GunaImageButton2.Size = new System.Drawing.Size(45, 53);
+            this.GunaImageButton2.Size = new System.Drawing.Size(45, 63);
             this.GunaImageButton2.TabIndex = 1;
-            // 
-            // txt_send
-            // 
-            this.txt_send.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(22)))), ((int)(((byte)(32)))));
-            this.txt_send.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(22)))), ((int)(((byte)(32)))));
-            this.txt_send.BorderColor = System.Drawing.Color.Silver;
-            this.txt_send.BorderSize = 0;
-            this.txt_send.CausesValidation = false;
-            this.txt_send.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txt_send.FocusedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(39)))), ((int)(((byte)(49)))));
-            this.txt_send.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.txt_send.FocusedForeColor = System.Drawing.Color.White;
-            this.txt_send.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txt_send.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(212)))), ((int)(((byte)(213)))));
-            this.txt_send.Location = new System.Drawing.Point(13, 10);
-            this.txt_send.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txt_send.Name = "txt_send";
-            this.txt_send.PasswordChar = '\0';
-            this.txt_send.SelectedText = "";
-            this.txt_send.Size = new System.Drawing.Size(450, 67);
-            this.txt_send.TabIndex = 0;
-            this.txt_send.Text = "Ok";
             // 
             // btn_send
             // 
@@ -429,7 +404,7 @@ namespace PBL4_Chat
             this.btn_send.FocusedColor = System.Drawing.Color.Empty;
             this.btn_send.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btn_send.ForeColor = System.Drawing.Color.White;
-            this.btn_send.Image = ((System.Drawing.Image)(resources.GetObject("btn_send.Image")));
+            this.btn_send.Image = global::PBL4_Chat.Properties.Resources.send;
             this.btn_send.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btn_send.ImageSize = new System.Drawing.Size(18, 18);
             this.btn_send.Location = new System.Drawing.Point(617, 15);
@@ -445,27 +420,6 @@ namespace PBL4_Chat
             this.btn_send.TabIndex = 19;
             this.btn_send.Click += new System.EventHandler(this.btn_send_Click);
             // 
-            // panel_listUser
-            // 
-            this.panel_listUser.Controls.Add(this.gunaPanel6);
-            this.panel_listUser.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel_listUser.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.panel_listUser.Location = new System.Drawing.Point(0, 0);
-            this.panel_listUser.Name = "panel_listUser";
-            this.panel_listUser.Size = new System.Drawing.Size(387, 859);
-            this.panel_listUser.TabIndex = 0;
-            // 
-            // gunaPanel6
-            // 
-            this.gunaPanel6.Controls.Add(this.btn_search);
-            this.gunaPanel6.Controls.Add(this.txt_search);
-            this.gunaPanel6.Controls.Add(this.GunaLabel1);
-            this.gunaPanel6.Location = new System.Drawing.Point(4, 5);
-            this.gunaPanel6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.gunaPanel6.Name = "gunaPanel6";
-            this.gunaPanel6.Size = new System.Drawing.Size(383, 113);
-            this.gunaPanel6.TabIndex = 3;
-            // 
             // btn_search
             // 
             this.btn_search.AnimationHoverSpeed = 0.07F;
@@ -477,10 +431,10 @@ namespace PBL4_Chat
             this.btn_search.FocusedColor = System.Drawing.Color.Empty;
             this.btn_search.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btn_search.ForeColor = System.Drawing.Color.White;
-            this.btn_search.Image = global::PBL4_Chat.Properties.Resources.Connection_Status_On_16px;
+            this.btn_search.Image = global::PBL4_Chat.Properties.Resources.search;
             this.btn_search.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btn_search.ImageSize = new System.Drawing.Size(20, 20);
-            this.btn_search.Location = new System.Drawing.Point(319, 51);
+            this.btn_search.Location = new System.Drawing.Point(319, 38);
             this.btn_search.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_search.Name = "btn_search";
             this.btn_search.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(168)))), ((int)(((byte)(251)))));
@@ -491,40 +445,113 @@ namespace PBL4_Chat
             this.btn_search.Radius = 4;
             this.btn_search.Size = new System.Drawing.Size(51, 49);
             this.btn_search.TabIndex = 2;
+            this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
             // 
-            // txt_search
+            // btnDangXuat
             // 
-            this.txt_search.BackColor = System.Drawing.Color.Transparent;
-            this.txt_search.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(34)))), ((int)(((byte)(41)))));
-            this.txt_search.BorderColor = System.Drawing.Color.Silver;
-            this.txt_search.BorderSize = 0;
-            this.txt_search.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txt_search.FocusedBaseColor = System.Drawing.Color.White;
-            this.txt_search.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.txt_search.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.txt_search.Font = new System.Drawing.Font("Segoe UI", 8F);
-            this.txt_search.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(159)))), ((int)(((byte)(163)))));
-            this.txt_search.Location = new System.Drawing.Point(18, 51);
-            this.txt_search.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txt_search.Name = "txt_search";
-            this.txt_search.PasswordChar = '\0';
-            this.txt_search.Radius = 4;
-            this.txt_search.SelectedText = "";
-            this.txt_search.Size = new System.Drawing.Size(293, 49);
-            this.txt_search.TabIndex = 2;
-            this.txt_search.Text = "Hai Ly";
+            this.btnDangXuat.AnimationHoverSpeed = 0.07F;
+            this.btnDangXuat.AnimationSpeed = 0.03F;
+            this.btnDangXuat.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.btnDangXuat.BorderColor = System.Drawing.Color.Black;
+            this.btnDangXuat.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.btnDangXuat.CheckedBorderColor = System.Drawing.Color.Black;
+            this.btnDangXuat.CheckedForeColor = System.Drawing.Color.White;
+            this.btnDangXuat.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnDangXuat.CheckedImage")));
+            this.btnDangXuat.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.btnDangXuat.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnDangXuat.FocusedColor = System.Drawing.Color.Empty;
+            this.btnDangXuat.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnDangXuat.ForeColor = System.Drawing.Color.White;
+            this.btnDangXuat.Image = null;
+            this.btnDangXuat.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnDangXuat.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btnDangXuat.Location = new System.Drawing.Point(982, 3);
+            this.btnDangXuat.Name = "btnDangXuat";
+            this.btnDangXuat.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btnDangXuat.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnDangXuat.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnDangXuat.OnHoverImage = null;
+            this.btnDangXuat.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btnDangXuat.OnPressedColor = System.Drawing.Color.Black;
+            this.btnDangXuat.Size = new System.Drawing.Size(111, 63);
+            this.btnDangXuat.TabIndex = 1;
+            this.btnDangXuat.Text = "Đăng xuất";
+            this.btnDangXuat.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnDangXuat.Click += new System.EventHandler(this.btnTrove_Click);
             // 
-            // GunaLabel1
+            // btn_taoNhom
             // 
-            this.GunaLabel1.AutoSize = true;
-            this.GunaLabel1.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.GunaLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(212)))), ((int)(((byte)(213)))));
-            this.GunaLabel1.Location = new System.Drawing.Point(12, 10);
-            this.GunaLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.GunaLabel1.Name = "GunaLabel1";
-            this.GunaLabel1.Size = new System.Drawing.Size(64, 32);
-            this.GunaLabel1.TabIndex = 2;
-            this.GunaLabel1.Text = "Chat";
+            this.btn_taoNhom.AnimationHoverSpeed = 0.07F;
+            this.btn_taoNhom.AnimationSpeed = 0.03F;
+            this.btn_taoNhom.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.btn_taoNhom.BorderColor = System.Drawing.Color.Black;
+            this.btn_taoNhom.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.btn_taoNhom.CheckedBorderColor = System.Drawing.Color.Black;
+            this.btn_taoNhom.CheckedForeColor = System.Drawing.Color.White;
+            this.btn_taoNhom.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btn_taoNhom.CheckedImage")));
+            this.btn_taoNhom.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.btn_taoNhom.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btn_taoNhom.FocusedColor = System.Drawing.Color.Empty;
+            this.btn_taoNhom.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btn_taoNhom.ForeColor = System.Drawing.Color.White;
+            this.btn_taoNhom.Image = null;
+            this.btn_taoNhom.ImageSize = new System.Drawing.Size(20, 20);
+            this.btn_taoNhom.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btn_taoNhom.Location = new System.Drawing.Point(780, 3);
+            this.btn_taoNhom.Name = "btn_taoNhom";
+            this.btn_taoNhom.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btn_taoNhom.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btn_taoNhom.OnHoverForeColor = System.Drawing.Color.White;
+            this.btn_taoNhom.OnHoverImage = null;
+            this.btn_taoNhom.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btn_taoNhom.OnPressedColor = System.Drawing.Color.Black;
+            this.btn_taoNhom.Size = new System.Drawing.Size(180, 63);
+            this.btn_taoNhom.TabIndex = 0;
+            this.btn_taoNhom.Text = "Tạo nhóm";
+            this.btn_taoNhom.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_taoNhom.Click += new System.EventHandler(this.btn_taoNhom_Click);
+            // 
+            // gunaCirclePictureBox2
+            // 
+            this.gunaCirclePictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.gunaCirclePictureBox2.BaseColor = System.Drawing.SystemColors.Window;
+            this.gunaCirclePictureBox2.Image = global::PBL4_Chat.Properties.Resources.profile;
+            this.gunaCirclePictureBox2.InitialImage = global::PBL4_Chat.Properties.Resources.profile;
+            this.gunaCirclePictureBox2.Location = new System.Drawing.Point(55, 39);
+            this.gunaCirclePictureBox2.Name = "gunaCirclePictureBox2";
+            this.gunaCirclePictureBox2.Size = new System.Drawing.Size(151, 146);
+            this.gunaCirclePictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.gunaCirclePictureBox2.TabIndex = 4;
+            this.gunaCirclePictureBox2.TabStop = false;
+            this.gunaCirclePictureBox2.UseTransfarantBackground = false;
+            // 
+            // gunaImageButton1
+            // 
+            this.gunaImageButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.gunaImageButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.gunaImageButton1.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.gunaImageButton1.Image = global::PBL4_Chat.Properties.Resources.message;
+            this.gunaImageButton1.ImageSize = new System.Drawing.Size(64, 64);
+            this.gunaImageButton1.Location = new System.Drawing.Point(0, 216);
+            this.gunaImageButton1.Name = "gunaImageButton1";
+            this.gunaImageButton1.OnHoverImage = null;
+            this.gunaImageButton1.OnHoverImageOffset = new System.Drawing.Point(0, 0);
+            this.gunaImageButton1.Size = new System.Drawing.Size(96, 90);
+            this.gunaImageButton1.TabIndex = 3;
+            // 
+            // gunaCirclePictureBox1
+            // 
+            this.gunaCirclePictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.gunaCirclePictureBox1.BaseColor = System.Drawing.SystemColors.Window;
+            this.gunaCirclePictureBox1.Image = global::PBL4_Chat.Properties.Resources.profile;
+            this.gunaCirclePictureBox1.InitialImage = global::PBL4_Chat.Properties.Resources.profile;
+            this.gunaCirclePictureBox1.Location = new System.Drawing.Point(3, 12);
+            this.gunaCirclePictureBox1.Name = "gunaCirclePictureBox1";
+            this.gunaCirclePictureBox1.Size = new System.Drawing.Size(89, 88);
+            this.gunaCirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.gunaCirclePictureBox1.TabIndex = 0;
+            this.gunaCirclePictureBox1.TabStop = false;
+            this.gunaCirclePictureBox1.UseTransfarantBackground = false;
             // 
             // mainForm
             // 
@@ -541,8 +568,11 @@ namespace PBL4_Chat
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.mainForm_FormClosed);
             this.Load += new System.EventHandler(this.mainForm_Load);
             this.gunaPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).EndInit();
+            this.gunaPanel2.ResumeLayout(false);
+            this.gunaPanel2.PerformLayout();
             this.gunaPanel3.ResumeLayout(false);
+            this.gunaPanel6.ResumeLayout(false);
+            this.gunaPanel6.PerformLayout();
             this.gunaPanel4.ResumeLayout(false);
             this.pn_chat.ResumeLayout(false);
             this.pn_chat.PerformLayout();
@@ -550,9 +580,8 @@ namespace PBL4_Chat
             this.gunaPanel8.PerformLayout();
             this.gunaPanel5.ResumeLayout(false);
             this.GunaElipsePanel5.ResumeLayout(false);
-            this.panel_listUser.ResumeLayout(false);
-            this.gunaPanel6.ResumeLayout(false);
-            this.gunaPanel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -567,7 +596,6 @@ namespace PBL4_Chat
         private System.Windows.Forms.FlowLayoutPanel panel_listUser;
         private Guna.UI.WinForms.GunaPanel gunaPanel5;
         private Guna.UI.WinForms.GunaCirclePictureBox gunaCirclePictureBox1;
-        internal Guna.UI.WinForms.GunaAdvenceButton GunaAdvenceButton1;
         internal Guna.UI.WinForms.GunaPanel gunaPanel6;
         internal Guna.UI.WinForms.GunaButton btn_search;
         internal Guna.UI.WinForms.GunaTextBox txt_search;
@@ -588,6 +616,10 @@ namespace PBL4_Chat
         internal Guna.UI.WinForms.GunaImageButton GunaImageButton5;
         internal Guna.UI.WinForms.GunaImageButton GunaImageButton4;
         private Guna.UI.WinForms.GunaAdvenceButton btnDangXuat;
+        private Guna.UI.WinForms.GunaCirclePictureBox gunaCirclePictureBox2;
+        private System.Windows.Forms.Label lbStatusPerson;
+        private System.Windows.Forms.Label lbNamePerson;
+        private Guna.UI.WinForms.GunaImageButton gunaImageButton1;
     }
 }
 

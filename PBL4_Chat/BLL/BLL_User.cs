@@ -86,9 +86,24 @@ namespace PBL4_Chat.BLL
             }                
         }
 
+        // update login
         public void BLL_updateLogin(int isOnline, string userId)
         {
             DAL_User.instance.DAL_updateLogin(isOnline, userId);
+        }
+
+        // tìm kiếm user to chat
+        public List<User> BLL_getListUserByName(string name)
+        {
+            List<User> listUser = new List<User>();
+            foreach(User u in BLL_getUser())
+            {
+                if ((u.firstName + " " + u.lastName).Contains(name))
+                {
+                    listUser.Add(u);
+                }                    
+            }    
+            return listUser;
         }
     }
 }

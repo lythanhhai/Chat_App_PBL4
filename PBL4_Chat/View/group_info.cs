@@ -84,7 +84,7 @@ namespace PBL4_Chat.View
 
             // chuyển dữ liệu
             ((mainForm)this.ParentForm).userId_receive = new mainForm.getUserIdReveive(getIdMember);
-            MessageBox.Show(getIdMember());
+            //MessageBox.Show(getIdMember());
             // load tên
             ((mainForm)this.ParentForm).lbName_Receiver.Text = this.name_group;
             ((mainForm)this.ParentForm).lbStatus.Text = "online";
