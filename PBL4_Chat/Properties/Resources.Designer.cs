@@ -223,6 +223,26 @@ namespace PBL4_Chat.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap message1 {
+            get {
+                object obj = ResourceManager.GetObject("message1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap message2 {
+            get {
+                object obj = ResourceManager.GetObject("message2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap messenger {
             get {
                 object obj = ResourceManager.GetObject("messenger", resourceCulture);

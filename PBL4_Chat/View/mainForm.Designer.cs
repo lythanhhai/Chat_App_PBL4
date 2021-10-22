@@ -59,8 +59,8 @@ namespace PBL4_Chat
             this.btnDangXuat = new Guna.UI.WinForms.GunaAdvenceButton();
             this.btn_taoNhom = new Guna.UI.WinForms.GunaAdvenceButton();
             this.gunaCirclePictureBox2 = new Guna.UI.WinForms.GunaCirclePictureBox();
-            this.gunaImageButton1 = new Guna.UI.WinForms.GunaImageButton();
             this.gunaCirclePictureBox1 = new Guna.UI.WinForms.GunaCirclePictureBox();
+            this.btn_message = new Guna.UI.WinForms.GunaButton();
             this.gunaPanel1.SuspendLayout();
             this.gunaPanel2.SuspendLayout();
             this.gunaPanel3.SuspendLayout();
@@ -77,7 +77,7 @@ namespace PBL4_Chat
             // gunaPanel1
             // 
             this.gunaPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(22)))), ((int)(((byte)(32)))));
-            this.gunaPanel1.Controls.Add(this.gunaImageButton1);
+            this.gunaPanel1.Controls.Add(this.btn_message);
             this.gunaPanel1.Controls.Add(this.gunaCirclePictureBox1);
             this.gunaPanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.gunaPanel1.Location = new System.Drawing.Point(0, 0);
@@ -310,7 +310,7 @@ namespace PBL4_Chat
             this.panel_listUser.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.panel_listUser.Location = new System.Drawing.Point(0, 0);
             this.panel_listUser.Name = "panel_listUser";
-            this.panel_listUser.Padding = new System.Windows.Forms.Padding(0, 114, 0, 0);
+            this.panel_listUser.Padding = new System.Windows.Forms.Padding(0, 113, 0, 0);
             this.panel_listUser.Size = new System.Drawing.Size(387, 859);
             this.panel_listUser.TabIndex = 0;
             // 
@@ -525,20 +525,6 @@ namespace PBL4_Chat
             this.gunaCirclePictureBox2.TabStop = false;
             this.gunaCirclePictureBox2.UseTransfarantBackground = false;
             // 
-            // gunaImageButton1
-            // 
-            this.gunaImageButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.gunaImageButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.gunaImageButton1.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaImageButton1.Image = global::PBL4_Chat.Properties.Resources.message;
-            this.gunaImageButton1.ImageSize = new System.Drawing.Size(64, 64);
-            this.gunaImageButton1.Location = new System.Drawing.Point(0, 216);
-            this.gunaImageButton1.Name = "gunaImageButton1";
-            this.gunaImageButton1.OnHoverImage = null;
-            this.gunaImageButton1.OnHoverImageOffset = new System.Drawing.Point(0, 0);
-            this.gunaImageButton1.Size = new System.Drawing.Size(96, 90);
-            this.gunaImageButton1.TabIndex = 3;
-            // 
             // gunaCirclePictureBox1
             // 
             this.gunaCirclePictureBox1.BackColor = System.Drawing.Color.Transparent;
@@ -552,6 +538,32 @@ namespace PBL4_Chat
             this.gunaCirclePictureBox1.TabIndex = 0;
             this.gunaCirclePictureBox1.TabStop = false;
             this.gunaCirclePictureBox1.UseTransfarantBackground = false;
+            // 
+            // btn_message
+            // 
+            this.btn_message.AnimationHoverSpeed = 0.07F;
+            this.btn_message.AnimationSpeed = 0.03F;
+            this.btn_message.BackColor = System.Drawing.Color.Transparent;
+            this.btn_message.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(154)))), ((int)(((byte)(250)))));
+            this.btn_message.BorderColor = System.Drawing.Color.Black;
+            this.btn_message.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btn_message.FocusedColor = System.Drawing.Color.Empty;
+            this.btn_message.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btn_message.ForeColor = System.Drawing.Color.White;
+            this.btn_message.Image = global::PBL4_Chat.Properties.Resources.message;
+            this.btn_message.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_message.ImageSize = new System.Drawing.Size(18, 18);
+            this.btn_message.Location = new System.Drawing.Point(0, 216);
+            this.btn_message.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btn_message.Name = "btn_message";
+            this.btn_message.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(168)))), ((int)(((byte)(251)))));
+            this.btn_message.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btn_message.OnHoverForeColor = System.Drawing.Color.White;
+            this.btn_message.OnHoverImage = null;
+            this.btn_message.OnPressedColor = System.Drawing.Color.Black;
+            this.btn_message.Radius = 4;
+            this.btn_message.Size = new System.Drawing.Size(96, 61);
+            this.btn_message.TabIndex = 20;
             // 
             // mainForm
             // 
@@ -619,7 +631,7 @@ namespace PBL4_Chat
         private Guna.UI.WinForms.GunaCirclePictureBox gunaCirclePictureBox2;
         private System.Windows.Forms.Label lbStatusPerson;
         private System.Windows.Forms.Label lbNamePerson;
-        private Guna.UI.WinForms.GunaImageButton gunaImageButton1;
+        internal Guna.UI.WinForms.GunaButton btn_message;
     }
 }
 

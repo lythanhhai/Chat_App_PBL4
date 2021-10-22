@@ -39,13 +39,21 @@ namespace PBL4_Chat.View
             }       
             if(count > 0)
             {
+                userId_add.Remove(userIdAdd());  
                 count--;
             }    
             else
             {
                 userId_add.Add(userIdAdd());
-                count--;
-            }                
+                //count--;
+            }
+            // test độ chính xác
+            //string a = "";
+            //for(int i = 0; i < userId_add.Count; i++)
+            //{
+            //    a += userId_add[i] + ", ";
+            //}    
+            //MessageBox.Show(a);
         }
 
         //void themUserIntoList()
@@ -63,6 +71,7 @@ namespace PBL4_Chat.View
         public CreateGroup()
         {
             InitializeComponent();
+            // khởi tạo sự kiện từ user Control.
             userInfoAdd.userInfoAddClick += new EventHandler(ClickSimulWithUserControl);
         }
         // cho user vào 
@@ -83,10 +92,7 @@ namespace PBL4_Chat.View
                 });
             }
         }
-        private void but_troveConfirm_Click(object sender, EventArgs e)
-        {
-
-        }
+       
 
         // tạo nhóm
         private void but_taoNhom_Click(object sender, EventArgs e)

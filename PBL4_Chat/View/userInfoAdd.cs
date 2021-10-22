@@ -65,15 +65,35 @@ namespace PBL4_Chat.View
 
         public static event EventHandler userInfoAddClick;
 
+        // đếm xem người đó đã được bấm chưa
+        int count = 0;
+
         private void userInfoAdd_Click(object sender, EventArgs e)
         {
-            // truyền dữ liệu
-            ((CreateGroup)this.ParentForm).userIdAdd = new CreateGroup.getUserIdAdd(getUserInfoAdd);
-            // mở click bên form
-            if (userInfoAddClick != null)
+            if(count == 0)
             {
-                userInfoAddClick(this, e);
-            }    
+                // truyền dữ liệu
+                ((CreateGroup)this.ParentForm).userIdAdd = new CreateGroup.getUserIdAdd(getUserInfoAdd);
+                // mở click bên form
+                if (userInfoAddClick != null)
+                {
+                    userInfoAddClick(this, e);
+                }
+                MessageBox.Show("thêm vào danh sách");
+                count++;
+            }   
+            else
+            {
+                // truyền dữ liệu
+                ((CreateGroup)this.ParentForm).userIdAdd = new CreateGroup.getUserIdAdd(getUserInfoAdd);
+                // mở click bên form
+                if (userInfoAddClick != null)
+                {
+                    userInfoAddClick(this, e);
+                }
+                MessageBox.Show("Xóa khỏi danh sách");
+                count--;
+            }                
                
         }
     }

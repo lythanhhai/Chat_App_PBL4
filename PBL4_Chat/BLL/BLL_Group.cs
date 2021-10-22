@@ -86,5 +86,19 @@ namespace PBL4_Chat.BLL
             }
             return Convert.ToString(max);
         }
+
+        // tìm kiếm group to chat
+        public List<Group> BLL_getListGroupByName(string name)
+        {
+            List<Group> listGroup = new List<Group>();
+            foreach (Group g in BLL_getAllGroup())
+            {
+                if ((g.name_group).Contains(name))
+                {
+                    listGroup.Add(g);
+                }
+            }
+            return listGroup;
+        }
     }
 }
