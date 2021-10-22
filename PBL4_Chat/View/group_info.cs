@@ -62,6 +62,13 @@ namespace PBL4_Chat.View
         string getIdMember()
         {
             list_idMember = "";
+            foreach (Group g in BLL_Group.instance.BLL_getAllGroup())
+            {
+                if (g.id_group == this.id_group)
+                {
+                    list_idMember += g.userId + " ";
+                }
+            }
             foreach (User_group ug in BLL_Group.instance.BLL_getAllUserGroup())
             {
                 if (ug.id_group == this.id_group)
