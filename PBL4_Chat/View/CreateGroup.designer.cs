@@ -41,7 +41,6 @@ namespace PBL4_Chat.View
             this.panelMain = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel_flowUser = new System.Windows.Forms.FlowLayoutPanel();
-            this.but_troveConfirm = new System.Windows.Forms.Button();
             this.bunifuPictureBox1 = new Bunifu.UI.WinForms.BunifuPictureBox();
             this.panelMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox1)).BeginInit();
@@ -99,7 +98,7 @@ namespace PBL4_Chat.View
             // 
             this.but_taoNhom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(174)))), ((int)(((byte)(208)))));
             this.but_taoNhom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.but_taoNhom.Location = new System.Drawing.Point(370, 613);
+            this.but_taoNhom.Location = new System.Drawing.Point(359, 614);
             this.but_taoNhom.Name = "but_taoNhom";
             this.but_taoNhom.Size = new System.Drawing.Size(147, 52);
             this.but_taoNhom.TabIndex = 8;
@@ -147,7 +146,6 @@ namespace PBL4_Chat.View
             this.panelMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(36)))), ((int)(((byte)(48)))));
             this.panelMain.Controls.Add(this.label1);
             this.panelMain.Controls.Add(this.panel_flowUser);
-            this.panelMain.Controls.Add(this.but_troveConfirm);
             this.panelMain.Controls.Add(this.bunifuPictureBox1);
             this.panelMain.Controls.Add(this.bunifuPanel2);
             this.panelMain.Controls.Add(this.but_taoNhom);
@@ -181,18 +179,6 @@ namespace PBL4_Chat.View
             this.panel_flowUser.Size = new System.Drawing.Size(416, 250);
             this.panel_flowUser.TabIndex = 15;
             // 
-            // but_troveConfirm
-            // 
-            this.but_troveConfirm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(174)))), ((int)(((byte)(208)))));
-            this.but_troveConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.but_troveConfirm.Location = new System.Drawing.Point(197, 613);
-            this.but_troveConfirm.Name = "but_troveConfirm";
-            this.but_troveConfirm.Size = new System.Drawing.Size(147, 52);
-            this.but_troveConfirm.TabIndex = 14;
-            this.but_troveConfirm.Text = "Trở về";
-            this.but_troveConfirm.UseVisualStyleBackColor = false;
-            this.but_troveConfirm.Click += new System.EventHandler(this.but_troveConfirm_Click);
-            // 
             // bunifuPictureBox1
             // 
             this.bunifuPictureBox1.AllowFocused = false;
@@ -217,6 +203,7 @@ namespace PBL4_Chat.View
             this.ClientSize = new System.Drawing.Size(602, 708);
             this.Controls.Add(this.panelMain);
             this.Name = "CreateGroup";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Tạo nhóm";
             this.Load += new System.EventHandler(this.CreateGroup_Load);
             this.panelMain.ResumeLayout(false);
@@ -238,7 +225,6 @@ namespace PBL4_Chat.View
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panelMain;
         private Bunifu.UI.WinForms.BunifuPictureBox bunifuPictureBox1;
-        private System.Windows.Forms.Button but_troveConfirm;
         private System.Windows.Forms.FlowLayoutPanel panel_flowUser;
         private System.Windows.Forms.Label label1;
     }

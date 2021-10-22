@@ -81,6 +81,35 @@ namespace PBL4_Chat
                     phone = u.phone,
                 });
             }
+            List<Group> listGroup = BLL_Group.instance.BLL_getListGroupByName(txt_search.Text);
+            foreach (Group g in listGroup)
+            {
+                if (userId() == g.userId)
+                {
+                    panel_listUser.Controls.Add(new group_info
+                    {
+                        id_group = g.id_group,
+                        name_group = g.name_group,
+                        des = g.des
+                    });
+                }
+                else
+                {
+                    foreach (User_group ug in BLL_Group.instance.BLL_getAllUserGroup())
+                    {
+                        if (ug.id_member == userId())
+                        {
+                            panel_listUser.Controls.Add(new group_info
+                            {
+                                id_group = g.id_group,
+                                name_group = g.name_group,
+                                des = g.des
+                            });
+                            break;
+                        }
+                    }
+                }
+            }
         }
         
         // showDSUser có trong hệ thống
@@ -255,7 +284,8 @@ namespace PBL4_Chat
 
         private void btn_send_Click(object sender, EventArgs e)
         {
-
+            if(txt_send.Text != "")
+            {
                 txt_message.Text += Environment.NewLine
                               + BLL_User.instance.BLL_getUserById(userId()).firstName
                               + " "
@@ -271,7 +301,11 @@ namespace PBL4_Chat
                 byte[] message = encoding.GetBytes(txt_send.Text);
                 stream.Write(message, 0, message.Length);
                 //add(encoding.GetString(message));
-
+            }
+            else
+            {
+                MessageBox.Show("bạn chưa nhập tin");
+            }                
         }
 
         // hàm add 1 userRelation hoặc tin nhắn
