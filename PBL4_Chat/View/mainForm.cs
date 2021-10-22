@@ -31,21 +31,20 @@ namespace PBL4_Chat
         // message thông qua userId
         string res = null;
         string nameReceiver = null;
-        // id_group
-
+        
 
 
         // chuyen userid cho mainForm
         public delegate string getUserId();
         public getUserId userId;
 
-        // lấy dữ liệu từ user control receiver
+        // lấy dữ liệu từ user control receiver or list_member
         public delegate string getUserIdReveive();
         public getUserIdReveive userId_receive;
 
         // lấy id_group từ group_info
-        public delegate string getIdGroup();
-        public getIdGroup id_group;
+        public delegate string getIdMember();
+        public getIdMember list_idMember;
 
         string id = "";
         public mainForm()
@@ -154,20 +153,30 @@ namespace PBL4_Chat
                     data = encoding.GetString(message);
 
                     res = null;
-                    for (int i = 1; i < data.Split(' ').Length; i++)
+                    // private
+                    if(data.Split(' ').Length < 3)
                     {
-                        res += data.Split(' ')[i] + " ";
-                    }
-                    nameReceiver = BLL_User.instance.BLL_getUserById(userId_receive()).firstName + " " + BLL_User.instance.BLL_getUserById(userId_receive()).lastName;
-                    // khi người dùng đang nhắn 1 người khác nhưng 1 người khác gửi tin thì tin nhắn này không hiển thị lên
-                    if (string.Compare(data.Split(' ')[0], userId_receive()) == 0)
-                    {
-                        msg();
-                    }
+                        for (int i = 1; i < data.Split(' ').Length; i++)
+                        {
+                            res += data.Split(' ')[i] + " ";
+                        }
+                        nameReceiver = BLL_User.instance.BLL_getUserById(userId_receive()).firstName + " " + BLL_User.instance.BLL_getUserById(userId_receive()).lastName;
+                        // khi người dùng đang nhắn 1 người khác nhưng 1 người khác gửi tin thì tin nhắn này không hiển thị lên
+                        if (string.Compare(data.Split(' ')[0], userId_receive()) == 0)
+                        {
+                            msg();
+                        }
+                        else
+                        {
+
+                        }
+                    }   
+                    // group
                     else
                     {
 
-                    }
+                    }                        
+                    
                 }
 
             }
@@ -192,29 +201,22 @@ namespace PBL4_Chat
         private void btn_send_Click(object sender, EventArgs e)
         {
 
-            txt_message.Text += Environment.NewLine
+                txt_message.Text += Environment.NewLine
                               + BLL_User.instance.BLL_getUserById(userId()).firstName
                               + " "
                               + BLL_User.instance.BLL_getUserById(userId()).lastName
                               + " << "
                               + txt_send.Text;
-            //txt_message.Text += Environment.NewLine
-            //                  + " << "
-            //                  + txt_send.Text;
+                //txt_message.Text += Environment.NewLine
+                //                  + " << "
+                //                  + txt_send.Text;
+                // gửi userId_receive cho server
+                byte[] userId_receive1 = encoding.GetBytes(userId() + " " + userId_receive());
+                stream.Write(userId_receive1, 0, userId_receive1.Length);
+                byte[] message = encoding.GetBytes(txt_send.Text);
+                stream.Write(message, 0, message.Length);
+                //add(encoding.GetString(message));
 
-            foreach(User_group ug in BLL_Group.instance.BLL_getAllUserGroup())
-            {
-                if(ug.id_group == id_group())
-                {
-
-                }    
-            }    
-            // gửi userId_receive cho server
-            byte[] userId_receive1 = encoding.GetBytes(userId() + " " + userId_receive());
-            stream.Write(userId_receive1, 0, userId_receive1.Length);
-            byte[] message = encoding.GetBytes(txt_send.Text);
-            stream.Write(message, 0, message.Length);
-            //add(encoding.GetString(message));
         }
 
         // hàm add 1 userRelation hoặc tin nhắn

@@ -29,7 +29,6 @@ D:\Class\PBL4\PBL4\test_chat_app\PBL4_Chat\bin\Debug\PBL4_Chat.exe
 D:\Class\PBL4\PBL4\test_chat_app\PBL4_Chat\bin\Debug\PBL4_Chat.pdb
 D:\Class\PBL4\PBL4\test_chat_app\PBL4_Chat\obj\Debug\PBL4_Chat.mainForm.resources
 D:\Class\PBL4\PBL4\test_chat_app\PBL4_Chat\obj\Debug\PBL4_Chat.Properties.Resources.resources
-D:\Class\PBL4\PBL4\test_chat_app\PBL4_Chat\obj\Debug\PBL4_Chat.View.Register_Login.resources
 D:\Class\PBL4\PBL4\test_chat_app\PBL4_Chat\obj\Debug\PBL4_Chat.View.user_info.resources
 D:\Class\PBL4\PBL4\test_chat_app\PBL4_Chat\obj\Debug\PBL4_Chat.csproj.GenerateResource.cache
 D:\Class\PBL4\PBL4\test_chat_app\PBL4_Chat\obj\Debug\PBL4_Chat.csproj.CoreCompileInputs.cache

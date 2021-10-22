@@ -1,4 +1,6 @@
-﻿using System;
+﻿using PBL4_Chat.BLL;
+using PBL4_Chat.DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,6 +21,8 @@ namespace PBL4_Chat.View
         private string _id_group;
         private string _name_group;
         private string _des;
+        // list id member
+        string list_idMember = "";
 
         public string id_group
         {
@@ -55,15 +59,23 @@ namespace PBL4_Chat.View
             }
         }
 
-        string getIdGroup()
+        string getIdMember()
         {
-            return this.id_group;
+            foreach (User_group ug in BLL_Group.instance.BLL_getAllUserGroup())
+            {
+                if (ug.id_group == this.id_group)
+                {
+                    list_idMember += ug.id_member + " ";
+                }
+            }
+            return list_idMember;
         }
 
         private void groupInfo_Click(object sender, EventArgs e)
         {
+
             // chuyển dữ liệu
-            ((mainForm)this.ParentForm).id_group = new mainForm.getIdGroup(getIdGroup);
+            ((mainForm)this.ParentForm).userId_receive = new mainForm.getUserIdReveive(getIdMember);
             // load tên
             ((mainForm)this.ParentForm).lbName_Receiver.Text = this.name_group;
             ((mainForm)this.ParentForm).lbStatus.Text = "online";
