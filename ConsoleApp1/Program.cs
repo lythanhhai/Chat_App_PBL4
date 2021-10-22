@@ -116,22 +116,53 @@ namespace Server
         {
             try
             {
-                for(int i = 0; i < userId.Count; i++)
+                for (int i = 0; i < userId.Count; i++)
                 {
                     Console.WriteLine(userId[i]);
-                }    
+                }
                 Console.WriteLine(SocketExtensions.IsConnected(client).ToString());
                 while (true)
+                {
+                    string userId_receiveCopy = "";
+                    byte[] userId_receive = new byte[BUFFER_SIZE];
+                    int size_userId = client.Receive(userId_receive);
+                    //Console.WriteLine(encoding.GetString(userId_receive));
+                    byte[] data = new byte[BUFFER_SIZE];
+                    int size = client.Receive(data);
+                    
+
+                    //Console.WriteLine(packetMes);
+                    // gửi nhóm
+                    if (encoding.GetString(userId_receive).Split(' ').Length > 2)
                     {
-                        byte[] userId_receive = new byte[BUFFER_SIZE];
-                        int size_userId = client.Receive(userId_receive);
-                        //Console.WriteLine(encoding.GetString(userId_receive));
-                        byte[] data = new byte[BUFFER_SIZE];
-                        int size = client.Receive(data);
+                        string packetMes = encoding.GetString(userId_receive).Split(' ')[0] + " " + encoding.GetString(data) + " " + "group";
+                        // biến đổi chuổi
+                        for (int i = 0; i < encoding.GetString(userId_receive).Split(' ').Length; i++)
+                        {
+                            if (i == encoding.GetString(userId_receive).Split(' ').Length - 1)
+                            {
+                                userId_receiveCopy += encoding.GetString(userId_receive).Split(' ')[i];
+                            }
+                            userId_receiveCopy += encoding.GetString(userId_receive).Split(' ')[i] + " ";
+                        }
+                        for (int i = 0; i < userId.Count; i++)
+                        {
+                            for(int j = 1; j < userId_receiveCopy.Split(' ').Length; j++)
+                            {
+                                if (String.Compare(userId_receiveCopy.Split(' ')[j], userId[i]) == 0)
+                                {
+                                    // gửi cho người nhận id người gửi để check xem có đang nhắn tin cùng nhau không
+                                    //Socket_client[i].Send(data, 0, size, SocketFlags.None);
+                                    Socket_client[i].Send(encoding.GetBytes(packetMes), 0, size + size + size_userId, SocketFlags.None);
+
+                                }
+                            }    
+                        }
+                    }
+                    // gửi private
+                    else
+                    {
                         string packetMes = encoding.GetString(userId_receive).Split(' ')[0] + " " + encoding.GetString(data);
-
-                        //Console.WriteLine(packetMes);
-
                         for (int i = 0; i < userId.Count; i++)
                         {
                             if (String.Compare(encoding.GetString(userId_receive).Split(' ')[1], userId[i]) == 0)
@@ -145,11 +176,12 @@ namespace Server
                         //client.Send(data, 0, size, SocketFlags.None);
                         //Socket_client[1].Send(data, 0, size, SocketFlags.None);
                         //Socket_client[1].Send(data, 0, size, SocketFlags.None);
-
                     }
-                //}
+
+
+                }
             }
-            catch(Exception err)
+            catch (Exception err)
             {
                 Console.WriteLine(err.ToString());
             }
