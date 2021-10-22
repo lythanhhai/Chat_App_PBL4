@@ -154,12 +154,12 @@ namespace Server
                         {
                             for(int j = 2; j < userId_receiveCopy.Split(' ').Length; j++)
                             {
-                                if (String.Compare(userId_receiveCopy.Split(' ')[j], userId[i]) == 0)
+                                if (String.Compare(userId_receiveCopy.Split(' ')[j], userId[i]) == 0 && String.Compare(userId_receiveCopy.Split(' ')[j], userId_receiveCopy.Split(' ')[0]) != 0)
                                 {
                                     // gửi cho người nhận id người gửi để check xem có đang nhắn tin cùng nhau không
                                     //Socket_client[i].Send(data, 0, size, SocketFlags.None);
                                     Socket_client[i].Send(encoding.GetBytes(packetMes), 0, size + size + size + size_userId, SocketFlags.None);
-                                    break;
+                                    //break;
                                 }
                             }    
                         }
@@ -167,14 +167,14 @@ namespace Server
                     // gửi private
                     else
                     {
-                        packetMes = encoding.GetString(userId_receive).Split(' ')[0] + " " + encoding.GetString(data);
+                        packetMes = encoding.GetString(userId_receive).Split(' ')[0] + " " + "private" + " " + encoding.GetString(data);
                         for (int i = 0; i < userId.Count; i++)
                         {
                             if (String.Compare(encoding.GetString(userId_receive).Split(' ')[1], userId[i]) == 0)
                             {
                                 // gửi cho người nhận id người gửi để check xem có đang nhắn tin cùng nhau không
                                 //Socket_client[i].Send(data, 0, size, SocketFlags.None);
-                                Socket_client[i].Send(encoding.GetBytes(packetMes), 0, size + size + size_userId, SocketFlags.None);
+                                Socket_client[i].Send(encoding.GetBytes(packetMes), 0, size + size + size + size_userId, SocketFlags.None);
 
                             }
                         }

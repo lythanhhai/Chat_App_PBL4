@@ -151,16 +151,20 @@ namespace PBL4_Chat
                     Byte[] message = new Byte[BUFFER_SIZE];
                     stream.Read(message, 0, BUFFER_SIZE);
                     data = encoding.GetString(message);
+                    string data_copy = null;
+                    for(int i = 0; i < data.Split(' ').Length; i++)
+                    {
 
+                    }    
                     res = null;
                     //MessageBox.Show(data);
                     //MessageBox.Show(data.Split(' ').Length.ToString());
                     //MessageBox.Show(data.Split(' ')[0]);
                     //MessageBox.Show(userId_receive());
                     // private
-                    if (data.Split(' ').Length < 3)
+                    if (data.Split(' ')[1] == "private")
                     {
-                        for (int i = 1; i < data.Split(' ').Length; i++)
+                        for (int i = 2; i < data.Split(' ').Length; i++)
                         {
                             res += data.Split(' ')[i] + " ";
                         }
@@ -178,8 +182,11 @@ namespace PBL4_Chat
                     // group
                     else
                     {
-
-                        res += data.Split(' ')[2] + " ";
+                        //lấy message từ vị trí thứ 2
+                        for (int i = 2; i < data.Split(' ').Length; i++)
+                        {
+                            res += data.Split(' ')[i] + " ";
+                        }
                         //MessageBox.Show(res);
                         //nameReceiver = BLL_User.instance.BLL_getUserById(userId_receive()).firstName + " " + BLL_User.instance.BLL_getUserById(userId_receive()).lastName;
                         // khi người dùng đang nhắn 1 người khác nhưng 1 người khác gửi tin thì tin nhắn này không hiển thị lên
