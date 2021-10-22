@@ -277,7 +277,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\profile.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Attach_hv_24px.png" />
     <None Include="Resources\Attach_24px.png" />
@@ -363,6 +365,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\UserEvent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\send.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\messenger.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\message.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

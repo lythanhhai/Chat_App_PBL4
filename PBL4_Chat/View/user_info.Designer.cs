@@ -90,7 +90,7 @@ namespace PBL4_Chat.View
             // 
             this.gunaCirclePictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.gunaCirclePictureBox1.BaseColor = System.Drawing.Color.White;
-            this.gunaCirclePictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("gunaCirclePictureBox1.Image")));
+            this.gunaCirclePictureBox1.Image = global::PBL4_Chat.Properties.Resources.profile;
             this.gunaCirclePictureBox1.Location = new System.Drawing.Point(3, 15);
             this.gunaCirclePictureBox1.Name = "gunaCirclePictureBox1";
             this.gunaCirclePictureBox1.Size = new System.Drawing.Size(59, 63);

@@ -18,6 +18,16 @@ namespace PBL4_Chat
 {
     public partial class mainForm : Form
     {
+        // format of chat private 
+        // id_sender + id_receive + data ...
+        // forrmat of chat group 
+        // id_sender + id_group + id_sender + list_idMember + data ...
+
+        // group_info(id_group + id_sender + list_idMember) -> mainForm.
+        // user_info(id_receive) -> mainForm.
+
+        // 
+       
         private const int BUFFER_SIZE = 1024;
         private const int PORT_NUMBER = 9999;
 
@@ -53,6 +63,26 @@ namespace PBL4_Chat
 
         }
 
+        // search user 
+        private void btn_search_Click(object sender, EventArgs e)
+        {
+            panel_listUser.Controls.Clear();
+            List<User> listUser = BLL_User.instance.BLL_getListUserByName(txt_search.Text);
+            foreach (User u in listUser)
+            {
+                if (u.userId == userId())
+                {
+                    continue;
+                }
+                panel_listUser.Controls.Add(new user_info
+                {
+                    userId = u.userId,
+                    name = u.firstName + " " + u.lastName,
+                    phone = u.phone,
+                });
+            }
+        }
+        
         // showDSUser có trong hệ thống
         public void showUser()
         {
@@ -106,6 +136,8 @@ namespace PBL4_Chat
         }
         private void mainForm_Load(object sender, EventArgs e)
         {
+            // 
+            lbNamePerson.Text = BLL_User.instance.BLL_getUserById(userId()).firstName + " " + BLL_User.instance.BLL_getUserById(userId()).lastName;
             showUser();
             showGroup();
             pn_chat.Visible = false;
@@ -168,7 +200,7 @@ namespace PBL4_Chat
                         {
                             res += data.Split(' ')[i] + " ";
                         }
-                        //nameReceiver = BLL_User.instance.BLL_getUserById(userId_receive()).firstName + " " + BLL_User.instance.BLL_getUserById(userId_receive()).lastName;
+                        nameReceiver = BLL_User.instance.BLL_getUserById(userId_receive()).firstName + " " + BLL_User.instance.BLL_getUserById(userId_receive()).lastName;
                         // khi người dùng đang nhắn 1 người khác nhưng 1 người khác gửi tin thì tin nhắn này không hiển thị lên
                         if (string.Compare(data.Split(' ')[0], userId_receive()) == 0)
                         {
@@ -188,7 +220,7 @@ namespace PBL4_Chat
                             res += data.Split(' ')[i] + " ";
                         }
                         //MessageBox.Show(res);
-                        //nameReceiver = BLL_User.instance.BLL_getUserById(userId_receive()).firstName + " " + BLL_User.instance.BLL_getUserById(userId_receive()).lastName;
+                        nameReceiver = BLL_User.instance.BLL_getUserById(data.Split(' ')[0]).firstName + " " + BLL_User.instance.BLL_getUserById(data.Split(' ')[0]).lastName;
                         // khi người dùng đang nhắn 1 người khác nhưng 1 người khác gửi tin thì tin nhắn này không hiển thị lên
                         if (string.Compare(data.Split(' ')[1], userId_receive().Split(' ')[0]) == 0)
                         {
@@ -284,11 +316,25 @@ namespace PBL4_Chat
         {
             return userId();
         }
+        // biến tạo 1 group trong 1 lần 
+        static int index = 0;
         private void btn_taoNhom_Click(object sender, EventArgs e)
         {
             CreateGroup cg = new CreateGroup();
             cg.userId += new CreateGroup.getUserId(getUserIdCrea);
-            cg.Show();
+            if(index == 0)
+            {
+                cg.Show();
+                index++;
+            }    
+
+            else
+            {
+                MessageBox.Show("Bạn đang mở tạo group");
+                index--;
+            }                
         }
+
+        
     }
 }
