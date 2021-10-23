@@ -47,10 +47,10 @@ namespace PBL4_Chat.View
             this.groupInfo.Controls.Add(this.gunaCirclePictureBox1);
             this.groupInfo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.groupInfo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupInfo.GradientColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(36)))), ((int)(((byte)(206)))));
+            this.groupInfo.GradientColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(48)))), ((int)(((byte)(90)))));
             this.groupInfo.GradientColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(48)))), ((int)(((byte)(90)))));
             this.groupInfo.GradientColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(48)))), ((int)(((byte)(90)))));
-            this.groupInfo.GradientColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(48)))), ((int)(((byte)(90)))));
+            this.groupInfo.GradientColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(36)))), ((int)(((byte)(206)))));
             this.groupInfo.Location = new System.Drawing.Point(0, 0);
             this.groupInfo.Name = "groupInfo";
             this.groupInfo.Size = new System.Drawing.Size(384, 95);
