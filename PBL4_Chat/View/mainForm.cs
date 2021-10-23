@@ -222,23 +222,33 @@ namespace PBL4_Chat
                     //MessageBox.Show(data.Split(' ').Length.ToString());
                     //MessageBox.Show(data.Split(' ')[0]);
                     //MessageBox.Show(userId_receive());
-                    // private
+
+                    // private(sender)
                     if (data.Split(' ')[1] == "private")
                     {
                         for (int i = 2; i < data.Split(' ').Length; i++)
                         {
                             res += data.Split(' ')[i] + " ";
                         }
-                        nameReceiver = BLL_User.instance.BLL_getUserById(userId_receive()).firstName + " " + BLL_User.instance.BLL_getUserById(userId_receive()).lastName;
-                        // khi người dùng đang nhắn 1 người khác nhưng 1 người khác gửi tin thì tin nhắn này không hiển thị lên
-                        if (string.Compare(data.Split(' ')[0], userId_receive()) == 0)
+                        // kiểm tra người nhận có đang nhắn private không
+                        if (userId_receive().Split(' ').Length == 1)
                         {
-                            msg();
-                        }
+                            nameReceiver = BLL_User.instance.BLL_getUserById(userId_receive()).firstName + " " + BLL_User.instance.BLL_getUserById(userId_receive()).lastName;
+                            // khi người dùng đang nhắn 1 người khác nhưng 1 người khác gửi tin thì tin nhắn này không hiển thị lên
+                            if (string.Compare(data.Split(' ')[0], userId_receive()) == 0)
+                            {
+                                msg();
+                            }
+                            else
+                            {
+
+                            }
+                        }  
                         else
                         {
-                            
-                        }
+
+                        }                            
+                        
                     }   
                     // group
                     else
@@ -249,17 +259,25 @@ namespace PBL4_Chat
                             res += data.Split(' ')[i] + " ";
                         }
                         //MessageBox.Show(res);
-                        nameReceiver = BLL_User.instance.BLL_getUserById(data.Split(' ')[0]).firstName + " " + BLL_User.instance.BLL_getUserById(data.Split(' ')[0]).lastName;
-                        // khi người dùng đang nhắn 1 người khác nhưng 1 người khác gửi tin thì tin nhắn này không hiển thị lên
-                        // kiểm tra xem có đúng id_group không (chiều dài của user_receive)
-                        if (string.Compare(data.Split(' ')[1], userId_receive().Split(' ')[0]) == 0 && userId_receive().Split(' ').Length > 1)
+                        // kiểm tra người nhận xem có đang nhắn group không ?
+                        if (userId_receive().Split(' ').Length > 1)
                         {
-                            msg();
-                        }
+                            nameReceiver = BLL_User.instance.BLL_getUserById(data.Split(' ')[0]).firstName + " " + BLL_User.instance.BLL_getUserById(data.Split(' ')[0]).lastName;
+                            // khi người dùng đang nhắn 1 người khác nhưng 1 người khác gửi tin thì tin nhắn này không hiển thị lên
+                            // kiểm tra xem có đúng id_group không (chiều dài của user_receive)
+                            if (string.Compare(data.Split(' ')[1], userId_receive().Split(' ')[0]) == 0)
+                            {
+                                msg();
+                            }
+                            else
+                            {
+
+                            }
+                        }   
                         else
                         {
 
-                        }
+                        }                            
                     }                        
                     
                 }
