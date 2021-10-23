@@ -251,7 +251,8 @@ namespace PBL4_Chat
                         //MessageBox.Show(res);
                         nameReceiver = BLL_User.instance.BLL_getUserById(data.Split(' ')[0]).firstName + " " + BLL_User.instance.BLL_getUserById(data.Split(' ')[0]).lastName;
                         // khi người dùng đang nhắn 1 người khác nhưng 1 người khác gửi tin thì tin nhắn này không hiển thị lên
-                        if (string.Compare(data.Split(' ')[1], userId_receive().Split(' ')[0]) == 0)
+                        // kiểm tra xem có đúng id_group không (chiều dài của user_receive)
+                        if (string.Compare(data.Split(' ')[1], userId_receive().Split(' ')[0]) == 0 && userId_receive().Split(' ').Length > 1)
                         {
                             msg();
                         }
@@ -369,6 +370,21 @@ namespace PBL4_Chat
             }                
         }
 
-        
+        private void btn_chooseFile_Click(object sender, EventArgs e)
+        {
+            Opendialog.ShowDialog();
+            string filename = Opendialog.FileName;
+            string readFile = File.ReadAllText(filename);
+            txt_message.Text += Environment.NewLine
+                              + BLL_User.instance.BLL_getUserById(userId()).firstName
+                              + " "
+                              + BLL_User.instance.BLL_getUserById(userId()).lastName
+                              + " << " + readFile;
+
+            byte[] userId_receive1 = encoding.GetBytes(userId() + " " + userId_receive());
+            stream.Write(userId_receive1, 0, userId_receive1.Length);
+            byte[] message = encoding.GetBytes(readFile);
+            stream.Write(message, 0, message.Length);
+        }
     }
 }
