@@ -375,34 +375,55 @@ namespace PBL4_Chat
         {
             CreateGroup cg = new CreateGroup();
             cg.userId += new CreateGroup.getUserId(getUserIdCrea);
-            if(index == 0)
-            {
-                cg.Show();
-                index++;
-            }    
+            cg.Show();
+            //if(index == 0)
+            //{
+            //    cg.Show();
+            //    index++;
+            //}    
 
-            else
-            {
-                MessageBox.Show("Bạn đang mở tạo group");
-                index--;
-            }                
+            //else
+            //{
+            //    MessageBox.Show("Bạn đang mở tạo group");
+            //    index--;
+            //}                
         }
 
         private void btn_chooseFile_Click(object sender, EventArgs e)
         {
-            Opendialog.ShowDialog();
-            string filename = Opendialog.FileName;
-            string readFile = File.ReadAllText(filename);
-            txt_message.Text += Environment.NewLine
-                              + BLL_User.instance.BLL_getUserById(userId()).firstName
-                              + " "
-                              + BLL_User.instance.BLL_getUserById(userId()).lastName
-                              + " << " + readFile;
+            try
+            {
+                Opendialog.ShowDialog();
+                
+                string filename = Opendialog.FileName;
+                
+                // kiểm tra xem người dùng có chọn file không
+                if (!String.IsNullOrEmpty(filename) != null && File.Exists(filename))
+                {
+                    string readFile = File.ReadAllText(filename);
+                    //txt_message.Text += Environment.NewLine
+                    //                  + BLL_User.instance.BLL_getUserById(userId()).firstName
+                    //                  + " "
+                    //                  + BLL_User.instance.BLL_getUserById(userId()).lastName
+                    //                  + " << " + readFile;
 
-            byte[] userId_receive1 = encoding.GetBytes(userId() + " " + userId_receive());
-            stream.Write(userId_receive1, 0, userId_receive1.Length);
-            byte[] message = encoding.GetBytes(readFile);
-            stream.Write(message, 0, message.Length);
+                    //byte[] userId_receive1 = encoding.GetBytes(userId() + " " + userId_receive());
+                    //stream.Write(userId_receive1, 0, userId_receive1.Length);
+                    //byte[] message = encoding.GetBytes(readFile);
+                    //stream.Write(message, 0, message.Length);
+                    txt_send.Text = readFile;
+                }
+            }
+            catch(Exception err)
+            {
+                MessageBox.Show(err.ToString());
+            }
+               
+        }
+
+        private void btn_message_Click(object sender, EventArgs e)
+        {
+            panel_listUser.Visible = true;
         }
     }
 }

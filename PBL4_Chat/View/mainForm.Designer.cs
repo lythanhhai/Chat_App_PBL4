@@ -111,6 +111,7 @@ namespace PBL4_Chat
             this.btn_message.Radius = 4;
             this.btn_message.Size = new System.Drawing.Size(96, 61);
             this.btn_message.TabIndex = 20;
+            this.btn_message.Click += new System.EventHandler(this.btn_message_Click);
             // 
             // gunaCirclePictureBox1
             // 
@@ -566,6 +567,7 @@ namespace PBL4_Chat
             this.panel_listUser.Padding = new System.Windows.Forms.Padding(0, 113, 0, 0);
             this.panel_listUser.Size = new System.Drawing.Size(387, 859);
             this.panel_listUser.TabIndex = 0;
+            this.panel_listUser.Visible = false;
             // 
             // Opendialog
             // 
