@@ -1,0 +1,281 @@
+[33mcommit 3847cdb4c0b95cbad8e8e09724263bc4fe143b0e[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: lythanhhai <you@example.com>
+Date:   Fri Oct 8 10:35:01 2021 +0700
+
+    fix chat 1
+
+[33mcommit a650325a2607bbf7563f4e32631697989033b9a8[m[33m ([m[1;31morigin/PBL4[m[33m)[m
+Author: lythanhhai <you@example.com>
+Date:   Fri Oct 8 09:37:31 2021 +0700
+
+    fix chat
+
+[33mcommit e22b69da03052074c3b23db6db55140c53da38f9[m
+Author: lythanhhai <you@example.com>
+Date:   Thu Oct 7 21:04:48 2021 +0700
+
+    fix error send message
+
+[33mcommit 82baa442b5debb2e156f9190e36af0900cd67933[m
+Author: lythanhhai <you@example.com>
+Date:   Thu Oct 7 14:55:46 2021 +0700
+
+    Fix a problems of 1 client send another client but second client was chatting with another client dont first client
+
+[33mcommit 1ff191cd337cd9892884580b20d36753c8aba02f[m
+Author: lythanhhai <you@example.com>
+Date:   Thu Oct 7 11:29:57 2021 +0700
+
+    update
+
+[33mcommit 598ab6eec15c310639f7abeb8f6c2e82460ab4d5[m
+Author: lythanhhai <you@example.com>
+Date:   Thu Oct 7 00:25:39 2021 +0700
+
+    Load frame chat 1
+
+[33mcommit b603094f5fd6570df256046d3b43194b46ede56f[m
+Author: lythanhhai <you@example.com>
+Date:   Thu Oct 7 00:12:48 2021 +0700
+
+    Load frame chat
+
+[33mcommit 490f04b80127db0df47376e571121b37c312ebf1[m
+Author: lythanhhai <you@example.com>
+Date:   Wed Oct 6 23:44:57 2021 +0700
+
+    update khung chat
+
+[33mcommit ce8b76250f19ff7d4ce8237b5c9e59e8e198f588[m
+Author: lythanhhai <you@example.com>
+Date:   Wed Oct 6 08:10:25 2021 +0700
+
+    fix bug add database
+
+[33mcommit 9f64e0a86d13059ecc8514fe54f458a391c160ab[m
+Merge: 2790a8f e3669af
+Author: lythanhhai <69575583+lythanhhai@users.noreply.github.com>
+Date:   Tue Oct 5 23:58:32 2021 +0700
+
+    Merge pull request #18 from lythanhhai/PBL4
+    
+    remove user from server
+
+[33mcommit e3669af411d2038a4975b7d3a2441cd025663512[m
+Author: lythanhhai <you@example.com>
+Date:   Tue Oct 5 23:57:57 2021 +0700
+
+    remove user from server
+
+[33mcommit 2790a8f716626853203d000ba675254f5bc737e4[m
+Merge: fd71694 9d25c4a
+Author: lythanhhai <69575583+lythanhhai@users.noreply.github.com>
+Date:   Mon Oct 4 22:58:30 2021 +0700
+
+    Merge pull request #17 from lythanhhai/PBL4
+    
+    update ui main form
+
+[33mcommit 9d25c4a820d7a13228c9601389938773c5f46786[m
+Author: lythanhhai <you@example.com>
+Date:   Mon Oct 4 22:57:19 2021 +0700
+
+    update ui mainForm
+
+[33mcommit fd7169408b8dc04ef21afdc5e77990bf18d7fc0f[m
+Merge: 38c03cb 852cfa2
+Author: lythanhhai <69575583+lythanhhai@users.noreply.github.com>
+Date:   Sun Oct 3 13:36:16 2021 +0700
+
+    Merge pull request #16 from lythanhhai/PBL4
+    
+    handle add userRelation or Message into database
+
+[33mcommit 852cfa2c55decf75e55f44d6b93e0e41682f0750[m
+Author: lythanhhai <you@example.com>
+Date:   Sun Oct 3 13:34:33 2021 +0700
+
+    handle add userRelation or Message into database
+
+[33mcommit 38c03cb76e84623e483847df346f51591b65af03[m
+Merge: def4705 4922bbe
+Author: lythanhhai <69575583+lythanhhai@users.noreply.github.com>
+Date:   Sat Oct 2 08:45:18 2021 +0700
+
+    Merge pull request #15 from lythanhhai/PBL4
+    
+    add user relation
+
+[33mcommit 4922bbedf42a022b783a1ab63ec54d5539fc6c28[m
+Author: lythanhhai <you@example.com>
+Date:   Sat Oct 2 08:44:33 2021 +0700
+
+    add user relatio
+
+[33mcommit def4705e11c5c34d1708ae0fabb7aad9f196779c[m
+Merge: 97238ea 58deb3b
+Author: lythanhhai <69575583+lythanhhai@users.noreply.github.com>
+Date:   Sat Oct 2 00:27:23 2021 +0700
+
+    Merge pull request #14 from lythanhhai/PBL4
+    
+    find receiver and send message correct
+
+[33mcommit 58deb3bc86ab59d22d1c06864bbcc915b40f2414[m
+Author: lythanhhai <you@example.com>
+Date:   Sat Oct 2 00:26:23 2021 +0700
+
+    find receiver and send message correct
+
+[33mcommit 97238ea28cbac456d153dc2e4ae140e91801c6a4[m
+Merge: 669dcbb 4dfd3f6
+Author: lythanhhai <69575583+lythanhhai@users.noreply.github.com>
+Date:   Fri Oct 1 11:50:16 2021 +0700
+
+    Merge pull request #13 from lythanhhai/PBL4
+    
+    send message
+
+[33mcommit 4dfd3f6bf2cc3eb3ea1ee6b2adcdbc087e74db69[m
+Author: lythanhhai <you@example.com>
+Date:   Fri Oct 1 11:48:37 2021 +0700
+
+    send message
+
+[33mcommit 6993cc8182b50cd85de633897247db5ee3889099[m
+Author: lythanhhai <you@example.com>
+Date:   Fri Oct 1 09:15:22 2021 +0700
+
+    choose friend to chat
+
+[33mcommit 669dcbb6ab36a08202039320ac5389d1b1dfaf72[m
+Merge: cadd8e3 b82275b
+Author: lythanhhai <69575583+lythanhhai@users.noreply.github.com>
+Date:   Fri Oct 1 08:50:52 2021 +0700
+
+    Merge pull request #12 from lythanhhai/PBL4
+    
+    add list User
+
+[33mcommit b82275bc8a6e75a3f1dc09e132005b17df331b62[m
+Author: lythanhhai <you@example.com>
+Date:   Fri Oct 1 08:09:46 2021 +0700
+
+    add list User
+
+[33mcommit cadd8e3a5c96ae1483b12f3ccc4e22dc57e20463[m
+Merge: 361bb32 b8f0b24
+Author: lythanhhai <69575583+lythanhhai@users.noreply.github.com>
+Date:   Thu Sep 30 23:11:00 2021 +0700
+
+    Merge pull request #11 from lythanhhai/PBL4
+    
+    add database for app
+
+[33mcommit b8f0b2466d048712d80b9d58fb47b84f4b11e7c5[m
+Author: lythanhhai <you@example.com>
+Date:   Thu Sep 30 23:10:14 2021 +0700
+
+    add database for app
+
+[33mcommit 361bb327afbf194bdb39d689a74a78927badb0fd[m
+Merge: 75b7555 a63f37a
+Author: lythanhhai <69575583+lythanhhai@users.noreply.github.com>
+Date:   Thu Sep 30 21:01:54 2021 +0700
+
+    Merge pull request #10 from lythanhhai/PBL4
+    
+    create model 3 layer for app
+
+[33mcommit a63f37acc4ebf4d2aa271cacd5b98741f1491ef3[m
+Author: lythanhhai <you@example.com>
+Date:   Thu Sep 30 21:00:45 2021 +0700
+
+    create model 3 layer for app
+
+[33mcommit 75b7555d2fe4db27330b8a353d341d06510b7947[m
+Merge: 4d2d4ac f23616e
+Author: lythanhhai <69575583+lythanhhai@users.noreply.github.com>
+Date:   Thu Sep 30 16:22:05 2021 +0700
+
+    Merge pull request #9 from lythanhhai/PBL4
+    
+    handle event for login/register
+
+[33mcommit f23616e390ceac62a22e8552b4f882cc63ba02b6[m
+Author: lythanhhai <you@example.com>
+Date:   Thu Sep 30 16:21:19 2021 +0700
+
+    handle event for login/register
+
+[33mcommit 4d2d4ac60448115354d6ca25ba28f7b22c346ed6[m
+Merge: 110e860 3ffd1c7
+Author: lythanhhai <69575583+lythanhhai@users.noreply.github.com>
+Date:   Thu Sep 30 11:32:49 2021 +0700
+
+    Merge pull request #8 from lythanhhai/PBL4
+    
+    UI login
+
+[33mcommit 3ffd1c7677d69e71ffcb04e52d2c9ed4124bfe7c[m
+Author: lythanhhai <you@example.com>
+Date:   Thu Sep 30 11:31:45 2021 +0700
+
+    UI login
+
+[33mcommit 110e860f27362397e459eeed066e26df1ef7b429[m
+Merge: e58c36a 4876028
+Author: lythanhhai <69575583+lythanhhai@users.noreply.github.com>
+Date:   Wed Sep 29 23:52:38 2021 +0700
+
+    Merge pull request #7 from lythanhhai/PBL4
+    
+    create and handle form login/register
+
+[33mcommit 4876028a26886e39ff7bcf59a6b052b6caec038a[m
+Author: lythanhhai <you@example.com>
+Date:   Wed Sep 29 23:51:30 2021 +0700
+
+    create and handle form login/register
+
+[33mcommit e58c36a255488ee625a5bde224188d7991f56dbb[m
+Merge: c4c2941 a27838e
+Author: lythanhhai <69575583+lythanhhai@users.noreply.github.com>
+Date:   Tue Sep 28 23:24:58 2021 +0700
+
+    Merge pull request #6 from lythanhhai/PBL4
+    
+    create ui for register and login
+
+[33mcommit a27838e98142261bcdcd8eacb4e0e3d03d9c0c27[m
+Author: lythanhhai <you@example.com>
+Date:   Tue Sep 28 23:23:40 2021 +0700
+
+    create ui for register and login
+
+[33mcommit c4c29411daca24ee9c2c3d4f2778ed0c6f7c7357[m
+Merge: 331c886 3484fd5
+Author: lythanhhai <69575583+lythanhhai@users.noreply.github.com>
+Date:   Mon Sep 27 23:16:26 2021 +0700
+
+    Merge pull request #5 from lythanhhai/PBL4
+    
+    handle recceive for multiple client
+
+[33mcommit 3484fd58ea41704d1afaf90950e9ec4ce09c6cca[m
+Author: lythanhhai <you@example.com>
+Date:   Mon Sep 27 23:15:17 2021 +0700
+
+    handle recceive for multiple client
+
+[33mcommit 331c8868db575ae2e5083ef0e1408b6793182342[m
+Merge: 81b3a70 cf26535
+Author: lythanhhai <69575583+lythanhhai@users.noreply.github.com>
+Date:   Mon Sep 27 07:48:52 2021 +0700
+
+    Merge pull request #4 from lythanhhai/PBL4
+    
+    create_serverCLient
+
+[33mcommit cf26535c7ba261ffb7336c0dc6bc4b6336413d0e[m
+Author: lythanhhai <you@exa

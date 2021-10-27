@@ -1,0 +1,388 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6B729520-3A79-42A7-A41A-794113605D42}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>PBL4_Chat</RootNamespace>
+    <AssemblyName>PBL4_Chat</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bunifu.Dataviz.WinForms, Version=2.2.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.Dataviz.WinForms.2.2.0\lib\Bunifu.Dataviz.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.Licensing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=f89b4760ba7dcb6b, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.Dataviz.WinForms.2.2.0\lib\Bunifu.Licensing.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.1.5.3, Version=1.5.3.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.2.3\lib\net40\Bunifu.UI.WinForms.1.5.3.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuButton, Version=5.2.2.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.2.3\lib\net40\Bunifu.UI.WinForms.BunifuButton.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuCheckBox, Version=5.2.2.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.2.3\lib\net40\Bunifu.UI.WinForms.BunifuCheckBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuCircleProgress, Version=5.2.2.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.2.3\lib\net40\Bunifu.UI.WinForms.BunifuCircleProgress.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuColorTransition, Version=5.2.2.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.2.3\lib\net40\Bunifu.UI.WinForms.BunifuColorTransition.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuDataGridView, Version=5.2.2.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.2.3\lib\net40\Bunifu.UI.WinForms.BunifuDataGridView.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuDatePicker, Version=5.2.2.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.2.3\lib\net40\Bunifu.UI.WinForms.BunifuDatePicker.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuDropdown, Version=5.2.2.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.2.3\lib\net40\Bunifu.UI.WinForms.BunifuDropdown.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuFormDock, Version=5.2.2.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.2.3\lib\net40\Bunifu.UI.WinForms.BunifuFormDock.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuGauge, Version=5.2.2.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.2.3\lib\net40\Bunifu.UI.WinForms.BunifuGauge.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuGradientPanel, Version=5.2.2.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.2.3\lib\net40\Bunifu.UI.WinForms.BunifuGradientPanel.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuGroupBox, Version=5.2.2.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.2.3\lib\net40\Bunifu.UI.WinForms.BunifuGroupBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuImageButton, Version=5.2.2.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.2.3\lib\net40\Bunifu.UI.WinForms.BunifuImageButton.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuLabel, Version=5.2.2.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.2.3\lib\net40\Bunifu.UI.WinForms.BunifuLabel.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuLoader, Version=5.2.2.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.2.3\lib\net40\Bunifu.UI.WinForms.BunifuLoader.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuPages, Version=5.2.2.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.2.3\lib\net40\Bunifu.UI.WinForms.BunifuPages.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuPanel, Version=5.2.2.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.2.3\lib\net40\Bunifu.UI.WinForms.BunifuPanel.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuPictureBox, Version=5.2.2.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.2.3\lib\net40\Bunifu.UI.WinForms.BunifuPictureBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuProgressBar, Version=5.2.2.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.2.3\lib\net40\Bunifu.UI.WinForms.BunifuProgressBar.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuRadioButton, Version=5.2.2.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.2.3\lib\net40\Bunifu.UI.WinForms.BunifuRadioButton.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuRating, Version=5.2.2.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.2.3\lib\net40\Bunifu.UI.WinForms.BunifuRating.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuScrollBar, Version=5.2.2.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.2.3\lib\net40\Bunifu.UI.WinForms.BunifuScrollBar.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuSeparator, Version=5.2.2.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.2.3\lib\net40\Bunifu.UI.WinForms.BunifuSeparator.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuShadowPanel, Version=5.2.2.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.2.3\lib\net40\Bunifu.UI.WinForms.BunifuShadowPanel.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuShapes, Version=5.2.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.2.3\lib\net40\Bunifu.UI.WinForms.BunifuShapes.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuSlider, Version=5.2.2.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.2.3\lib\net40\Bunifu.UI.WinForms.BunifuSlider.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuSnackbar, Version=5.2.2.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.2.3\lib\net40\Bunifu.UI.WinForms.BunifuSnackbar.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuTextBox, Version=5.2.2.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.2.3\lib\net40\Bunifu.UI.WinForms.BunifuTextBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuToggleSwitch, Version=5.2.2.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.2.3\lib\net40\Bunifu.UI.WinForms.BunifuToggleSwitch.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuToolTip, Version=5.2.2.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.2.3\lib\net40\Bunifu.UI.WinForms.BunifuToolTip.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuTransition, Version=5.2.2.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.2.3\lib\net40\Bunifu.UI.WinForms.BunifuTransition.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuUserControl, Version=5.2.2.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.2.3\lib\net40\Bunifu.UI.WinForms.BunifuUserControl.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.Deprecated, Version=5.2.2.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.2.3\lib\net40\Bunifu.UI.WinForms.Deprecated.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI">
+      <HintPath>..\..\guna_framework\Guna_UI_Framework_Ultimate_v2.0.0.1\Guna_UI_Framework_Ultimate_v2.0.0.1\Guna.UI-Framework-Lib-master\Guna.UI WinForms\.net 4.0\Guna.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI2">
+      <HintPath>..\..\..\guna_framework\Guna_UI_Framework_Ultimate_v2.0.0.1\Guna_UI_Framework_Ultimate_v2.0.0.1\Guna.UI-Framework-Lib-master\Guna.UI2 WinForms\.net 4.0\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BLL\BLL_Group.cs" />
+    <Compile Include="BLL\BLL_User.cs" />
+    <Compile Include="BLL\BLL_UserRelation.cs" />
+    <Compile Include="DAL\DAL_Group.cs" />
+    <Compile Include="DAL\DAL_User.cs" />
+    <Compile Include="DAL\DAL_UserRelationship.cs" />
+    <Compile Include="DAL\DBHelper.cs" />
+    <Compile Include="DTO\Group.cs" />
+    <Compile Include="DTO\Message.cs" />
+    <Compile Include="DTO\Message_group.cs" />
+    <Compile Include="DTO\User.cs" />
+    <Compile Include="DTO\UserRelationship.cs" />
+    <Compile Include="DTO\User_group.cs" />
+    <Compile Include="View\CreateGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\CreateGroup.designer.cs">
+      <DependentUpon>CreateGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\group_info.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\group_info.Designer.cs">
+      <DependentUpon>group_info.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\mainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\mainForm.Designer.cs">
+      <DependentUpon>mainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\Register.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Register.designer.cs">
+      <DependentUpon>Register.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\userInfoAdd.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\userInfoAdd.Designer.cs">
+      <DependentUpon>userInfoAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\user_info.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\user_info.Designer.cs">
+      <DependentUpon>user_info.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\user_message.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\user_message.Designer.cs">
+      <DependentUpon>user_message.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="View\CreateGroup.resx">
+      <DependentUpon>CreateGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\group_info.resx">
+      <DependentUpon>group_info.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\mainForm.resx">
+      <DependentUpon>mainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="View\Register.resx">
+      <DependentUpon>Register.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\userInfoAdd.resx">
+      <DependentUpon>userInfoAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\user_info.resx">
+      <DependentUpon>user_info.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\user_message.resx">
+      <DependentUpon>user_message.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\profile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Attach_hv_24px.png" />
+    <None Include="Resources\Attach_24px.png" />
+    <None Include="Resources\Address Book2_16px.png" />
+    <None Include="Resources\Address Book_hv_16px.png" />
+    <None Include="Resources\Video Call_hv_24px.png" />
+    <None Include="Resources\Video Call_24px.png" />
+    <None Include="Resources\User Account_ck_16px.png" />
+    <None Include="Resources\User Account_16px.png" />
+    <None Include="Resources\Telegram App_18px.png" />
+    <None Include="Resources\Speech Bubble_ck_16px.png" />
+    <None Include="Resources\Speech Bubble_16px.png" />
+    <None Include="Resources\Settings_ck_16px.png" />
+    <None Include="Resources\Settings_16px.png" />
+    <None Include="Resources\Plus_16px.png" />
+    <None Include="Resources\Phone_hv_24px.png" />
+    <None Include="Resources\Phone_24px.png" />
+    <None Include="Resources\Next page_24px.png" />
+    <None Include="Resources\Menu_hv_16px.png" />
+    <None Include="Resources\Menu_16px.png" />
+    <None Include="Resources\Instagram_hv_24px.png" />
+    <None Include="Resources\Instagram_24px.png" />
+    <None Include="Resources\Info_hv_24px.png" />
+    <None Include="Resources\Info_24px.png" />
+    <None Include="Resources\Connection Status On_ck_16px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Back To_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Connection Status On_16px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\confirmPass.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\confirmPassEvent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\password.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PasswordEvent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\siginIn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SiginIn1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SignIn2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\signInHover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\signUp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SignUp1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SignUp2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\signUpHove.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UserEvent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\send.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\messenger.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\message.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\message1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\message2.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
