@@ -20,7 +20,7 @@ namespace PBL4_Chat.View
         public delegate string getUserId();
         public getUserId userId;
 
-        // nhận userId từ mainForm
+        // nhận userId từ mainForm(userId_add)
         public delegate string getUserIdAdd();
         public getUserIdAdd userIdAdd;
 
@@ -101,6 +101,11 @@ namespace PBL4_Chat.View
             {
                 string id_group = Convert.ToString(Convert.ToInt32(BLL_Group.instance.BLL_getMaxIdGroup()) + 1);
                 string date = DateTime.Now.ToString();
+                // kiểm tra lượng người (tối thiểu 3 người, kể cả người tạo)
+                if(userId_add.Count + 1 < 3)
+                {
+                    MessageBox.Show("Nhóm tối thiểu 3 người");
+                }    
                 // thêm group
                 BLL_Group.instance.BLL_addGroup(id_group, txtNameGroup.Text.ToString(), userId(), date, txtDes.Text.ToString());
                 foreach (string str in userId_add)
@@ -110,6 +115,7 @@ namespace PBL4_Chat.View
                     BLL_Group.instance.BLL_addUserGroup(id_userGroup, str, id_group, date);
                 }
                 MessageBox.Show("Tạo nhóm thành công");
+                userId_add.Clear();
             }
             catch(Exception err)
             {
@@ -121,6 +127,11 @@ namespace PBL4_Chat.View
         private void CreateGroup_Load(object sender, EventArgs e)
         {
             showUser();
+        }
+
+        private void CreateGroup_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            userId_add.Clear();
         }
     }
 }

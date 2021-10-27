@@ -205,6 +205,7 @@ namespace PBL4_Chat.View
             this.Name = "CreateGroup";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Tạo nhóm";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CreateGroup_FormClosed);
             this.Load += new System.EventHandler(this.CreateGroup_Load);
             this.panelMain.ResumeLayout(false);
             this.panelMain.PerformLayout();

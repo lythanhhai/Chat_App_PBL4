@@ -221,9 +221,7 @@ namespace PBL4_Chat
                     ns.Read(choose, 0, choose.Length);
                     data = encoding.GetString(choose);
                     //MessageBox.Show(encoding.GetString(choose));
-                    //ns = client.GetStream();
                     
-
                     //stream = client.GetStream();
                     //Byte[] message = new Byte[BUFFER_SIZE];
                     //stream.Read(message, 0, BUFFER_SIZE);
@@ -244,10 +242,67 @@ namespace PBL4_Chat
                     //MessageBox.Show(userId_receive());
 
                     // chat image
-                    if (data.Contains("image") == true)
+                    if (String.Compare(data, "image") == 0)
                     {
-                        
-                        message = new Byte[1024 * 500];
+
+                        // private(sender)
+                        if (data.Split(' ')[1] == "private")
+                        {
+                            for (int i = 2; i < data.Split(' ').Length; i++)
+                            {
+                                res += data.Split(' ')[i] + " ";
+                            }
+                            // kiểm tra người nhận có đang nhắn private không
+                            if (userId_receive().Split(' ').Length == 1)
+                            {
+                                nameReceiver = BLL_User.instance.BLL_getUserById(userId_receive()).firstName + " " + BLL_User.instance.BLL_getUserById(userId_receive()).lastName;
+                                // khi người dùng đang nhắn 1 người khác nhưng 1 người khác gửi tin thì tin nhắn này không hiển thị lên
+                                if (string.Compare(data.Split(' ')[0], userId_receive()) == 0)
+                                {
+                                    msg();
+                                }
+                                else
+                                {
+
+                                }
+                            }
+                            else
+                            {
+
+                            }
+
+                        }
+                        // group
+                        else
+                        {
+                            //lấy message từ vị trí thứ 2
+                            for (int i = 2; i < data.Split(' ').Length; i++)
+                            {
+                                res += data.Split(' ')[i] + " ";
+                            }
+                            //MessageBox.Show(res);
+                            // kiểm tra người nhận xem có đang nhắn group không ?
+                            if (userId_receive().Split(' ').Length > 1)
+                            {
+                                nameReceiver = BLL_User.instance.BLL_getUserById(data.Split(' ')[0]).firstName + " " + BLL_User.instance.BLL_getUserById(data.Split(' ')[0]).lastName;
+                                // khi người dùng đang nhắn 1 người khác nhưng 1 người khác gửi tin thì tin nhắn này không hiển thị lên
+                                // kiểm tra xem có đúng id_group không (chiều dài của user_receive)
+                                if (string.Compare(data.Split(' ')[1], userId_receive().Split(' ')[0]) == 0)
+                                {
+                                    msg();
+                                }
+                                else
+                                {
+
+                                }
+                            }
+                            else
+                            {
+
+                            }
+                        }
+                        //
+                        message = new Byte[1024 * 1000];
                         ns.Read(message, 0, message.Length);
                         msg1();
                         //MessageBox.Show("a");
@@ -259,11 +314,6 @@ namespace PBL4_Chat
                         //}
                         //MessageBox.Show(res.Trim());
 
-                        //MemoryStream imagestream = new MemoryStream(encoding.GetBytes(res.Trim()));
-                        //Image image1 = Image.FromStream(imagestream);
-                        ////Bitmap bmp = new Bitmap(imagestream);
-                        //gunaTransfarantPictureBox1.Image = image1;
-                        //break;
                     }
                     // chat text
                     else
@@ -363,20 +413,19 @@ namespace PBL4_Chat
                     gtb.Size = new System.Drawing.Size(270, 50);
                     gtb.TabIndex = 0;
                     gtb.Text = res;
-                    gtb.Margin = new System.Windows.Forms.Padding(3, 3, 3, 3);
+                    gtb.Enabled = false;
+                    gtb.Radius = 20;
+                    gtb.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
                     txt_message.Controls.Add(gtb);
 
 
                     //ns = new NetworkStream(socket);
 
                 }
-                //MemoryStream imagestream = new MemoryStream(message);
-                //Image image1 = Image.FromStream(imagestream);
-                ////Bitmap bmp = new Bitmap(imagestream);
-                //gunaTransfarantPictureBox1.Image = image1;
+
             }
         }
-
+        // xử lý nhận luồng ảnh
         private void msg1()
         {
             if (this.InvokeRequired)
@@ -386,15 +435,26 @@ namespace PBL4_Chat
                 txt_message1.Text += Environment.NewLine + nameReceiver + " >> " + res;
                 if (res != null)
                 {
-                    MemoryStream imagestream = new MemoryStream(message);
-                    Image image1 = Image.FromStream(imagestream);
-                    ////Bitmap bmp = new Bitmap(imagestream);
-                    gunaTransfarantPictureBox1.Image = image1;
+                    //MemoryStream imagestream = new MemoryStream(message);
+                    //Image image1 = Image.FromStream(imagestream);
+                    //////Bitmap bmp = new Bitmap(imagestream);
+                    //gunaTransfarantPictureBox1.Image = image1;
                 }
                 MemoryStream imagestream1 = new MemoryStream(message);
                 Image image2 = Image.FromStream(imagestream1);
-                ////Bitmap bmp = new Bitmap(imagestream);
-                gunaTransfarantPictureBox1.Image = image2;
+                //gunaTransfarantPictureBox1.Image = image2;
+                // thêm ảnh vào control
+                GunaTransfarantPictureBox gpb = new GunaTransfarantPictureBox();
+                //gpb.BaseColor = System.Drawing.Color.White;
+                gpb.Location = new System.Drawing.Point(3, 3);
+                gpb.MaximumSize = new System.Drawing.Size(230, 250);
+                gpb.MinimumSize = new System.Drawing.Size(230, 160);
+                gpb.Size = new System.Drawing.Size(230, 190);
+                gpb.TabIndex = 0;
+                gpb.TabStop = false;
+                gpb.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+                gpb.Image = image2;
+                txt_message.Controls.Add(gpb);
             }
         }
 
@@ -425,7 +485,7 @@ namespace PBL4_Chat
                 gtb.Size = new System.Drawing.Size(270, 50);
                 gtb.TabIndex = 0;
                 gtb.Text = txt_send.Text;
-                gtb.Margin = new System.Windows.Forms.Padding(180, 3, 3, 3);
+                gtb.Margin = new System.Windows.Forms.Padding(185, 5, 3, 5);
                 gtb.Enabled = false;
                 gtb.Radius = 20;
                 txt_message.Controls.Add(gtb);
@@ -562,7 +622,7 @@ namespace PBL4_Chat
                     gpb.Size = new System.Drawing.Size(230, 190);
                     gpb.TabIndex = 0;
                     gpb.TabStop = false;
-                    gpb.Margin = new System.Windows.Forms.Padding(220, 3, 3, 3);
+                    gpb.Margin = new System.Windows.Forms.Padding(220, 5, 2, 5);
                     gpb.Image = new Bitmap(opnfd.FileName);
                     txt_message.Controls.Add(gpb);
 
@@ -600,12 +660,3 @@ namespace PBL4_Chat
         }
     }
 }
-//1111111111111111
-///1111//1/1/1/1/
-///
-//111
-
-//1111111111111111
-///1111//1/1/1/1/
-///
-//111

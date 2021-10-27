@@ -132,23 +132,47 @@ namespace Server
                     // gửi ảnh
                     if(encoding.GetString(userId_receive).Contains("image"))
                     {
-                        // MessageBox.Show(encoding.GetString(userId_receive));
-                        byte[] image = new byte[1024 * 500];
-                        int size_image = client.Receive(image);
-                        //packetMes = "image" + " " + encoding.GetString(image);
-                        //socket.Send(encoding.GetBytes("image"), 0, encoding.GetBytes("image").Length, SocketFlags.None);
-                        //socket.Send(image, 0, image1, SocketFlags.None);
-                        for (int i = 0; i < userId.Count; i++)
+                        // nhóm gửi ảnh
+                        if (encoding.GetString(userId_receive).Split(' ').Length > 2)
                         {
-                            if (String.Compare(encoding.GetString(userId_receive).Split(' ')[1], userId[i]) == 0)
+                            byte[] image = new byte[1024 * 500];
+                            int size_image = client.Receive(image);
+                            for (int i = 0; i < userId.Count; i++)
                             {
-                                // gửi cho người nhận id người gửi để check xem có đang nhắn tin cùng nhau không
-                                // Socket_client[i].Send(data, 0, size, SocketFlags.None);
-                                Socket_client[i].Send(encoding.GetBytes("image"), 0, encoding.GetBytes("image").Length, SocketFlags.None);
-                                Socket_client[i].Send(image, 0, size_image, SocketFlags.None);
-
+                                for (int j = 2; j < userId_receiveCopy.Split(' ').Length; j++)
+                                {
+                                    if (String.Compare(userId_receiveCopy.Split(' ')[j], userId[i]) == 0 && String.Compare(userId_receiveCopy.Split(' ')[j], userId_receiveCopy.Split(' ')[0]) != 0)
+                                    {
+                                        // gửi cho người nhận id người gửi để check xem có đang nhắn tin cùng nhau không
+                                        //Socket_client[i].Send(data, 0, size, SocketFlags.None);
+                                        Socket_client[i].Send(encoding.GetBytes("image"), 0, encoding.GetBytes("image").Length, SocketFlags.None);
+                                        Socket_client[i].Send(image, 0, size_image, SocketFlags.None);
+                                    }
+                                }
                             }
                         }
+                        // gửi private ảnh
+                        else
+                        {
+                            // MessageBox.Show(encoding.GetString(userId_receive));
+                            byte[] image = new byte[1024 * 500];
+                            int size_image = client.Receive(image);
+                            //packetMes = "image" + " " + encoding.GetString(image);
+                            //socket.Send(encoding.GetBytes("image"), 0, encoding.GetBytes("image").Length, SocketFlags.None);
+                            //socket.Send(image, 0, image1, SocketFlags.None);
+                            for (int i = 0; i < userId.Count; i++)
+                            {
+                                if (String.Compare(encoding.GetString(userId_receive).Split(' ')[1], userId[i]) == 0)
+                                {
+                                    // gửi cho người nhận id người gửi để check xem có đang nhắn tin cùng nhau không
+                                    // Socket_client[i].Send(data, 0, size, SocketFlags.None);
+                                    Socket_client[i].Send(encoding.GetBytes("image"), 0, encoding.GetBytes("image").Length, SocketFlags.None);
+                                    Socket_client[i].Send(image, 0, size_image, SocketFlags.None);
+
+                                }
+                            }
+                        }
+                        
                         //break;
                     }   
                     // gửi text
