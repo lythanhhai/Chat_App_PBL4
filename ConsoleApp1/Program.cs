@@ -132,17 +132,22 @@ namespace Server
                     // gửi ảnh
                     if (encoding.GetString(userId_receive).Contains("image"))
                     {
-                        // nhóm gửi ảnh
+                        // gửi ảnh tới nhóm
                         // trừ image
-                        if (encoding.GetString(userId_receive).Split(' ').Length - 1 > 2)
+                        if (encoding.GetString(userId_receive).Split(' ').Length - 3 >= 2)
                         {
+                            //Console.WriteLine("1");
                             byte[] image = new byte[1024 * 500];
                             int size_image = client.Receive(image);
-                            packetMes = encoding.GetString(userId_receive).Split(' ')[0] + " " + "group" + " " + "image";
+                            packetMes = encoding.GetString(userId_receive).Split(' ')[0] + " " + encoding.GetString(userId_receive).Split(' ')[1] + " " + "image";
                             // tách userId_receive
                             for (int i = 0; i < encoding.GetString(userId_receive).Split(' ').Length; i++)
                             {
                                 if (i == encoding.GetString(userId_receive).Split(' ').Length - 1)
+                                {
+                                    break;
+                                }
+                                if (i == encoding.GetString(userId_receive).Split(' ').Length - 2)
                                 {
                                     userId_receiveCopy += encoding.GetString(userId_receive).Split(' ')[i];
                                 }
@@ -154,6 +159,7 @@ namespace Server
                                 {
                                     if (String.Compare(userId_receiveCopy.Split(' ')[j], userId[i]) == 0 && String.Compare(userId_receiveCopy.Split(' ')[j], userId_receiveCopy.Split(' ')[0]) != 0)
                                     {
+                                        //Console.WriteLine("2");
                                         // gửi cho người nhận id người gửi để check xem có đang nhắn tin cùng nhau không
                                         //Socket_client[i].Send(data, 0, size, SocketFlags.None);
                                         Socket_client[i].Send(encoding.GetBytes(packetMes), 0, encoding.GetBytes(packetMes).Length, SocketFlags.None);
@@ -196,7 +202,7 @@ namespace Server
                         //Console.WriteLine(packetMes);
                         Console.WriteLine(encoding.GetString(userId_receive).Split(' ').Length.ToString());
                         // gửi nhóm
-                        if (encoding.GetString(userId_receive).Split(' ').Length > 2)
+                        if (encoding.GetString(userId_receive).Split(' ').Length - 2 >= 2)
                         {
                             packetMes = encoding.GetString(userId_receive).Split(' ')[0] + " " + encoding.GetString(userId_receive).Split(' ')[1] + " " + encoding.GetString(data);
                             // biến đổi chuổi
@@ -232,6 +238,7 @@ namespace Server
                             packetMes = encoding.GetString(userId_receive).Split(' ')[0] + " " + "private" + " " + encoding.GetString(data);
                             for (int i = 0; i < userId.Count; i++)
                             {
+                                Console.WriteLine(encoding.GetString(userId_receive));
                                 if (String.Compare(encoding.GetString(userId_receive).Split(' ')[1], userId[i]) == 0)
                                 {
                                     // gửi cho người nhận id người gửi để check xem có đang nhắn tin cùng nhau không

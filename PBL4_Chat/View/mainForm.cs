@@ -245,7 +245,7 @@ namespace PBL4_Chat
 
                     // chat image
                     //MessageBox.Show(choose);
-                    if (String.Compare(choose.Split(' ')[2], "image") == 0)
+                    if (choose.Contains("image"))
                     {
                         message = new Byte[1024 * 500];
                         ns.Read(message, 0, message.Length);
@@ -255,7 +255,7 @@ namespace PBL4_Chat
                             // kiểm tra người nhận có đang nhắn private không
                             if (userId_receive().Split(' ').Length == 1)
                             {
-                                nameReceiver = BLL_User.instance.BLL_getUserById(userId_receive()).firstName + " " + BLL_User.instance.BLL_getUserById(userId_receive()).lastName;
+                                //nameReceiver = BLL_User.instance.BLL_getUserById(userId_receive()).firstName + " " + BLL_User.instance.BLL_getUserById(userId_receive()).lastName;
                                 // khi người dùng đang nhắn 1 người khác nhưng 1 người khác gửi tin thì tin nhắn này không hiển thị lên
                                 if (string.Compare(choose.Split(' ')[0], userId_receive()) == 0)
                                 {
@@ -275,16 +275,17 @@ namespace PBL4_Chat
                         // group
                         else
                         {
-
+                            //MessageBox.Show("group");
                             //MessageBox.Show(res);
                             // kiểm tra người nhận xem có đang nhắn group không ?
-                            if (userId_receive().Split(' ').Length > 1)
+                            if (userId_receive().Split(' ').Length - 1 > 1)
                             {
-                                nameReceiver = BLL_User.instance.BLL_getUserById(data.Split(' ')[0]).firstName + " " + BLL_User.instance.BLL_getUserById(data.Split(' ')[0]).lastName;
+                                //nameReceiver = BLL_User.instance.BLL_getUserById(data.Split(' ')[0]).firstName + " " + BLL_User.instance.BLL_getUserById(data.Split(' ')[0]).lastName;
                                 // khi người dùng đang nhắn 1 người khác nhưng 1 người khác gửi tin thì tin nhắn này không hiển thị lên
                                 // kiểm tra xem có đúng id_group không (chiều dài của user_receive)
                                 if (string.Compare(choose.Split(' ')[1], userId_receive().Split(' ')[0]) == 0)
                                 {
+                                    MessageBox.Show("oke");
                                     msg1();
                                 }
                                 else
@@ -355,7 +356,7 @@ namespace PBL4_Chat
                             }
                             //MessageBox.Show(res);
                             // kiểm tra người nhận xem có đang nhắn group không ?
-                            if (userId_receive().Split(' ').Length > 1)
+                            if (userId_receive().Split(' ').Length - 1 > 1)
                             {
                                 nameReceiver = BLL_User.instance.BLL_getUserById(data.Split(' ')[0]).firstName + " " + BLL_User.instance.BLL_getUserById(data.Split(' ')[0]).lastName;
                                 // khi người dùng đang nhắn 1 người khác nhưng 1 người khác gửi tin thì tin nhắn này không hiển thị lên
@@ -394,8 +395,8 @@ namespace PBL4_Chat
             else
             {
                 txt_message1.Text += Environment.NewLine + nameReceiver + " >> " + res;
-                if (res != null)
-                {//quan trọng
+                //if (res != null)
+                //{//quan trọng
                     GunaTextBox gtb = new GunaTextBox();
                     gtb.BaseColor = System.Drawing.Color.White;
                     gtb.BorderColor = System.Drawing.Color.Silver;
@@ -421,7 +422,7 @@ namespace PBL4_Chat
 
                     //ns = new NetworkStream(socket);
 
-                }
+                //}
 
             }
         }
@@ -433,13 +434,13 @@ namespace PBL4_Chat
             else
             {
                 txt_message1.Text += Environment.NewLine + nameReceiver + " >> " + res;
-                if (res != null)
-                {
+                //if (res != null)
+                //{
                     //MemoryStream imagestream = new MemoryStream(message);
                     //Image image1 = Image.FromStream(imagestream);
                     //////Bitmap bmp = new Bitmap(imagestream);
                     //gunaTransfarantPictureBox1.Image = image1;
-                }
+                //}
                 MemoryStream imagestream1 = new MemoryStream(message);
                 Image image2 = Image.FromStream(imagestream1);
                 //gunaTransfarantPictureBox1.Image = image2;
