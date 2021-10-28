@@ -217,9 +217,9 @@ namespace PBL4_Chat
                 while (true)
                 {
                     ns = client.GetStream();
-                    byte[] choose = new Byte[1024 * 10];
-                    ns.Read(choose, 0, choose.Length);
-                    data = encoding.GetString(choose);
+                    byte[] byte_choose = new Byte[1024 * 10];
+                    ns.Read(byte_choose, 0, byte_choose.Length);
+                    string choose = encoding.GetString(byte_choose);
                     //MessageBox.Show(encoding.GetString(choose));
                     
                     //stream = client.GetStream();
@@ -227,10 +227,12 @@ namespace PBL4_Chat
                     //stream.Read(message, 0, BUFFER_SIZE);
                     //data = encoding.GetString(message);
                     //string data_copy = null;
-                    for (int i = 0; i < data.Split(' ').Length; i++)
-                    {
 
-                    }
+                    //for (int i = 0; i < data.Split(' ').Length; i++)
+                    //{
+
+                    //}
+
                     res = null;
                     if (userId_receive() == null)
                     {
@@ -242,24 +244,22 @@ namespace PBL4_Chat
                     //MessageBox.Show(userId_receive());
 
                     // chat image
-                    if (String.Compare(data, "image") == 0)
+                    //MessageBox.Show(choose);
+                    if (String.Compare(choose.Split(' ')[2], "image") == 0)
                     {
-
+                        message = new Byte[1024 * 500];
+                        ns.Read(message, 0, message.Length);
                         // private(sender)
-                        if (data.Split(' ')[1] == "private")
+                        if (choose.Split(' ')[1] == "private")
                         {
-                            for (int i = 2; i < data.Split(' ').Length; i++)
-                            {
-                                res += data.Split(' ')[i] + " ";
-                            }
                             // kiểm tra người nhận có đang nhắn private không
                             if (userId_receive().Split(' ').Length == 1)
                             {
                                 nameReceiver = BLL_User.instance.BLL_getUserById(userId_receive()).firstName + " " + BLL_User.instance.BLL_getUserById(userId_receive()).lastName;
                                 // khi người dùng đang nhắn 1 người khác nhưng 1 người khác gửi tin thì tin nhắn này không hiển thị lên
-                                if (string.Compare(data.Split(' ')[0], userId_receive()) == 0)
+                                if (string.Compare(choose.Split(' ')[0], userId_receive()) == 0)
                                 {
-                                    msg();
+                                    msg1();
                                 }
                                 else
                                 {
@@ -275,11 +275,7 @@ namespace PBL4_Chat
                         // group
                         else
                         {
-                            //lấy message từ vị trí thứ 2
-                            for (int i = 2; i < data.Split(' ').Length; i++)
-                            {
-                                res += data.Split(' ')[i] + " ";
-                            }
+
                             //MessageBox.Show(res);
                             // kiểm tra người nhận xem có đang nhắn group không ?
                             if (userId_receive().Split(' ').Length > 1)
@@ -287,9 +283,9 @@ namespace PBL4_Chat
                                 nameReceiver = BLL_User.instance.BLL_getUserById(data.Split(' ')[0]).firstName + " " + BLL_User.instance.BLL_getUserById(data.Split(' ')[0]).lastName;
                                 // khi người dùng đang nhắn 1 người khác nhưng 1 người khác gửi tin thì tin nhắn này không hiển thị lên
                                 // kiểm tra xem có đúng id_group không (chiều dài của user_receive)
-                                if (string.Compare(data.Split(' ')[1], userId_receive().Split(' ')[0]) == 0)
+                                if (string.Compare(choose.Split(' ')[1], userId_receive().Split(' ')[0]) == 0)
                                 {
-                                    msg();
+                                    msg1();
                                 }
                                 else
                                 {
@@ -302,9 +298,10 @@ namespace PBL4_Chat
                             }
                         }
                         //
-                        message = new Byte[1024 * 1000];
-                        ns.Read(message, 0, message.Length);
-                        msg1();
+                        //MessageBox.Show("a");
+                        //message = new Byte[1024 * 500];
+                        //ns.Read(message, 0, message.Length);
+                        //msg1();
                         //MessageBox.Show("a");
                         //MessageBox.Show(data.Length.ToString());
                         //MessageBox.Show(data.Split(' ').Length.ToString());
@@ -318,6 +315,9 @@ namespace PBL4_Chat
                     // chat text
                     else
                     {
+                        byte[] content = new Byte[1024];
+                        ns.Read(content, 0, content.Length);
+                        data = encoding.GetString(content);
                         // private(sender)
                         if (data.Split(' ')[1] == "private")
                         {
