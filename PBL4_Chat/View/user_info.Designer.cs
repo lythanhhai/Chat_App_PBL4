@@ -53,7 +53,7 @@ namespace PBL4_Chat.View
             this.userInfo.GradientColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(48)))), ((int)(((byte)(90)))));
             this.userInfo.Location = new System.Drawing.Point(0, 0);
             this.userInfo.Name = "userInfo";
-            this.userInfo.Size = new System.Drawing.Size(384, 95);
+            this.userInfo.Size = new System.Drawing.Size(370, 95);
             this.userInfo.TabIndex = 0;
             this.userInfo.Text = "gunaGradientPanel1";
             this.userInfo.Click += new System.EventHandler(this.userInfo_Click);
@@ -106,7 +106,7 @@ namespace PBL4_Chat.View
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.userInfo);
             this.Name = "user_info";
-            this.Size = new System.Drawing.Size(384, 95);
+            this.Size = new System.Drawing.Size(370, 95);
             this.userInfo.ResumeLayout(false);
             this.userInfo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).EndInit();

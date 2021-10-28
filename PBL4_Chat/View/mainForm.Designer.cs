@@ -169,7 +169,7 @@ namespace PBL4_Chat
             // 
             this.lbStatusPerson.AutoSize = true;
             this.lbStatusPerson.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lbStatusPerson.Location = new System.Drawing.Point(103, 247);
+            this.lbStatusPerson.Location = new System.Drawing.Point(109, 248);
             this.lbStatusPerson.Name = "lbStatusPerson";
             this.lbStatusPerson.Size = new System.Drawing.Size(51, 20);
             this.lbStatusPerson.TabIndex = 3;
@@ -180,7 +180,7 @@ namespace PBL4_Chat
             this.lbNamePerson.AutoSize = true;
             this.lbNamePerson.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbNamePerson.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lbNamePerson.Location = new System.Drawing.Point(90, 203);
+            this.lbNamePerson.Location = new System.Drawing.Point(93, 203);
             this.lbNamePerson.Name = "lbNamePerson";
             this.lbNamePerson.Size = new System.Drawing.Size(79, 29);
             this.lbNamePerson.TabIndex = 2;
@@ -360,6 +360,8 @@ namespace PBL4_Chat
             // 
             // txt_message
             // 
+            this.txt_message.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_message.AutoScroll = true;
             this.txt_message.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txt_message.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
@@ -492,7 +494,7 @@ namespace PBL4_Chat
             this.GunaElipsePanel5.Location = new System.Drawing.Point(0, 5);
             this.GunaElipsePanel5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.GunaElipsePanel5.Name = "GunaElipsePanel5";
-            this.GunaElipsePanel5.Size = new System.Drawing.Size(612, 87);
+            this.GunaElipsePanel5.Size = new System.Drawing.Size(623, 87);
             this.GunaElipsePanel5.TabIndex = 18;
             // 
             // btn_chooseFile
@@ -501,12 +503,12 @@ namespace PBL4_Chat
             this.btn_chooseFile.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btn_chooseFile.Image = global::PBL4_Chat.Properties.Resources.Attach_24px;
             this.btn_chooseFile.ImageSize = new System.Drawing.Size(24, 24);
-            this.btn_chooseFile.Location = new System.Drawing.Point(488, 10);
+            this.btn_chooseFile.Location = new System.Drawing.Point(483, 0);
             this.btn_chooseFile.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_chooseFile.Name = "btn_chooseFile";
             this.btn_chooseFile.OnHoverImage = null;
             this.btn_chooseFile.OnHoverImageOffset = new System.Drawing.Point(0, 0);
-            this.btn_chooseFile.Size = new System.Drawing.Size(61, 67);
+            this.btn_chooseFile.Size = new System.Drawing.Size(66, 87);
             this.btn_chooseFile.TabIndex = 2;
             this.btn_chooseFile.Click += new System.EventHandler(this.btn_chooseFile_Click);
             // 
@@ -516,12 +518,12 @@ namespace PBL4_Chat
             this.btn_chooseImg.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btn_chooseImg.Image = global::PBL4_Chat.Properties.Resources.Instagram_24px;
             this.btn_chooseImg.ImageSize = new System.Drawing.Size(24, 24);
-            this.btn_chooseImg.Location = new System.Drawing.Point(552, 10);
+            this.btn_chooseImg.Location = new System.Drawing.Point(552, 0);
             this.btn_chooseImg.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_chooseImg.Name = "btn_chooseImg";
             this.btn_chooseImg.OnHoverImage = null;
             this.btn_chooseImg.OnHoverImageOffset = new System.Drawing.Point(0, 0);
-            this.btn_chooseImg.Size = new System.Drawing.Size(56, 67);
+            this.btn_chooseImg.Size = new System.Drawing.Size(67, 87);
             this.btn_chooseImg.TabIndex = 1;
             this.btn_chooseImg.Click += new System.EventHandler(this.btn_chooseImg_Click);
             // 
@@ -538,12 +540,12 @@ namespace PBL4_Chat
             this.txt_send.FocusedForeColor = System.Drawing.Color.White;
             this.txt_send.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txt_send.ForeColor = System.Drawing.Color.Black;
-            this.txt_send.Location = new System.Drawing.Point(0, 10);
+            this.txt_send.Location = new System.Drawing.Point(0, 5);
             this.txt_send.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txt_send.Name = "txt_send";
             this.txt_send.PasswordChar = '\0';
             this.txt_send.SelectedText = "";
-            this.txt_send.Size = new System.Drawing.Size(492, 67);
+            this.txt_send.Size = new System.Drawing.Size(480, 77);
             this.txt_send.TabIndex = 0;
             this.txt_send.Text = "Ok";
             // 
@@ -561,7 +563,7 @@ namespace PBL4_Chat
             this.btn_send.Image = global::PBL4_Chat.Properties.Resources.send;
             this.btn_send.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btn_send.ImageSize = new System.Drawing.Size(18, 18);
-            this.btn_send.Location = new System.Drawing.Point(620, 15);
+            this.btn_send.Location = new System.Drawing.Point(624, 10);
             this.btn_send.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_send.Name = "btn_send";
             this.btn_send.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(168)))), ((int)(((byte)(251)))));
@@ -570,7 +572,7 @@ namespace PBL4_Chat
             this.btn_send.OnHoverImage = null;
             this.btn_send.OnPressedColor = System.Drawing.Color.Black;
             this.btn_send.Radius = 4;
-            this.btn_send.Size = new System.Drawing.Size(85, 67);
+            this.btn_send.Size = new System.Drawing.Size(85, 77);
             this.btn_send.TabIndex = 19;
             this.btn_send.Click += new System.EventHandler(this.btn_send_Click);
             // 
@@ -585,6 +587,7 @@ namespace PBL4_Chat
             this.panel_listUser.Size = new System.Drawing.Size(387, 859);
             this.panel_listUser.TabIndex = 0;
             this.panel_listUser.Visible = false;
+            this.panel_listUser.WrapContents = false;
             // 
             // Opendialog
             // 
