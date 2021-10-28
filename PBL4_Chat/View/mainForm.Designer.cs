@@ -143,12 +143,12 @@ namespace PBL4_Chat
             // 
             // txt_message1
             // 
-            this.txt_message1.Location = new System.Drawing.Point(0, 296);
+            this.txt_message1.Location = new System.Drawing.Point(131, 348);
             this.txt_message1.Multiline = true;
             this.txt_message1.Name = "txt_message1";
             this.txt_message1.ReadOnly = true;
             this.txt_message1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txt_message1.Size = new System.Drawing.Size(228, 648);
+            this.txt_message1.Size = new System.Drawing.Size(121, 128);
             this.txt_message1.TabIndex = 0;
             // 
             // gunaCirclePictureBox2
@@ -576,6 +576,7 @@ namespace PBL4_Chat
             // 
             // panel_listUser
             // 
+            this.panel_listUser.AutoScroll = true;
             this.panel_listUser.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel_listUser.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.panel_listUser.Location = new System.Drawing.Point(0, 0);

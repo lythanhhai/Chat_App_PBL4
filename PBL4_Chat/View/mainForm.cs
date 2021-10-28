@@ -600,10 +600,19 @@ namespace PBL4_Chat
             }
                
         }
-
+        int demBam = 0;
         private void btn_message_Click(object sender, EventArgs e)
         {
-            panel_listUser.Visible = true;
+            if(demBam == 0)
+            {
+                panel_listUser.Visible = true;
+                demBam++;
+            }    
+            else
+            {
+                panel_listUser.Visible = false;
+                demBam--;
+            }                
         }
 
         private void btn_chooseImg_Click(object sender, EventArgs e)
