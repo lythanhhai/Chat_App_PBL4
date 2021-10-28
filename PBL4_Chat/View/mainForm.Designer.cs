@@ -362,10 +362,14 @@ namespace PBL4_Chat
             // 
             this.txt_message.AutoScroll = true;
             this.txt_message.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txt_message.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.txt_message.Location = new System.Drawing.Point(0, 116);
+            this.txt_message.MaximumSize = new System.Drawing.Size(709, 658);
+            this.txt_message.MinimumSize = new System.Drawing.Size(709, 658);
             this.txt_message.Name = "txt_message";
             this.txt_message.Size = new System.Drawing.Size(709, 658);
             this.txt_message.TabIndex = 17;
+            this.txt_message.WrapContents = false;
             // 
             // gunaPanel8
             // 
