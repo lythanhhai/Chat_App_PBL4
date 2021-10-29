@@ -285,7 +285,6 @@ namespace PBL4_Chat
                                 // kiểm tra xem có đúng id_group không (chiều dài của user_receive)
                                 if (string.Compare(choose.Split(' ')[1], userId_receive().Split(' ')[0]) == 0)
                                 {
-                                    MessageBox.Show("oke");
                                     msg1();
                                 }
                                 else
@@ -316,7 +315,6 @@ namespace PBL4_Chat
                     // gửi file
                     else if(choose.Contains("file"))
                     {
-                        MessageBox.Show("file");
                         message = new Byte[1024 * 500];
                         ns.Read(message, 0, message.Length);
                         // private(sender)
@@ -341,6 +339,29 @@ namespace PBL4_Chat
 
                             }
 
+                        }
+                        // group
+                        else
+                        {
+                            // kiểm tra người nhận xem có đang nhắn group không ?
+                            if (userId_receive().Split(' ').Length - 1 > 1)
+                            {
+                                //nameReceiver = BLL_User.instance.BLL_getUserById(data.Split(' ')[0]).firstName + " " + BLL_User.instance.BLL_getUserById(data.Split(' ')[0]).lastName;
+                                // khi người dùng đang nhắn 1 người khác nhưng 1 người khác gửi tin thì tin nhắn này không hiển thị lên
+                                // kiểm tra xem có đúng id_group không (chiều dài của user_receive)
+                                if (string.Compare(choose.Split(' ')[1], userId_receive().Split(' ')[0]) == 0)
+                                {
+                                    msg2();
+                                }
+                                else
+                                {
+
+                                }
+                            }
+                            else
+                            {
+
+                            }
                         }
                     }    
                     // chat text
@@ -627,6 +648,29 @@ namespace PBL4_Chat
             //}                
         }
 
+        private void downloadFile(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+            saveFileDialog1.DefaultExt = "txt";
+            saveFileDialog1.Filter = "RichTextFile |*.rtf|Text file (*.txt)|*.txt|XML file (*.xml)|*.xml|All files (*.*)|*.*";
+            saveFileDialog1.AddExtension = true;
+            saveFileDialog1.RestoreDirectory = true;
+            saveFileDialog1.Title = "Where do you want to save the file?";
+            saveFileDialog1.InitialDirectory = @"D:/";
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                //MessageBox.Show("You selected the file: " + saveFileDialog1.FileName);
+                string saveFileName = saveFileDialog1.FileName;
+                File.WriteAllBytes(saveFileName, message);
+            }
+            else
+            {
+                //MessageBox.Show("You hit cancel or closed the dialog.");
+            }
+            saveFileDialog1.Dispose();
+            saveFileDialog1 = null;
+        }
+
         private void btn_chooseFile_Click(object sender, EventArgs e)
         {
             try
@@ -645,7 +689,6 @@ namespace PBL4_Chat
                     //                  + " "
                     //                  + BLL_User.instance.BLL_getUserById(userId()).lastName
                     //                  + " << " + readFile;
-                    MessageBox.Show(filename);
                     string handleFileName = Path.GetFileName(filename);
                     GunaLinkLabel gll = new GunaLinkLabel();
                     gll.ActiveLinkColor = System.Drawing.Color.Silver;
@@ -655,11 +698,12 @@ namespace PBL4_Chat
                     gll.Size = new System.Drawing.Size(134, 25);
                     gll.TabIndex = 0;
                     gll.TabStop = true;
-                    gll.Margin = new System.Windows.Forms.Padding(200, 5, 3, 5);
+                    gll.Margin = new System.Windows.Forms.Padding(330, 5, 3, 5);
                     gll.Text = handleFileName;
                     gll.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+                    // sự kiện download
+                    gll.Click += new System.EventHandler(downloadFile);
                     txt_message.Controls.Add(gll);
-
 
 
                     //FileStream stream = File.OpenRead(filename);
@@ -693,13 +737,12 @@ namespace PBL4_Chat
                     //ns.Write(buffer, 0, buffer.Length);
 
 
-                    string file_name = Path.GetFileName(filename);// "Your File Name";
+                    string file_name = Path.GetFileName(filename);
 
                     FileInfo fileInfo = new FileInfo(filename);
                     string file_path = fileInfo.DirectoryName + @"\";
 
                     byte[] fileNameByte = Encoding.ASCII.GetBytes(file_name);
-
 
                     byte[] fileData = File.ReadAllBytes(file_path + file_name);
 
@@ -717,7 +760,6 @@ namespace PBL4_Chat
                     byte[] userId_receive1 = encoding.GetBytes(userId() + " " + userId_receive() + " " + "file");
                     ns.Write(userId_receive1, 0, userId_receive1.Length);
                     ns.Write(mesData, 0, mesData.Length);
-                    MessageBox.Show(encoding.GetString(mesData));
                 }
             }
             catch(Exception err)
@@ -776,13 +818,6 @@ namespace PBL4_Chat
                     txt_message.Controls.Add(gpb);
 
 
-                    //Bitmap tImage = new Bitmap(opnfd.FileName);
-
-                    //byte[] bStream = ImageToByte(tImage);
-                    ////byte[] bStream = File.ReadAllBytes(opnfd.FileName);
-                    //stream.Write(bStream, 0, bStream.Length);
-
-
                     ms = new MemoryStream();
                     gpb.Image.Save(ms, gpb.Image.RawFormat);
                     byte[] buffer = ms.GetBuffer();
@@ -795,10 +830,6 @@ namespace PBL4_Chat
                     //ns.Close();
 
 
-                    //bw = new BinaryWriter(ns); // write to buffer as binary
-                    //bw.Write(buffer); // send information to server
-                    //bw.Close();
-                    //client.Close();
                 }
 
             }

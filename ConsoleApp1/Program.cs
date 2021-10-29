@@ -200,23 +200,61 @@ namespace Server
                     {
                         byte[] dataFile = new byte[BUFFER_SIZE * 500];
                         int size_file = client.Receive(dataFile);
-                        //int sizeFile = client.Receive(dataFile);
-
-                        Console.WriteLine(encoding.GetString(dataFile));
-                        packetMes = encoding.GetString(userId_receive).Split(' ')[0] + " " + "private" + " " + "file";
-                        //socket.Send(encoding.GetBytes("image"), 0, encoding.GetBytes("image").Length, SocketFlags.None);
-                        //socket.Send(image, 0, image1, SocketFlags.None);
-                        for (int i = 0; i < userId.Count; i++)
+                        // gửi nhóm
+                        if (encoding.GetString(userId_receive).Split(' ').Length - 3 >= 2)
                         {
-                            if (String.Compare(encoding.GetString(userId_receive).Split(' ')[1], userId[i]) == 0)
+                            packetMes = encoding.GetString(userId_receive).Split(' ')[0] + " " + encoding.GetString(userId_receive).Split(' ')[1] + " " + "file";
+                            // tách userId_receive
+                            for (int i = 0; i < encoding.GetString(userId_receive).Split(' ').Length; i++)
                             {
-                                // gửi cho người nhận id người gửi để check xem có đang nhắn tin cùng nhau không
-                                // Socket_client[i].Send(data, 0, size, SocketFlags.None);
-                                Socket_client[i].Send(encoding.GetBytes(packetMes), 0, encoding.GetBytes(packetMes).Length, SocketFlags.None);
-                                Socket_client[i].Send(dataFile, 0, dataFile.Length, SocketFlags.None);
-
+                                if (i == encoding.GetString(userId_receive).Split(' ').Length - 1)
+                                {
+                                    break;
+                                }
+                                if (i == encoding.GetString(userId_receive).Split(' ').Length - 2)
+                                {
+                                    userId_receiveCopy += encoding.GetString(userId_receive).Split(' ')[i];
+                                }
+                                userId_receiveCopy += encoding.GetString(userId_receive).Split(' ')[i] + " ";
+                            }
+                            for (int i = 0; i < userId.Count; i++)
+                            {
+                                for (int j = 2; j < userId_receiveCopy.Split(' ').Length; j++)
+                                {
+                                    if (String.Compare(userId_receiveCopy.Split(' ')[j], userId[i]) == 0 && String.Compare(userId_receiveCopy.Split(' ')[j], userId_receiveCopy.Split(' ')[0]) != 0)
+                                    {
+                                        //Console.WriteLine("2");
+                                        // gửi cho người nhận id người gửi để check xem có đang nhắn tin cùng nhau không
+                                        //Socket_client[i].Send(data, 0, size, SocketFlags.None);
+                                        Socket_client[i].Send(encoding.GetBytes(packetMes), 0, encoding.GetBytes(packetMes).Length, SocketFlags.None);
+                                        Socket_client[i].Send(dataFile, 0, size_file, SocketFlags.None);
+                                    }
+                                }
                             }
                         }
+                        // gửi private file
+                        else
+                        {
+                            
+                            //int sizeFile = client.Receive(dataFile);
+
+                            Console.WriteLine(encoding.GetString(dataFile));
+                            packetMes = encoding.GetString(userId_receive).Split(' ')[0] + " " + "private" + " " + "file";
+                            //socket.Send(encoding.GetBytes("image"), 0, encoding.GetBytes("image").Length, SocketFlags.None);
+                            //socket.Send(image, 0, image1, SocketFlags.None);
+                            for (int i = 0; i < userId.Count; i++)
+                            {
+                                if (String.Compare(encoding.GetString(userId_receive).Split(' ')[1], userId[i]) == 0)
+                                {
+                                    // gửi cho người nhận id người gửi để check xem có đang nhắn tin cùng nhau không
+                                    // Socket_client[i].Send(data, 0, size, SocketFlags.None);
+                                    Socket_client[i].Send(encoding.GetBytes(packetMes), 0, encoding.GetBytes(packetMes).Length, SocketFlags.None);
+                                    Socket_client[i].Send(dataFile, 0, dataFile.Length, SocketFlags.None);
+
+                                }
+                            }
+                        }
+                        
                     }    
                     // gửi text
                     else
