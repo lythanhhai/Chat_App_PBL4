@@ -661,7 +661,16 @@ namespace PBL4_Chat
             {
                 //MessageBox.Show("You selected the file: " + saveFileDialog1.FileName);
                 string saveFileName = saveFileDialog1.FileName;
-                File.WriteAllBytes(saveFileName, message);
+                byte[] message1;
+                if(message == null)
+                {
+                    message1 = new byte[1024 * 500]; 
+                }    
+                else
+                {
+                    message1 = message;
+                }                    
+                File.WriteAllBytes(saveFileName, message1);
             }
             else
             {
