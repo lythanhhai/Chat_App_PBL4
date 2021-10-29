@@ -90,7 +90,6 @@ namespace PBL4_Chat.View
             ((mainForm)this.ParentForm).lbStatus.Text = "online";
             ((mainForm)this.ParentForm).pn_chat.Visible = true;
             // khi người dùng nhắn cho 1 người khác sẽ xóa panel để upload tin nhắn
-            ((mainForm)this.ParentForm).txt_message1.Clear();
             ((mainForm)this.ParentForm).txt_message.Controls.Clear();
             ((mainForm)this.ParentForm).txt_send.Clear();
             

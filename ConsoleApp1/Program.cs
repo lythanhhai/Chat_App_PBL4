@@ -12,7 +12,7 @@ namespace Server
 {
     public class Program
     {
-        private const int BUFFER_SIZE = 1024;
+        private const int BUFFER_SIZE = 1024 * 1000;
         private const int PORT_NUMBER = 9999;
 
         static ASCIIEncoding encoding = new ASCIIEncoding();
@@ -138,7 +138,7 @@ namespace Server
                         if (encoding.GetString(userId_receive).Split(' ').Length - 3 >= 2)
                         {
                             //Console.WriteLine("1");
-                            byte[] image = new byte[1024 * 500];
+                            byte[] image = new byte[BUFFER_SIZE];
                             int size_image = client.Receive(image);
                             packetMes = encoding.GetString(userId_receive).Split(' ')[0] + " " + encoding.GetString(userId_receive).Split(' ')[1] + " " + "image";
                             // tách userId_receive
@@ -172,9 +172,9 @@ namespace Server
                         // gửi private ảnh
                         else
                         {
-                            Console.WriteLine("1");
+                            //Console.WriteLine("1");
                             // MessageBox.Show(encoding.GetString(userId_receive));
-                            byte[] image = new byte[1024 * 500];
+                            byte[] image = new byte[BUFFER_SIZE];
                             int size_image = client.Receive(image);
                             packetMes = encoding.GetString(userId_receive).Split(' ')[0] + " " + "private" + " " + "image";
                             //socket.Send(encoding.GetBytes("image"), 0, encoding.GetBytes("image").Length, SocketFlags.None);
@@ -190,7 +190,7 @@ namespace Server
 
                                 }
                             }
-                            Console.WriteLine(packetMes);
+                            //Console.WriteLine(packetMes);
                         }
                         
                         //break;
@@ -198,7 +198,7 @@ namespace Server
                     // gửi file
                     else if(encoding.GetString(userId_receive).Contains("file"))
                     {
-                        byte[] dataFile = new byte[BUFFER_SIZE * 500];
+                        byte[] dataFile = new byte[BUFFER_SIZE];
                         int size_file = client.Receive(dataFile);
                         // gửi nhóm
                         if (encoding.GetString(userId_receive).Split(' ').Length - 3 >= 2)
@@ -238,7 +238,7 @@ namespace Server
                             
                             //int sizeFile = client.Receive(dataFile);
 
-                            Console.WriteLine(encoding.GetString(dataFile));
+                            //Console.WriteLine(encoding.GetString(dataFile));
                             packetMes = encoding.GetString(userId_receive).Split(' ')[0] + " " + "private" + " " + "file";
                             //socket.Send(encoding.GetBytes("image"), 0, encoding.GetBytes("image").Length, SocketFlags.None);
                             //socket.Send(image, 0, image1, SocketFlags.None);
@@ -259,10 +259,10 @@ namespace Server
                     // gửi text
                     else
                     {
-                        byte[] data = new byte[BUFFER_SIZE];
+                        byte[] data = new byte[1024];
                         int size = client.Receive(data);
                         //Console.WriteLine(packetMes);
-                        Console.WriteLine(encoding.GetString(userId_receive).Split(' ').Length.ToString());
+                        //Console.WriteLine(encoding.GetString(userId_receive).Split(' ').Length.ToString());
                         // gửi nhóm
                         if (encoding.GetString(userId_receive).Split(' ').Length - 2 >= 2)
                         {

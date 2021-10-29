@@ -29,7 +29,7 @@ namespace PBL4_Chat
 
         // 
        
-        private const int BUFFER_SIZE = 1024;
+        private const int BUFFER_SIZE = 1024 * 1000;
         private const int PORT_NUMBER = 9999;
 
         static ASCIIEncoding encoding = new ASCIIEncoding();
@@ -217,7 +217,7 @@ namespace PBL4_Chat
                 while (true)
                 {
                     ns = client.GetStream();
-                    byte[] byte_choose = new Byte[1024 * 10];
+                    byte[] byte_choose = new Byte[BUFFER_SIZE];
                     ns.Read(byte_choose, 0, byte_choose.Length);
                     string choose = encoding.GetString(byte_choose);
                     //MessageBox.Show(encoding.GetString(choose));
@@ -247,7 +247,7 @@ namespace PBL4_Chat
                     //MessageBox.Show(choose);
                     if (choose.Contains("image"))
                     {
-                        message = new Byte[1024 * 500];
+                        message = new Byte[BUFFER_SIZE];
                         ns.Read(message, 0, message.Length);
                         // private(sender)
                         if (choose.Split(' ')[1] == "private")
@@ -315,7 +315,7 @@ namespace PBL4_Chat
                     // gửi file
                     else if(choose.Contains("file"))
                     {
-                        message = new Byte[1024 * 500];
+                        message = new Byte[BUFFER_SIZE];
                         ns.Read(message, 0, message.Length);
                         // private(sender)
                         if (choose.Split(' ')[1] == "private")
@@ -445,7 +445,7 @@ namespace PBL4_Chat
                 this.Invoke(new MethodInvoker(msg));
             else
             {
-                txt_message1.Text += Environment.NewLine + nameReceiver + " >> " + res;
+                //txt_message1.Text += Environment.NewLine + nameReceiver + " >> " + res;
                 //if (res != null)
                 //{//quan trọng
                     GunaTextBox gtb = new GunaTextBox();
@@ -484,7 +484,7 @@ namespace PBL4_Chat
                 this.Invoke(new MethodInvoker(msg1));
             else
             {
-                txt_message1.Text += Environment.NewLine + nameReceiver + " >> " + res;
+                //txt_message1.Text += Environment.NewLine + nameReceiver + " >> " + res;
                 //if (res != null)
                 //{
                     //MemoryStream imagestream = new MemoryStream(message);
@@ -516,7 +516,7 @@ namespace PBL4_Chat
                 this.Invoke(new MethodInvoker(msg2));
             else
             {
-                txt_message1.Text += Environment.NewLine + nameReceiver + " >> " + encoding.GetString(message);
+                //txt_message1.Text += Environment.NewLine + nameReceiver + " >> " + encoding.GetString(message);
                 int fileNameLen = BitConverter.ToInt32(message, 0);
                 string fileName1 = Encoding.ASCII.GetString(message, 4, fileNameLen);
                 MemoryStream filestream1 = new MemoryStream(message);
@@ -542,12 +542,13 @@ namespace PBL4_Chat
         {
             if (txt_send.Text != "")
             {
-                txt_message1.Text += Environment.NewLine
-                              + BLL_User.instance.BLL_getUserById(userId()).firstName
-                              + " "
-                              + BLL_User.instance.BLL_getUserById(userId()).lastName
-                              + " << "
-                              + txt_send.Text;
+                //txt_message1.Text += Environment.NewLine
+                //              + BLL_User.instance.BLL_getUserById(userId()).firstName
+                //              + " "
+                //              + BLL_User.instance.BLL_getUserById(userId()).lastName
+                //              + " << "
+                //              + txt_send.Text;
+
                 GunaTextBox gtb = new GunaTextBox();
                 gtb.BaseColor = System.Drawing.Color.White;
                 gtb.BorderColor = System.Drawing.Color.Silver;
@@ -573,11 +574,12 @@ namespace PBL4_Chat
                 //                  + " << "
                 //                  + txt_send.Text;
                 // gửi userId_receive cho server
-                //ns = client.GetStream();
+                ns = client.GetStream();
+                //stream = client.GetStream();
                 byte[] userId_receive1 = encoding.GetBytes(userId() + " " + userId_receive());
-                stream.Write(userId_receive1, 0, userId_receive1.Length);
+                ns.Write(userId_receive1, 0, userId_receive1.Length);
                 byte[] message = encoding.GetBytes(txt_send.Text);
-                stream.Write(message, 0, message.Length);
+                ns.Write(message, 0, message.Length);
                 //add(encoding.GetString(message));
             }
             else
@@ -745,7 +747,7 @@ namespace PBL4_Chat
                     ////fs.Read(dataFile, 0, System.Convert.ToInt32(fs.Length));
                     //ns.Write(buffer, 0, buffer.Length);
 
-
+                    ns = client.GetStream();
                     string file_name = Path.GetFileName(filename);
 
                     FileInfo fileInfo = new FileInfo(filename);

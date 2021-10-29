@@ -34,7 +34,6 @@ namespace PBL4_Chat
             this.btn_message = new Guna.UI.WinForms.GunaButton();
             this.gunaCirclePictureBox1 = new Guna.UI.WinForms.GunaCirclePictureBox();
             this.gunaPanel2 = new Guna.UI.WinForms.GunaPanel();
-            this.txt_message1 = new System.Windows.Forms.TextBox();
             this.gunaCirclePictureBox2 = new Guna.UI.WinForms.GunaCirclePictureBox();
             this.lbStatusPerson = new System.Windows.Forms.Label();
             this.lbNamePerson = new System.Windows.Forms.Label();
@@ -48,6 +47,7 @@ namespace PBL4_Chat
             this.gunaPanel4 = new Guna.UI.WinForms.GunaPanel();
             this.pn_chat = new Guna.UI.WinForms.GunaPanel();
             this.txt_message = new System.Windows.Forms.FlowLayoutPanel();
+            this.gunaLinkLabel1 = new Guna.UI.WinForms.GunaLinkLabel();
             this.gunaPanel8 = new Guna.UI.WinForms.GunaPanel();
             this.lbName_Receiver = new Guna.UI.WinForms.GunaLabel();
             this.GunaSeparator1 = new Guna.UI.WinForms.GunaSeparator();
@@ -63,7 +63,6 @@ namespace PBL4_Chat
             this.btn_send = new Guna.UI.WinForms.GunaButton();
             this.panel_listUser = new System.Windows.Forms.FlowLayoutPanel();
             this.Opendialog = new System.Windows.Forms.OpenFileDialog();
-            this.gunaLinkLabel1 = new Guna.UI.WinForms.GunaLinkLabel();
             this.gunaPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).BeginInit();
             this.gunaPanel2.SuspendLayout();
@@ -133,7 +132,6 @@ namespace PBL4_Chat
             // gunaPanel2
             // 
             this.gunaPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(22)))), ((int)(((byte)(32)))));
-            this.gunaPanel2.Controls.Add(this.txt_message1);
             this.gunaPanel2.Controls.Add(this.gunaCirclePictureBox2);
             this.gunaPanel2.Controls.Add(this.lbStatusPerson);
             this.gunaPanel2.Controls.Add(this.lbNamePerson);
@@ -142,16 +140,6 @@ namespace PBL4_Chat
             this.gunaPanel2.Name = "gunaPanel2";
             this.gunaPanel2.Size = new System.Drawing.Size(255, 959);
             this.gunaPanel2.TabIndex = 1;
-            // 
-            // txt_message1
-            // 
-            this.txt_message1.Location = new System.Drawing.Point(6, 348);
-            this.txt_message1.Multiline = true;
-            this.txt_message1.Name = "txt_message1";
-            this.txt_message1.ReadOnly = true;
-            this.txt_message1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txt_message1.Size = new System.Drawing.Size(246, 128);
-            this.txt_message1.TabIndex = 0;
             // 
             // gunaCirclePictureBox2
             // 
@@ -376,6 +364,19 @@ namespace PBL4_Chat
             this.txt_message.TabIndex = 17;
             this.txt_message.WrapContents = false;
             // 
+            // gunaLinkLabel1
+            // 
+            this.gunaLinkLabel1.ActiveLinkColor = System.Drawing.Color.Silver;
+            this.gunaLinkLabel1.AutoSize = true;
+            this.gunaLinkLabel1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.gunaLinkLabel1.Location = new System.Drawing.Point(3, 0);
+            this.gunaLinkLabel1.Name = "gunaLinkLabel1";
+            this.gunaLinkLabel1.Size = new System.Drawing.Size(134, 25);
+            this.gunaLinkLabel1.TabIndex = 0;
+            this.gunaLinkLabel1.TabStop = true;
+            this.gunaLinkLabel1.Text = "gunaLinkLabel1";
+            this.gunaLinkLabel1.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            // 
             // gunaPanel8
             // 
             this.gunaPanel8.Controls.Add(this.lbName_Receiver);
@@ -596,19 +597,6 @@ namespace PBL4_Chat
             // 
             this.Opendialog.FileName = "openFileDialog1";
             // 
-            // gunaLinkLabel1
-            // 
-            this.gunaLinkLabel1.ActiveLinkColor = System.Drawing.Color.Silver;
-            this.gunaLinkLabel1.AutoSize = true;
-            this.gunaLinkLabel1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gunaLinkLabel1.Location = new System.Drawing.Point(3, 0);
-            this.gunaLinkLabel1.Name = "gunaLinkLabel1";
-            this.gunaLinkLabel1.Size = new System.Drawing.Size(134, 25);
-            this.gunaLinkLabel1.TabIndex = 0;
-            this.gunaLinkLabel1.TabStop = true;
-            this.gunaLinkLabel1.Text = "gunaLinkLabel1";
-            this.gunaLinkLabel1.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -663,7 +651,6 @@ namespace PBL4_Chat
         internal Guna.UI.WinForms.GunaImageButton btn_chooseFile;
         internal Guna.UI.WinForms.GunaImageButton btn_chooseImg;
         internal Guna.UI.WinForms.GunaTextBox txt_send;
-        internal System.Windows.Forms.TextBox txt_message1;
         internal Guna.UI.WinForms.GunaPanel pn_chat;
         private Guna.UI.WinForms.GunaPanel gunaPanel8;
         internal Guna.UI.WinForms.GunaLabel lbName_Receiver;

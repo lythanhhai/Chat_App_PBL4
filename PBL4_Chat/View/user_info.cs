@@ -91,13 +91,12 @@ namespace PBL4_Chat.View
                 ((mainForm)this.ParentForm).pn_chat.Visible = true;
                 // khi người dùng nhắn cho 1 người khác sẽ xóa sạch panel để upload tin nhắn
                 ((mainForm)this.ParentForm).txt_message.Controls.Clear();
-                ((mainForm)this.ParentForm).txt_message1.Clear();
                 ((mainForm)this.ParentForm).txt_send.Clear();
                 List<Message1> listMes = BLL_UserRelation.instance.BLL_loadMessageForChat(((mainForm)this.ParentForm).userId(), this.userId);
                 // load data from database
                 foreach (Message1 m in listMes)
                 {
-                    ((mainForm)this.ParentForm).txt_message1.Text += Environment.NewLine + " >> " + m.content_mes;
+                    //((mainForm)this.ParentForm).txt_message1.Text += Environment.NewLine + " >> " + m.content_mes;
                 } 
         }
     }
