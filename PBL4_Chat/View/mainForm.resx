@@ -144,6 +144,16 @@
         6s5eMBPVtjBo7f+DiY3YZtZbOQs+3xcwqLQ+pE6R4AAAAABJRU5ErkJggg==
 </value>
   </data>
+  <data name="bunifuPanel1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAMgAAAAyCAYAAAAZUZThAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAD7SURBVHhe7dZBCoMwEEBR738e79ciNotpdYwSi5r3QDAu
+        dDPfZAAaG8fxNV1r99bWV1hPlp6donzg9A/BiZrH0vyFANzD4Z+/XYNe7J51cdCb6pkXB73anH1x0Lu0
+        AYEAkFrcKOweMBMIJH5aEAdEmoBECEQtEAkEagkEIk1AwhELEgKBWgKBSBOQcMSChECglkAg0gQkHLEg
+        IRCoJRCINAEJRyxICARqCQQiOwgkBAIJTcAeioHZYgsCgZlAILHagkggIRB6t9mASOiV2YdW1EQvDs+6
+        SHi6JjMuFJ6m+UxPLyzX5xHczl9m+PsjZV2eWVtfcT3dA80MwxuxFRz+EuYFWwAAAABJRU5ErkJggg==
+</value>
+  </data>
   <metadata name="Opendialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>

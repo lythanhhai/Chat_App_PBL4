@@ -138,7 +138,7 @@ namespace Server
                         if (encoding.GetString(userId_receive).Split(' ').Length - 3 >= 2)
                         {
                             //Console.WriteLine("1");
-                            byte[] image = new byte[BUFFER_SIZE];
+                            byte[] image = new byte[BUFFER_SIZE * 100];
                             int size_image = client.Receive(image);
                             packetMes = encoding.GetString(userId_receive).Split(' ')[0] + " " + encoding.GetString(userId_receive).Split(' ')[1] + " " + "image";
                             // tách userId_receive
@@ -259,7 +259,7 @@ namespace Server
                     // gửi text
                     else
                     {
-                        byte[] data = new byte[1024];
+                        byte[] data = new byte[BUFFER_SIZE];
                         int size = client.Receive(data);
                         //Console.WriteLine(packetMes);
                         //Console.WriteLine(encoding.GetString(userId_receive).Split(' ').Length.ToString());

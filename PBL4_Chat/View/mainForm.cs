@@ -1,4 +1,5 @@
-﻿using Guna.UI.WinForms;
+﻿using Bunifu.UI.WinForms;
+using Guna.UI.WinForms;
 using PBL4_Chat.BLL;
 using PBL4_Chat.DTO;
 using PBL4_Chat.View;
@@ -367,7 +368,7 @@ namespace PBL4_Chat
                     // chat text
                     else
                     {
-                        byte[] content = new Byte[1024];
+                        byte[] content = new Byte[BUFFER_SIZE];
                         ns.Read(content, 0, content.Length);
                         data = encoding.GetString(content);
                         // private(sender)
@@ -531,10 +532,31 @@ namespace PBL4_Chat
                 gll.Size = new System.Drawing.Size(134, 25);
                 gll.TabIndex = 0;
                 gll.TabStop = true;
-                gll.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+                gll.Margin = new System.Windows.Forms.Padding(10, 30, 3, 5);
                 gll.Text = fileName1;
                 gll.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-                txt_message.Controls.Add(gll);
+
+
+                // panel
+                BunifuPanel bp = new BunifuPanel();
+                bp.BackgroundColor = System.Drawing.Color.Transparent;
+                //bp.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuPanel1.BackgroundImage")));
+                bp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+                bp.BorderColor = System.Drawing.Color.Silver;
+                bp.BorderRadius = 30;
+                bp.BorderThickness = 1;
+                bp.Location = new System.Drawing.Point(3, 3);
+                bp.MaximumSize = new System.Drawing.Size(170, 50);
+                bp.MinimumSize = new System.Drawing.Size(150, 50);
+                bp.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+                bp.ShowBorders = true;
+                bp.Size = new System.Drawing.Size(150, 50);
+                bp.TabIndex = 1;
+
+                bp.Controls.Add(gll);
+                txt_message.Controls.Add(bp);
+
+
             }
         }
 
@@ -701,6 +723,9 @@ namespace PBL4_Chat
                     //                  + BLL_User.instance.BLL_getUserById(userId()).lastName
                     //                  + " << " + readFile;
                     string handleFileName = Path.GetFileName(filename);
+                    
+                    // gunalink
+
                     GunaLinkLabel gll = new GunaLinkLabel();
                     gll.ActiveLinkColor = System.Drawing.Color.Silver;
                     gll.AutoSize = true;
@@ -709,12 +734,31 @@ namespace PBL4_Chat
                     gll.Size = new System.Drawing.Size(134, 25);
                     gll.TabIndex = 0;
                     gll.TabStop = true;
-                    gll.Margin = new System.Windows.Forms.Padding(330, 5, 3, 5);
+                    gll.Margin = new System.Windows.Forms.Padding(10, 30, 3, 5);
                     gll.Text = handleFileName;
                     gll.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
                     // sự kiện download
                     gll.Click += new System.EventHandler(downloadFile);
-                    txt_message.Controls.Add(gll);
+
+                    // panel
+                    BunifuPanel bp = new BunifuPanel();
+                    bp.BackgroundColor = System.Drawing.Color.Transparent;
+                    //bp.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuPanel1.BackgroundImage")));
+                    bp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+                    bp.BorderColor = System.Drawing.Color.Silver;
+                    bp.BorderRadius = 30;
+                    bp.BorderThickness = 1;
+                    bp.Location = new System.Drawing.Point(3, 3);
+                    bp.MaximumSize = new System.Drawing.Size(170, 50);
+                    bp.MinimumSize = new System.Drawing.Size(150, 50);
+                    bp.Margin = new System.Windows.Forms.Padding(315, 5, 3, 5);
+                    bp.ShowBorders = true;
+                    bp.Size = new System.Drawing.Size(150, 50);
+                    bp.TabIndex = 1;
+
+
+                    bp.Controls.Add(gll);
+                    txt_message.Controls.Add(bp);
 
 
                     //FileStream stream = File.OpenRead(filename);

@@ -63,6 +63,7 @@ namespace PBL4_Chat
             this.btn_send = new Guna.UI.WinForms.GunaButton();
             this.panel_listUser = new System.Windows.Forms.FlowLayoutPanel();
             this.Opendialog = new System.Windows.Forms.OpenFileDialog();
+            this.bunifuPanel1 = new Bunifu.UI.WinForms.BunifuPanel();
             this.gunaPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).BeginInit();
             this.gunaPanel2.SuspendLayout();
@@ -75,6 +76,7 @@ namespace PBL4_Chat
             this.gunaPanel8.SuspendLayout();
             this.gunaPanel5.SuspendLayout();
             this.GunaElipsePanel5.SuspendLayout();
+            this.bunifuPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // gunaPanel1
@@ -354,7 +356,7 @@ namespace PBL4_Chat
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_message.AutoScroll = true;
             this.txt_message.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.txt_message.Controls.Add(this.gunaLinkLabel1);
+            this.txt_message.Controls.Add(this.bunifuPanel1);
             this.txt_message.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.txt_message.Location = new System.Drawing.Point(0, 116);
             this.txt_message.MaximumSize = new System.Drawing.Size(709, 658);
@@ -369,7 +371,9 @@ namespace PBL4_Chat
             this.gunaLinkLabel1.ActiveLinkColor = System.Drawing.Color.Silver;
             this.gunaLinkLabel1.AutoSize = true;
             this.gunaLinkLabel1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gunaLinkLabel1.Location = new System.Drawing.Point(3, 0);
+            this.gunaLinkLabel1.Location = new System.Drawing.Point(30, 10);
+            this.gunaLinkLabel1.MaximumSize = new System.Drawing.Size(200, 25);
+            this.gunaLinkLabel1.MinimumSize = new System.Drawing.Size(134, 25);
             this.gunaLinkLabel1.Name = "gunaLinkLabel1";
             this.gunaLinkLabel1.Size = new System.Drawing.Size(134, 25);
             this.gunaLinkLabel1.TabIndex = 0;
@@ -597,6 +601,25 @@ namespace PBL4_Chat
             // 
             this.Opendialog.FileName = "openFileDialog1";
             // 
+            // bunifuPanel1
+            // 
+            this.bunifuPanel1.BackgroundColor = System.Drawing.Color.Transparent;
+            this.bunifuPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuPanel1.BackgroundImage")));
+            this.bunifuPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuPanel1.BorderColor = System.Drawing.Color.Transparent;
+            this.bunifuPanel1.BorderRadius = 30;
+            this.bunifuPanel1.BorderThickness = 1;
+            this.bunifuPanel1.Controls.Add(this.gunaLinkLabel1);
+            this.bunifuPanel1.Location = new System.Drawing.Point(330, 3);
+            this.bunifuPanel1.Margin = new System.Windows.Forms.Padding(330, 3, 3, 3);
+            this.bunifuPanel1.MaximumSize = new System.Drawing.Size(250, 50);
+            this.bunifuPanel1.MinimumSize = new System.Drawing.Size(200, 50);
+            this.bunifuPanel1.Name = "bunifuPanel1";
+            this.bunifuPanel1.Padding = new System.Windows.Forms.Padding(3, 6, 0, 0);
+            this.bunifuPanel1.ShowBorders = true;
+            this.bunifuPanel1.Size = new System.Drawing.Size(200, 50);
+            this.bunifuPanel1.TabIndex = 1;
+            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -622,11 +645,12 @@ namespace PBL4_Chat
             this.gunaPanel4.ResumeLayout(false);
             this.pn_chat.ResumeLayout(false);
             this.txt_message.ResumeLayout(false);
-            this.txt_message.PerformLayout();
             this.gunaPanel8.ResumeLayout(false);
             this.gunaPanel8.PerformLayout();
             this.gunaPanel5.ResumeLayout(false);
             this.GunaElipsePanel5.ResumeLayout(false);
+            this.bunifuPanel1.ResumeLayout(false);
+            this.bunifuPanel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -667,6 +691,7 @@ namespace PBL4_Chat
         private System.Windows.Forms.OpenFileDialog Opendialog;
         internal System.Windows.Forms.FlowLayoutPanel txt_message;
         private Guna.UI.WinForms.GunaLinkLabel gunaLinkLabel1;
+        private Bunifu.UI.WinForms.BunifuPanel bunifuPanel1;
     }
 }
 
