@@ -313,6 +313,36 @@ namespace PBL4_Chat
                         //MessageBox.Show(res.Trim());
 
                     }
+                    // gửi file
+                    else if(choose.Contains("file"))
+                    {
+                        MessageBox.Show("file");
+                        message = new Byte[1024 * 500];
+                        ns.Read(message, 0, message.Length);
+                        // private(sender)
+                        if (choose.Split(' ')[1] == "private")
+                        {
+                            // kiểm tra người nhận có đang nhắn private không
+                            if (userId_receive().Split(' ').Length == 1)
+                            {
+                                //nameReceiver = BLL_User.instance.BLL_getUserById(userId_receive()).firstName + " " + BLL_User.instance.BLL_getUserById(userId_receive()).lastName;
+                                // khi người dùng đang nhắn 1 người khác nhưng 1 người khác gửi tin thì tin nhắn này không hiển thị lên
+                                if (string.Compare(choose.Split(' ')[0], userId_receive()) == 0)
+                                {
+                                    msg2();
+                                }
+                                else
+                                {
+
+                                }
+                            }
+                            else
+                            {
+
+                            }
+
+                        }
+                    }    
                     // chat text
                     else
                     {
@@ -459,6 +489,34 @@ namespace PBL4_Chat
             }
         }
 
+        private void msg2()
+        {
+            if (this.InvokeRequired)
+                this.Invoke(new MethodInvoker(msg2));
+            else
+            {
+                txt_message1.Text += Environment.NewLine + nameReceiver + " >> " + encoding.GetString(message);
+                int fileNameLen = BitConverter.ToInt32(message, 0);
+                string fileName1 = Encoding.ASCII.GetString(message, 4, fileNameLen);
+                MemoryStream filestream1 = new MemoryStream(message);
+                
+                //gunaTransfarantPictureBox1.Image = image2;
+                // thêm ảnh vào control
+                GunaLinkLabel gll = new GunaLinkLabel();
+                gll.ActiveLinkColor = System.Drawing.Color.Silver;
+                gll.AutoSize = true;
+                gll.Font = new System.Drawing.Font("Segoe UI", 9F);
+                gll.Location = new System.Drawing.Point(3, 0);
+                gll.Size = new System.Drawing.Size(134, 25);
+                gll.TabIndex = 0;
+                gll.TabStop = true;
+                gll.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+                gll.Text = fileName1;
+                gll.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+                txt_message.Controls.Add(gll);
+            }
+        }
+
         private void btn_send_Click(object sender, EventArgs e)
         {
             if (txt_send.Text != "")
@@ -581,17 +639,85 @@ namespace PBL4_Chat
                 if (!String.IsNullOrEmpty(filename) != null && File.Exists(filename))
                 {
                     string readFile = File.ReadAllText(filename);
+                    //txt_send.Text = readFile;
                     //txt_message.Text += Environment.NewLine
                     //                  + BLL_User.instance.BLL_getUserById(userId()).firstName
                     //                  + " "
                     //                  + BLL_User.instance.BLL_getUserById(userId()).lastName
                     //                  + " << " + readFile;
+                    MessageBox.Show(filename);
+                    string handleFileName = Path.GetFileName(filename);
+                    GunaLinkLabel gll = new GunaLinkLabel();
+                    gll.ActiveLinkColor = System.Drawing.Color.Silver;
+                    gll.AutoSize = true;
+                    gll.Font = new System.Drawing.Font("Segoe UI", 9F);
+                    gll.Location = new System.Drawing.Point(3, 0);
+                    gll.Size = new System.Drawing.Size(134, 25);
+                    gll.TabIndex = 0;
+                    gll.TabStop = true;
+                    gll.Margin = new System.Windows.Forms.Padding(200, 5, 3, 5);
+                    gll.Text = handleFileName;
+                    gll.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+                    txt_message.Controls.Add(gll);
 
-                    //byte[] userId_receive1 = encoding.GetBytes(userId() + " " + userId_receive());
-                    //stream.Write(userId_receive1, 0, userId_receive1.Length);
-                    //byte[] message = encoding.GetBytes(readFile);
-                    //stream.Write(message, 0, message.Length);
-                    txt_send.Text = readFile;
+
+
+                    //FileStream stream = File.OpenRead(filename);
+                    // byte[] fileBytes = new byte[stream.Length];
+
+                    //ms = new MemoryStream();
+                    //FileStream fs = new FileStream(filename, FileMode.Open, FileAccess.Read);
+                    //ms.CopyTo(fs);
+                    ////File.WriteAllBytes(filename, ms.ToArray());
+                    //byte[] buffer = ms.GetBuffer();
+
+                    //ms = new MemoryStream();
+                    //FileStream file1 = new FileStream(filename, FileMode.Open, FileAccess.Read);
+                    //byte[] byte1s = new byte[file1.Length];
+                    //file1.Read(byte1s, 0, (int)file1.Length);
+                    //ms.Write(byte1s, 0, (int)file1.Length);
+
+                    //byte[] buffer = ms.GetBuffer();
+
+                    //FileStream fs = new FileStream(filename, FileMode.Open, FileAccess.Read);
+                    //ms = new MemoryStream();
+                    //fs.CopyTo(ms);
+                    //byte[] buffer = ms.GetBuffer();
+
+                    //byte[] userId_receive1 = encoding.GetBytes(userId() + " " + userId_receive() + " " + "file");
+                    //ns.Write(userId_receive1, 0, userId_receive1.Length);
+                    //byte[] dataFile = File.ReadAllBytes(filename);
+                    ////byte[] dataFile = FileToByteArray(filename);
+                    //MessageBox.Show(encoding.GetString(buffer));
+                    ////fs.Read(dataFile, 0, System.Convert.ToInt32(fs.Length));
+                    //ns.Write(buffer, 0, buffer.Length);
+
+
+                    string file_name = Path.GetFileName(filename);// "Your File Name";
+
+                    FileInfo fileInfo = new FileInfo(filename);
+                    string file_path = fileInfo.DirectoryName + @"\";
+
+                    byte[] fileNameByte = Encoding.ASCII.GetBytes(file_name);
+
+
+                    byte[] fileData = File.ReadAllBytes(file_path + file_name);
+
+                    byte[] mesData = new byte[4 + fileNameByte.Length + fileData.Length];
+
+                    byte[] fileNameLen = BitConverter.GetBytes(fileNameByte.Length);
+
+
+                    fileNameLen.CopyTo(mesData, 0);
+
+                    fileNameByte.CopyTo(mesData, 4);
+
+                    fileData.CopyTo(mesData, 4 + fileNameByte.Length);
+
+                    byte[] userId_receive1 = encoding.GetBytes(userId() + " " + userId_receive() + " " + "file");
+                    ns.Write(userId_receive1, 0, userId_receive1.Length);
+                    ns.Write(mesData, 0, mesData.Length);
+                    MessageBox.Show(encoding.GetString(mesData));
                 }
             }
             catch(Exception err)
@@ -600,6 +726,19 @@ namespace PBL4_Chat
             }
                
         }
+
+        public static byte[] FileToByteArray(string fileName)
+        {
+            byte[] fileData = null;
+
+            using (FileStream fs = File.OpenRead(fileName))
+            {
+                var binaryReader = new BinaryReader(fs);
+                fileData = binaryReader.ReadBytes((int)fs.Length);
+            }
+            return fileData;
+        }
+
         int demBam = 0;
         private void btn_message_Click(object sender, EventArgs e)
         {

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Sockets;
@@ -30,7 +31,7 @@ namespace Server
             {
                 IPAddress address = IPAddress.Parse("127.0.0.1");
 
-                TcpListener listener = new TcpListener(address, PORT_NUMBER);
+                TcpListener listener = new TcpListener(System.Net.IPAddress.Any, PORT_NUMBER);
                 // 1. listen
                 listener.Start();
 
@@ -194,6 +195,29 @@ namespace Server
                         
                         //break;
                     }   
+                    // gửi file
+                    else if(encoding.GetString(userId_receive).Contains("file"))
+                    {
+                        byte[] dataFile = new byte[BUFFER_SIZE * 500];
+                        int size_file = client.Receive(dataFile);
+                        //int sizeFile = client.Receive(dataFile);
+
+                        Console.WriteLine(encoding.GetString(dataFile));
+                        packetMes = encoding.GetString(userId_receive).Split(' ')[0] + " " + "private" + " " + "file";
+                        //socket.Send(encoding.GetBytes("image"), 0, encoding.GetBytes("image").Length, SocketFlags.None);
+                        //socket.Send(image, 0, image1, SocketFlags.None);
+                        for (int i = 0; i < userId.Count; i++)
+                        {
+                            if (String.Compare(encoding.GetString(userId_receive).Split(' ')[1], userId[i]) == 0)
+                            {
+                                // gửi cho người nhận id người gửi để check xem có đang nhắn tin cùng nhau không
+                                // Socket_client[i].Send(data, 0, size, SocketFlags.None);
+                                Socket_client[i].Send(encoding.GetBytes(packetMes), 0, encoding.GetBytes(packetMes).Length, SocketFlags.None);
+                                Socket_client[i].Send(dataFile, 0, dataFile.Length, SocketFlags.None);
+
+                            }
+                        }
+                    }    
                     // gửi text
                     else
                     {
