@@ -311,7 +311,7 @@ namespace PBL4_Chat
                         //    res += data.Split(' ')[i] + " ";
                         //}
                         //MessageBox.Show(res.Trim());
-
+                        continue;
                     }
                     // gửi file
                     else if(choose.Contains("file"))
@@ -364,6 +364,7 @@ namespace PBL4_Chat
 
                             }
                         }
+                        continue;
                     }    
                     // chat text
                     else
@@ -371,6 +372,7 @@ namespace PBL4_Chat
                         byte[] content = new Byte[BUFFER_SIZE];
                         ns.Read(content, 0, content.Length);
                         data = encoding.GetString(content);
+                        
                         // private(sender)
                         if (data.Split(' ')[1] == "private")
                         {
@@ -528,13 +530,14 @@ namespace PBL4_Chat
                 gll.ActiveLinkColor = System.Drawing.Color.Silver;
                 gll.AutoSize = true;
                 gll.Font = new System.Drawing.Font("Segoe UI", 9F);
-                gll.Location = new System.Drawing.Point(3, 0);
+                gll.Location = new System.Drawing.Point(20, 10);
                 gll.Size = new System.Drawing.Size(134, 25);
                 gll.TabIndex = 0;
                 gll.TabStop = true;
                 gll.Margin = new System.Windows.Forms.Padding(10, 30, 3, 5);
                 gll.Text = fileName1;
                 gll.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+                gll.Click += new System.EventHandler(downloadFile);
 
 
                 // panel
@@ -546,11 +549,11 @@ namespace PBL4_Chat
                 bp.BorderRadius = 30;
                 bp.BorderThickness = 1;
                 bp.Location = new System.Drawing.Point(3, 3);
-                bp.MaximumSize = new System.Drawing.Size(170, 50);
-                bp.MinimumSize = new System.Drawing.Size(150, 50);
+                bp.MaximumSize = new System.Drawing.Size(170, 40);
+                bp.MinimumSize = new System.Drawing.Size(150, 40);
                 bp.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
                 bp.ShowBorders = true;
-                bp.Size = new System.Drawing.Size(150, 50);
+                bp.Size = new System.Drawing.Size(150, 40);
                 bp.TabIndex = 1;
 
                 bp.Controls.Add(gll);
@@ -723,22 +726,7 @@ namespace PBL4_Chat
                     //                  + BLL_User.instance.BLL_getUserById(userId()).lastName
                     //                  + " << " + readFile;
                     string handleFileName = Path.GetFileName(filename);
-                    
-                    // gunalink
 
-                    GunaLinkLabel gll = new GunaLinkLabel();
-                    gll.ActiveLinkColor = System.Drawing.Color.Silver;
-                    gll.AutoSize = true;
-                    gll.Font = new System.Drawing.Font("Segoe UI", 9F);
-                    gll.Location = new System.Drawing.Point(3, 0);
-                    gll.Size = new System.Drawing.Size(134, 25);
-                    gll.TabIndex = 0;
-                    gll.TabStop = true;
-                    gll.Margin = new System.Windows.Forms.Padding(10, 30, 3, 5);
-                    gll.Text = handleFileName;
-                    gll.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-                    // sự kiện download
-                    gll.Click += new System.EventHandler(downloadFile);
 
                     // panel
                     BunifuPanel bp = new BunifuPanel();
@@ -748,13 +736,30 @@ namespace PBL4_Chat
                     bp.BorderColor = System.Drawing.Color.Silver;
                     bp.BorderRadius = 30;
                     bp.BorderThickness = 1;
-                    bp.Location = new System.Drawing.Point(3, 3);
-                    bp.MaximumSize = new System.Drawing.Size(170, 50);
-                    bp.MinimumSize = new System.Drawing.Size(150, 50);
-                    bp.Margin = new System.Windows.Forms.Padding(315, 5, 3, 5);
+                    bp.Location = new System.Drawing.Point(345, 3);
+                    bp.MaximumSize = new System.Drawing.Size(170, 40);
+                    bp.MinimumSize = new System.Drawing.Size(150, 40);
+                    bp.Margin = new System.Windows.Forms.Padding(300, 5, 3, 5);
+                    //bp.Padding = new System.Windows.Forms.Padding(20, 25, 0, 0);
                     bp.ShowBorders = true;
-                    bp.Size = new System.Drawing.Size(150, 50);
+                    bp.Size = new System.Drawing.Size(150, 40);
                     bp.TabIndex = 1;
+
+                    // gunalink
+
+                    GunaLinkLabel gll = new GunaLinkLabel();
+                    gll.ActiveLinkColor = System.Drawing.Color.Silver;
+                    gll.AutoSize = true;
+                    gll.Margin = new System.Windows.Forms.Padding(0);
+                    gll.Font = new System.Drawing.Font("Segoe UI", 9F);
+                    gll.Location = new System.Drawing.Point(20, 10);
+                    gll.Size = new System.Drawing.Size(134, 25);
+                    gll.TabIndex = 0;
+                    gll.TabStop = true;
+                    gll.Text = handleFileName;
+                    gll.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+                    // sự kiện download
+                    gll.Click += new System.EventHandler(downloadFile);
 
 
                     bp.Controls.Add(gll);
