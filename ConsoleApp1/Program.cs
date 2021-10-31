@@ -138,7 +138,7 @@ namespace Server
                         if (encoding.GetString(userId_receive).Split(' ').Length - 3 >= 2)
                         {
                             //Console.WriteLine("1");
-                            byte[] image = new byte[BUFFER_SIZE * 100];
+                            byte[] image = new byte[BUFFER_SIZE];
                             int size_image = client.Receive(image);
                             packetMes = encoding.GetString(userId_receive).Split(' ')[0] + " " + encoding.GetString(userId_receive).Split(' ')[1] + " " + "image";
                             // tách userId_receive
@@ -249,7 +249,7 @@ namespace Server
                                     // gửi cho người nhận id người gửi để check xem có đang nhắn tin cùng nhau không
                                     // Socket_client[i].Send(data, 0, size, SocketFlags.None);
                                     Socket_client[i].Send(encoding.GetBytes(packetMes), 0, encoding.GetBytes(packetMes).Length, SocketFlags.None);
-                                    Socket_client[i].Send(dataFile, 0, dataFile.Length, SocketFlags.None);
+                                    Socket_client[i].Send(dataFile, 0, size_file, SocketFlags.None);
 
                                 }
                             }
