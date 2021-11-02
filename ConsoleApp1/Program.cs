@@ -25,6 +25,12 @@ namespace Server
 
         // chứa danh sách userId kết nối
         static List<string> userId = new List<string>();
+
+        // chứa danh sách socket kết nối đến (Cam)
+        static List<Socket> Socket_clientCam = new List<Socket>();
+
+        // chứa danh sách userId kết nối (Cam)
+        static List<string> userIdCam = new List<string>();
         public static void Main()
         {
             try
@@ -49,26 +55,47 @@ namespace Server
                     byte[] userId_load = new byte[BUFFER_SIZE];
                     int size_userIdLoad = socket.Receive(userId_load);
 
-                    // kiểm tra xem client đã từng tồn tại chưa
-                    for(int i = 0; i < userId.Count; i++)
+                    // gửi ảnh màn hình
+                    if(encoding.GetString(userId_load).Contains("Cam"))
                     {
-                        if(String.Compare(encoding.GetString(userId_load), userId[i]) == 0)
+                        // kiểm tra xem client đã từng tồn tại chưa
+                        for (int i = 0; i < userIdCam.Count; i++)
                         {
-                            remote.RemoveAt(i);
-                            Socket_client.RemoveAt(i);
-                            userId.RemoveAt(i);
-                            break;
-                        }    
-                    }
-                    userId.Add(encoding.GetString(userId_load));
-                    remote.Add(socket.RemoteEndPoint);
-                    Socket_client.Add(socket);
+                            if (String.Compare(encoding.GetString(userId_load), userIdCam[i]) == 0)
+                            {
+                                Socket_clientCam.RemoveAt(i);
+                                userIdCam.RemoveAt(i);
+                                break;
+                            }
+                        }
+                        userIdCam.Add(encoding.GetString(userId_load));
+                        Socket_clientCam.Add(socket);
+
+                        Thread userCam = new Thread(new ThreadStart(() => p.UserCam(socket)));
+                        userCam.Start();
+                    }  
+                    // gửi tin nhắn 
+                    else
+                    {
+                        // kiểm tra xem client đã từng tồn tại chưa
+                        for (int i = 0; i < userId.Count; i++)
+                        {
+                            if (String.Compare(encoding.GetString(userId_load), userId[i]) == 0)
+                            {
+                                remote.RemoveAt(i);
+                                Socket_client.RemoveAt(i);
+                                userId.RemoveAt(i);
+                                break;
+                            }
+                        }
+                        userId.Add(encoding.GetString(userId_load));
+                        remote.Add(socket.RemoteEndPoint);
+                        Socket_client.Add(socket);
 
 
-
-
-                    Thread userThread = new Thread(new ThreadStart(() => p.User(socket)));
-                    userThread.Start();
+                        Thread userThread = new Thread(new ThreadStart(() => p.User(socket)));
+                        userThread.Start();
+                    }                          
 
                   
                     // 4. close
@@ -112,7 +139,13 @@ namespace Server
             client.Close();
 
         }
-        // xử lý gửi
+        // xử lý gửi ảnh cam
+        public void UserCam(Socket client)
+        {
+
+        }
+
+        // xử lý gửi tin nhắn 
         public void User(Socket client)
         {
             try

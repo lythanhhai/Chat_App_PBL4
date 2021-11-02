@@ -898,5 +898,17 @@ namespace PBL4_Chat
                 MessageBox.Show(err.ToString());
             }
         }
+
+        public string getUserIdForCam()
+        {
+            return userId();
+        }
+
+        private void btnCamera_Click(object sender, EventArgs e)
+        {
+            Cam cam = new Cam();
+            cam.userId += new Cam.getUserId(getUserIdForCam);
+            cam.Show();
+        }
     }
 }

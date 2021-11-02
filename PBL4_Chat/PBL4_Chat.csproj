@@ -48,6 +48,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AForge, Version=2.2.5.0, Culture=neutral, PublicKeyToken=c1db6ff4eaa06aeb, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.2.2.5\lib\AForge.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video, Version=2.2.5.0, Culture=neutral, PublicKeyToken=cbfb6e07d173c401, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.Video.2.2.5\lib\AForge.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.DirectShow, Version=2.2.5.0, Culture=neutral, PublicKeyToken=61ea4348d43881b7, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.Video.DirectShow.2.2.5\lib\AForge.Video.DirectShow.dll</HintPath>
+    </Reference>
     <Reference Include="Bunifu.Dataviz.WinForms, Version=2.2.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
       <HintPath>..\packages\Bunifu.Dataviz.WinForms.2.2.0\lib\Bunifu.Dataviz.WinForms.dll</HintPath>
     </Reference>
@@ -187,6 +196,12 @@
     <Compile Include="DTO\User.cs" />
     <Compile Include="DTO\UserRelationship.cs" />
     <Compile Include="DTO\User_group.cs" />
+    <Compile Include="View\Cam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Cam.Designer.cs">
+      <DependentUpon>Cam.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\CreateGroup.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -232,6 +247,9 @@
       <DependentUpon>user_message.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="View\Cam.resx">
+      <DependentUpon>Cam.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\CreateGroup.resx">
       <DependentUpon>CreateGroup.cs</DependentUpon>
     </EmbeddedResource>

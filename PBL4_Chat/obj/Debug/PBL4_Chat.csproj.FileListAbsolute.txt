@@ -370,3 +370,10 @@ D:\Class\PBL4\PBL4_F2\test_chat_app-PBL4\PBL4_Chat\obj\Debug\PBL4_Chat.csproj.Co
 D:\Class\PBL4\PBL4_F2\test_chat_app-PBL4\PBL4_Chat\obj\Debug\PBL4_Chat.csproj.CopyComplete
 D:\Class\PBL4\PBL4_F2\test_chat_app-PBL4\PBL4_Chat\obj\Debug\PBL4_Chat.exe
 D:\Class\PBL4\PBL4_F2\test_chat_app-PBL4\PBL4_Chat\obj\Debug\PBL4_Chat.pdb
+D:\Class\PBL4\PBL4_F2\test_chat_app-PBL4\PBL4_Chat\bin\Debug\AForge.dll
+D:\Class\PBL4\PBL4_F2\test_chat_app-PBL4\PBL4_Chat\bin\Debug\AForge.Video.DirectShow.dll
+D:\Class\PBL4\PBL4_F2\test_chat_app-PBL4\PBL4_Chat\bin\Debug\AForge.Video.dll
+D:\Class\PBL4\PBL4_F2\test_chat_app-PBL4\PBL4_Chat\bin\Debug\AForge.xml
+D:\Class\PBL4\PBL4_F2\test_chat_app-PBL4\PBL4_Chat\bin\Debug\AForge.Video.xml
+D:\Class\PBL4\PBL4_F2\test_chat_app-PBL4\PBL4_Chat\bin\Debug\AForge.Video.DirectShow.xml
+D:\Class\PBL4\PBL4_F2\test_chat_app-PBL4\PBL4_Chat\obj\Debug\PBL4_Chat.View.Cam.resources

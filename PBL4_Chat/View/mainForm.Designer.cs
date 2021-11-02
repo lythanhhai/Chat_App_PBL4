@@ -54,7 +54,7 @@ namespace PBL4_Chat
             this.GunaSeparator1 = new Guna.UI.WinForms.GunaSeparator();
             this.GunaCircleButton1 = new Guna.UI.WinForms.GunaCircleButton();
             this.lbStatus = new Guna.UI.WinForms.GunaLabel();
-            this.GunaImageButton5 = new Guna.UI.WinForms.GunaImageButton();
+            this.btnCamera = new Guna.UI.WinForms.GunaImageButton();
             this.GunaImageButton4 = new Guna.UI.WinForms.GunaImageButton();
             this.gunaPanel5 = new Guna.UI.WinForms.GunaPanel();
             this.GunaElipsePanel5 = new Guna.UI.WinForms.GunaElipsePanel();
@@ -408,7 +408,7 @@ namespace PBL4_Chat
             this.gunaPanel8.Controls.Add(this.GunaSeparator1);
             this.gunaPanel8.Controls.Add(this.GunaCircleButton1);
             this.gunaPanel8.Controls.Add(this.lbStatus);
-            this.gunaPanel8.Controls.Add(this.GunaImageButton5);
+            this.gunaPanel8.Controls.Add(this.btnCamera);
             this.gunaPanel8.Controls.Add(this.GunaImageButton4);
             this.gunaPanel8.Dock = System.Windows.Forms.DockStyle.Top;
             this.gunaPanel8.Location = new System.Drawing.Point(0, 0);
@@ -476,18 +476,19 @@ namespace PBL4_Chat
             this.lbStatus.TabIndex = 26;
             this.lbStatus.Text = "online";
             // 
-            // GunaImageButton5
+            // btnCamera
             // 
-            this.GunaImageButton5.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.GunaImageButton5.Image = global::PBL4_Chat.Properties.Resources.Video_Call_24px;
-            this.GunaImageButton5.ImageSize = new System.Drawing.Size(24, 24);
-            this.GunaImageButton5.Location = new System.Drawing.Point(570, 26);
-            this.GunaImageButton5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.GunaImageButton5.Name = "GunaImageButton5";
-            this.GunaImageButton5.OnHoverImage = null;
-            this.GunaImageButton5.OnHoverImageOffset = new System.Drawing.Point(0, 0);
-            this.GunaImageButton5.Size = new System.Drawing.Size(64, 59);
-            this.GunaImageButton5.TabIndex = 28;
+            this.btnCamera.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnCamera.Image = global::PBL4_Chat.Properties.Resources.Video_Call_24px;
+            this.btnCamera.ImageSize = new System.Drawing.Size(24, 24);
+            this.btnCamera.Location = new System.Drawing.Point(570, 26);
+            this.btnCamera.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnCamera.Name = "btnCamera";
+            this.btnCamera.OnHoverImage = null;
+            this.btnCamera.OnHoverImageOffset = new System.Drawing.Point(0, 0);
+            this.btnCamera.Size = new System.Drawing.Size(64, 59);
+            this.btnCamera.TabIndex = 28;
+            this.btnCamera.Click += new System.EventHandler(this.btnCamera_Click);
             // 
             // GunaImageButton4
             // 
@@ -683,7 +684,7 @@ namespace PBL4_Chat
         internal Guna.UI.WinForms.GunaSeparator GunaSeparator1;
         internal Guna.UI.WinForms.GunaCircleButton GunaCircleButton1;
         internal Guna.UI.WinForms.GunaLabel lbStatus;
-        internal Guna.UI.WinForms.GunaImageButton GunaImageButton5;
+        internal Guna.UI.WinForms.GunaImageButton btnCamera;
         internal Guna.UI.WinForms.GunaImageButton GunaImageButton4;
         private Guna.UI.WinForms.GunaAdvenceButton btnDangXuat;
         private Guna.UI.WinForms.GunaCirclePictureBox gunaCirclePictureBox2;
