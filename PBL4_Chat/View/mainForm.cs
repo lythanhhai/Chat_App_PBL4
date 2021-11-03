@@ -904,10 +904,16 @@ namespace PBL4_Chat
             return userId();
         }
 
+        public string getUserReceiveForCam()
+        {
+            return userId_receive();
+        }
+
         private void btnCamera_Click(object sender, EventArgs e)
         {
             Cam cam = new Cam();
             cam.userId += new Cam.getUserId(getUserIdForCam);
+            cam.userReceiver += new Cam.getUserReceive(getUserReceiveForCam);
             cam.Show();
         }
     }

@@ -33,7 +33,9 @@ namespace PBL4_Chat.View
             this.btnStart = new System.Windows.Forms.Button();
             this.pbCamera = new System.Windows.Forms.PictureBox();
             this.btn_stop = new System.Windows.Forms.Button();
+            this.gunaTransfarantPictureBox1 = new Guna.UI.WinForms.GunaTransfarantPictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbCamera)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gunaTransfarantPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // cbbCamera
@@ -58,7 +60,7 @@ namespace PBL4_Chat.View
             // 
             this.pbCamera.Location = new System.Drawing.Point(12, 12);
             this.pbCamera.Name = "pbCamera";
-            this.pbCamera.Size = new System.Drawing.Size(1468, 800);
+            this.pbCamera.Size = new System.Drawing.Size(1468, 515);
             this.pbCamera.TabIndex = 1;
             this.pbCamera.TabStop = false;
             // 
@@ -72,11 +74,23 @@ namespace PBL4_Chat.View
             this.btn_stop.UseVisualStyleBackColor = true;
             this.btn_stop.Click += new System.EventHandler(this.btn_stop_Click);
             // 
+            // gunaTransfarantPictureBox1
+            // 
+            this.gunaTransfarantPictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.gunaTransfarantPictureBox1.BaseColor = System.Drawing.Color.Black;
+            this.gunaTransfarantPictureBox1.Location = new System.Drawing.Point(12, 533);
+            this.gunaTransfarantPictureBox1.Name = "gunaTransfarantPictureBox1";
+            this.gunaTransfarantPictureBox1.Size = new System.Drawing.Size(1468, 271);
+            this.gunaTransfarantPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.gunaTransfarantPictureBox1.TabIndex = 5;
+            this.gunaTransfarantPictureBox1.TabStop = false;
+            // 
             // Cam
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1492, 911);
+            this.Controls.Add(this.gunaTransfarantPictureBox1);
             this.Controls.Add(this.btn_stop);
             this.Controls.Add(this.btnStart);
             this.Controls.Add(this.pbCamera);
@@ -87,6 +101,7 @@ namespace PBL4_Chat.View
             this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
             this.Load += new System.EventHandler(this.Cam_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbCamera)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gunaTransfarantPictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -97,5 +112,6 @@ namespace PBL4_Chat.View
         private System.Windows.Forms.PictureBox pbCamera;
         private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.Button btn_stop;
+        private Guna.UI.WinForms.GunaTransfarantPictureBox gunaTransfarantPictureBox1;
     }
 }
