@@ -56,9 +56,12 @@ namespace PBL4_Chat.View
                     videoCaptureDevice.NewFrame += VideoCaptureDevice_NewFrame;
                     videoCaptureDevice.Start();
                 }
-                send = new Thread(xuLyGui);
-                send.Start();
-                send.IsBackground = true;
+                lock(this)
+                {
+                    send = new Thread(xuLyGui);
+                    send.IsBackground = true;
+                    send.Start();
+                }
 
             }
             catch (Exception err)
@@ -66,7 +69,7 @@ namespace PBL4_Chat.View
                 MessageBox.Show(err.ToString());
             }
         }
-        private static readonly Object objLock = new Object();
+        private static readonly Object objLock = new object();
         void myTimer_Elapsed(object sender, ElapsedEventArgs e)
         {
             //your code
@@ -83,7 +86,12 @@ namespace PBL4_Chat.View
                 //Image image = (Image)pbCamera.Image.Clone();
                 ns = client.GetStream();
                 ms = new MemoryStream();
-                pbCamera.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                Invoke((MethodInvoker)(delegate ()
+                {
+                    var image = pbCamera.Image;
+                    image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                }));
+                    //pbCamera.Image.Save(ms, pbCamera.Image.RawFormat);
                 byte[] buffer = ms.GetBuffer();
                 byte[] userId_receive1 = encoding.GetBytes(userId() + " " + userReceiver());
                 ns.Write(userId_receive1, 0, userId_receive1.Length);
@@ -115,10 +123,10 @@ namespace PBL4_Chat.View
             }
             else
             {
-                pbCamera.Image = image;
+                    pbCamera.Image = image;   
             }
         }
-        System.Timers.Timer myTimer = new Timer(1000);
+        System.Timers.Timer myTimer = new Timer(500);
         public void xuLyGui()
         {
             try
@@ -126,7 +134,8 @@ namespace PBL4_Chat.View
 
                 myTimer.Start();
                 myTimer.Elapsed += new ElapsedEventHandler(myTimer_Elapsed);
-
+                //Thread.Sleep(100);
+                Task.Delay(100);
 
 
                 //while (true)
@@ -247,8 +256,11 @@ namespace PBL4_Chat.View
 
         private void VideoCaptureDevice_NewFrame(object sender, NewFrameEventArgs eventArgs)
         {
-            Bitmap bitmap = (Bitmap)eventArgs.Frame.Clone();
-            SetImage(bitmap);
+            lock(this)
+            {
+                Bitmap bitmap = (Bitmap)eventArgs.Frame.Clone();
+                SetImage(bitmap);  
+            }
             //pbCamera.Image = bitmap;
         }
         private void Cam_Load(object sender, EventArgs e)
@@ -271,9 +283,13 @@ namespace PBL4_Chat.View
                 ns.Write(userId_load, 0, userId_load.Length);
 
                 //Thread userThread1 = new Thread(new ThreadStart(() => p.XLNhan()));
-                receive = new Thread(XLNhan);
-                receive.Start();
-                receive.IsBackground = true;
+                lock(this)
+                {
+                    receive = new Thread(XLNhan);
+                    receive.IsBackground = true;
+                    receive.Start();
+
+                }    
             }
 
             catch (Exception ex)
