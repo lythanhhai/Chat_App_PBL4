@@ -56,7 +56,7 @@ namespace Server
                     int size_userIdLoad = socket.Receive(userId_load);
 
                     // gửi ảnh màn hình
-                    if(encoding.GetString(userId_load).Contains("Cam"))
+                    if (encoding.GetString(userId_load).Contains("Cam"))
                     {
                         Console.WriteLine("1");
                         // kiểm tra xem client đã từng tồn tại chưa
@@ -74,7 +74,7 @@ namespace Server
 
                         Thread userCam = new Thread(new ThreadStart(() => p.UserCam(socket)));
                         userCam.Start();
-                    }  
+                    }
                     // gửi tin nhắn 
                     else
                     {
@@ -96,9 +96,9 @@ namespace Server
 
                         Thread userThread = new Thread(new ThreadStart(() => p.User(socket)));
                         userThread.Start();
-                    }                          
+                    }
 
-                  
+
                     // 4. close
                     //socket.Close();
 
@@ -118,7 +118,7 @@ namespace Server
             Console.Read();
         }
 
-        
+
         public static void DisconnectClient(Socket client)
         {
             if (client == null)
@@ -131,10 +131,10 @@ namespace Server
             {
                 //if (String.Compare(client.RemoteEndPoint.ToString(), remote[i].ToString()) == 0)
                 //{
-                    remote.RemoveAt(i);
-                    Socket_client.RemoveAt(i);
-                    userId.RemoveAt(i);
-                    break;
+                remote.RemoveAt(i);
+                Socket_client.RemoveAt(i);
+                userId.RemoveAt(i);
+                break;
                 //}
             }
             client.Close();
@@ -191,8 +191,23 @@ namespace Server
                     // truyền gói tin
                     string packetMes = "";
 
+                    if (encoding.GetString(userId_receive).Contains("Cam"))
+                    {
+                        packetMes = encoding.GetString(userId_receive).Split(' ')[0] + " " + "Cam";
+                        for (int i = 0; i < userId.Count; i++)
+                        {
+                            if (String.Compare(encoding.GetString(userId_receive).Split(' ')[1], userId[i]) == 0)
+                            {
+                                // gửi cho người nhận id người gửi để check xem có đang nhắn tin cùng nhau không
+                                // Socket_client[i].Send(data, 0, size, SocketFlags.None);
+                                Socket_client[i].Send(encoding.GetBytes(packetMes), 0, encoding.GetBytes(packetMes).Length, SocketFlags.None);
+
+                            }
+                        }
+                        //Console.WriteLine(packetMes);
+                    }
                     // gửi ảnh
-                    if (encoding.GetString(userId_receive).Contains("image"))
+                    else if (encoding.GetString(userId_receive).Contains("image"))
                     {
                         // gửi ảnh tới nhóm
                         // trừ image
@@ -253,11 +268,11 @@ namespace Server
                             }
                             //Console.WriteLine(packetMes);
                         }
-                        
+
                         //break;
-                    }   
+                    }
                     // gửi file
-                    else if(encoding.GetString(userId_receive).Contains("file"))
+                    else if (encoding.GetString(userId_receive).Contains("file"))
                     {
                         byte[] dataFile = new byte[BUFFER_SIZE];
                         int size_file = client.Receive(dataFile);
@@ -296,7 +311,7 @@ namespace Server
                         // gửi private file
                         else
                         {
-                            
+
                             //int sizeFile = client.Receive(dataFile);
 
                             //Console.WriteLine(encoding.GetString(dataFile));
@@ -315,8 +330,8 @@ namespace Server
                                 }
                             }
                         }
-                        
-                    }    
+
+                    }
                     // gửi text
                     else
                     {
@@ -375,7 +390,7 @@ namespace Server
                             //Socket_client[1].Send(data, 0, size, SocketFlags.None);
                             //Socket_client[1].Send(data, 0, size, SocketFlags.None);
                         }
-                    }                        
+                    }
 
                 }
             }

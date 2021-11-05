@@ -29,7 +29,7 @@ namespace PBL4_Chat
         // user_info(id_receive) -> mainForm.
 
         // 
-       
+
         private const int BUFFER_SIZE = 1024 * 1000;
         private const int PORT_NUMBER = 9999;
 
@@ -43,7 +43,7 @@ namespace PBL4_Chat
         // message thông qua userId
         string res = null;
         string nameReceiver = null;
-        
+
 
 
         // chuyen userid cho mainForm
@@ -120,7 +120,7 @@ namespace PBL4_Chat
                 }
             }
         }
-        
+
         // showDSUser có trong hệ thống
         public void showUser()
         {
@@ -158,7 +158,7 @@ namespace PBL4_Chat
                 {
                     foreach (User_group ug in BLL_Group.instance.BLL_getAllUserGroup())
                     {
-                        if(ug.id_member == userId())
+                        if (ug.id_member == userId())
                         {
                             panel_listUser.Controls.Add(new group_info
                             {
@@ -167,9 +167,9 @@ namespace PBL4_Chat
                                 des = g.des
                             });
                             break;
-                        }    
-                    }    
-                }                    
+                        }
+                    }
+                }
             }
         }
         private void mainForm_Load(object sender, EventArgs e)
@@ -205,9 +205,19 @@ namespace PBL4_Chat
             }
         }
 
-       
+
         public delegate void Delegate();
         //public void XLNhan(TcpClient client, Stream stream)
+
+        public string getUserIdForCam1()
+        {
+            return userId_receive();
+        }
+
+        public string getUserReceiveForCam1()
+        {
+            return userId();
+        }
 
         // hàm xử lý nhận
         byte[] message;
@@ -222,7 +232,7 @@ namespace PBL4_Chat
                     ns.Read(byte_choose, 0, byte_choose.Length);
                     string choose = encoding.GetString(byte_choose);
                     //MessageBox.Show(encoding.GetString(choose));
-                    
+
                     //stream = client.GetStream();
                     //Byte[] message = new Byte[BUFFER_SIZE];
                     //stream.Read(message, 0, BUFFER_SIZE);
@@ -246,7 +256,24 @@ namespace PBL4_Chat
 
                     // chat image
                     //MessageBox.Show(choose);
-                    if (choose.Contains("image"))
+                    if (choose.Contains("Cam"))
+                    {
+                        DialogResult dr = MessageBox.Show("Ban co cuoc goi",
+                        "Video call", MessageBoxButtons.YesNo);
+                        if (DialogResult.Yes == dr)
+                        {
+                            Cam cam1 = new Cam();
+                            cam1.userId += new Cam.getUserId(getUserIdForCam);
+                            cam1.userReceiver += new Cam.getUserReceive(getUserReceiveForCam);
+                            cam1.ShowDialog();
+                            continue;
+                        }
+                        else
+                        {
+                            //cam.Close();
+                        }
+                    }
+                    else if (choose.Contains("image"))
                     {
                         message = new Byte[BUFFER_SIZE];
                         ns.Read(message, 0, message.Length);
@@ -314,7 +341,7 @@ namespace PBL4_Chat
                         continue;
                     }
                     // gửi file
-                    else if(choose.Contains("file"))
+                    else if (choose.Contains("file"))
                     {
                         message = new Byte[BUFFER_SIZE];
                         ns.Read(message, 0, message.Length);
@@ -365,14 +392,14 @@ namespace PBL4_Chat
                             }
                         }
                         continue;
-                    }    
+                    }
                     // chat text
                     else
                     {
                         byte[] content = new Byte[BUFFER_SIZE];
                         ns.Read(content, 0, content.Length);
                         data = encoding.GetString(content);
-                        
+
                         // private(sender)
                         if (data.Split(' ')[1] == "private")
                         {
@@ -432,7 +459,7 @@ namespace PBL4_Chat
 
                     }
                 }
-                    
+
 
             }
             catch (Exception err)
@@ -451,30 +478,30 @@ namespace PBL4_Chat
                 //txt_message1.Text += Environment.NewLine + nameReceiver + " >> " + res;
                 //if (res != null)
                 //{//quan trọng
-                    GunaTextBox gtb = new GunaTextBox();
-                    gtb.BaseColor = System.Drawing.Color.White;
-                    gtb.BorderColor = System.Drawing.Color.Silver;
-                    gtb.Cursor = System.Windows.Forms.Cursors.IBeam;
-                    gtb.FocusedBaseColor = System.Drawing.Color.White;
-                    gtb.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-                    gtb.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-                    gtb.Font = new System.Drawing.Font("Segoe UI", 9F);
-                    gtb.Location = new System.Drawing.Point(3, 3);
-                    gtb.MaximumSize = new System.Drawing.Size(270, 1000);
-                    gtb.MinimumSize = new System.Drawing.Size(270, 50);
-                    gtb.Multiline = true;
-                    gtb.PasswordChar = '\0';
-                    gtb.SelectedText = "";
-                    gtb.Size = new System.Drawing.Size(270, 50);
-                    gtb.TabIndex = 0;
-                    gtb.Text = res;
-                    gtb.Enabled = false;
-                    gtb.Radius = 20;
-                    gtb.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-                    txt_message.Controls.Add(gtb);
+                GunaTextBox gtb = new GunaTextBox();
+                gtb.BaseColor = System.Drawing.Color.White;
+                gtb.BorderColor = System.Drawing.Color.Silver;
+                gtb.Cursor = System.Windows.Forms.Cursors.IBeam;
+                gtb.FocusedBaseColor = System.Drawing.Color.White;
+                gtb.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+                gtb.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+                gtb.Font = new System.Drawing.Font("Segoe UI", 9F);
+                gtb.Location = new System.Drawing.Point(3, 3);
+                gtb.MaximumSize = new System.Drawing.Size(270, 1000);
+                gtb.MinimumSize = new System.Drawing.Size(270, 50);
+                gtb.Multiline = true;
+                gtb.PasswordChar = '\0';
+                gtb.SelectedText = "";
+                gtb.Size = new System.Drawing.Size(270, 50);
+                gtb.TabIndex = 0;
+                gtb.Text = res;
+                gtb.Enabled = false;
+                gtb.Radius = 20;
+                gtb.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+                txt_message.Controls.Add(gtb);
 
 
-                    //ns = new NetworkStream(socket);
+                //ns = new NetworkStream(socket);
 
                 //}
 
@@ -490,10 +517,10 @@ namespace PBL4_Chat
                 //txt_message1.Text += Environment.NewLine + nameReceiver + " >> " + res;
                 //if (res != null)
                 //{
-                    //MemoryStream imagestream = new MemoryStream(message);
-                    //Image image1 = Image.FromStream(imagestream);
-                    //////Bitmap bmp = new Bitmap(imagestream);
-                    //gunaTransfarantPictureBox1.Image = image1;
+                //MemoryStream imagestream = new MemoryStream(message);
+                //Image image1 = Image.FromStream(imagestream);
+                //////Bitmap bmp = new Bitmap(imagestream);
+                //gunaTransfarantPictureBox1.Image = image1;
                 //}
                 MemoryStream imagestream1 = new MemoryStream(message);
                 Image image2 = Image.FromStream(imagestream1);
@@ -523,7 +550,7 @@ namespace PBL4_Chat
                 int fileNameLen = BitConverter.ToInt32(message, 0);
                 string fileName1 = Encoding.ASCII.GetString(message, 4, fileNameLen);
                 MemoryStream filestream1 = new MemoryStream(message);
-                
+
                 //gunaTransfarantPictureBox1.Image = image2;
                 // thêm ảnh vào control
                 GunaLinkLabel gll = new GunaLinkLabel();
@@ -689,14 +716,14 @@ namespace PBL4_Chat
                 //MessageBox.Show("You selected the file: " + saveFileDialog1.FileName);
                 string saveFileName = saveFileDialog1.FileName;
                 byte[] message1;
-                if(message == null)
+                if (message == null)
                 {
-                    message1 = new byte[1024 * 500]; 
-                }    
+                    message1 = new byte[1024 * 500];
+                }
                 else
                 {
                     message1 = message;
-                }                    
+                }
                 File.WriteAllBytes(saveFileName, message1);
             }
             else
@@ -712,9 +739,9 @@ namespace PBL4_Chat
             try
             {
                 Opendialog.ShowDialog();
-                
+
                 string filename = Opendialog.FileName;
-                
+
                 // kiểm tra xem người dùng có chọn file không
                 if (!String.IsNullOrEmpty(filename) != null && File.Exists(filename))
                 {
@@ -822,11 +849,11 @@ namespace PBL4_Chat
                     ns.Write(mesData, 0, mesData.Length);
                 }
             }
-            catch(Exception err)
+            catch (Exception err)
             {
                 MessageBox.Show(err.ToString());
             }
-               
+
         }
 
         public static byte[] FileToByteArray(string fileName)
@@ -844,7 +871,7 @@ namespace PBL4_Chat
         int demBam = 0;
         private void btn_message_Click(object sender, EventArgs e)
         {
-                panel_listUser.Visible = true;
+            panel_listUser.Visible = true;
             //if(demBam == 0)
             //{
             //    demBam++;
@@ -914,6 +941,9 @@ namespace PBL4_Chat
             Cam cam = new Cam();
             cam.userId += new Cam.getUserId(getUserIdForCam);
             cam.userReceiver += new Cam.getUserReceive(getUserReceiveForCam);
+            ns = client.GetStream();
+            byte[] userId_receive1 = encoding.GetBytes(userId() + " " + userId_receive() + " " + "Cam");
+            ns.Write(userId_receive1, 0, userId_receive1.Length);
             cam.Show();
         }
     }

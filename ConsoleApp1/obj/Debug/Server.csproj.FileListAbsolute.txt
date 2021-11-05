@@ -19,3 +19,10 @@ D:\Class\PBL4\PBL4_F2\test_chat_app-PBL4\ConsoleApp1\obj\Debug\Server.csprojAsse
 D:\Class\PBL4\PBL4_F2\test_chat_app-PBL4\ConsoleApp1\obj\Debug\Server.csproj.CoreCompileInputs.cache
 D:\Class\PBL4\PBL4_F2\test_chat_app-PBL4\ConsoleApp1\obj\Debug\ConsoleApp1.exe
 D:\Class\PBL4\PBL4_F2\test_chat_app-PBL4\ConsoleApp1\obj\Debug\ConsoleApp1.pdb
+D:\Class\PBL4\PBL4_F3\test_chat_app-PBL4\ConsoleApp1\bin\Debug\ConsoleApp1.exe.config
+D:\Class\PBL4\PBL4_F3\test_chat_app-PBL4\ConsoleApp1\bin\Debug\ConsoleApp1.exe
+D:\Class\PBL4\PBL4_F3\test_chat_app-PBL4\ConsoleApp1\bin\Debug\ConsoleApp1.pdb
+D:\Class\PBL4\PBL4_F3\test_chat_app-PBL4\ConsoleApp1\obj\Debug\Server.csprojAssemblyReference.cache
+D:\Class\PBL4\PBL4_F3\test_chat_app-PBL4\ConsoleApp1\obj\Debug\Server.csproj.CoreCompileInputs.cache
+D:\Class\PBL4\PBL4_F3\test_chat_app-PBL4\ConsoleApp1\obj\Debug\ConsoleApp1.exe
+D:\Class\PBL4\PBL4_F3\test_chat_app-PBL4\ConsoleApp1\obj\Debug\ConsoleApp1.pdb
