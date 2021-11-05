@@ -15,6 +15,7 @@ using AForge.Video;
 using AForge.Video.DirectShow;
 using Guna.UI.WinForms;
 using Timer = System.Timers.Timer;
+using NAudio.Wave;
 
 namespace PBL4_Chat.View
 {
@@ -56,13 +57,9 @@ namespace PBL4_Chat.View
                     videoCaptureDevice.NewFrame += VideoCaptureDevice_NewFrame;
                     videoCaptureDevice.Start();
                 }
-                lock(this)
-                {
                     send = new Thread(xuLyGui);
                     send.IsBackground = true;
                     send.Start();
-                }
-
             }
             catch (Exception err)
             {
@@ -113,20 +110,7 @@ namespace PBL4_Chat.View
 
 
         }
-        public delegate void SetImageCallback(Bitmap bmp);
-        private void SetImage(Bitmap image)
-        {
-            if (pbCamera.InvokeRequired)
-            {
-                SetImageCallback callback = new SetImageCallback(SetImage);
-                this.BeginInvoke(callback, new object[] { image });
-            }
-            else
-            {
-                    pbCamera.Image = image;   
-            }
-        }
-        System.Timers.Timer myTimer = new Timer(500);
+        System.Timers.Timer myTimer = new Timer(250);
         public void xuLyGui()
         {
             try
@@ -134,8 +118,7 @@ namespace PBL4_Chat.View
 
                 myTimer.Start();
                 myTimer.Elapsed += new ElapsedEventHandler(myTimer_Elapsed);
-                //Thread.Sleep(100);
-                Task.Delay(100);
+                Task.Delay(10);
 
 
                 //while (true)
@@ -182,7 +165,9 @@ namespace PBL4_Chat.View
 
             }
         }
-        int question = 0;
+        
+        
+        //int question = 0;
         byte[] message;
         public void XLNhan()
         {
@@ -254,17 +239,29 @@ namespace PBL4_Chat.View
             }
         }
 
+        public delegate void SetImageCallback(Bitmap bmp);
+        private void SetImage(Bitmap image)
+        {
+            if (pbCamera.InvokeRequired)
+            {
+                SetImageCallback callback = new SetImageCallback(SetImage);
+                this.BeginInvoke(callback, new object[] { image });
+            }
+            else
+            {
+                pbCamera.Image = image;
+            }
+        }
         private void VideoCaptureDevice_NewFrame(object sender, NewFrameEventArgs eventArgs)
         {
-            lock(this)
-            {
-                Bitmap bitmap = (Bitmap)eventArgs.Frame.Clone();
-                SetImage(bitmap);  
-            }
+            Bitmap bitmap = (Bitmap)eventArgs.Frame.Clone();
+            SetImage(bitmap);  
             //pbCamera.Image = bitmap;
         }
+        WaveIn wave;
         private void Cam_Load(object sender, EventArgs e)
         {
+            // load cbb camera
             filterInfoCollection = new FilterInfoCollection(FilterCategory.VideoInputDevice);
             foreach (FilterInfo fi in filterInfoCollection)
             {
@@ -272,10 +269,16 @@ namespace PBL4_Chat.View
                 cbbCamera.SelectedIndex = 0;
                 videoCaptureDevice = new VideoCaptureDevice();
             }
+            // load mic
+            for (int i = 0; i < WaveIn.DeviceCount; i++)
+            {
+                var device = WaveIn.GetCapabilities(i);
+                cbbMic.Items.Add(device.ProductName);
+            }
             try
             {
 
-                client.Connect("127.0.0.1", PORT_NUMBER);
+                client.Connect("192.168.1.9", PORT_NUMBER);
                 ns = client.GetStream();
 
                 // gửi userId mỗi khi load
@@ -283,13 +286,12 @@ namespace PBL4_Chat.View
                 ns.Write(userId_load, 0, userId_load.Length);
 
                 //Thread userThread1 = new Thread(new ThreadStart(() => p.XLNhan()));
-                lock(this)
-                {
-                    receive = new Thread(XLNhan);
-                    receive.IsBackground = true;
-                    receive.Start();
-
-                }    
+                receive = new Thread(XLNhan);
+                receive.IsBackground = true;
+                receive.Start();
+                //Thread receive1 = new Thread(XLNhanVoice);
+                //receive1.IsBackground = true;
+                //receive1.Start();
             }
 
             catch (Exception ex)
@@ -306,5 +308,77 @@ namespace PBL4_Chat.View
                 videoCaptureDevice.Stop();
             }
         }
+
+        // record
+        byte[] buffer;
+        int size_buffer;
+        private void Wave_DataAvailable(object sender, WaveInEventArgs e)
+        {
+            //writer.Write(e.Buffer, 0, e.BytesRecorded);
+            buffer = e.Buffer;
+            size_buffer = e.BytesRecorded;
+        }
+        private void btn_unMute_Click(object sender, EventArgs e)
+        {
+            //System.Diagnostics.Process.Start("mmsys.cpl", ",1");
+            try
+            {
+                wave = new WaveIn();
+                wave.WaveFormat = new WaveFormat(44100, 1);
+                wave.DeviceNumber = cbbMic.SelectedIndex;
+                wave.DataAvailable += Wave_DataAvailable;
+                wave.StartRecording();
+
+                Thread sendVoice = new Thread(xuLyGuiVoice);
+                sendVoice.IsBackground = true;
+                sendVoice.Start();
+            }
+            catch(Exception err)
+            {
+                MessageBox.Show(err.ToString());
+            }
+        }
+        private static readonly Object objLock1 = new object();
+        void myTimer_ElapsedVoice(object sender, ElapsedEventArgs e)
+        {
+
+            ns = client.GetStream();
+            byte[] bufferVoice = new byte[1024 * 1024];
+            int size_bufferVoice = 0;
+            Invoke((MethodInvoker)(delegate ()
+            {
+                //var image = pbCamera.Image;
+                //image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                bufferVoice = buffer;
+                size_bufferVoice = size_buffer;
+            }));
+            byte[] userId_receive1 = encoding.GetBytes(userId() + " " + userReceiver() + " " + "Voice");
+            ns.Write(userId_receive1, 0, userId_receive1.Length);
+            ns.Write(bufferVoice, 0, size_bufferVoice);
+
+        }
+        System.Timers.Timer myTimerVoice = new Timer(200);
+        public void xuLyGuiVoice()
+        {
+            try
+            {
+
+                myTimerVoice.Start();
+                myTimerVoice.Elapsed += new ElapsedEventHandler(myTimer_ElapsedVoice);
+                Task.Delay(10);
+
+            }
+            catch (Exception err)
+            {
+
+            }
+        }
+
+        private void btn_Mute_Click(object sender, EventArgs e)
+        {
+            wave.StopRecording();
+            myTimerVoice.Stop();
+        }
+
     }
 }

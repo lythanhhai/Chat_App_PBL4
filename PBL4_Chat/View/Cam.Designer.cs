@@ -35,6 +35,9 @@ namespace PBL4_Chat.View
             this.gunaPanel1 = new Guna.UI.WinForms.GunaPanel();
             this.btn_stop = new Guna.UI.WinForms.GunaButton();
             this.btnStart = new Guna.UI.WinForms.GunaButton();
+            this.btn_Mute = new Guna.UI.WinForms.GunaButton();
+            this.btn_unMute = new Guna.UI.WinForms.GunaButton();
+            this.cbbMic = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbCamera)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gunaTransfarantPictureBox1)).BeginInit();
             this.gunaPanel1.SuspendLayout();
@@ -43,7 +46,7 @@ namespace PBL4_Chat.View
             // cbbCamera
             // 
             this.cbbCamera.FormattingEnabled = true;
-            this.cbbCamera.Location = new System.Drawing.Point(889, 836);
+            this.cbbCamera.Location = new System.Drawing.Point(689, 836);
             this.cbbCamera.Name = "cbbCamera";
             this.cbbCamera.Size = new System.Drawing.Size(240, 28);
             this.cbbCamera.TabIndex = 0;
@@ -53,6 +56,7 @@ namespace PBL4_Chat.View
             this.pbCamera.Location = new System.Drawing.Point(967, 484);
             this.pbCamera.Name = "pbCamera";
             this.pbCamera.Size = new System.Drawing.Size(501, 311);
+            this.pbCamera.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pbCamera.TabIndex = 1;
             this.pbCamera.TabStop = false;
             // 
@@ -64,7 +68,7 @@ namespace PBL4_Chat.View
             this.gunaTransfarantPictureBox1.Location = new System.Drawing.Point(0, 0);
             this.gunaTransfarantPictureBox1.Name = "gunaTransfarantPictureBox1";
             this.gunaTransfarantPictureBox1.Size = new System.Drawing.Size(1468, 795);
-            this.gunaTransfarantPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.gunaTransfarantPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.gunaTransfarantPictureBox1.TabIndex = 5;
             this.gunaTransfarantPictureBox1.TabStop = false;
             // 
@@ -89,14 +93,14 @@ namespace PBL4_Chat.View
             this.btn_stop.ForeColor = System.Drawing.Color.White;
             this.btn_stop.Image = null;
             this.btn_stop.ImageSize = new System.Drawing.Size(20, 20);
-            this.btn_stop.Location = new System.Drawing.Point(1154, 836);
+            this.btn_stop.Location = new System.Drawing.Point(1225, 836);
             this.btn_stop.Name = "btn_stop";
             this.btn_stop.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.btn_stop.OnHoverBorderColor = System.Drawing.Color.Black;
             this.btn_stop.OnHoverForeColor = System.Drawing.Color.White;
             this.btn_stop.OnHoverImage = null;
             this.btn_stop.OnPressedColor = System.Drawing.Color.Black;
-            this.btn_stop.Size = new System.Drawing.Size(160, 63);
+            this.btn_stop.Size = new System.Drawing.Size(129, 63);
             this.btn_stop.TabIndex = 7;
             this.btn_stop.Text = "Stop";
             this.btn_stop.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -114,18 +118,76 @@ namespace PBL4_Chat.View
             this.btnStart.ForeColor = System.Drawing.Color.White;
             this.btnStart.Image = null;
             this.btnStart.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnStart.Location = new System.Drawing.Point(1320, 836);
+            this.btnStart.Location = new System.Drawing.Point(1360, 836);
             this.btnStart.Name = "btnStart";
             this.btnStart.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.btnStart.OnHoverBorderColor = System.Drawing.Color.Black;
             this.btnStart.OnHoverForeColor = System.Drawing.Color.White;
             this.btnStart.OnHoverImage = null;
             this.btnStart.OnPressedColor = System.Drawing.Color.Black;
-            this.btnStart.Size = new System.Drawing.Size(160, 63);
+            this.btnStart.Size = new System.Drawing.Size(120, 63);
             this.btnStart.TabIndex = 8;
             this.btnStart.Text = "Start";
             this.btnStart.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
+            // 
+            // btn_Mute
+            // 
+            this.btn_Mute.AnimationHoverSpeed = 0.07F;
+            this.btn_Mute.AnimationSpeed = 0.03F;
+            this.btn_Mute.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.btn_Mute.BorderColor = System.Drawing.Color.Black;
+            this.btn_Mute.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btn_Mute.FocusedColor = System.Drawing.Color.Empty;
+            this.btn_Mute.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btn_Mute.ForeColor = System.Drawing.Color.White;
+            this.btn_Mute.Image = null;
+            this.btn_Mute.ImageSize = new System.Drawing.Size(20, 20);
+            this.btn_Mute.Location = new System.Drawing.Point(935, 836);
+            this.btn_Mute.Name = "btn_Mute";
+            this.btn_Mute.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btn_Mute.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btn_Mute.OnHoverForeColor = System.Drawing.Color.White;
+            this.btn_Mute.OnHoverImage = null;
+            this.btn_Mute.OnPressedColor = System.Drawing.Color.Black;
+            this.btn_Mute.Size = new System.Drawing.Size(139, 63);
+            this.btn_Mute.TabIndex = 9;
+            this.btn_Mute.Text = "Mute";
+            this.btn_Mute.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_Mute.Click += new System.EventHandler(this.btn_Mute_Click);
+            // 
+            // btn_unMute
+            // 
+            this.btn_unMute.AnimationHoverSpeed = 0.07F;
+            this.btn_unMute.AnimationSpeed = 0.03F;
+            this.btn_unMute.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.btn_unMute.BorderColor = System.Drawing.Color.Black;
+            this.btn_unMute.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btn_unMute.FocusedColor = System.Drawing.Color.Empty;
+            this.btn_unMute.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btn_unMute.ForeColor = System.Drawing.Color.White;
+            this.btn_unMute.Image = null;
+            this.btn_unMute.ImageSize = new System.Drawing.Size(20, 20);
+            this.btn_unMute.Location = new System.Drawing.Point(1080, 836);
+            this.btn_unMute.Name = "btn_unMute";
+            this.btn_unMute.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btn_unMute.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btn_unMute.OnHoverForeColor = System.Drawing.Color.White;
+            this.btn_unMute.OnHoverImage = null;
+            this.btn_unMute.OnPressedColor = System.Drawing.Color.Black;
+            this.btn_unMute.Size = new System.Drawing.Size(139, 63);
+            this.btn_unMute.TabIndex = 10;
+            this.btn_unMute.Text = "Unmute";
+            this.btn_unMute.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_unMute.Click += new System.EventHandler(this.btn_unMute_Click);
+            // 
+            // cbbMic
+            // 
+            this.cbbMic.FormattingEnabled = true;
+            this.cbbMic.Location = new System.Drawing.Point(411, 836);
+            this.cbbMic.Name = "cbbMic";
+            this.cbbMic.Size = new System.Drawing.Size(234, 28);
+            this.cbbMic.TabIndex = 11;
             // 
             // Cam
             // 
@@ -133,6 +195,9 @@ namespace PBL4_Chat.View
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(47)))));
             this.ClientSize = new System.Drawing.Size(1492, 911);
+            this.Controls.Add(this.cbbMic);
+            this.Controls.Add(this.btn_unMute);
+            this.Controls.Add(this.btn_Mute);
             this.Controls.Add(this.btnStart);
             this.Controls.Add(this.btn_stop);
             this.Controls.Add(this.gunaPanel1);
@@ -157,5 +222,8 @@ namespace PBL4_Chat.View
         private Guna.UI.WinForms.GunaPanel gunaPanel1;
         private Guna.UI.WinForms.GunaButton btn_stop;
         private Guna.UI.WinForms.GunaButton btnStart;
+        private Guna.UI.WinForms.GunaButton btn_Mute;
+        private Guna.UI.WinForms.GunaButton btn_unMute;
+        private System.Windows.Forms.ComboBox cbbMic;
     }
 }

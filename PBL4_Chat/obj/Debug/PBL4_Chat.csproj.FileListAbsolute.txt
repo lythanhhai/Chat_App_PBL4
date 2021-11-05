@@ -471,3 +471,17 @@ D:\Class\PBL4\PBL4_F3\test_chat_app-PBL4\PBL4_Chat\obj\Debug\PBL4_Chat.csproj.Co
 D:\Class\PBL4\PBL4_F3\test_chat_app-PBL4\PBL4_Chat\obj\Debug\PBL4_Chat.csproj.CopyComplete
 D:\Class\PBL4\PBL4_F3\test_chat_app-PBL4\PBL4_Chat\obj\Debug\PBL4_Chat.exe
 D:\Class\PBL4\PBL4_F3\test_chat_app-PBL4\PBL4_Chat\obj\Debug\PBL4_Chat.pdb
+D:\Class\PBL4\PBL4_F3\test_chat_app-PBL4\PBL4_Chat\bin\Debug\Microsoft.Win32.Registry.dll
+D:\Class\PBL4\PBL4_F3\test_chat_app-PBL4\PBL4_Chat\bin\Debug\NAudio.Asio.dll
+D:\Class\PBL4\PBL4_F3\test_chat_app-PBL4\PBL4_Chat\bin\Debug\NAudio.Core.dll
+D:\Class\PBL4\PBL4_F3\test_chat_app-PBL4\PBL4_Chat\bin\Debug\NAudio.dll
+D:\Class\PBL4\PBL4_F3\test_chat_app-PBL4\PBL4_Chat\bin\Debug\NAudio.Midi.dll
+D:\Class\PBL4\PBL4_F3\test_chat_app-PBL4\PBL4_Chat\bin\Debug\NAudio.Wasapi.dll
+D:\Class\PBL4\PBL4_F3\test_chat_app-PBL4\PBL4_Chat\bin\Debug\NAudio.WinForms.dll
+D:\Class\PBL4\PBL4_F3\test_chat_app-PBL4\PBL4_Chat\bin\Debug\NAudio.WinMM.dll
+D:\Class\PBL4\PBL4_F3\test_chat_app-PBL4\PBL4_Chat\bin\Debug\System.Security.AccessControl.dll
+D:\Class\PBL4\PBL4_F3\test_chat_app-PBL4\PBL4_Chat\bin\Debug\System.Security.Principal.Windows.dll
+D:\Class\PBL4\PBL4_F3\test_chat_app-PBL4\PBL4_Chat\bin\Debug\Microsoft.Win32.Registry.xml
+D:\Class\PBL4\PBL4_F3\test_chat_app-PBL4\PBL4_Chat\bin\Debug\NAudio.xml
+D:\Class\PBL4\PBL4_F3\test_chat_app-PBL4\PBL4_Chat\bin\Debug\System.Security.AccessControl.xml
+D:\Class\PBL4\PBL4_F3\test_chat_app-PBL4\PBL4_Chat\bin\Debug\System.Security.Principal.Windows.xml

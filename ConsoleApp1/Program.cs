@@ -36,8 +36,9 @@ namespace Server
             try
             {
                 IPAddress address = IPAddress.Parse("127.0.0.1");
+                IPAddress address1 = IPAddress.Parse("192.168.1.9");
 
-                TcpListener listener = new TcpListener(System.Net.IPAddress.Any, PORT_NUMBER);
+                TcpListener listener = new TcpListener(address1, PORT_NUMBER);
                 // 1. listen
                 listener.Start();
 
