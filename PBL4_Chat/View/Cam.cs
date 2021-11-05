@@ -169,6 +169,8 @@ namespace PBL4_Chat.View
         
         //int question = 0;
         byte[] message;
+        byte[] messageVoice;
+        // xử lý nhận
         public void XLNhan()
         {
             try
@@ -186,35 +188,61 @@ namespace PBL4_Chat.View
                         break;
                     }
                     // chat image
-                    message = new Byte[BUFFER_SIZE];
-                    ns.Read(message, 0, message.Length);
-                    // private(sender)
-                    //MessageBox.Show("1");
-                    //MessageBox.Show(choose);
-                    if (choose.Contains("private"))
+                    if(choose.Contains("Voice"))
                     {
-                        //MessageBox.Show("2");
-                        // kiểm tra người nhận có đang nhắn private không
-                        if (userReceiver().Split(' ').Length == 1)
+                        messageVoice = new Byte[BUFFER_SIZE];
+                        ns.Read(messageVoice, 0, messageVoice.Length);
+                        // private(sender)
+                        if (choose.Contains("private"))
                         {
-                            //MessageBox.Show("3");
-                            //nameReceiver = BLL_User.instance.BLL_getUserById(userId_receive()).firstName + " " + BLL_User.instance.BLL_getUserById(userId_receive()).lastName;
-                            // khi người dùng đang nhắn 1 người khác nhưng 1 người khác gửi tin thì tin nhắn này không hiển thị lên
-                            if (string.Compare(choose.Split(' ')[0], userReceiver()) == 0)
+                            // kiểm tra người nhận có đang nhắn private không
+                            if (userReceiver().Split(' ').Length == 1)
                             {
-                                //MessageBox.Show("a");
-                                msg();
+                                //nameReceiver = BLL_User.instance.BLL_getUserById(userId_receive()).firstName + " " + BLL_User.instance.BLL_getUserById(userId_receive()).lastName;
+                                // khi người dùng đang nhắn 1 người khác nhưng 1 người khác gửi tin thì tin nhắn này không hiển thị lên
+                                if (string.Compare(choose.Split(' ')[0], userReceiver()) == 0)
+                                {
+                                    msg1();
+                                }
+                                else
+                                {
+
+                                }
                             }
                             else
                             {
 
                             }
                         }
-                        else
+                    }   
+                    else
+                    {
+                        message = new Byte[BUFFER_SIZE];
+                        ns.Read(message, 0, message.Length);
+                        // private(sender)
+                        if (choose.Contains("private"))
                         {
+                            // kiểm tra người nhận có đang nhắn private không
+                            if (userReceiver().Split(' ').Length == 1)
+                            {
+                                //nameReceiver = BLL_User.instance.BLL_getUserById(userId_receive()).firstName + " " + BLL_User.instance.BLL_getUserById(userId_receive()).lastName;
+                                // khi người dùng đang nhắn 1 người khác nhưng 1 người khác gửi tin thì tin nhắn này không hiển thị lên
+                                if (string.Compare(choose.Split(' ')[0], userReceiver()) == 0)
+                                {
+                                    msg();
+                                }
+                                else
+                                {
 
+                                }
+                            }
+                            else
+                            {
+
+                            }
                         }
-                    }
+                    }                        
+                    
 
                 }
             }
@@ -224,7 +252,7 @@ namespace PBL4_Chat.View
             }
 
         }
-        // hiển tin nhắn lên textbox
+        // xử lý nhận ảnh 
         private void msg()
         {
             if (this.InvokeRequired)
@@ -236,6 +264,24 @@ namespace PBL4_Chat.View
                 Image image2 = Image.FromStream(imagestream1);
                 gunaTransfarantPictureBox1.Image = image2;
 
+            }
+        }
+        // xử lý nhận voice
+        private void msg1()
+        {
+            if (this.InvokeRequired)
+                this.Invoke(new MethodInvoker(msg1));
+            else
+            {
+
+                //MemoryStream imagestream1 = new MemoryStream(message);
+                //Image image2 = Image.FromStream(imagestream1);
+                //gunaTransfarantPictureBox1.Image = image2;
+                WaveOut waveout = new WaveOut();
+                IWaveProvider provider = new RawSourceWaveStream(new MemoryStream(messageVoice), new WaveFormat());
+                waveout.DeviceNumber = cbbPhone.SelectedIndex;
+                waveout.Init(provider);
+                waveout.Play();
             }
         }
 
@@ -274,6 +320,14 @@ namespace PBL4_Chat.View
             {
                 var device = WaveIn.GetCapabilities(i);
                 cbbMic.Items.Add(device.ProductName);
+                cbbMic.SelectedIndex = 0;
+            }
+            // load phone
+            for (int i = 0; i < WaveOut.DeviceCount; i++)
+            {
+                var device = WaveOut.GetCapabilities(i);
+                cbbPhone.Items.Add(device.ProductName);
+                cbbPhone.SelectedIndex = 0;
             }
             try
             {
@@ -376,8 +430,15 @@ namespace PBL4_Chat.View
 
         private void btn_Mute_Click(object sender, EventArgs e)
         {
-            wave.StopRecording();
-            myTimerVoice.Stop();
+            try
+            {
+                wave.StopRecording();
+                myTimerVoice.Stop();
+            }
+            catch(Exception err)
+            {
+                MessageBox.Show(err.ToString());
+            }
         }
 
     }

@@ -38,6 +38,7 @@ namespace PBL4_Chat.View
             this.btn_Mute = new Guna.UI.WinForms.GunaButton();
             this.btn_unMute = new Guna.UI.WinForms.GunaButton();
             this.cbbMic = new System.Windows.Forms.ComboBox();
+            this.cbbPhone = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbCamera)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gunaTransfarantPictureBox1)).BeginInit();
             this.gunaPanel1.SuspendLayout();
@@ -189,12 +190,21 @@ namespace PBL4_Chat.View
             this.cbbMic.Size = new System.Drawing.Size(234, 28);
             this.cbbMic.TabIndex = 11;
             // 
+            // cbbPhone
+            // 
+            this.cbbPhone.FormattingEnabled = true;
+            this.cbbPhone.Location = new System.Drawing.Point(207, 836);
+            this.cbbPhone.Name = "cbbPhone";
+            this.cbbPhone.Size = new System.Drawing.Size(173, 28);
+            this.cbbPhone.TabIndex = 12;
+            // 
             // Cam
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(47)))));
             this.ClientSize = new System.Drawing.Size(1492, 911);
+            this.Controls.Add(this.cbbPhone);
             this.Controls.Add(this.cbbMic);
             this.Controls.Add(this.btn_unMute);
             this.Controls.Add(this.btn_Mute);
@@ -225,5 +235,6 @@ namespace PBL4_Chat.View
         private Guna.UI.WinForms.GunaButton btn_Mute;
         private Guna.UI.WinForms.GunaButton btn_unMute;
         private System.Windows.Forms.ComboBox cbbMic;
+        private System.Windows.Forms.ComboBox cbbPhone;
     }
 }
