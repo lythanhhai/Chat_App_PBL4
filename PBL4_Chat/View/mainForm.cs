@@ -524,7 +524,23 @@ namespace PBL4_Chat
                 //}
                 MemoryStream imagestream1 = new MemoryStream(message);
                 Image image2 = Image.FromStream(imagestream1);
-                //gunaTransfarantPictureBox1.Image = image2;
+
+                // panel
+                BunifuPanel bp = new BunifuPanel();
+                bp.BackgroundColor = System.Drawing.Color.Transparent;
+                //bp.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuPanel1.BackgroundImage")));
+                bp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+                bp.BorderColor = System.Drawing.Color.Silver;
+                bp.BorderRadius = 30;
+                bp.BorderThickness = 1;
+                bp.Location = new System.Drawing.Point(345, 3);
+                bp.MaximumSize = new System.Drawing.Size(240, 260);
+                bp.MinimumSize = new System.Drawing.Size(230, 160);
+                bp.Margin = new System.Windows.Forms.Padding(10, 5, 3, 5);
+                bp.ShowBorders = true;
+                bp.Size = new System.Drawing.Size(230, 200);
+                bp.TabIndex = 1;
+
                 // thêm ảnh vào control
                 GunaTransfarantPictureBox gpb = new GunaTransfarantPictureBox();
                 //gpb.BaseColor = System.Drawing.Color.White;
@@ -536,7 +552,9 @@ namespace PBL4_Chat
                 gpb.TabStop = false;
                 gpb.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
                 gpb.Image = image2;
-                txt_message.Controls.Add(gpb);
+
+                bp.Controls.Add(gpb);
+                txt_message.Controls.Add(bp);
             }
         }
 
@@ -891,6 +909,23 @@ namespace PBL4_Chat
                 opnfd.Filter = "Image Files (*.jpg;*.jpeg;*.png;*.gif;)|*.jpg;*.jpeg;*.png;*.gif";
                 if (opnfd.ShowDialog() == DialogResult.OK)
                 {
+
+                    // panel
+                    BunifuPanel bp = new BunifuPanel();
+                    bp.BackgroundColor = System.Drawing.Color.Transparent;
+                    //bp.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuPanel1.BackgroundImage")));
+                    bp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+                    bp.BorderColor = System.Drawing.Color.Silver;
+                    bp.BorderRadius = 30;
+                    bp.BorderThickness = 1;
+                    bp.Location = new System.Drawing.Point(345, 3);
+                    bp.MaximumSize = new System.Drawing.Size(240, 260);
+                    bp.MinimumSize = new System.Drawing.Size(230, 160);
+                    bp.Margin = new System.Windows.Forms.Padding(210, 5, 3, 5);
+                    bp.ShowBorders = true;
+                    bp.Size = new System.Drawing.Size(230, 200);
+                    bp.TabIndex = 1;
+
                     // thêm ảnh vào control
                     GunaTransfarantPictureBox gpb = new GunaTransfarantPictureBox();
                     //gpb.BaseColor = System.Drawing.Color.White;
@@ -902,7 +937,12 @@ namespace PBL4_Chat
                     gpb.TabStop = false;
                     gpb.Margin = new System.Windows.Forms.Padding(220, 5, 2, 5);
                     gpb.Image = new Bitmap(opnfd.FileName);
-                    txt_message.Controls.Add(gpb);
+
+
+                    bp.Controls.Add(gpb);
+                    txt_message.Controls.Add(bp);
+
+
 
 
                     ms = new MemoryStream();

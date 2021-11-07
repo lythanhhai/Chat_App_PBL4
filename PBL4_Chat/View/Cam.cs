@@ -180,6 +180,7 @@ namespace PBL4_Chat.View
         {
             try
             {
+                waveout = new WaveOut();
                 while (true)
                 {
 
@@ -192,6 +193,7 @@ namespace PBL4_Chat.View
                     {
                         break;
                     }
+
                     // chat image
                     if(choose.Contains("Voice"))
                     {
@@ -285,11 +287,9 @@ namespace PBL4_Chat.View
                 this.Invoke(new MethodInvoker(msg1));
             else
             {
-
-                //MessageBox.Show(encoding.GetString(messageVoice));
                 DisposeWave();
                 //1
-                waveout = new WaveOut();
+                //waveout = new WaveOut();
                 IWaveProvider provider = new RawSourceWaveStream(new MemoryStream(messageVoice), new WaveFormat(16000, 16, 1));
                 waveout.DeviceNumber = cbbPhone.SelectedIndex;
                 waveout.Init(provider);
@@ -374,7 +374,6 @@ namespace PBL4_Chat.View
                 byte[] userId_load = encoding.GetBytes(userId() + " " + "Cam");
                 ns.Write(userId_load, 0, userId_load.Length);
 
-                //Thread userThread1 = new Thread(new ThreadStart(() => p.XLNhan()));
                 receive = new Thread(XLNhan);
                 receive.IsBackground = true;
                 receive.Start();
@@ -401,7 +400,6 @@ namespace PBL4_Chat.View
         int size_bufferVoice;
         private void Wave_DataAvailable(object sender, WaveInEventArgs e)
         {
-            //writer.Write(e.Buffer, 0, e.BytesRecorded);
             bufferVoice = e.Buffer;
             size_bufferVoice = e.BytesRecorded;
         }
@@ -469,7 +467,7 @@ namespace PBL4_Chat.View
                 wave.StopRecording();
                 myTimerVoice.Stop();
             }
-            catch(Exception err)
+            catch (Exception err)
             {
                 MessageBox.Show(err.ToString());
             }
