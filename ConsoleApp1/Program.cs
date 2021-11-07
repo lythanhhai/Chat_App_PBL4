@@ -38,7 +38,7 @@ namespace Server
                 IPAddress address = IPAddress.Parse("127.0.0.1");
                 IPAddress address1 = IPAddress.Parse("192.168.1.9");
 
-                TcpListener listener = new TcpListener(address1, PORT_NUMBER);
+                TcpListener listener = new TcpListener(System.Net.IPAddress.Any, PORT_NUMBER);
                 // 1. listen
                 listener.Start();
 
@@ -154,7 +154,8 @@ namespace Server
                 // gửi voice
                 if(encoding.GetString(userId_receive).Contains("Voice"))
                 {
-                 
+
+                    Console.WriteLine("2");
                     byte[] voice = new byte[BUFFER_SIZE];
                     int size_voice = client.Receive(voice);
                     packetMes = encoding.GetString(userId_receive).Split(' ')[0] + " " + "private" + " " + "Voice";

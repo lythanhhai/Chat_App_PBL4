@@ -45,8 +45,13 @@ namespace PBL4_Chat.View
 
         MemoryStream ms;
 
+        // luồng
         Thread send;
         Thread receive;
+
+        // stream voice
+        WaveIn wave;
+        WaveOut waveout;
         private void btnStart_Click(object sender, EventArgs e)
         {
             try
@@ -190,18 +195,22 @@ namespace PBL4_Chat.View
                     // chat image
                     if(choose.Contains("Voice"))
                     {
+                        //MessageBox.Show("1");
                         messageVoice = new Byte[BUFFER_SIZE];
                         ns.Read(messageVoice, 0, messageVoice.Length);
                         // private(sender)
                         if (choose.Contains("private"))
                         {
+                            //MessageBox.Show("2");
                             // kiểm tra người nhận có đang nhắn private không
                             if (userReceiver().Split(' ').Length == 1)
                             {
+                                //MessageBox.Show("3");
                                 //nameReceiver = BLL_User.instance.BLL_getUserById(userId_receive()).firstName + " " + BLL_User.instance.BLL_getUserById(userId_receive()).lastName;
                                 // khi người dùng đang nhắn 1 người khác nhưng 1 người khác gửi tin thì tin nhắn này không hiển thị lên
                                 if (string.Compare(choose.Split(' ')[0], userReceiver()) == 0)
                                 {
+                                    //MessageBox.Show("4");
                                     msg1();
                                 }
                                 else
@@ -267,6 +276,9 @@ namespace PBL4_Chat.View
             }
         }
         // xử lý nhận voice
+        private NAudio.Wave.BlockAlignReductionStream stream = null;
+
+        private NAudio.Wave.DirectSoundOut output = null;
         private void msg1()
         {
             if (this.InvokeRequired)
@@ -274,14 +286,41 @@ namespace PBL4_Chat.View
             else
             {
 
-                //MemoryStream imagestream1 = new MemoryStream(message);
-                //Image image2 = Image.FromStream(imagestream1);
-                //gunaTransfarantPictureBox1.Image = image2;
-                WaveOut waveout = new WaveOut();
+                //MessageBox.Show(encoding.GetString(messageVoice));
+                DisposeWave();
+                //1
+                waveout = new WaveOut();
                 IWaveProvider provider = new RawSourceWaveStream(new MemoryStream(messageVoice), new WaveFormat());
                 waveout.DeviceNumber = cbbPhone.SelectedIndex;
                 waveout.Init(provider);
                 waveout.Play();
+                //2
+                //byte[] b = WaveFileReader(@"D:\Class\ky2_2122\XL tín hiệu số\44.1khz.wav");
+
+                //WaveStream wav = new RawSourceWaveStream(new MemoryStream(b), new WaveFormat(44100, 16, 2));
+                //WaveOutEvent output = new WaveOutEvent();
+                //output.Init(wav);
+                //output.Play();
+                //3
+                //NAudio.Wave.WaveStream pcm = new NAudio.Wave.WaveChannel32(new NAudio.Wave.WaveFileReader(@"D:\Class\ky2_2122\XL tín hiệu số\44.1khz.wav"));
+                //stream = new NAudio.Wave.BlockAlignReductionStream(pcm);
+                //output = new NAudio.Wave.DirectSoundOut();
+                //output.Init(stream);
+                //output.Play();
+            }
+        }
+        private void DisposeWave()
+        {
+            if (output != null)
+            {
+                if (output.PlaybackState == NAudio.Wave.PlaybackState.Playing) output.Stop();
+                output.Dispose();
+                output = null;
+            }
+            if (stream != null)
+            {
+                stream.Dispose();
+                stream = null;
             }
         }
 
@@ -304,7 +343,7 @@ namespace PBL4_Chat.View
             SetImage(bitmap);  
             //pbCamera.Image = bitmap;
         }
-        WaveIn wave;
+        
         private void Cam_Load(object sender, EventArgs e)
         {
             // load cbb camera
@@ -332,7 +371,7 @@ namespace PBL4_Chat.View
             try
             {
 
-                client.Connect("192.168.1.9", PORT_NUMBER);
+                client.Connect("127.0.0.1", PORT_NUMBER);
                 ns = client.GetStream();
 
                 // gửi userId mỗi khi load
@@ -343,9 +382,7 @@ namespace PBL4_Chat.View
                 receive = new Thread(XLNhan);
                 receive.IsBackground = true;
                 receive.Start();
-                //Thread receive1 = new Thread(XLNhanVoice);
-                //receive1.IsBackground = true;
-                //receive1.Start();
+
             }
 
             catch (Exception ex)
@@ -364,13 +401,14 @@ namespace PBL4_Chat.View
         }
 
         // record
-        byte[] buffer;
-        int size_buffer;
+        byte[] bufferVoice;
+        //List<byte[]> listBufferVoice = new List<byte[]>();
+        int size_bufferVoice;
         private void Wave_DataAvailable(object sender, WaveInEventArgs e)
         {
             //writer.Write(e.Buffer, 0, e.BytesRecorded);
-            buffer = e.Buffer;
-            size_buffer = e.BytesRecorded;
+            bufferVoice = e.Buffer;
+            size_bufferVoice = e.BytesRecorded;
         }
         private void btn_unMute_Click(object sender, EventArgs e)
         {
@@ -397,21 +435,28 @@ namespace PBL4_Chat.View
         {
 
             ns = client.GetStream();
-            byte[] bufferVoice = new byte[1024 * 1024];
-            int size_bufferVoice = 0;
+            ms = new MemoryStream();
+            int a = 0;
             Invoke((MethodInvoker)(delegate ()
             {
-                //var image = pbCamera.Image;
-                //image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
-                bufferVoice = buffer;
-                size_bufferVoice = size_buffer;
+                var bufferVoice1 = bufferVoice;
+                var size_bufferVoice1 = size_bufferVoice;
+                ms.Write(bufferVoice1, 0, size_bufferVoice1);
+                a = cbbPhone.SelectedIndex;
             }));
+            waveout = new WaveOut();
+            IWaveProvider provider = new RawSourceWaveStream(ms, new WaveFormat());
+            waveout.DeviceNumber = a;
+            waveout.Init(provider);
+            waveout.Play();
+
             byte[] userId_receive1 = encoding.GetBytes(userId() + " " + userReceiver() + " " + "Voice");
             ns.Write(userId_receive1, 0, userId_receive1.Length);
             ns.Write(bufferVoice, 0, size_bufferVoice);
+            //Array.Clear(bufferVoice, 0, bufferVoice.Length);
 
         }
-        System.Timers.Timer myTimerVoice = new Timer(200);
+        System.Timers.Timer myTimerVoice = new Timer(100);
         public void xuLyGuiVoice()
         {
             try
@@ -420,6 +465,8 @@ namespace PBL4_Chat.View
                 myTimerVoice.Start();
                 myTimerVoice.Elapsed += new ElapsedEventHandler(myTimer_ElapsedVoice);
                 Task.Delay(10);
+
+                
 
             }
             catch (Exception err)
