@@ -290,7 +290,7 @@ namespace PBL4_Chat.View
                 DisposeWave();
                 //1
                 waveout = new WaveOut();
-                IWaveProvider provider = new RawSourceWaveStream(new MemoryStream(messageVoice), new WaveFormat());
+                IWaveProvider provider = new RawSourceWaveStream(new MemoryStream(messageVoice), new WaveFormat(16000, 16, 1));
                 waveout.DeviceNumber = cbbPhone.SelectedIndex;
                 waveout.Init(provider);
                 waveout.Play();
@@ -311,17 +311,13 @@ namespace PBL4_Chat.View
         }
         private void DisposeWave()
         {
-            if (output != null)
-            {
-                if (output.PlaybackState == NAudio.Wave.PlaybackState.Playing) output.Stop();
-                output.Dispose();
-                output = null;
-            }
-            if (stream != null)
-            {
-                stream.Dispose();
-                stream = null;
-            }
+            //if (waveout != null)
+            //{
+            //    if (waveout.PlaybackState == NAudio.Wave.PlaybackState.Playing) waveout.Stop();
+            //    waveout.Dispose();
+            //    waveout = null;
+            //}
+            
         }
 
         public delegate void SetImageCallback(Bitmap bmp);
@@ -402,7 +398,6 @@ namespace PBL4_Chat.View
 
         // record
         byte[] bufferVoice;
-        //List<byte[]> listBufferVoice = new List<byte[]>();
         int size_bufferVoice;
         private void Wave_DataAvailable(object sender, WaveInEventArgs e)
         {
@@ -416,7 +411,7 @@ namespace PBL4_Chat.View
             try
             {
                 wave = new WaveIn();
-                wave.WaveFormat = new WaveFormat(44100, 1);
+                wave.WaveFormat = new WaveFormat(16000, 16, 1);
                 wave.DeviceNumber = cbbMic.SelectedIndex;
                 wave.DataAvailable += Wave_DataAvailable;
                 wave.StartRecording();
@@ -435,28 +430,22 @@ namespace PBL4_Chat.View
         {
 
             ns = client.GetStream();
-            ms = new MemoryStream();
-            int a = 0;
-            Invoke((MethodInvoker)(delegate ()
-            {
-                var bufferVoice1 = bufferVoice;
-                var size_bufferVoice1 = size_bufferVoice;
-                ms.Write(bufferVoice1, 0, size_bufferVoice1);
-                a = cbbPhone.SelectedIndex;
-            }));
-            waveout = new WaveOut();
-            IWaveProvider provider = new RawSourceWaveStream(ms, new WaveFormat());
-            waveout.DeviceNumber = a;
-            waveout.Init(provider);
-            waveout.Play();
-
+            //ms = new MemoryStream();
+            //Invoke((MethodInvoker)(delegate ()
+            //{
+            //    var bufferVoice1 = bufferVoice;
+            //    var size_bufferVoice1 = size_bufferVoice;
+            //    ms.Write(bufferVoice1, 0, size_bufferVoice1);
+            //}));
+           
             byte[] userId_receive1 = encoding.GetBytes(userId() + " " + userReceiver() + " " + "Voice");
             ns.Write(userId_receive1, 0, userId_receive1.Length);
+            //byte[] bufferVoiceMS = ms.GetBuffer();
             ns.Write(bufferVoice, 0, size_bufferVoice);
             //Array.Clear(bufferVoice, 0, bufferVoice.Length);
 
         }
-        System.Timers.Timer myTimerVoice = new Timer(100);
+        System.Timers.Timer myTimerVoice = new Timer(200);
         public void xuLyGuiVoice()
         {
             try
@@ -464,9 +453,7 @@ namespace PBL4_Chat.View
 
                 myTimerVoice.Start();
                 myTimerVoice.Elapsed += new ElapsedEventHandler(myTimer_ElapsedVoice);
-                Task.Delay(10);
-
-                
+                Task.Delay(10); 
 
             }
             catch (Exception err)
