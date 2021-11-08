@@ -40,6 +40,7 @@ namespace PBL4_Chat.View
         TcpClient client = new TcpClient();
         NetworkStream ns;
 
+        //cam
         FilterInfoCollection filterInfoCollection;
         VideoCaptureDevice videoCaptureDevice;
 
@@ -52,6 +53,7 @@ namespace PBL4_Chat.View
         // stream voice
         WaveIn wave;
         WaveOut waveout;
+        //IWaveProvider provider;
         private void btnStart_Click(object sender, EventArgs e)
         {
             try
@@ -180,7 +182,6 @@ namespace PBL4_Chat.View
         {
             try
             {
-                waveout = new WaveOut();
                 while (true)
                 {
 
@@ -197,6 +198,7 @@ namespace PBL4_Chat.View
                     // chat image
                     if(choose.Contains("Voice"))
                     {
+                        
                         //MessageBox.Show("1");
                         messageVoice = new Byte[BUFFER_SIZE];
                         ns.Read(messageVoice, 0, messageVoice.Length);
@@ -214,6 +216,7 @@ namespace PBL4_Chat.View
                                 {
                                     //MessageBox.Show("4");
                                     msg1();
+                                    
                                 }
                                 else
                                 {
@@ -287,13 +290,22 @@ namespace PBL4_Chat.View
                 this.Invoke(new MethodInvoker(msg1));
             else
             {
-                DisposeWave();
+                //DisposeWave();
                 //1
-                //waveout = new WaveOut();
-                IWaveProvider provider = new RawSourceWaveStream(new MemoryStream(messageVoice), new WaveFormat(16000, 16, 1));
-                waveout.DeviceNumber = cbbPhone.SelectedIndex;
-                waveout.Init(provider);
-                waveout.Play();
+                try
+                {
+                    //waveout = new WaveOut();
+                    IWaveProvider provider = new RawSourceWaveStream(new MemoryStream(messageVoice), new WaveFormat(8000, 16, 1));
+                    //IWaveProvider provider = new RawSourceWaveStream(new MemoryStream(messageVoice), new WaveFormat(16000, 16, 1));
+                    //waveout.DeviceNumber = cbbPhone.SelectedIndex;
+                    waveout.Init(provider);
+                    waveout.Play();
+
+                }
+                catch(Exception err)
+                {
+
+                }
                 //2
                 //byte[] b = WaveFileReader(@"D:\Class\ky2_2122\XL tín hiệu số\44.1khz.wav");
 
@@ -374,6 +386,13 @@ namespace PBL4_Chat.View
                 byte[] userId_load = encoding.GetBytes(userId() + " " + "Cam");
                 ns.Write(userId_load, 0, userId_load.Length);
 
+                waveout = new WaveOut();
+                //IWaveProvider provider = new RawSourceWaveStream(new MemoryStream(messageVoice), new WaveFormat(16000, 16, 1));
+                //IWaveProvider provider = new RawSourceWaveStream(new MemoryStream(messageVoice), new WaveFormat(16000, 16, 1));
+                waveout.DeviceNumber = cbbPhone.SelectedIndex;
+                //waveout.Init(provider);
+                //waveout.Play();
+
                 receive = new Thread(XLNhan);
                 receive.IsBackground = true;
                 receive.Start();
@@ -409,7 +428,7 @@ namespace PBL4_Chat.View
             try
             {
                 wave = new WaveIn();
-                wave.WaveFormat = new WaveFormat(16000, 16, 1);
+                wave.WaveFormat = new WaveFormat(8000, 16, 1);
                 wave.DeviceNumber = cbbMic.SelectedIndex;
                 wave.DataAvailable += Wave_DataAvailable;
                 wave.StartRecording();
@@ -443,7 +462,7 @@ namespace PBL4_Chat.View
             //Array.Clear(bufferVoice, 0, bufferVoice.Length);
 
         }
-        System.Timers.Timer myTimerVoice = new Timer(200);
+        System.Timers.Timer myTimerVoice = new Timer(250);
         public void xuLyGuiVoice()
         {
             try

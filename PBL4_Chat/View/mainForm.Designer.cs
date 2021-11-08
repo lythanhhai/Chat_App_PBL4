@@ -390,7 +390,7 @@ namespace PBL4_Chat
             this.gunaLinkLabel1.ActiveLinkColor = System.Drawing.Color.Silver;
             this.gunaLinkLabel1.AutoSize = true;
             this.gunaLinkLabel1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gunaLinkLabel1.Location = new System.Drawing.Point(20, 17);
+            this.gunaLinkLabel1.Location = new System.Drawing.Point(40, 17);
             this.gunaLinkLabel1.Margin = new System.Windows.Forms.Padding(0);
             this.gunaLinkLabel1.MaximumSize = new System.Drawing.Size(200, 25);
             this.gunaLinkLabel1.MinimumSize = new System.Drawing.Size(134, 25);

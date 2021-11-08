@@ -756,8 +756,9 @@ namespace PBL4_Chat
         {
             try
             {
+                Opendialog.Filter = "Files (*.txt;*.docx;*.xlsx;*.pdf;*.readme;)|*.txt;*.docx;*.xlsx;*.pdf;*.readme";
+                //OpenFileDialog Opendialog = new OpenFileDialog();
                 Opendialog.ShowDialog();
-
                 string filename = Opendialog.FileName;
 
                 // kiểm tra xem người dùng có chọn file không
@@ -921,7 +922,7 @@ namespace PBL4_Chat
                     bp.Location = new System.Drawing.Point(345, 3);
                     bp.MaximumSize = new System.Drawing.Size(240, 260);
                     bp.MinimumSize = new System.Drawing.Size(230, 160);
-                    bp.Margin = new System.Windows.Forms.Padding(210, 5, 3, 5);
+                    bp.Margin = new System.Windows.Forms.Padding(230, 5, 3, 5);
                     bp.ShowBorders = true;
                     bp.Size = new System.Drawing.Size(230, 200);
                     bp.TabIndex = 1;
