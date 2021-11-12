@@ -650,6 +650,7 @@ namespace PBL4_Chat
                 ns.Write(userId_receive1, 0, userId_receive1.Length);
                 byte[] message = encoding.GetBytes(txt_send.Text);
                 ns.Write(message, 0, message.Length);
+                txt_send.Text = "";
                 //add(encoding.GetString(message));
             }
             else
