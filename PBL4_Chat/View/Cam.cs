@@ -48,6 +48,7 @@ namespace PBL4_Chat.View
 
         // luồng
         Thread send;
+        Thread send_voice;
         Thread receive;
 
         // stream voice
@@ -117,7 +118,7 @@ namespace PBL4_Chat.View
 
 
         }
-        System.Timers.Timer myTimer = new Timer(250);
+        System.Timers.Timer myTimer = new Timer(350);
         public void xuLyGui()
         {
             try
@@ -290,12 +291,12 @@ namespace PBL4_Chat.View
                 this.Invoke(new MethodInvoker(msg1));
             else
             {
-                DisposeWave();
                 //1
                 try
                 {
-                    //waveout = new WaveOut();
-                    IWaveProvider provider = new RawSourceWaveStream(new MemoryStream(messageVoice), new WaveFormat(16000, 16, 1));
+                    DisposeWave();
+                    //MessageBox.Show("A");
+                    IWaveProvider provider = new RawSourceWaveStream(new MemoryStream(messageVoice), new WaveFormat(44100, 16, 1));
                     //IWaveProvider provider = new RawSourceWaveStream(new MemoryStream(messageVoice), new WaveFormat(16000, 16, 1));
                     //waveout.DeviceNumber = cbbPhone.SelectedIndex;
                     waveout.Init(provider);
@@ -327,7 +328,7 @@ namespace PBL4_Chat.View
             {
                 if (waveout.PlaybackState == NAudio.Wave.PlaybackState.Playing) waveout.Stop();
                 waveout.Dispose();
-                waveout = null;
+                waveout = new WaveOut();
             }
         }
 
@@ -378,7 +379,7 @@ namespace PBL4_Chat.View
             try
             {
 
-                client.Connect("192.168.1.2", PORT_NUMBER);
+                client.Connect("192.168.1.10", PORT_NUMBER);
                 ns = client.GetStream();
 
                 // gửi userId mỗi khi load
@@ -423,15 +424,15 @@ namespace PBL4_Chat.View
             try
             {
                 wave = new WaveIn();
-                wave.WaveFormat = new WaveFormat(16000, 16, 1);
+                wave.WaveFormat = new WaveFormat(44100, 16, 1);
                 wave.DeviceNumber = cbbMic.SelectedIndex;
                 //wave.BufferMilliseconds = 100;
                 wave.DataAvailable += Wave_DataAvailable;
                 wave.StartRecording();
 
-                Thread sendVoice = new Thread(xuLyGuiVoice);
-                sendVoice.IsBackground = true;
-                sendVoice.Start();
+                send_voice = new Thread(xuLyGuiVoice);
+                send_voice.IsBackground = true;
+                send_voice.Start();
             }
             catch(Exception err)
             {

@@ -74,6 +74,7 @@ namespace Server
                         Socket_clientCam.Add(socket);
 
                         Thread userCam = new Thread(new ThreadStart(() => p.UserCam(socket)));
+                        userCam.IsBackground = true;
                         userCam.Start();
                     }
                     // gửi tin nhắn 
@@ -96,6 +97,7 @@ namespace Server
 
 
                         Thread userThread = new Thread(new ThreadStart(() => p.User(socket)));
+                        userThread.IsBackground = true;
                         userThread.Start();
                     }
 
@@ -153,6 +155,7 @@ namespace Server
                 string packetMes = "";
                 // gửi voice
                 if(encoding.GetString(userId_receive).Contains("Voice"))
+                //if(String.Compare(encoding.GetString(userId_receive).Split(' ')[2], "Voice") == 0)
                 {
 
                     Console.WriteLine("2");
@@ -168,6 +171,8 @@ namespace Server
                             Socket_clientCam[i].Send(voice, 0, size_voice, SocketFlags.None);
                         }
                     }
+                    Thread.Sleep(100);
+                    continue;
                 }   
                 // gửi cam
                 else
