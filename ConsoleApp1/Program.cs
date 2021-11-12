@@ -26,11 +26,17 @@ namespace Server
         // chứa danh sách userId kết nối
         static List<string> userId = new List<string>();
 
+        // cam
         // chứa danh sách socket kết nối đến (Cam)
         static List<Socket> Socket_clientCam = new List<Socket>();
-
         // chứa danh sách userId kết nối (Cam)
         static List<string> userIdCam = new List<string>();
+
+        // voice
+        // chứa danh sách socket kết nối đến (Voice)
+        static List<Socket> Socket_clientVoice = new List<Socket>();
+        // chứa danh sách userId kết nối (Voice)
+        static List<string> userIdVoice = new List<string>();
         public static void Main()
         {
             try
@@ -59,7 +65,6 @@ namespace Server
                     // gửi ảnh màn hình
                     if (encoding.GetString(userId_load).Contains("Cam"))
                     {
-                        Console.WriteLine("1");
                         // kiểm tra xem client đã từng tồn tại chưa
                         for (int i = 0; i < userIdCam.Count; i++)
                         {
@@ -76,6 +81,27 @@ namespace Server
                         Thread userCam = new Thread(new ThreadStart(() => p.UserCam(socket)));
                         userCam.IsBackground = true;
                         userCam.Start();
+                    }
+                    // gửi voice
+                    else if (encoding.GetString(userId_load).Contains("Voice"))
+                    {
+                        //Console.WriteLine("1");
+                        // kiểm tra xem client đã từng tồn tại chưa
+                        for (int i = 0; i < userIdVoice.Count; i++)
+                        {
+                            if (String.Compare(encoding.GetString(userId_load).Split(' ')[0], userIdVoice[i]) == 0)
+                            {
+                                Socket_clientVoice.RemoveAt(i);
+                                userIdVoice.RemoveAt(i);
+                                break;
+                            }
+                        }
+                        userIdVoice.Add(encoding.GetString(userId_load).Split(' ')[0]);
+                        Socket_clientVoice.Add(socket);
+
+                        Thread userVoice = new Thread(new ThreadStart(() => p.UserVoice(socket)));
+                        userVoice.IsBackground = true;
+                        userVoice.Start();
                     }
                     // gửi tin nhắn 
                     else
@@ -148,51 +174,51 @@ namespace Server
         {
             while (true)
             {
-                string userId_receiveCopy = "";
+                //string userId_receiveCopy = "";
+                byte[] userId_receive = new byte[BUFFER_SIZE];
+                int size_userId = client.Receive(userId_receive);
+                // truyền gói tin
+                string packetMes = "";
+                byte[] image = new byte[BUFFER_SIZE];
+                int size_image = client.Receive(image);
+                packetMes = encoding.GetString(userId_receive).Split(' ')[0] + " " + "private";
+                for (int i = 0; i < userIdCam.Count; i++)
+                {
+                    if (String.Compare(encoding.GetString(userId_receive).Split(' ')[1], userIdCam[i]) == 0)
+                    {
+                        // gửi cho người nhận id người gửi để check xem có đang nhắn tin cùng nhau không
+                        Socket_clientCam[i].Send(encoding.GetBytes(packetMes), 0, encoding.GetBytes(packetMes).Length, SocketFlags.None);
+                        Socket_clientCam[i].Send(image, 0, size_image, SocketFlags.None);
+
+                    }
+                }
+            }
+        }
+
+        // xử lý gửi voice
+        public void UserVoice(Socket client)
+        {
+            while (true)
+            {
+                //string userId_receiveCopy = "";
                 byte[] userId_receive = new byte[BUFFER_SIZE];
                 int size_userId = client.Receive(userId_receive);
                 // truyền gói tin
                 string packetMes = "";
                 // gửi voice
-                if(encoding.GetString(userId_receive).Contains("Voice"))
-                //if(String.Compare(encoding.GetString(userId_receive).Split(' ')[2], "Voice") == 0)
+                //Console.WriteLine("2");
+                byte[] voice = new byte[BUFFER_SIZE];
+                int size_voice = client.Receive(voice);
+                packetMes = encoding.GetString(userId_receive).Split(' ')[0] + " " + "private";
+                for (int i = 0; i < userIdVoice.Count; i++)
                 {
-
-                    Console.WriteLine("2");
-                    byte[] voice = new byte[BUFFER_SIZE];
-                    int size_voice = client.Receive(voice);
-                    packetMes = encoding.GetString(userId_receive).Split(' ')[0] + " " + "private" + " " + "Voice";
-                    for (int i = 0; i < userIdCam.Count; i++)
+                    if (String.Compare(encoding.GetString(userId_receive).Split(' ')[1], userIdVoice[i]) == 0)
                     {
-                        if (String.Compare(encoding.GetString(userId_receive).Split(' ')[1], userIdCam[i]) == 0)
-                        {
-                            // gửi cho người nhận id người gửi để check xem có đang nhắn tin cùng nhau không
-                            Socket_clientCam[i].Send(encoding.GetBytes(packetMes), 0, encoding.GetBytes(packetMes).Length, SocketFlags.None);
-                            Socket_clientCam[i].Send(voice, 0, size_voice, SocketFlags.None);
-                        }
+                        // gửi cho người nhận id người gửi để check xem có đang nhắn tin cùng nhau không
+                        Socket_clientVoice[i].Send(encoding.GetBytes(packetMes), 0, encoding.GetBytes(packetMes).Length, SocketFlags.None);
+                        Socket_clientVoice[i].Send(voice, 0, size_voice, SocketFlags.None);
                     }
-                    Thread.Sleep(100);
-                    continue;
-                }   
-                // gửi cam
-                else
-                {
-                    byte[] image = new byte[BUFFER_SIZE];
-                    int size_image = client.Receive(image);
-                    packetMes = encoding.GetString(userId_receive).Split(' ')[0] + " " + "private";
-                    for (int i = 0; i < userIdCam.Count; i++)
-                    {
-                        if (String.Compare(encoding.GetString(userId_receive).Split(' ')[1], userIdCam[i]) == 0)
-                        {
-                            // gửi cho người nhận id người gửi để check xem có đang nhắn tin cùng nhau không
-                            Socket_clientCam[i].Send(encoding.GetBytes(packetMes), 0, encoding.GetBytes(packetMes).Length, SocketFlags.None);
-                            Socket_clientCam[i].Send(image, 0, size_image, SocketFlags.None);
-
-                        }
-                    }
-                }                    
-                
-
+                }
             }
         }
 

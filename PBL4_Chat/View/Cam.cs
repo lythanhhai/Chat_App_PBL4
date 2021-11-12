@@ -39,6 +39,8 @@ namespace PBL4_Chat.View
         static ASCIIEncoding encoding = new ASCIIEncoding();
         TcpClient client = new TcpClient();
         NetworkStream ns;
+        TcpClient client1 = new TcpClient();
+        NetworkStream ns1;
 
         //cam
         FilterInfoCollection filterInfoCollection;
@@ -50,24 +52,36 @@ namespace PBL4_Chat.View
         Thread send;
         Thread send_voice;
         Thread receive;
+        Thread receive_voice;
 
         // stream voice
         WaveIn wave;
         WaveOut waveout;
-        //IWaveProvider provider;
         private void btnStart_Click(object sender, EventArgs e)
         {
             try
             {
+                client.Connect("192.168.1.10", PORT_NUMBER);
+                ns = client.GetStream();
+
+                // gửi userId mỗi khi load
+                byte[] userId_load = encoding.GetBytes(userId() + " " + "Cam");
+                ns.Write(userId_load, 0, userId_load.Length);
+
+                receive = new Thread(XLNhan);
+                receive.IsBackground = true;
+                receive.Start();
+
                 if (videoCaptureDevice.IsRunning == false)
                 {
                     videoCaptureDevice = new VideoCaptureDevice(filterInfoCollection[cbbCamera.SelectedIndex].MonikerString);
                     videoCaptureDevice.NewFrame += VideoCaptureDevice_NewFrame;
                     videoCaptureDevice.Start();
                 }
-                    send = new Thread(xuLyGui);
-                    send.IsBackground = true;
-                    send.Start();
+                send = new Thread(xuLyGui);
+                send.IsBackground = true;
+                send.Start();
+
             }
             catch (Exception err)
             {
@@ -77,8 +91,6 @@ namespace PBL4_Chat.View
         private static readonly Object objLock = new object();
         void myTimer_Elapsed(object sender, ElapsedEventArgs e)
         {
-            //your code
-
             bool isNullOrEmpty = pbCamera == null || pbCamera.Image == null;
             if (isNullOrEmpty == true)
             {
@@ -86,8 +98,6 @@ namespace PBL4_Chat.View
             }
             else
             {
-
-
                 //Image image = (Image)pbCamera.Image.Clone();
                 ns = client.GetStream();
                 ms = new MemoryStream();
@@ -103,22 +113,11 @@ namespace PBL4_Chat.View
                 ns.Write(buffer, 0, buffer.Length);
 
 
-                //Thread.Sleep(1000);
-                try
-                {
-                    //Task.Delay(10);
-                }
-                catch (Exception err)
-                {
-
-                }
-                //i--;
-
             }
 
 
         }
-        System.Timers.Timer myTimer = new Timer(350);
+        System.Timers.Timer myTimer = new Timer(250);
         public void xuLyGui()
         {
             try
@@ -127,45 +126,6 @@ namespace PBL4_Chat.View
                 myTimer.Start();
                 myTimer.Elapsed += new ElapsedEventHandler(myTimer_Elapsed);
                 Task.Delay(10);
-
-
-                //while (true)
-                //{
-
-                //    bool isNullOrEmpty = pbCamera == null || pbCamera.Image == null;
-                //    if (isNullOrEmpty == true)
-                //    {
-
-                //    }
-                //    else
-                //    {
-
-
-                //        //Image image = (Image)pbCamera.Image.Clone();
-                //        ns = client.GetStream();
-                //        ms = new MemoryStream();
-                //        pbCamera.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
-                //        byte[] buffer = ms.GetBuffer();
-                //        byte[] userId_receive1 = encoding.GetBytes(userId() + " " + userReceiver());
-                //        ns.Write(userId_receive1, 0, userId_receive1.Length);
-                //        ns.Write(buffer, 0, buffer.Length);
-
-
-                //        Thread.Sleep(500);
-                //        try
-                //        {
-                //            //Task.Delay(10);
-                //        }
-                //        catch (Exception err)
-                //        {
-
-                //        }
-                //        //i--;
-
-                //    }
-                //}    
-
-
 
             }
             catch (Exception err)
@@ -185,8 +145,6 @@ namespace PBL4_Chat.View
             {
                 while (true)
                 {
-
-
                     ns = client.GetStream();
                     byte[] byte_choose = new Byte[BUFFER_SIZE];
                     ns.Read(byte_choose, 0, byte_choose.Length);
@@ -195,70 +153,30 @@ namespace PBL4_Chat.View
                     {
                         break;
                     }
-
-                    // chat image
-                    if(choose.Contains("Voice"))
+                    message = new Byte[BUFFER_SIZE];
+                    ns.Read(message, 0, message.Length);
+                    // private(sender)
+                    if (choose.Contains("private"))
                     {
-                        
-                        //MessageBox.Show("1");
-                        messageVoice = new Byte[BUFFER_SIZE];
-                        ns.Read(messageVoice, 0, messageVoice.Length);
-                        // private(sender)
-                        if (choose.Contains("private"))
+                        // kiểm tra người nhận có đang nhắn private không
+                        if (userReceiver().Split(' ').Length == 1)
                         {
-                            //MessageBox.Show("2");
-                            // kiểm tra người nhận có đang nhắn private không
-                            if (userReceiver().Split(' ').Length == 1)
+                            //nameReceiver = BLL_User.instance.BLL_getUserById(userId_receive()).firstName + " " + BLL_User.instance.BLL_getUserById(userId_receive()).lastName;
+                            // khi người dùng đang nhắn 1 người khác nhưng 1 người khác gửi tin thì tin nhắn này không hiển thị lên
+                            if (string.Compare(choose.Split(' ')[0], userReceiver()) == 0)
                             {
-                                //MessageBox.Show("3");
-                                //nameReceiver = BLL_User.instance.BLL_getUserById(userId_receive()).firstName + " " + BLL_User.instance.BLL_getUserById(userId_receive()).lastName;
-                                // khi người dùng đang nhắn 1 người khác nhưng 1 người khác gửi tin thì tin nhắn này không hiển thị lên
-                                if (string.Compare(choose.Split(' ')[0], userReceiver()) == 0)
-                                {
-                                    //MessageBox.Show("4");
-                                    msg1();
-                                    
-                                }
-                                else
-                                {
-
-                                }
+                                msg();
                             }
                             else
                             {
 
                             }
                         }
-                    }   
-                    else
-                    {
-                        message = new Byte[BUFFER_SIZE];
-                        ns.Read(message, 0, message.Length);
-                        // private(sender)
-                        if (choose.Contains("private"))
+                        else
                         {
-                            // kiểm tra người nhận có đang nhắn private không
-                            if (userReceiver().Split(' ').Length == 1)
-                            {
-                                //nameReceiver = BLL_User.instance.BLL_getUserById(userId_receive()).firstName + " " + BLL_User.instance.BLL_getUserById(userId_receive()).lastName;
-                                // khi người dùng đang nhắn 1 người khác nhưng 1 người khác gửi tin thì tin nhắn này không hiển thị lên
-                                if (string.Compare(choose.Split(' ')[0], userReceiver()) == 0)
-                                {
-                                    msg();
-                                }
-                                else
-                                {
 
-                                }
-                            }
-                            else
-                            {
-
-                            }
                         }
-                    }                        
-                    
-
+                    }
                 }
             }
             catch (Exception err)
@@ -274,10 +192,12 @@ namespace PBL4_Chat.View
                 this.Invoke(new MethodInvoker(msg));
             else
             {
-
-                MemoryStream imagestream1 = new MemoryStream(message);
-                Image image2 = Image.FromStream(imagestream1);
-                gunaTransfarantPictureBox1.Image = image2;
+                if(message != null)
+                {
+                    MemoryStream imagestream1 = new MemoryStream(message);
+                    Image image2 = Image.FromStream(imagestream1);
+                    gunaTransfarantPictureBox1.Image = image2;
+                }   
 
             }
         }
@@ -379,25 +299,67 @@ namespace PBL4_Chat.View
             try
             {
 
-                client.Connect("192.168.1.10", PORT_NUMBER);
-                ns = client.GetStream();
-
-                // gửi userId mỗi khi load
-                byte[] userId_load = encoding.GetBytes(userId() + " " + "Cam");
-                ns.Write(userId_load, 0, userId_load.Length);
-
                 waveout = new WaveOut();
                 waveout.DeviceNumber = cbbPhone.SelectedIndex;
-
-                receive = new Thread(XLNhan);
-                receive.IsBackground = true;
-                receive.Start();
 
             }
 
             catch (Exception ex)
             {
                 Console.WriteLine("Error: " + ex);
+            }
+        }
+
+        // xử lý nhận voice
+        public void XLNhan1()
+        {
+            try
+            {
+                while (true)
+                {
+
+                    ns1 = client1.GetStream();
+                    byte[] byte_choose = new Byte[BUFFER_SIZE];
+                    ns1.Read(byte_choose, 0, byte_choose.Length);
+                    string choose = encoding.GetString(byte_choose);
+                    if (userReceiver() == null)
+                    {
+                        break;
+                    }
+                    //MessageBox.Show("1");
+                    messageVoice = new Byte[BUFFER_SIZE];
+                    ns1.Read(messageVoice, 0, messageVoice.Length);
+                    // private(sender)
+                    if (choose.Contains("private"))
+                    {
+                        //MessageBox.Show("2");
+                        // kiểm tra người nhận có đang nhắn private không
+                        if (userReceiver().Split(' ').Length == 1)
+                        {
+                            //MessageBox.Show("3");
+                            //nameReceiver = BLL_User.instance.BLL_getUserById(userId_receive()).firstName + " " + BLL_User.instance.BLL_getUserById(userId_receive()).lastName;
+                            // khi người dùng đang nhắn 1 người khác nhưng 1 người khác gửi tin thì tin nhắn này không hiển thị lên
+                            if (string.Compare(choose.Split(' ')[0], userReceiver()) == 0)
+                            {
+                                //MessageBox.Show("4");
+                                msg1();
+
+                            }
+                            else
+                            {
+
+                            }
+                        }
+                        else
+                        {
+
+                        }
+                    }
+                }
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.ToString());
             }
         }
 
@@ -423,6 +385,18 @@ namespace PBL4_Chat.View
             //System.Diagnostics.Process.Start("mmsys.cpl", ",1");
             try
             {
+
+                client1.Connect("192.168.1.10", PORT_NUMBER);
+                ns1 = client1.GetStream();
+
+                // gửi userId mỗi khi load
+                byte[] userId_load = encoding.GetBytes(userId() + " " + "Voice");
+                ns1.Write(userId_load, 0, userId_load.Length);
+
+                receive_voice = new Thread(XLNhan1);
+                receive_voice.IsBackground = true;
+                receive_voice.Start();
+
                 wave = new WaveIn();
                 wave.WaveFormat = new WaveFormat(44100, 16, 1);
                 wave.DeviceNumber = cbbMic.SelectedIndex;
@@ -443,10 +417,10 @@ namespace PBL4_Chat.View
         void myTimer_ElapsedVoice(object sender, ElapsedEventArgs e)
         {
 
-            ns = client.GetStream();
+            ns1 = client1.GetStream();
             byte[] userId_receive1 = encoding.GetBytes(userId() + " " + userReceiver() + " " + "Voice");
-            ns.Write(userId_receive1, 0, userId_receive1.Length);
-            ns.Write(bufferVoice, 0, size_bufferVoice);
+            ns1.Write(userId_receive1, 0, userId_receive1.Length);
+            ns1.Write(bufferVoice, 0, size_bufferVoice);
             //Array.Clear(bufferVoice, 0, bufferVoice.Length);
 
         }
