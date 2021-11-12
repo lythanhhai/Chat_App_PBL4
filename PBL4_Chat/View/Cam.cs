@@ -61,6 +61,10 @@ namespace PBL4_Chat.View
         {
             try
             {
+                //if(client != null)
+                //{
+                    client = new TcpClient();
+                //}    
                 client.Connect("192.168.1.10", PORT_NUMBER);
                 ns = client.GetStream();
 
@@ -369,6 +373,9 @@ namespace PBL4_Chat.View
             {
                 myTimer.Stop();
                 videoCaptureDevice.Stop();
+                //send.Abort();
+                //receive.Abort();
+                //client.Close();
             }
         }
 
