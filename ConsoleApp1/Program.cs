@@ -404,7 +404,7 @@ namespace Server
                                         // gửi cho người nhận id người gửi để check xem có đang nhắn tin cùng nhau không
                                         //Socket_client[i].Send(data, 0, size, SocketFlags.None);
                                         Socket_client[i].Send(encoding.GetBytes("text"), 0, encoding.GetBytes("text").Length, SocketFlags.None);
-                                        Socket_client[i].Send(encoding.GetBytes(packetMes), 0, size + size + size + size_userId, SocketFlags.None);
+                                        Socket_client[i].Send(encoding.GetBytes(packetMes), 0, encoding.GetBytes(encoding.GetString(userId_receive).Split(' ')[0]).Length + encoding.GetBytes(" ").Length + encoding.GetBytes(encoding.GetString(userId_receive).Split(' ')[1]).Length + encoding.GetBytes(" ").Length + size, SocketFlags.None);
                                         //break;
                                     }
                                 }
@@ -422,8 +422,7 @@ namespace Server
                                     // gửi cho người nhận id người gửi để check xem có đang nhắn tin cùng nhau không
                                     //Socket_client[i].Send(data, 0, size, SocketFlags.None);
                                     Socket_client[i].Send(encoding.GetBytes("text"), 0, encoding.GetBytes("text").Length, SocketFlags.None);
-                                    Socket_client[i].Send(encoding.GetBytes(packetMes), 0, size + size + size + size_userId, SocketFlags.None);
-
+                                    Socket_client[i].Send(encoding.GetBytes(packetMes), 0, encoding.GetBytes(encoding.GetString(userId_receive).Split(' ')[0]).Length + encoding.GetBytes(" ").Length + encoding.GetBytes("private").Length + encoding.GetBytes(" ").Length + size, SocketFlags.None);
                                 }
                             }
                             //client.Send(data, 0, size, SocketFlags.None);

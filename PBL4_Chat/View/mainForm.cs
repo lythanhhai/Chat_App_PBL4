@@ -268,19 +268,12 @@ namespace PBL4_Chat
                                     "Video call", MessageBoxButtons.YesNo);
                                     if (DialogResult.Yes == dr)
                                     {
-                                        //Cam cam1 = new Cam();
-                                        //cam1.userId += new Cam.getUserId(getUserIdForCam);
-                                        //cam1.userReceiver += new Cam.getUserReceive(getUserReceiveForCam);
-                                        ////BeginInvoke((Action)(() => cam1.ShowDialog()));
-                                        //cam1.ShowDialog();
-                                        ////continue;
                                         msgShow();
                                     }
                                     else
                                     {
-                                        //cam.Close();
+
                                     }
-                                    //continue;
                                 }
                                 else
                                 {
@@ -500,9 +493,7 @@ namespace PBL4_Chat
                 Cam cam1 = new Cam();
                 cam1.userId += new Cam.getUserId(getUserIdForCam);
                 cam1.userReceiver += new Cam.getUserReceive(getUserReceiveForCam);
-                //BeginInvoke((Action)(() => cam1.ShowDialog()));
                 cam1.Show();
-                //continue;
 
             }
         }
