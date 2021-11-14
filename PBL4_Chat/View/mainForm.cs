@@ -184,7 +184,7 @@ namespace PBL4_Chat
                 //data = "Conected to Chat Server ...";
                 //msg();
                 // 1. connect
-                client.Connect("192.168.1.10", PORT_NUMBER);
+                client.Connect("192.168.1.7", PORT_NUMBER);
                 stream = client.GetStream();
                 ns = client.GetStream();
 
@@ -258,20 +258,42 @@ namespace PBL4_Chat
                     //MessageBox.Show(choose);
                     if (choose.Contains("Cam"))
                     {
-                        DialogResult dr = MessageBox.Show("Ban co cuoc goi",
-                        "Video call", MessageBoxButtons.YesNo);
-                        if (DialogResult.Yes == dr)
+                        if (choose.Split(' ')[1] == "private")
                         {
-                            Cam cam1 = new Cam();
-                            cam1.userId += new Cam.getUserId(getUserIdForCam);
-                            cam1.userReceiver += new Cam.getUserReceive(getUserReceiveForCam);
-                            cam1.ShowDialog();
-                            continue;
+                            if (userId_receive().Split(' ').Length == 1)
+                            {
+                                if (string.Compare(choose.Split(' ')[0], userId_receive()) == 0)
+                                {
+                                    DialogResult dr = MessageBox.Show("Ban co cuoc goi",
+                                    "Video call", MessageBoxButtons.YesNo);
+                                    if (DialogResult.Yes == dr)
+                                    {
+                                        //Cam cam1 = new Cam();
+                                        //cam1.userId += new Cam.getUserId(getUserIdForCam);
+                                        //cam1.userReceiver += new Cam.getUserReceive(getUserReceiveForCam);
+                                        ////BeginInvoke((Action)(() => cam1.ShowDialog()));
+                                        //cam1.ShowDialog();
+                                        ////continue;
+                                        msgShow();
+                                    }
+                                    else
+                                    {
+                                        //cam.Close();
+                                    }
+                                    //continue;
+                                }
+                                else
+                                {
+
+                                }
+                            }
+                            else
+                            {
+
+                            }
+
                         }
-                        else
-                        {
-                            //cam.Close();
-                        }
+                        
                     }
                     else if (choose.Contains("image"))
                     {
@@ -468,6 +490,23 @@ namespace PBL4_Chat
             }
 
         }
+
+        private void msgShow()
+        {
+            if (this.InvokeRequired)
+                this.Invoke(new MethodInvoker(msgShow));
+            else
+            {
+                Cam cam1 = new Cam();
+                cam1.userId += new Cam.getUserId(getUserIdForCam);
+                cam1.userReceiver += new Cam.getUserReceive(getUserReceiveForCam);
+                //BeginInvoke((Action)(() => cam1.ShowDialog()));
+                cam1.Show();
+                //continue;
+
+            }
+        }
+
         // hiển tin nhắn lên textbox
         private void msg()
         {

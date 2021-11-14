@@ -227,11 +227,6 @@ namespace Server
         {
             try
             {
-                //for (int i = 0; i < userId.Count; i++)
-                //{
-                //    Console.WriteLine(userId[i]);
-                //}
-                //Console.WriteLine(SocketExtensions.IsConnected(client).ToString());
                 while (true)
                 {
                     string userId_receiveCopy = "";
@@ -242,7 +237,7 @@ namespace Server
 
                     if (encoding.GetString(userId_receive).Contains("Cam"))
                     {
-                        packetMes = encoding.GetString(userId_receive).Split(' ')[0] + " " + "Cam";
+                        packetMes = encoding.GetString(userId_receive).Split(' ')[0] + " " + "private" + " " + "Cam";
                         for (int i = 0; i < userId.Count; i++)
                         {
                             if (String.Compare(encoding.GetString(userId_receive).Split(' ')[1], userId[i]) == 0)
@@ -253,7 +248,6 @@ namespace Server
 
                             }
                         }
-                        //Console.WriteLine(packetMes);
                     }
                     // gửi ảnh
                     else if (encoding.GetString(userId_receive).Contains("image"))
@@ -285,7 +279,6 @@ namespace Server
                                 {
                                     if (String.Compare(userId_receiveCopy.Split(' ')[j], userId[i]) == 0 && String.Compare(userId_receiveCopy.Split(' ')[j], userId_receiveCopy.Split(' ')[0]) != 0)
                                     {
-                                        //Console.WriteLine("2");
                                         // gửi cho người nhận id người gửi để check xem có đang nhắn tin cùng nhau không
                                         //Socket_client[i].Send(data, 0, size, SocketFlags.None);
                                         Socket_client[i].Send(encoding.GetBytes(packetMes), 0, encoding.GetBytes(packetMes).Length, SocketFlags.None);
@@ -297,8 +290,6 @@ namespace Server
                         // gửi private ảnh
                         else
                         {
-                            //Console.WriteLine("1");
-                            // MessageBox.Show(encoding.GetString(userId_receive));
                             byte[] image = new byte[BUFFER_SIZE];
                             int size_image = client.Receive(image);
                             packetMes = encoding.GetString(userId_receive).Split(' ')[0] + " " + "private" + " " + "image";
@@ -425,7 +416,7 @@ namespace Server
                             packetMes = encoding.GetString(userId_receive).Split(' ')[0] + " " + "private" + " " + encoding.GetString(data);
                             for (int i = 0; i < userId.Count; i++)
                             {
-                                Console.WriteLine(encoding.GetString(userId_receive));
+                                //Console.WriteLine(encoding.GetString(userId_receive));
                                 if (String.Compare(encoding.GetString(userId_receive).Split(' ')[1], userId[i]) == 0)
                                 {
                                     // gửi cho người nhận id người gửi để check xem có đang nhắn tin cùng nhau không
