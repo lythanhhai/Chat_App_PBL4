@@ -184,7 +184,7 @@ namespace PBL4_Chat
                 //data = "Conected to Chat Server ...";
                 //msg();
                 // 1. connect
-                client.Connect("192.168.1.7", PORT_NUMBER);
+                client.Connect("192.168.1.10", PORT_NUMBER);
                 stream = client.GetStream();
                 ns = client.GetStream();
 
@@ -1007,7 +1007,7 @@ namespace PBL4_Chat
         {
             return userId_receive();
         }
-
+                                                                                                                                    
         private void btnCamera_Click(object sender, EventArgs e)
         {
             Cam cam = new Cam();
