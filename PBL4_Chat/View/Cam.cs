@@ -64,7 +64,7 @@ namespace PBL4_Chat.View
         {
             try
             {
-                client.Connect("192.168.1.10", PORT_NUMBER);
+                client.Connect("192.168.1.5", PORT_NUMBER);
                 ns = client.GetStream();
 
                 // gửi userId mỗi khi load
@@ -394,7 +394,7 @@ namespace PBL4_Chat.View
             try
             {
 
-                client1.Connect("192.168.1.10", PORT_NUMBER);
+                client1.Connect("192.168.1.5", PORT_NUMBER);
                 ns1 = client1.GetStream();
 
                 // gửi userId mỗi khi load

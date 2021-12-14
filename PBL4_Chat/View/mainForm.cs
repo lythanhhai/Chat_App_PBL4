@@ -184,7 +184,7 @@ namespace PBL4_Chat
                 //data = "Conected to Chat Server ...";
                 //msg();
                 // 1. connect
-                client.Connect("192.168.1.10", PORT_NUMBER);
+                client.Connect("192.168.1.5", PORT_NUMBER);
                 stream = client.GetStream();
                 ns = client.GetStream();
 
